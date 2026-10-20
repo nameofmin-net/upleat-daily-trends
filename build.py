@@ -106,40 +106,41 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
-/* layout: grid + aside */
-.content-layout{display:grid;grid-template-columns:1fr 272px;gap:40px;align-items:start;}
-@media (max-width:860px){.content-layout{grid-template-columns:1fr;}}
-
-/* article feed — flat editorial single-column timeline (magazine-hd.kr pattern) */
-.feed-list{display:flex;flex-direction:column;}
-.feed-item{padding:30px 0;border-top:1px solid var(--line);}
-.feed-item:first-child{border-top:none;padding-top:0;}
-.feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+/* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
+.feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+@media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
+@media (max-width:560px){.feed-list{grid-template-columns:1fr;gap:28px;}}
+.feed-item{padding:0;border-top:none;height:100%;}
+.feed-link{display:flex;flex-direction:column;height:100%;}
+.feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-.feed-thumb-emoji{font-size:42px;opacity:.5;}
-.feed-eyebrow{font-size:12px;font-weight:800;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
-.feed-title{font-size:19px;font-weight:800;margin:0 0 8px;line-height:1.4;letter-spacing:-.01em;color:var(--ink);}
+.feed-thumb-emoji{font-size:34px;opacity:.5;}
+.feed-eyebrow{font-size:11px;font-weight:800;letter-spacing:.05em;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.feed-title{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.45;letter-spacing:-.005em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(15.5px*1.45*3);}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-summary{font-size:13.5px;color:var(--sub);line-height:1.65;margin:0 0 14px;}
-.feed-meta{display:flex;align-items:center;gap:8px;}
-.feed-src-icon{width:22px;height:22px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex:0 0 auto;}
-.feed-src-name{font-size:12px;font-weight:600;color:var(--ink);}
-.feed-dot{font-size:12px;color:var(--sub2);}
-.feed-date{font-size:12px;color:var(--sub2);}
+.feed-summary{font-size:12.5px;color:var(--sub);line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(12.5px*1.55*2);}
+.feed-meta{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:2px;}
+.feed-src-icon{width:18px;height:18px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800;flex:0 0 auto;}
+.feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
+.feed-date{font-size:11px;color:var(--sub2);flex:0 0 auto;}
 .hidden-initial{display:none;}
 
-.loadmore-wrap{text-align:center;margin-top:8px;}
+.loadmore-wrap{text-align:center;margin-top:36px;}
 .loadmore-btn{appearance:none;cursor:pointer;font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--sub);font-weight:700;font-size:14px;padding:13px 0;width:100%;border-radius:10px;box-shadow:var(--shadow);}
 .loadmore-btn:hover{border-color:var(--accent);color:var(--accent);}
 .no-results{font-size:14px;color:var(--sub);padding:40px 0;text-align:center;}
 
-aside.rail{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:18px;}
-aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
-.rail-item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);}
-.rail-item:first-of-type{border-top:none;padding-top:0;}
+/* "최근 핵심 인사이트" — full-width strip below the grid, not a sidebar */
+.rail-strip{margin-top:52px;padding-top:28px;border-top:1px solid var(--line);}
+.rail-strip h3{font-size:14px;margin:0 0 18px;font-weight:800;}
+.rail-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;}
+@media (max-width:860px){.rail-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.rail-grid{grid-template-columns:1fr;}}
+.rail-item{padding:0;}
 .rail-text{font-size:12.5px;color:var(--ink);line-height:1.5;}
 .rail-text b{color:var(--accent);}
-.rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:2px;}
+.rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:4px;}
 
 .scrolltop{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:50;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
@@ -374,7 +375,7 @@ def render_feed_item(a):
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
   <div class="feed-eyebrow" style="color:{color}"><span>{emoji}</span><span>{a['cat_label']}</span></div>
   <h2 class="feed-title">{a['title']}</h2>
-  <p class="feed-summary">{preview_text(a['insight'])}</p>
+  <p class="feed-summary">{preview_text(a['insight'], limit=80)}</p>
   <div class="feed-meta"><span class="feed-src-icon" style="background:{color}">{source_initial(a['source'])}</span><span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span></div>
 </a>
 </article>'''
@@ -388,10 +389,10 @@ def render_rail(articles, limit=5):
         items.append(f'''<div class="rail-item">
 <a href="articles/{a['id']}.html" class="rail-text"><b>{phrase}</b><span class="rail-date">{a['dateLabel']}</span></a>
 </div>''')
-    return f'''<aside class="rail">
+    return f'''<div class="rail-strip">
 <h3>최근 핵심 인사이트</h3>
-{"".join(items)}
-</aside>'''
+<div class="rail-grid">{"".join(items)}</div>
+</div>'''
 
 
 def pick_related(articles, idx, limit=4):
@@ -498,16 +499,13 @@ def build():
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
 
-<div class="content-layout">
-  <div>
-    <div class="feed-list" id="feedList">
+<div class="feed-list" id="feedList">
 {feed_html}
-    </div>
-    <div class="no-results" id="noResults" style="display:none">검색 결과가 없습니다.</div>
-    <div class="loadmore-wrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
-  </div>
-  {rail_html}
 </div>
+<div class="no-results" id="noResults" style="display:none">검색 결과가 없습니다.</div>
+<div class="loadmore-wrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
+
+{rail_html}
 {FOOTER_HTML}
 </div>'''
 
