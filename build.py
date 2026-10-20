@@ -81,7 +81,8 @@ body{
 }
 .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--ink);margin-bottom:28px;}
+.gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
 .brand a{color:inherit;}
 .topbar .gh{font-size:13px;color:var(--sub);}
@@ -94,14 +95,14 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* search + pill filters row — interaction chrome stays soft/rounded */
-.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 30px;}
-.search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
+/* GNB search + pill filters row — interaction chrome stays soft/rounded */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:0;padding:12px 0;border-bottom:2px solid var(--ink);}
+.search-box{position:relative;max-width:320px;flex:1;min-width:200px;margin:0;}
 .search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
 .search-box input:focus{outline:none;border-color:var(--accent);}
-.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;}
+.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;z-index:1;}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap;}
-.pill-btn{appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
+.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
 .pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
@@ -202,9 +203,13 @@ FEED_SCRIPT = """
   var loadBtn = document.getElementById('loadMoreBtn');
   var noResults = document.getElementById('noResults');
   var searchInput = document.getElementById('searchInput');
+  var searchForm = searchInput ? searchInput.closest('form') : null;
   var pillBtns = Array.prototype.slice.call(document.querySelectorAll('.pill-btn'));
 
-  var state = { cat: 'all', q: '', visible: PAGE_SIZE };
+  var params = new URLSearchParams(location.search);
+  var state = { cat: params.get('cat') || 'all', q: (params.get('q') || '').trim().toLowerCase(), visible: PAGE_SIZE };
+  if (searchInput && params.get('q')) searchInput.value = params.get('q');
+  pillBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.cat === state.cat); });
 
   function matches(item){
     if (state.cat !== 'all' && item.dataset.cat !== state.cat) return false;
@@ -226,13 +231,15 @@ FEED_SCRIPT = """
     noResults.style.display = (matched === 0) ? '' : 'none';
   }
 
+  if (searchForm) searchForm.addEventListener('submit', function(e){ e.preventDefault(); });
   searchInput.addEventListener('input', function(){
     state.q = this.value.trim().toLowerCase();
     state.visible = PAGE_SIZE;
     render();
   });
   pillBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
       pillBtns.forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
       state.cat = btn.dataset.cat;
@@ -262,9 +269,17 @@ HEAD = """<!DOCTYPE html>
 <style>{style}</style>
 </head>
 <body>
+<div class="gnb-sticky">
 <div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
   <div class="brand"><a href="{root_prefix}index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+<div class="filter-row wrap" style="padding-top:12px;padding-bottom:12px;max-width:1100px;">
+  <form class="search-box" action="{root_prefix}index.html" method="get">
+    <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
+  </form>
+  <div class="pill-row">{gnb_pills}</div>
+</div>
 </div>
 """
 
@@ -302,6 +317,13 @@ def find_thumb(article_id):
 
 def source_initial(source):
     return esc(source.strip()[0]) if source and source.strip() else "?"
+
+
+def render_gnb_pills(root_prefix):
+    pills = [f'<a class="pill-btn" data-cat="all" href="{root_prefix}index.html">전체</a>']
+    for key in CATEGORY_ORDER:
+        pills.append(f'<a class="pill-btn" data-cat="{key}" href="{root_prefix}index.html?cat={key}">{CATEGORY_LABEL[key]}</a>')
+    return "".join(pills)
 
 
 def build_articles(days):
@@ -469,21 +491,12 @@ def build():
     feed_html = "".join(render_feed_item(a) for a in articles)
     rail_html = render_rail(articles)
 
-    pill_buttons = ['<button class="pill-btn active" data-cat="all">전체</button>']
-    for key in CATEGORY_ORDER:
-        pill_buttons.append(f'<button class="pill-btn" data-cat="{key}">{CATEGORY_LABEL[key]}</button>')
-
     index_body = f'''<div class="wrap">
 <header class="site">
 <p class="eyebrow">UPLEAT</p>
 <h1>UPLEAT 데일리 트렌드 아카이브</h1>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
-
-<div class="filter-row">
-  <div class="search-box"><input id="searchInput" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색"></div>
-  <div class="pill-row">{"".join(pill_buttons)}</div>
-</div>
 
 <div class="content-layout">
   <div>
@@ -500,7 +513,7 @@ def build():
 
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(
-            HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, root_prefix="")
+            HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, root_prefix="", gnb_pills=render_gnb_pills(""))
             + index_body
             + FEED_SCRIPT
             + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
@@ -515,7 +528,7 @@ def build():
 
         with open(os.path.join(ARTICLES_DIR, f"{a['id']}.html"), "w", encoding="utf-8") as f:
             f.write(
-                HEAD.format(title=f"{a['title']} · UPLEAT Daily Brief", style=STYLE, root_prefix="../")
+                HEAD.format(title=f"{a['title']} · UPLEAT Daily Brief", style=STYLE, root_prefix="../", gnb_pills=render_gnb_pills("../"))
                 + body
                 + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
             )

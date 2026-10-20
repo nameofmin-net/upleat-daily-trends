@@ -30,7 +30,8 @@ body{
 }
 .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--ink);margin-bottom:28px;}
+.gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
 .brand a{color:inherit;}
 .topbar .gh{font-size:13px;color:var(--sub);}
@@ -43,14 +44,14 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* search + pill filters row — interaction chrome stays soft/rounded */
-.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 30px;}
-.search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
+/* GNB search + pill filters row — interaction chrome stays soft/rounded */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:0;padding:12px 0;border-bottom:2px solid var(--ink);}
+.search-box{position:relative;max-width:320px;flex:1;min-width:200px;margin:0;}
 .search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
 .search-box input:focus{outline:none;border-color:var(--accent);}
-.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;}
+.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;z-index:1;}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap;}
-.pill-btn{appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
+.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
 .pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
@@ -131,9 +132,17 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </style>
 </head>
 <body>
+<div class="gnb-sticky">
 <div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
   <div class="brand"><a href="index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+<div class="filter-row wrap" style="padding-top:12px;padding-bottom:12px;max-width:1100px;">
+  <form class="search-box" action="index.html" method="get">
+    <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
+  </form>
+  <div class="pill-row"><a class="pill-btn" data-cat="all" href="index.html">전체</a><a class="pill-btn" data-cat="ai" href="index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="index.html?cat=biz">TECH & BIZ</a></div>
+</div>
 </div>
 <div class="wrap">
 <header class="site">
@@ -142,17 +151,12 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 102개의 글 수록.</p>
 </header>
 
-<div class="filter-row">
-  <div class="search-box"><input id="searchInput" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색"></div>
-  <div class="pill-row"><button class="pill-btn active" data-cat="all">전체</button><button class="pill-btn" data-cat="ai">AI</button><button class="pill-btn" data-cat="ux">UX</button><button class="pill-btn" data-cat="design">DESIGN</button><button class="pill-btn" data-cat="biz">TECH & BIZ</button></div>
-</div>
-
 <div class="content-layout">
   <div>
     <div class="feed-list" id="feedList">
 <article class="feed-item" data-cat="ai" data-search="anthropic 'claude opus 5.5' 공개··· openai도 저가형 gpt-6 모델 2종으로 맞대응 성능은 유지하면서 비용은 40% 낮춘 모델 경쟁이 본격화되면서, ai 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다. siliconangle 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-ai-1.html">
-  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><img src="assets/thumbs/2026-10-20-i-ai-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic 'Claude Opus 5.5' 공개··· OpenAI도 저가형 GPT-6 모델 2종으로 맞대응</h2>
   <p class="feed-summary">성능은 유지하면서 비용은 40% 낮춘 모델 경쟁이 본격화되면서, AI 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다.</p>
@@ -168,7 +172,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="openai, anthropic에 이어 비공개 ipo 신청··· 양사 모두 1조 달러대 밸류 추진 ai 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, ai 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동하는 변곡점을 맞고 있다. 9to5google 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-biz-1.html">
-  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><img src="assets/thumbs/2026-10-20-i-biz-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">OpenAI, Anthropic에 이어 비공개 IPO 신청··· 양사 모두 1조 달러대 밸류 추진</h2>
   <p class="feed-summary">AI 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, AI 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동하는 변곡점을 맞고 있다.</p>
@@ -176,7 +180,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="네이버, ai 안전성 체계 적용 사례 공개··· 'ai safety progress report' 첫 발간 서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, 국내 플랫폼도 ai 안전성 검증을 정기 보고 체계로 제도화하고 있음을 보여준다. 바이라인네트워크 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-ai-1.html">
-  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><img src="assets/thumbs/2026-10-20-d-ai-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">네이버, AI 안전성 체계 적용 사례 공개··· 'AI Safety Progress Report' 첫 발간</h2>
   <p class="feed-summary">서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, 국내 플랫폼도 AI 안전성 검증을 정기 보고 체계로 제도화하고 있음을 보여준다.</p>
@@ -184,7 +188,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="삼성전자, dx부문에 제미나이·챗gpt·클로드 등 외부 생성형 ai 6월 공식 도입 2023년 보안 우려로 챗gpt 사용을 제한했던 삼성전자가 방향을 바꿔 외부 ai를 사내 업무에 전면 허용한 것은, 대기업의 ai 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌고 있음을 보여준다. 헤럴드경제 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-ai-2.html">
-  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><img src="assets/thumbs/2026-10-20-d-ai-2.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">삼성전자, DX부문에 제미나이·챗GPT·클로드 등 외부 생성형 AI 6월 공식 도입</h2>
   <p class="feed-summary">2023년 보안 우려로 챗GPT 사용을 제한했던 삼성전자가 방향을 바꿔 외부 AI를 사내 업무에 전면 허용한 것은, 대기업의 AI 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌…</p>
@@ -192,7 +196,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="design" data-search="lmnt, 전문가 매칭 플랫폼 숨고 bx 리뉴얼··· 2026 if 디자인 어워드 수상 거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 국제 디자인 어워드 수상으로 이어진 것은, 국내 bx 디자인의 완성도가 글로벌 기준에 근접했음을 보여준다. 월간 디자인 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-design-1.html">
-  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><img src="assets/thumbs/2026-10-20-d-design-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">LMNT, 전문가 매칭 플랫폼 숨고 BX 리뉴얼··· 2026 iF 디자인 어워드 수상</h2>
   <p class="feed-summary">거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 국제 디자인 어워드 수상으로 이어진 것은, 국내 BX 디자인…</p>
@@ -200,7 +204,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="라이너, 500억원 시리즈c 투자 유치··· 누적 투자 940억원 오픈ai의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, 국내 ai 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁에 들어섰음을 보여준다. 머니투데이 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-biz-1.html">
-  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><img src="assets/thumbs/2026-10-20-d-biz-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">라이너, 500억원 시리즈C 투자 유치··· 누적 투자 940억원</h2>
   <p class="feed-summary">오픈AI의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, 국내 AI 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁에 들…</p>
@@ -216,7 +220,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="reflection ai, 오픈웨이트 모델 'beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워 오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다. techcrunch 2026년 10월 19일 월요일">
 <a class="feed-link" href="articles/2026-10-19-i-ai-2.html">
-  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><img src="assets/thumbs/2026-10-19-i-ai-2.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Reflection AI, 오픈웨이트 모델 'Beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워</h2>
   <p class="feed-summary">오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다.</p>
@@ -995,9 +999,13 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
   var loadBtn = document.getElementById('loadMoreBtn');
   var noResults = document.getElementById('noResults');
   var searchInput = document.getElementById('searchInput');
+  var searchForm = searchInput ? searchInput.closest('form') : null;
   var pillBtns = Array.prototype.slice.call(document.querySelectorAll('.pill-btn'));
 
-  var state = { cat: 'all', q: '', visible: PAGE_SIZE };
+  var params = new URLSearchParams(location.search);
+  var state = { cat: params.get('cat') || 'all', q: (params.get('q') || '').trim().toLowerCase(), visible: PAGE_SIZE };
+  if (searchInput && params.get('q')) searchInput.value = params.get('q');
+  pillBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.cat === state.cat); });
 
   function matches(item){
     if (state.cat !== 'all' && item.dataset.cat !== state.cat) return false;
@@ -1019,13 +1027,15 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
     noResults.style.display = (matched === 0) ? '' : 'none';
   }
 
+  if (searchForm) searchForm.addEventListener('submit', function(e){ e.preventDefault(); });
   searchInput.addEventListener('input', function(){
     state.q = this.value.trim().toLowerCase();
     state.visible = PAGE_SIZE;
     render();
   });
   pillBtns.forEach(function(btn){
-    btn.addEventListener('click', function(){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
       pillBtns.forEach(function(b){ b.classList.remove('active'); });
       btn.classList.add('active');
       state.cat = btn.dataset.cat;

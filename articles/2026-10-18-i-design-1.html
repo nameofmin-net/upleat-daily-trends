@@ -30,7 +30,8 @@ body{
 }
 .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--ink);margin-bottom:28px;}
+.gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
 .brand a{color:inherit;}
 .topbar .gh{font-size:13px;color:var(--sub);}
@@ -43,14 +44,14 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* search + pill filters row — interaction chrome stays soft/rounded */
-.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 30px;}
-.search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
+/* GNB search + pill filters row — interaction chrome stays soft/rounded */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:0;padding:12px 0;border-bottom:2px solid var(--ink);}
+.search-box{position:relative;max-width:320px;flex:1;min-width:200px;margin:0;}
 .search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
 .search-box input:focus{outline:none;border-color:var(--accent);}
-.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;}
+.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;z-index:1;}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap;}
-.pill-btn{appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
+.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
 .pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
@@ -131,9 +132,17 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </style>
 </head>
 <body>
+<div class="gnb-sticky">
 <div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
   <div class="brand"><a href="../index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+<div class="filter-row wrap" style="padding-top:12px;padding-bottom:12px;max-width:1100px;">
+  <form class="search-box" action="../index.html" method="get">
+    <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
+  </form>
+  <div class="pill-row"><a class="pill-btn" data-cat="all" href="../index.html">전체</a><a class="pill-btn" data-cat="ai" href="../index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="../index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="../index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="../index.html?cat=biz">TECH & BIZ</a></div>
+</div>
 </div>
 <div class="wrap" style="padding-bottom:0;">
 <a class="back" href="../index.html">← 피드로</a>
@@ -167,7 +176,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <div class="rt-art" style="background:#F2767A33">🎨</div>
 <div class="rt-label">Smashing Magazine, 'AI 시대엔 디자이너의 안목이 더 중요해진다' 뉴스레터 발행</div>
 </a><a class="related-tile" href="2026-10-20-d-design-1.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-20-d-design-1.jpg')"></div>
 <div class="rt-label">LMNT, 전문가 매칭 플랫폼 숨고 BX 리뉴얼··· 2026 iF 디자인 어워드 수상</div>
 </a><a class="related-tile" href="2026-10-18-d-design-1.html">
 <div class="rt-art" style="background:#F2767A33">🎨</div>
