@@ -108,6 +108,18 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
 
+/* "오늘의 트렌드" — horizontal snap carousel for today's articles */
+.today-carousel{margin-bottom:52px;}
+.today-carousel h2{font-size:20px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em;}
+.carousel-date{font-size:13px;color:var(--sub2);margin:0 0 18px;}
+.carousel-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;}
+.carousel-card{flex:0 0 auto;width:300px;scroll-snap-align:start;display:block;}
+.carousel-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.carousel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+.carousel-card:hover .carousel-thumb img{transform:scale(1.06);}
+.carousel-title{font-size:16px;font-weight:700;margin:0 0 8px;line-height:1.4;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.carousel-card:hover .carousel-title{color:var(--accent);}
+
 /* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
@@ -433,6 +445,37 @@ def render_feed_item(a):
 </article>'''
 
 
+def render_today_carousel(articles):
+    if not articles:
+        return ""
+    today = articles[0]["date"]
+    todays = [a for a in articles if a["date"] == today]
+    if not todays:
+        return ""
+
+    cards = []
+    for a in todays:
+        color = CATEGORY_COLOR[a["cat_key"]]
+        emoji = "🌐" if a["region_key"] == "intl" else "🇰🇷"
+        thumb = find_thumb(a["id"])
+        if thumb:
+            thumb_html = f'<img src="{thumb}" alt="" loading="lazy">'
+        else:
+            thumb_html = f'<span class="feed-thumb-emoji">{CATEGORY_EMOJI.get(a["cat_key"], "📡")}</span>'
+        cards.append(f'''<a class="carousel-card" href="articles/{a['id']}.html">
+  <div class="carousel-thumb" style="background:{color}22">{thumb_html}</div>
+  <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
+  <h3 class="carousel-title">{a['title']}</h3>
+  <div class="feed-meta"><span class="feed-src-name">{esc(a['source'])}</span></div>
+</a>''')
+
+    return f'''<section class="today-carousel">
+<h2>오늘의 트렌드</h2>
+<p class="carousel-date">{todays[0]['dateLabel']}</p>
+<div class="carousel-scroll">{"".join(cards)}</div>
+</section>'''
+
+
 def render_rail(articles, limit=4):
     items = []
     for a in articles[:limit]:
@@ -534,6 +577,7 @@ def build():
     os.makedirs(ARTICLES_DIR, exist_ok=True)
 
     # ---- index.html ----
+    carousel_html = render_today_carousel(articles)
     feed_html = "".join(render_feed_item(a) for a in articles)
     rail_html = render_rail(articles)
 
@@ -549,6 +593,8 @@ def build():
 </div>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
+
+{carousel_html}
 
 <div class="feed-list" id="feedList">
 {feed_html}
