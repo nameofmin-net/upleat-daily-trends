@@ -96,21 +96,17 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
-.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
-.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
-.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+/* day detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
+.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
 .hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
-.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:22px;}
-.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
-.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
-.index-box ol{margin:0;padding-left:18px;}
-.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
-.index-box a{color:var(--ink);}
-.index-box a:hover{color:var(--accent);}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:6px;}
+.region-tabs{margin:18px 0 0;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
 .detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
 
@@ -126,21 +122,15 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
 .related-tile.current{outline:2px solid var(--accent);}
 
-.region-block{margin-bottom:36px;}
-.region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
-.region-date{font-size:19px;font-weight:800;}
-.takeaway{margin:14px 0 18px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.takeaway{margin:18px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
 .takeaway b{color:var(--accent);}
-details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden;}
-details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
-details.cat summary::-webkit-details-marker{display:none;}
-details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
-details.cat[open] summary::before{transform:rotate(90deg);}
-.cat-label{color:var(--accent);}
-.cat-count{color:var(--sub);font-weight:500;}
-.cat-body{padding:4px 16px 14px;}
-.empty-note{font-size:13px;color:var(--sub);padding:6px 0 10px;}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.region-grid{grid-template-columns:1fr;}}
+.cat-group{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;}
+.cat-heading{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.02em;margin-bottom:10px;}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+.cat-count{color:var(--sub);font-weight:600;font-size:12px;}
+.empty-note{font-size:13px;color:var(--sub);padding:2px 0 4px;}
 .item{display:block;padding:12px 0;border-top:1px solid var(--line);}
 .item:first-child{border-top:none;}
 .item-title{font-size:14.5px;font-weight:700;color:var(--ink);}
@@ -157,28 +147,29 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
   <div class="brand"><a href="../index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
 </div>
-<div class="wrap">
+<div class="wrap" style="padding-bottom:0;">
 <a class="back" href="../index.html">← 전체 목록</a>
+</div>
 
-<div class="hero-cover" style="background:linear-gradient(135deg,#F2767A,#E8515E)"><div class="hero-emoji">📡</div>
+<div class="hero-cover" style="background:linear-gradient(135deg,#F2767A,#E8515E)">
+<div class="hero-inner">
+<div class="hero-emoji">📡</div>
 <div class="hero-info"><span class="hero-tag">UPLEAT Daily Brief</span><span class="hero-date">2026년 10월 14일 수요일</span></div>
 </div>
+</div>
 
+<div class="wrap" style="padding-top:28px;">
 <div class="detail-card">
 <h1>2026년 10월 14일 수요일 트렌드 브리프</h1>
-<div class="index-box">
-<div class="index-title">INDEX</div>
-<ol>
-<li><a href="#intl">🌐 해외 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-<li><a href="#domestic">🇰🇷 국내 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-</ol>
+<div class="tabs-row region-tabs">
+  <button class="tab-btn active" data-region="intl">🌐 해외</button>
+  <button class="tab-btn" data-region="domestic">🇰🇷 국내</button>
 </div>
-<section class="region-block" id="intl">
-<div class="region-head"><span class="region-badge">🌐 해외</span><span class="region-date">2026년 10월 14일 수요일</span></div>
+<div class="region-panel" data-region="intl" style="">
 <div class="takeaway">프론티어 AI 모델 경쟁이 <b>성능 그 자체보다 반도체 공급망과 비용 구조</b> 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔버스 안으로 끌어들이는 방향으로 수렴하고 있다.</div>
-<details class="cat">
-<summary><span class="cat-label">AI</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+<div class="region-grid"><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#8F8CF5"></span><span style="color:#8F8CF5">AI</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html" target="_blank" rel="noopener">'모델 피로감' 확산…빅테크, 숨 가쁜 속도로 신모델 출시 경쟁</a>
 <div class="src">CNBC &middot; 2026-09-06</div>
 <div class="insight">며칠 간격으로 신모델이 쏟아지면서 이제 경쟁의 축은 <b>출시 속도가 아니라 실제 채택률</b>로 넘어가고 있다.</div>
@@ -187,10 +178,10 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://9to5mac.com/2026/09/16/ios-27-2-expands-siri-ai-to-these-new-languages/" target="_blank" rel="noopener">애플, iOS 27.2에서 Siri AI에 한국어·일본어 등 5개 언어 추가</a>
 <div class="src">9to5Mac &middot; 2026-09-16</div>
 <div class="insight">Siri AI가 영어 단일 언어로 출시된 지 수개월 만에 <b>한국어를 포함한 5개 언어로 확장</b>되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">UX</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2A93B"></span><span style="color:#F2A93B">UX</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://getperspective.ai/blog/state-of-ai-native-ux-research-2026-300-research-teams-replaced-discovery-survey" target="_blank" rel="noopener">UX 리서치팀 74%, AI 중심 조사로 디스커버리 서베이 대체<span class="dup-badge">중복</span></a>
 <div class="src">Perspective AI &middot; 2026-05-20</div>
 <div class="insight">리서치팀 대다수가 <b>AI 모더레이션 인터뷰로 전통적 서베이를 대체</b>하고 있다는 조사는, 정성 리서치의 자동화가 이미 주류가 됐음을 보여준다.</div>
@@ -199,10 +190,10 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://www.koji.so/blog/ux-research-statistics-2026" target="_blank" rel="noopener">Koji, 'UX 리서치 통계 2026' 발표…디자이너 70%가 직접 인사이트 수집</a>
 <div class="src">Koji</div>
 <div class="insight">제품 매니저(42%)보다 디자이너(70%)가 더 적극적으로 사용자 인사이트를 모은다는 통계는, <b>리서치 역할이 전담 조직에서 디자이너 개인으로 분산</b>되고 있음을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">DESIGN</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2767A"></span><span style="color:#F2767A">DESIGN</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://www.dezeen.com/?p=2367060" target="_blank" rel="noopener">Dezeen Awards 2026 디자인 부문 쇼트리스트 발표</a>
 <div class="src">Dezeen &middot; 2026-09-23</div>
 <div class="insight">Bocci, Kvadrat, Fuseproject 등이 포함된 쇼트리스트는, <b>올해 제품 디자인 어워드의 중심이 소재와 조명 실험으로 이동</b>했음을 보여준다.</div>
@@ -211,36 +202,35 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://forum.figma.com/product-updates-3/everything-announced-at-config-2026-55221" target="_blank" rel="noopener">피그마 Config 2026, 코드 레이어·모션·에이전트 전면 공개</a>
 <div class="src">Figma Forum &middot; 2026-06-24</div>
 <div class="insight">캔버스에서 코드를 직접 다루는 '코드 레이어'와 네이티브 애니메이션 도구 'Figma Motion'은, <b>디자인 툴의 경쟁이 비주얼 편집을 넘어 제작 전체를 흡수하는 방향</b>으로 가고 있음을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">TECH & BIZ</span><span class="cat-count">(1)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#2BC9AE"></span><span style="color:#2BC9AE">TECH & BIZ</span><span class="cat-count">(1)</span></div>
+<div class="item">
 <a class="item-title" href="https://www.tradingkey.com/analysis/stocks/us-stocks/262205755-tsmc-q3-revenue-ai-demand-record-tradingkey" target="_blank" rel="noopener">TSMC, 3분기 매출 전년 대비 50% 급증…AI 반도체 수요가 견인</a>
 <div class="src">TradingKey</div>
 <div class="insight">분기 매출이 자체 가이던스를 넘어선 것은, <b>AI 데이터센터용 반도체 수요가 여전히 공급을 앞서고 있음</b>을 보여준다.</div>
+</div>
 </div></div>
-</details>
-</section>
-<section class="region-block" id="domestic">
-<div class="region-head"><span class="region-badge">🇰🇷 국내</span><span class="region-date">2026년 10월 14일 수요일</span></div>
+</div>
+<div class="region-panel" data-region="domestic" style="display:none">
 <div class="takeaway">카카오가 독립 AI 앱을 접고 카카오톡 중심으로 재편하는 동안, <b>국내 핀테크·디자인 스튜디오는 '10년치 서비스'를 하나의 브랜드 스토리로 묶는 리브랜딩</b>에 집중하고 있다.</div>
-<details class="cat">
-<summary><span class="cat-label">AI</span><span class="cat-count">(1)</span></summary>
-<div class="cat-body"><div class="item">
+<div class="region-grid"><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#8F8CF5"></span><span style="color:#8F8CF5">AI</span><span class="cat-count">(1)</span></div>
+<div class="item">
 <a class="item-title" href="https://byline.network/2026/09/15_20218273/" target="_blank" rel="noopener">카카오, 독립 AI 앱 '카나나' 10월 15일 종료…카카오톡 중심으로 재편</a>
 <div class="src">바이라인네트워크 &middot; 2026-09-15</div>
 <div class="insight">출시 1년여 만에 월간활성사용자가 6만9000명대에서 1만명대로 줄어든 끝에 서비스가 종료된 것은, <b>독립 AI 앱보다 메신저에 기능을 얹는 전략이 더 유효함</b>을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">UX</span><span class="cat-count">(1)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2A93B"></span><span style="color:#F2A93B">UX</span><span class="cat-count">(1)</span></div>
+<div class="item">
 <a class="item-title" href="https://m.etnews.com/20260121000300" target="_blank" rel="noopener">HCI & UX 코리아 2026, 'AI가 UX를 어떻게 바꾸는가' 공통 질문으로</a>
 <div class="src">전자신문 &middot; 2026-01-21</div>
 <div class="insight">키노트 전반에서 더블 다이아몬드 기반 기존 프로세스의 한계가 제기된 것은, <b>국내 UX 업계도 AI 네이티브 설계 방식으로 전환이 불가피</b>함을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">DESIGN</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2767A"></span><span style="color:#F2767A">DESIGN</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://toss.im/newsroom/toss-new-homepage" target="_blank" rel="noopener">토스, 홈페이지 전면 개편…10년의 서비스 확장 과정을 하나의 스토리로</a>
 <div class="src">토스 뉴스룸 &middot; 2026-08-18</div>
 <div class="insight">인트로 영상은 생성형 AI로, 정교한 카메라 워크는 3D로 제작한 것은, <b>국내 핀테크 기업도 브랜드 사이트 제작에 AI와 3D를 결합</b>하기 시작했음을 보여준다.</div>
@@ -249,16 +239,16 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://www.hankyung.com/article/202607243592O" target="_blank" rel="noopener">스튜디오 듀당스, 국보디자인 BI·BX 체계 재구성</a>
 <div class="src">한국경제 &middot; 2026-07-24</div>
 <div class="insight">로고 교체에 그치지 않고 제안서부터 현장 사인물까지 아우르는 아이콘 체계를 설계한 것은, <b>B2B 기업도 전사적 브랜드 경험 재정비에 나서고 있음</b>을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">TECH & BIZ</span><span class="cat-count">(1)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#2BC9AE"></span><span style="color:#2BC9AE">TECH & BIZ</span><span class="cat-count">(1)</span></div>
+<div class="item">
 <a class="item-title" href="https://www.smarttoday.co.kr/ko-kr/articles/101598" target="_blank" rel="noopener">AI 반도체 양대산맥 '리벨리온·퓨리오사', 8000억 규모 프리IPO 추진<span class="dup-badge">중복</span></a>
 <div class="src">스마트투데이 &middot; 2026-08-26</div>
 <div class="insight">두 회사 모두 조 단위 밸류에이션으로 프리IPO를 진행 중인 것은, <b>국내 AI 반도체 스타트업에 대한 상장 전 자금 수요가 여전히 뜨겁다</b>는 점을 보여준다.</div>
+</div>
 </div></div>
-</details>
-</section>
+</div>
 <div class="tag-cloud"><span class="tag-pill">#해외</span><span class="tag-pill">#국내</span><span class="tag-pill">#AI</span><span class="tag-pill">#UX</span><span class="tag-pill">#DESIGN</span><span class="tag-pill">#TECH &amp; BIZ</span><span class="tag-pill">#CNBC</span><span class="tag-pill">#9to5Mac</span><span class="tag-pill">#Perspective AI</span><span class="tag-pill">#Koji</span><span class="tag-pill">#Dezeen</span><span class="tag-pill">#Figma Forum</span><span class="tag-pill">#TradingKey</span><span class="tag-pill">#바이라인네트워크</span></div>
 <div class="detail-note">이 리포트는 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드입니다. 올해 실제로 발행된 기사만 사용하며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일과 중복된 기사는 "중복" 뱃지로 표시됩니다.</div>
 </div>
@@ -283,6 +273,21 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="back" href="../index.html">← 전체 목록</a>
 <footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
 </div>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.region-tabs .tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.region-panel'));
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var region = btn.dataset.region;
+      panels.forEach(function(p){ p.style.display = (p.dataset.region === region) ? '' : 'none'; });
+    });
+  });
+})();
+</script>
+
 
 <button class="scrolltop" id="scrolltop" aria-label="맨 위로">↑</button>
 <script>

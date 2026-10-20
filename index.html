@@ -96,21 +96,17 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
-.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
-.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
-.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+/* day detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
+.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
 .hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
-.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:22px;}
-.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
-.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
-.index-box ol{margin:0;padding-left:18px;}
-.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
-.index-box a{color:var(--ink);}
-.index-box a:hover{color:var(--accent);}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:6px;}
+.region-tabs{margin:18px 0 0;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
 .detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
 
@@ -126,21 +122,15 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
 .related-tile.current{outline:2px solid var(--accent);}
 
-.region-block{margin-bottom:36px;}
-.region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
-.region-date{font-size:19px;font-weight:800;}
-.takeaway{margin:14px 0 18px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.takeaway{margin:18px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
 .takeaway b{color:var(--accent);}
-details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden;}
-details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
-details.cat summary::-webkit-details-marker{display:none;}
-details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
-details.cat[open] summary::before{transform:rotate(90deg);}
-.cat-label{color:var(--accent);}
-.cat-count{color:var(--sub);font-weight:500;}
-.cat-body{padding:4px 16px 14px;}
-.empty-note{font-size:13px;color:var(--sub);padding:6px 0 10px;}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.region-grid{grid-template-columns:1fr;}}
+.cat-group{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;}
+.cat-heading{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.02em;margin-bottom:10px;}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+.cat-count{color:var(--sub);font-weight:600;font-size:12px;}
+.empty-note{font-size:13px;color:var(--sub);padding:2px 0 4px;}
 .item{display:block;padding:12px 0;border-top:1px solid var(--line);}
 .item:first-child{border-top:none;}
 .item-title{font-size:14.5px;font-weight:700;color:var(--ink);}
@@ -319,6 +309,8 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </div>
 </aside>
 </div>
+<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
+</div>
 <script>
 (function(){
   var PAGE_SIZE = 9;
@@ -391,8 +383,6 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 })();
 </script>
 
-<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
-</div>
 
 <button class="scrolltop" id="scrolltop" aria-label="맨 위로">↑</button>
 <script>

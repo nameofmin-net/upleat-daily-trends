@@ -127,21 +127,17 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
-.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
-.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
-.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+/* day detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
+.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
 .hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
-.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:22px;}
-.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
-.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
-.index-box ol{margin:0;padding-left:18px;}
-.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
-.index-box a{color:var(--ink);}
-.index-box a:hover{color:var(--accent);}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:6px;}
+.region-tabs{margin:18px 0 0;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
 .detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
 
@@ -157,21 +153,15 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
 .related-tile.current{outline:2px solid var(--accent);}
 
-.region-block{margin-bottom:36px;}
-.region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
-.region-date{font-size:19px;font-weight:800;}
-.takeaway{margin:14px 0 18px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.takeaway{margin:18px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
 .takeaway b{color:var(--accent);}
-details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden;}
-details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
-details.cat summary::-webkit-details-marker{display:none;}
-details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
-details.cat[open] summary::before{transform:rotate(90deg);}
-.cat-label{color:var(--accent);}
-.cat-count{color:var(--sub);font-weight:500;}
-.cat-body{padding:4px 16px 14px;}
-.empty-note{font-size:13px;color:var(--sub);padding:6px 0 10px;}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.region-grid{grid-template-columns:1fr;}}
+.cat-group{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;}
+.cat-heading{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.02em;margin-bottom:10px;}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+.cat-count{color:var(--sub);font-weight:600;font-size:12px;}
+.empty-note{font-size:13px;color:var(--sub);padding:2px 0 4px;}
 .item{display:block;padding:12px 0;border-top:1px solid var(--line);}
 .item:first-child{border-top:none;}
 .item-title{font-size:14.5px;font-weight:700;color:var(--ink);}
@@ -284,15 +274,31 @@ HEAD = """<!DOCTYPE html>
   <div class="brand"><a href="{root_prefix}index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
 </div>
-<div class="wrap">
 """
 
 FOOT = """
-<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
-</div>
 {scrolltop}
 </body>
 </html>
+"""
+
+FOOTER_HTML = '<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>'
+
+DETAIL_SCRIPT = """
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.region-tabs .tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.region-panel'));
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var region = btn.dataset.region;
+      panels.forEach(function(p){ p.style.display = (p.dataset.region === region) ? '' : 'none'; });
+    });
+  });
+})();
+</script>
 """
 
 
@@ -321,20 +327,20 @@ def render_items(items):
     return "\n".join(parts)
 
 
-def render_region(day, anchor_id):
-    region_label = "🌐 해외" if day["region"] == "해외" else "🇰🇷 국내"
-    cats_html = []
+def render_region_panel(day, region_key, active):
+    groups = []
     for cat in day["categories"]:
         n = len(cat["items"])
-        cats_html.append(f'''<details class="cat">
-<summary><span class="cat-label">{cat['label']}</span><span class="cat-count">({n})</span></summary>
-<div class="cat-body">{render_items(cat['items'])}</div>
-</details>''')
-    return f'''<section class="region-block" id="{anchor_id}">
-<div class="region-head"><span class="region-badge">{region_label}</span><span class="region-date">{day['dateLabel']}</span></div>
+        color = CATEGORY_COLOR[cat["key"]]
+        groups.append(f'''<div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:{color}"></span><span style="color:{color}">{cat['label']}</span><span class="cat-count">({n})</span></div>
+{render_items(cat['items'])}
+</div>''')
+    display = "" if active else "display:none"
+    return f'''<div class="region-panel" data-region="{region_key}" style="{display}">
 <div class="takeaway">{day['takeawayHtml']}</div>
-{"".join(cats_html)}
-</section>'''
+<div class="region-grid">{"".join(groups)}</div>
+</div>'''
 
 
 def collect_tags(d):
@@ -446,7 +452,8 @@ def build():
             lbl = next((c["label"] for c in days[0]["intl"]["categories"] if c["key"] == key), key.upper())
             pill_buttons.append(f'<button class="pill-btn" data-cat="{key}">{lbl}</button>')
 
-    index_body = f'''<header class="site">
+    index_body = f'''<div class="wrap">
+<header class="site">
 <p class="eyebrow">UPLEAT</p>
 <h1>UPLEAT 데일리 트렌드 아카이브</h1>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 그대로 미러링하며, 새 리포트가 생성될 때마다 자동으로 업데이트됩니다. 총 {len(days)}일치 수록.</p>
@@ -472,6 +479,8 @@ def build():
     <div class="loadmore-wrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
   </div>
   {rail_html}
+</div>
+{FOOTER_HTML}
 </div>'''
 
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
@@ -516,35 +525,44 @@ def build():
 <div class="related-scroll">{"".join(related_tiles)}</div>
 </div>'''
 
-        body = f'''<a class="back" href="../index.html">← 전체 목록</a>
+        intl_panel = render_region_panel(d["intl"], "intl", active=True)
+        domestic_panel = render_region_panel(d["domestic"], "domestic", active=False)
 
-<div class="hero-cover" style="background:{gradient}"><div class="hero-emoji">📡</div>
+        body = f'''<div class="wrap" style="padding-bottom:0;">
+<a class="back" href="../index.html">← 전체 목록</a>
+</div>
+
+<div class="hero-cover" style="background:{gradient}">
+<div class="hero-inner">
+<div class="hero-emoji">📡</div>
 <div class="hero-info"><span class="hero-tag">UPLEAT Daily Brief</span><span class="hero-date">{label}</span></div>
 </div>
+</div>
 
+<div class="wrap" style="padding-top:28px;">
 <div class="detail-card">
 <h1>{label} 트렌드 브리프</h1>
-<div class="index-box">
-<div class="index-title">INDEX</div>
-<ol>
-<li><a href="#intl">🌐 해외 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-<li><a href="#domestic">🇰🇷 국내 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-</ol>
+<div class="tabs-row region-tabs">
+  <button class="tab-btn active" data-region="intl">🌐 해외</button>
+  <button class="tab-btn" data-region="domestic">🇰🇷 국내</button>
 </div>
-{render_region(d['intl'], 'intl')}
-{render_region(d['domestic'], 'domestic')}
+{intl_panel}
+{domestic_panel}
 <div class="tag-cloud">{tags_html}</div>
 <div class="detail-note">이 리포트는 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드입니다. 올해 실제로 발행된 기사만 사용하며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일과 중복된 기사는 "중복" 뱃지로 표시됩니다.</div>
 </div>
 
 <div class="daynav">{nav_prev}<span class="spacer"></span>{nav_next}</div>
 {related_html}
-<a class="back" href="../index.html">← 전체 목록</a>'''
+<a class="back" href="../index.html">← 전체 목록</a>
+{FOOTER_HTML}
+</div>'''
 
         with open(os.path.join(DAYS_DIR, f"{date}.html"), "w", encoding="utf-8") as f:
             f.write(
                 HEAD.format(title=f"{d['intl']['dateLabel']} · UPLEAT Daily Brief", style=STYLE, root_prefix="../")
                 + body
+                + DETAIL_SCRIPT
                 + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
             )
 

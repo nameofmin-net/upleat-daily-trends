@@ -96,21 +96,17 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
-.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
-.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
-.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+/* day detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
+.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
 .hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
-.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:22px;}
-.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
-.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
-.index-box ol{margin:0;padding-left:18px;}
-.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
-.index-box a{color:var(--ink);}
-.index-box a:hover{color:var(--accent);}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:6px;}
+.region-tabs{margin:18px 0 0;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
 .detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
 
@@ -126,21 +122,15 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
 .related-tile.current{outline:2px solid var(--accent);}
 
-.region-block{margin-bottom:36px;}
-.region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
-.region-date{font-size:19px;font-weight:800;}
-.takeaway{margin:14px 0 18px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.takeaway{margin:18px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
 .takeaway b{color:var(--accent);}
-details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden;}
-details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
-details.cat summary::-webkit-details-marker{display:none;}
-details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
-details.cat[open] summary::before{transform:rotate(90deg);}
-.cat-label{color:var(--accent);}
-.cat-count{color:var(--sub);font-weight:500;}
-.cat-body{padding:4px 16px 14px;}
-.empty-note{font-size:13px;color:var(--sub);padding:6px 0 10px;}
+.region-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:640px){.region-grid{grid-template-columns:1fr;}}
+.cat-group{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff;}
+.cat-heading{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;letter-spacing:.02em;margin-bottom:10px;}
+.cat-dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;}
+.cat-count{color:var(--sub);font-weight:600;font-size:12px;}
+.empty-note{font-size:13px;color:var(--sub);padding:2px 0 4px;}
 .item{display:block;padding:12px 0;border-top:1px solid var(--line);}
 .item:first-child{border-top:none;}
 .item-title{font-size:14.5px;font-weight:700;color:var(--ink);}
@@ -157,28 +147,29 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
   <div class="brand"><a href="../index.html">UPLEAT · Daily Trend Archive</a></div>
   <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
 </div>
-<div class="wrap">
+<div class="wrap" style="padding-bottom:0;">
 <a class="back" href="../index.html">← 전체 목록</a>
+</div>
 
-<div class="hero-cover" style="background:linear-gradient(135deg,#2BC9AE,#17AE98)"><div class="hero-emoji">📡</div>
+<div class="hero-cover" style="background:linear-gradient(135deg,#2BC9AE,#17AE98)">
+<div class="hero-inner">
+<div class="hero-emoji">📡</div>
 <div class="hero-info"><span class="hero-tag">UPLEAT Daily Brief</span><span class="hero-date">2026년 10월 13일 화요일</span></div>
 </div>
+</div>
 
+<div class="wrap" style="padding-top:28px;">
 <div class="detail-card">
 <h1>2026년 10월 13일 화요일 트렌드 브리프</h1>
-<div class="index-box">
-<div class="index-title">INDEX</div>
-<ol>
-<li><a href="#intl">🌐 해외 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-<li><a href="#domestic">🇰🇷 국내 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
-</ol>
+<div class="tabs-row region-tabs">
+  <button class="tab-btn active" data-region="intl">🌐 해외</button>
+  <button class="tab-btn" data-region="domestic">🇰🇷 국내</button>
 </div>
-<section class="region-block" id="intl">
-<div class="region-head"><span class="region-badge">🌐 해외</span><span class="region-date">2026년 10월 13일 화요일</span></div>
+<div class="region-panel" data-region="intl" style="">
 <div class="takeaway">Anthropic·OpenAI·Google이 한 달 새 나란히 <b>저비용·고효율 모델</b>로 세대교체에 나선 가운데, 텐센트의 7조원대 칩 임대 딜은 <b>AI 인프라 경쟁이 모델 성능을 넘어 자본과 공급망으로 번지고 있음</b>을 보여준다.</div>
-<details class="cat">
-<summary><span class="cat-label">AI</span><span class="cat-count">(3)</span></summary>
-<div class="cat-body"><div class="item">
+<div class="region-grid"><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#8F8CF5"></span><span style="color:#8F8CF5">AI</span><span class="cat-count">(3)</span></div>
+<div class="item">
 <a class="item-title" href="https://letsdatascience.com/news/anthropic-releases-claude-haiku-55-for-high-volume-tasks-1c6260b4" target="_blank" rel="noopener">Anthropic, 초저비용 모델 'Claude Haiku 5.5' 출시</a>
 <div class="src">Let's Data Science &middot; 2026-10-07</div>
 <div class="insight">앤트로픽이 이전 모델보다 <b>약 75% 낮은 비용</b>으로 대량 작업을 처리하는 모델을 내놓은 것은, 플래그십 경쟁 못지않게 저비용 서브 에이전트 확보 경쟁이 치열해지고 있음을 보여준다.</div>
@@ -192,10 +183,10 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://letsdatascience.com/news/google-rolls-out-nano-banana-21-image-model-c6ac3b89" target="_blank" rel="noopener">구글, 이미지 생성 모델 'Nano Banana 2.1' 정식 출시</a>
 <div class="src">Let's Data Science &middot; 2026-10-06</div>
 <div class="insight">멀티턴 캐릭터 일관성과 텍스트 렌더링을 개선하면서도 <b>개발자 API 비용을 50% 낮춘 것</b>은, 생성 이미지 모델 경쟁에서도 품질과 비용 효율을 동시에 요구받고 있음을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">UX</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2A93B"></span><span style="color:#F2A93B">UX</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://baymard.com/research-articles/ux-ray-progress-2026" target="_blank" rel="noopener">Baymard, 자동 UX 감사 도구 'UX-Ray'를 209개 휴리스틱으로 확장</a>
 <div class="src">Baymard Institute</div>
 <div class="insight">자동 진단 도구가 <b>209개의 연구 기반 UX 휴리스틱에서 95% 정확도</b>를 낸다는 결과는, 정성 리서치의 반복 작업 상당 부분이 AI 기반 자동 감사로 대체될 수 있음을 보여준다.</div>
@@ -204,13 +195,13 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://www.userlytics.com/resources/news/userlytics-rolls-out-study-pulse-and-a-new-wave-of-ai-powered-tools/" target="_blank" rel="noopener">Userlytics, 실시간 협업 워크스페이스 'Study Pulse'와 AI 분석 도구 모음 공개</a>
 <div class="src">Userlytics</div>
 <div class="insight">모집부터 세션 진행, 결과 분석까지 <b>실시간 상태 뷰 하나로 통합</b>한 것은, UX 리서치 플랫폼들이 속도와 통합을 동시에 요구받는 경쟁에 들어섰음을 보여준다.</div>
-</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">DESIGN</span><span class="cat-count">(0)</span></summary>
-<div class="cat-body"><div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">TECH & BIZ</span><span class="cat-count">(2)</span></summary>
-<div class="cat-body"><div class="item">
+</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2767A"></span><span style="color:#F2767A">DESIGN</span><span class="cat-count">(0)</span></div>
+<div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#2BC9AE"></span><span style="color:#2BC9AE">TECH & BIZ</span><span class="cat-count">(2)</span></div>
+<div class="item">
 <a class="item-title" href="https://thenextweb.com/news/tencent-oracle-100000-ai-chips-7bn-lease-ft" target="_blank" rel="noopener">텐센트, 오라클과 5년간 AI 칩 10만 개 임대…7조원 규모 해외 딜</a>
 <div class="src">The Next Web &middot; 2026-10-01</div>
 <div class="insight">중국 내 반입이 막힌 첨단 칩을 <b>동남아 데이터센터 임대로 우회 확보</b>한 것은, 수출 규제가 AI 칩의 '소유'를 막아도 '사용'까지는 막지 못하고 있음을 보여준다.</div>
@@ -219,30 +210,29 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="item-title" href="https://cryptobriefing.com/ramp-funding-talks-60-billion-valuation/" target="_blank" rel="noopener">결제 스타트업 Ramp, 3개월 만에 몸값 74%↑…600억 달러 밸류 투자 논의</a>
 <div class="src">Cryptobriefing &middot; 2026-09-08</div>
 <div class="insight">6월 440억 달러였던 기업가치가 <b>석 달 만에 600억 달러 논의로 뛴 것</b>은, 핀테크 자동화 기업에 대한 투자 열기가 AI 섹터 밖에서도 꺾이지 않고 있음을 보여준다.</div>
+</div>
 </div></div>
-</details>
-</section>
-<section class="region-block" id="domestic">
-<div class="region-head"><span class="region-badge">🇰🇷 국내</span><span class="region-date">2026년 10월 13일 화요일</span></div>
+</div>
+<div class="region-panel" data-region="domestic" style="display:none">
 <div class="takeaway">국내에선 AI 풀스택 스타트업 <b>엘리스그룹이 몸값 1조원 상장</b>을 추진하며, AI 기업의 국내 자본시장 데뷔 행렬이 하반기에도 이어지고 있음을 보여준다.</div>
-<details class="cat">
-<summary><span class="cat-label">AI</span><span class="cat-count">(0)</span></summary>
-<div class="cat-body"><div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">UX</span><span class="cat-count">(0)</span></summary>
-<div class="cat-body"><div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">DESIGN</span><span class="cat-count">(0)</span></summary>
-<div class="cat-body"><div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div></div>
-</details><details class="cat">
-<summary><span class="cat-label">TECH & BIZ</span><span class="cat-count">(1)</span></summary>
-<div class="cat-body"><div class="item">
+<div class="region-grid"><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#8F8CF5"></span><span style="color:#8F8CF5">AI</span><span class="cat-count">(0)</span></div>
+<div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2A93B"></span><span style="color:#F2A93B">UX</span><span class="cat-count">(0)</span></div>
+<div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#F2767A"></span><span style="color:#F2767A">DESIGN</span><span class="cat-count">(0)</span></div>
+<div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div>
+</div><div class="cat-group">
+<div class="cat-heading"><span class="cat-dot" style="background:#2BC9AE"></span><span style="color:#2BC9AE">TECH & BIZ</span><span class="cat-count">(1)</span></div>
+<div class="item">
 <a class="item-title" href="https://www.inews24.com/view/2011587" target="_blank" rel="noopener">AI 풀스택 '엘리스그룹', 몸값 1조 코스닥 상장 청약 돌입</a>
 <div class="src">아이뉴스24</div>
 <div class="insight">AI 클라우드·교육 풀스택 기업이 <b>공모가 상단 기준 시가총액 1조원</b>으로 상장을 추진하는 것은, 국내 AI 기업의 자본시장 데뷔가 올 하반기에도 끊이지 않고 이어지고 있음을 보여준다.</div>
+</div>
 </div></div>
-</details>
-</section>
+</div>
 <div class="tag-cloud"><span class="tag-pill">#해외</span><span class="tag-pill">#국내</span><span class="tag-pill">#AI</span><span class="tag-pill">#UX</span><span class="tag-pill">#TECH &amp; BIZ</span><span class="tag-pill">#Let's Data Science</span><span class="tag-pill">#APH Networks</span><span class="tag-pill">#Baymard Institute</span><span class="tag-pill">#Userlytics</span><span class="tag-pill">#The Next Web</span><span class="tag-pill">#Cryptobriefing</span><span class="tag-pill">#아이뉴스24</span></div>
 <div class="detail-note">이 리포트는 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드입니다. 올해 실제로 발행된 기사만 사용하며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일과 중복된 기사는 "중복" 뱃지로 표시됩니다.</div>
 </div>
@@ -267,6 +257,21 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <a class="back" href="../index.html">← 전체 목록</a>
 <footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
 </div>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.region-tabs .tab-btn'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.region-panel'));
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var region = btn.dataset.region;
+      panels.forEach(function(p){ p.style.display = (p.dataset.region === region) ? '' : 'none'; });
+    });
+  });
+})();
+</script>
+
 
 <button class="scrolltop" id="scrolltop" aria-label="맨 위로">↑</button>
 <script>
