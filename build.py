@@ -118,7 +118,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .hero-slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.65,0,.35,1);}
 .hero-slide{flex:0 0 100%;width:100%;height:100%;position:relative;display:block;background-size:cover;background-position:center;}
 .hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%);}
-.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;max-width:1440px;margin:0 auto;padding:0 20px 32px;z-index:2;}
+.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;z-index:2;}
 .hero-slide-title{font-size:26px;font-weight:700;color:#fff;margin:10px 0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:760px;}
 @media (max-width:640px){.hero-slide-title{font-size:19px;}}
 .hero-slide-meta{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85);}
@@ -517,13 +517,11 @@ def render_today_carousel(articles):
     if len(todays) > 1:
         arrows_html = '''<button class="slider-arrow slider-prev" aria-label="이전 슬라이드">&lsaquo;</button>
 <button class="slider-arrow slider-next" aria-label="다음 슬라이드">&rsaquo;</button>'''
-        dots_html = f'<div class="wrap" style="padding-top:0;padding-bottom:0;"><div class="slider-dots">{"".join(dots)}</div></div>'
+        dots_html = f'<div class="slider-dots">{"".join(dots)}</div>'
 
     return f'''<section class="today-carousel">
-<div class="wrap" style="padding-bottom:0;">
-  <h2>오늘의 트렌드</h2>
-  <p class="carousel-date">{todays[0]['dateLabel']}</p>
-</div>
+<h2>오늘의 트렌드</h2>
+<p class="carousel-date">{todays[0]['dateLabel']}</p>
 <div class="hero-slider" id="heroSlider" tabindex="0">
   <div class="hero-slider-track" id="heroSliderTrack">{"".join(slides)}</div>
   {arrows_html}
@@ -637,7 +635,7 @@ def build():
     feed_html = "".join(render_feed_item(a) for a in articles)
     rail_html = render_rail(articles)
 
-    index_body = f'''<div class="wrap" style="padding-bottom:0;">
+    index_body = f'''<div class="wrap">
 <header class="site">
 <div class="header-row">
   <h1>UPLEAT 데일리 트렌드 아카이브</h1>
@@ -649,11 +647,9 @@ def build():
 </div>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
-</div>
 
 {carousel_html}
 
-<div class="wrap">
 <div class="feed-list" id="feedList">
 {feed_html}
 </div>

@@ -67,7 +67,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .hero-slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.65,0,.35,1);}
 .hero-slide{flex:0 0 100%;width:100%;height:100%;position:relative;display:block;background-size:cover;background-position:center;}
 .hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%);}
-.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;max-width:1440px;margin:0 auto;padding:0 20px 32px;z-index:2;}
+.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;z-index:2;}
 .hero-slide-title{font-size:26px;font-weight:700;color:#fff;margin:10px 0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:760px;}
 @media (max-width:640px){.hero-slide-title{font-size:19px;}}
 .hero-slide-meta{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85);}
@@ -174,7 +174,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
   </div>
 </div>
 </div>
-<div class="wrap" style="padding-bottom:0;">
+<div class="wrap">
 <header class="site">
 <div class="header-row">
   <h1>UPLEAT 데일리 트렌드 아카이브</h1>
@@ -186,13 +186,10 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </div>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 102개의 글 수록.</p>
 </header>
-</div>
 
 <section class="today-carousel">
-<div class="wrap" style="padding-bottom:0;">
-  <h2>오늘의 트렌드</h2>
-  <p class="carousel-date">2026년 10월 20일 화요일</p>
-</div>
+<h2>오늘의 트렌드</h2>
+<p class="carousel-date">2026년 10월 20일 화요일</p>
 <div class="hero-slider" id="heroSlider" tabindex="0">
   <div class="hero-slider-track" id="heroSliderTrack"><a class="hero-slide" href="articles/2026-10-20-i-ai-1.html" style="background-image:url('assets/thumbs/2026-10-20-i-ai-1.jpg');">
   <div class="hero-slide-inner">
@@ -240,10 +237,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
   <button class="slider-arrow slider-prev" aria-label="이전 슬라이드">&lsaquo;</button>
 <button class="slider-arrow slider-next" aria-label="다음 슬라이드">&rsaquo;</button>
 </div>
-<div class="wrap" style="padding-top:0;padding-bottom:0;"><div class="slider-dots"><button class="slider-dot active" data-index="0" aria-label="1번째 슬라이드"></button><button class="slider-dot" data-index="1" aria-label="2번째 슬라이드"></button><button class="slider-dot" data-index="2" aria-label="3번째 슬라이드"></button><button class="slider-dot" data-index="3" aria-label="4번째 슬라이드"></button><button class="slider-dot" data-index="4" aria-label="5번째 슬라이드"></button><button class="slider-dot" data-index="5" aria-label="6번째 슬라이드"></button><button class="slider-dot" data-index="6" aria-label="7번째 슬라이드"></button></div></div>
+<div class="slider-dots"><button class="slider-dot active" data-index="0" aria-label="1번째 슬라이드"></button><button class="slider-dot" data-index="1" aria-label="2번째 슬라이드"></button><button class="slider-dot" data-index="2" aria-label="3번째 슬라이드"></button><button class="slider-dot" data-index="3" aria-label="4번째 슬라이드"></button><button class="slider-dot" data-index="4" aria-label="5번째 슬라이드"></button><button class="slider-dot" data-index="5" aria-label="6번째 슬라이드"></button><button class="slider-dot" data-index="6" aria-label="7번째 슬라이드"></button></div>
 </section>
 
-<div class="wrap">
 <div class="feed-list" id="feedList">
 <article class="feed-item" data-cat="ai" data-region="intl" data-search="anthropic 'claude opus 5.5' 공개··· openai도 저가형 gpt-6 모델 2종으로 맞대응 앤트로픽이 9월 22일 클로드 오퍼스 5.5를 출시하며 가격을 20% 인하했다. 입력 토큰 100만 개당 4달러·출력 20달러로 책정돼 동일 작업 기준 오퍼스 5 대비 실제 비용은 40% 낮아졌고, 출력 속도도 30% 이상 빨라졌다. 에이전트 코딩 벤치마크 terminal-bench 4.0에서 66.4%를 기록했고, 박스(box)·깃허브 임원들은 "답변이 더 간결해지고 터미널 작업을 절반 이하 스텝으로 처리한다"고 평가했다.&lt;br&gt;&lt;br&gt;오픈ai는 같은 날 수 분 뒤 gpt-6 '솔'과 '루나' 두 모델을 공개하며 맞불을 놓았다. 솔은 입력 100만 토큰당 2달러·출력 10달러, 루나는 입력 10센트·출력 50센트로 책정됐으며 둘 다 전작 gpt-5.6 대비 가격이 절반 수준이다. 솔은 반복적인 코딩·에이전트 작업을, 루나는 요약·추출 등 고빈도 단순 작업을 겨냥했고, 캐시 입력 비용도 90% 할인했다.&lt;br&gt;&lt;br&gt;이날 두 회사가 거의 동시에 가격 인하 모델을 내놓으면서, ai 모델 경쟁의 축이 '최고 성능'에서 '가격 대비 성능'으로 빠르게 옮겨가고 있다. 다만 오픈ai가 신모델을 비교한 대상은 앤트로픽의 이전 세대 모델(fable 5.1·오퍼스 5)이어서, 같은 날 나온 두 발표를 직접 비교하기는 어렵다는 점도 기사는 짚었다. siliconangle 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-ai-1.html">
@@ -1012,7 +1008,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </a>
 </article><article class="feed-item" data-cat="ux" data-region="intl" data-search="ai 네이티브 ux 리서치 확산…리서치팀 74%가 ai 모더레이션 인터뷰로 전환 조사 대상 리서치팀의 74%가 설문 기반 디스커버리를 ai 모더레이션 인터뷰로 대체했다는 결과는, ux 리서치 실행 단계가 이미 ai 중심으로 넘어갔음을 시사한다. perspective ai 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-ux-1.html">
-  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><img src="assets/thumbs/2026-10-11-i-ux-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow"><span>🌐</span><span>해외</span></div>
   <h2 class="feed-title">AI 네이티브 UX 리서치 확산…리서치팀 74%가 AI 모더레이션 인터뷰로 전환</h2>
   <p class="feed-summary">조사 대상 리서치팀의 74%가 설문 기반 디스커버리를 AI 모더레이션 인터뷰로 대체했다는 결과는, UX 리서치 실행 단계가 이미 AI 중심으로 …</p>
@@ -1021,7 +1017,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </a>
 </article><article class="feed-item" data-cat="design" data-region="intl" data-search="figma, 캔버스 안에 자연어 기반 ai 디자인 에이전트 정식 출시 에이전트가 실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성한다는 점은, ai 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는 단계에 들어섰음을 뜻한다. figma 공식 포럼 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-design-1.html">
-  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><img src="assets/thumbs/2026-10-11-i-design-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow"><span>🌐</span><span>해외</span></div>
   <h2 class="feed-title">Figma, 캔버스 안에 자연어 기반 AI 디자인 에이전트 정식 출시</h2>
   <p class="feed-summary">에이전트가 실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성한다는 점은, AI 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는…</p>
@@ -1030,7 +1026,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </a>
 </article><article class="feed-item" data-cat="biz" data-region="intl" data-search="오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널 구조조정 비용이 총 28억 달러까지 불어났다는 점은, ai 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다. data center dynamics 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-biz-1.html">
-  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><img src="assets/thumbs/2026-10-11-i-biz-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow"><span>🌐</span><span>해외</span></div>
   <h2 class="feed-title">오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널</h2>
   <p class="feed-summary">구조조정 비용이 총 28억 달러까지 불어났다는 점은, AI 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다.</p>
