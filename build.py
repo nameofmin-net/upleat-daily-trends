@@ -108,17 +108,29 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
 
-/* "오늘의 트렌드" — horizontal snap carousel for today's articles */
+/* "오늘의 트렌드" — full-width, one-at-a-time hero slider */
 .today-carousel{margin-bottom:52px;}
 .today-carousel h2{font-size:20px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em;}
 .carousel-date{font-size:13px;color:var(--sub2);margin:0 0 18px;}
-.carousel-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;}
-.carousel-card{flex:0 0 auto;width:300px;scroll-snap-align:start;display:block;}
-.carousel-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-.carousel-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
-.carousel-card:hover .carousel-thumb img{transform:scale(1.06);}
-.carousel-title{font-size:16px;font-weight:700;margin:0 0 8px;line-height:1.4;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.carousel-card:hover .carousel-title{color:var(--accent);}
+
+.hero-slider{position:relative;width:100%;height:440px;overflow:hidden;background:#F2F2F2;}
+@media (max-width:640px){.hero-slider{height:320px;}}
+.hero-slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.65,0,.35,1);}
+.hero-slide{flex:0 0 100%;width:100%;height:100%;position:relative;display:block;background-size:cover;background-position:center;}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%);}
+.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;max-width:1440px;margin:0 auto;padding:0 20px 32px;z-index:2;}
+.hero-slide-title{font-size:26px;font-weight:700;color:#fff;margin:10px 0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:760px;}
+@media (max-width:640px){.hero-slide-title{font-size:19px;}}
+.hero-slide-meta{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85);}
+
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.85);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:background .15s ease;}
+@media (max-width:640px){.slider-arrow{top:18px;transform:none;width:36px;height:36px;font-size:18px;}}
+.slider-arrow:hover{background:#fff;}
+.slider-prev{left:20px;}
+.slider-next{right:20px;}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.slider-dot{width:7px;height:7px;border-radius:50%;border:none;padding:0;background:var(--line);cursor:pointer;}
+.slider-dot.active{background:var(--ink);}
 
 /* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
@@ -327,6 +339,37 @@ FEED_SCRIPT = """
 </script>
 """
 
+SLIDER_SCRIPT = """
+<script>
+(function(){
+  var slider = document.getElementById('heroSlider');
+  if (!slider) return;
+  var track = document.getElementById('heroSliderTrack');
+  var slides = Array.prototype.slice.call(track.children);
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.slider-dot'));
+  var prevBtn = slider.querySelector('.slider-prev');
+  var nextBtn = slider.querySelector('.slider-next');
+  var index = 0;
+
+  function go(i){
+    index = (i + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    dots.forEach(function(d, di){ d.classList.toggle('active', di === index); });
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function(e){ e.preventDefault(); go(index - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(e){ e.preventDefault(); go(index + 1); });
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){ go(parseInt(d.dataset.index, 10)); });
+  });
+  slider.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') go(index - 1);
+    if (e.key === 'ArrowRight') go(index + 1);
+  });
+})();
+</script>
+"""
+
 HEAD = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -453,26 +496,39 @@ def render_today_carousel(articles):
     if not todays:
         return ""
 
-    cards = []
-    for a in todays:
+    slides = []
+    dots = []
+    for i, a in enumerate(todays):
         color = CATEGORY_COLOR[a["cat_key"]]
         emoji = "🌐" if a["region_key"] == "intl" else "🇰🇷"
         thumb = find_thumb(a["id"])
-        if thumb:
-            thumb_html = f'<img src="{thumb}" alt="" loading="lazy">'
-        else:
-            thumb_html = f'<span class="feed-thumb-emoji">{CATEGORY_EMOJI.get(a["cat_key"], "📡")}</span>'
-        cards.append(f'''<a class="carousel-card" href="articles/{a['id']}.html">
-  <div class="carousel-thumb" style="background:{color}22">{thumb_html}</div>
-  <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
-  <h3 class="carousel-title">{a['title']}</h3>
-  <div class="feed-meta"><span class="feed-src-name">{esc(a['source'])}</span></div>
+        bg = f"background-image:url('{thumb}');" if thumb else f"background:{color}33;"
+        slides.append(f'''<a class="hero-slide" href="articles/{a['id']}.html" style="{bg}">
+  <div class="hero-slide-inner">
+    <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
+    <h3 class="hero-slide-title">{a['title']}</h3>
+    <div class="hero-slide-meta"><span>{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span>{a['dateLabel']}</span></div>
+  </div>
 </a>''')
+        dots.append(f'<button class="slider-dot{" active" if i == 0 else ""}" data-index="{i}" aria-label="{i+1}번째 슬라이드"></button>')
+
+    arrows_html = ""
+    dots_html = ""
+    if len(todays) > 1:
+        arrows_html = '''<button class="slider-arrow slider-prev" aria-label="이전 슬라이드">&lsaquo;</button>
+<button class="slider-arrow slider-next" aria-label="다음 슬라이드">&rsaquo;</button>'''
+        dots_html = f'<div class="wrap" style="padding-top:0;padding-bottom:0;"><div class="slider-dots">{"".join(dots)}</div></div>'
 
     return f'''<section class="today-carousel">
-<h2>오늘의 트렌드</h2>
-<p class="carousel-date">{todays[0]['dateLabel']}</p>
-<div class="carousel-scroll">{"".join(cards)}</div>
+<div class="wrap" style="padding-bottom:0;">
+  <h2>오늘의 트렌드</h2>
+  <p class="carousel-date">{todays[0]['dateLabel']}</p>
+</div>
+<div class="hero-slider" id="heroSlider" tabindex="0">
+  <div class="hero-slider-track" id="heroSliderTrack">{"".join(slides)}</div>
+  {arrows_html}
+</div>
+{dots_html}
 </section>'''
 
 
@@ -581,7 +637,7 @@ def build():
     feed_html = "".join(render_feed_item(a) for a in articles)
     rail_html = render_rail(articles)
 
-    index_body = f'''<div class="wrap">
+    index_body = f'''<div class="wrap" style="padding-bottom:0;">
 <header class="site">
 <div class="header-row">
   <h1>UPLEAT 데일리 트렌드 아카이브</h1>
@@ -593,9 +649,11 @@ def build():
 </div>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
+</div>
 
 {carousel_html}
 
+<div class="wrap">
 <div class="feed-list" id="feedList">
 {feed_html}
 </div>
@@ -610,6 +668,7 @@ def build():
             HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, root_prefix="", gnb_pills=render_gnb_pills(""))
             + index_body
             + FEED_SCRIPT
+            + SLIDER_SCRIPT
             + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
         )
 
