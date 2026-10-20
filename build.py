@@ -186,8 +186,6 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
 .related-tile:hover .rt-art{transform:scale(1.06);}
 .related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-
-footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 """
 
 SCROLLTOP_SCRIPT = """
@@ -348,8 +346,6 @@ FOOT = """
 </body>
 </html>
 """
-
-FOOTER_HTML = '<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: magazine-hd.kr &amp; wiseapp.co.kr/insight</footer>'
 
 
 def esc(s):
@@ -522,7 +518,6 @@ def render_article_page(a, next_a, related):
 
 <div class="daynav"><span class="spacer"></span>{nav_next}</div>
 {related_html}
-{FOOTER_HTML}
 </div>'''
 
 
@@ -562,7 +557,6 @@ def build():
 <div class="loadmore-wrap" id="loadMoreWrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
 
 {rail_html}
-{FOOTER_HTML}
 </div>'''
 
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
