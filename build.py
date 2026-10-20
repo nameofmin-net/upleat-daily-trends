@@ -124,7 +124,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-title{font-size:20px;font-weight:700;margin:0 0 11px;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(20px*1.4*2);}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(16px*1.6*2);}
-.feed-hashtag{display:inline-block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:14px;}
+.feed-hashtag{display:block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:14px;}
 .feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:3px;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
@@ -184,8 +184,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .related-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.related-scroll{grid-template-columns:1fr;gap:24px;}}
-.related-tile{width:100%;background:var(--card);display:block;}
-.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;}
+.related-tile{width:100%;background:var(--card);display:block;overflow:hidden;}
+.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .4s ease;}
+.related-tile:hover .rt-art{transform:scale(1.06);}
 .related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 
 footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
@@ -289,8 +290,8 @@ FEED_SCRIPT = """
   render();
 
   // auto-expand as the user scrolls near the load-more button, no click needed
+  var sentinel = document.getElementById('loadMoreWrap') || loadBtn;
   if ('IntersectionObserver' in window) {
-    var sentinel = document.getElementById('loadMoreWrap') || loadBtn;
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if (entry.isIntersecting && loadBtn.style.display !== 'none') loadMore();
@@ -298,6 +299,18 @@ FEED_SCRIPT = """
     }, { rootMargin: '600px 0px' });
     io.observe(sentinel);
   }
+  // backup check on scroll in case IntersectionObserver misses a fast/jump scroll
+  var scrollCheckQueued = false;
+  window.addEventListener('scroll', function(){
+    if (scrollCheckQueued || loadBtn.style.display === 'none') return;
+    scrollCheckQueued = true;
+    requestAnimationFrame(function(){
+      scrollCheckQueued = false;
+      if (loadBtn.style.display === 'none') return;
+      var r = sentinel.getBoundingClientRect();
+      if (r.top < window.innerHeight + 600) loadMore();
+    });
+  }, { passive: true });
 })();
 </script>
 """
@@ -493,7 +506,7 @@ def render_article_page(a, prev_a, next_a, related):
 {hero_photo_html}
 <div class="hero-inner">
 {hero_emoji_html}
-<div class="hero-info"><span class="hero-tag">{a['region']} &middot; {a['cat_label']}</span><span class="hero-date">{a['dateLabel']}</span></div>
+<div class="hero-info"><span class="hero-tag">{a['region']}</span><span class="hero-date">{a['dateLabel']}</span></div>
 </div>
 </div>
 
@@ -504,6 +517,7 @@ def render_article_page(a, prev_a, next_a, related):
   <span class="byline-name">{esc(a['source'])}</span><span class="byline-dot">&middot;</span><span class="byline-role">{a['pubDate'] or a['dateLabel']}</span>
 </div>
 <div class="insight">{a['insight']}</div>
+<span class="feed-hashtag">#{esc(a['cat_label'])}</span>
 <a class="source-cta" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
 <div class="tag-cloud">{tags_html}</div>
 <div class="detail-note">이 글은 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드 중 하나입니다. 올해 실제로 발행된 기사만 다루며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일 내 동일 URL로 이미 글이 있으면 새로 만들지 않고 걸러냅니다.</div>
