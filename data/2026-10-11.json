@@ -1,0 +1,174 @@
+{
+  "intl": {
+    "date": "2026-10-11",
+    "dateLabel": "2026년 10월 11일 일요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic과 OpenAI가 한 달 간격으로 플래그십 모델을 교체하며 <b>AI 경쟁의 무게중심이 '성능'에서 '에이전트 실행력'으로 옮겨가는</b> 가운데, 오라클·테슬라의 실적은 AI 투자 부담과 수요 둔화가 동시에 진행 중임을 보여준다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 'Claude Opus 5.5' 공식 출시…비용 40% 절감",
+            "url": "https://www.thurrott.com/a-i/anthropic/341913/anthropic-releases-claude-opus-5-5",
+            "source": "Thurrott",
+            "pubDate": "2026-09-22",
+            "image": null,
+            "insight": "Opus 5.5는 <b>이전 모델보다 비용을 40% 낮추면서도 최고 성능을 확보</b>해, 고성능 모델의 가격 장벽이 빠르게 무너지고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "OpenAI, 컴퓨터 사용 에이전트 모델 'GPT-6 Astra' 출시",
+            "url": "https://www.constellationr.com/insights/news/openai-launches-gpt-6-astra",
+            "source": "Constellation Research",
+            "pubDate": "2026-09-03",
+            "image": null,
+            "insight": "GPT-6 Astra는 <b>양식 작성·리서치·문서 초안까지 대신 처리하는 에이전트형 모델</b>로, AI 경쟁의 축이 '대화'에서 '실제 업무 대행'으로 옮겨가고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "AI 네이티브 UX 리서치 확산…리서치팀 74%가 AI 모더레이션 인터뷰로 전환",
+            "url": "https://getperspective.ai/blog/state-of-ai-native-ux-research-2026-300-research-teams-replaced-discovery-survey",
+            "source": "Perspective AI",
+            "pubDate": "2026-05-20",
+            "image": null,
+            "insight": "조사 대상 리서치팀의 <b>74%가 설문 기반 디스커버리를 AI 모더레이션 인터뷰로 대체</b>했다는 결과는, UX 리서치 실행 단계가 이미 AI 중심으로 넘어갔음을 시사한다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Figma, 캔버스 안에 자연어 기반 AI 디자인 에이전트 정식 출시",
+            "url": "https://forum.figma.com/product-updates-3/figma-s-ai-agent-is-here-and-it-s-rolling-out-now-54154",
+            "source": "Figma 공식 포럼",
+            "pubDate": "2026-05-20",
+            "image": null,
+            "insight": "에이전트가 <b>실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성</b>한다는 점은, AI 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는 단계에 들어섰음을 뜻한다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널",
+            "url": "https://www.datacenterdynamics.com/en/news/oracle-upscales-layoffs-expected-to-increase-restructuring-costs-by-700m/",
+            "source": "Data Center Dynamics",
+            "pubDate": null,
+            "image": null,
+            "insight": "구조조정 비용이 <b>총 28억 달러까지 불어났다는 점</b>은, AI 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "테슬라, 2026년 3분기 차량 48만 6532대 인도…시장 예상치 상회",
+            "url": "https://teslanorth.com/2026/10/02/tesla-q3-2026-deliveries/",
+            "source": "Tesla North",
+            "pubDate": "2026-10-02",
+            "image": null,
+            "insight": "전년 동기보다는 줄었지만 <b>시장 예상치를 2만 대 이상 웃돌았다는 점</b>은, 수요 둔화 우려 속에서도 테슬라가 가격·재고 조정으로 방어선을 지켰음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-11",
+    "dateLabel": "2026년 10월 11일 일요일",
+    "region": "국내",
+    "takeawayHtml": "과기정통부가 <b>AMD와 손잡고 국산 NPU 연계 '개방형 AI 컴퓨팅' 전략을 구체화</b>하는 한편, 퓨리오사AI의 대규모 프리IPO와 국내 벤처투자 회복세가 AI 반도체 생태계에 대한 투자 신뢰를 뒷받침하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "과기정통부-AMD, 국내 AI 반도체 기업과 라운드테이블…이기종 컴퓨팅 협력",
+            "url": "https://byline.network/2026/10/1007-5/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-10-07",
+            "image": null,
+            "insight": "엔비디아 의존도를 낮추려는 <b>정부 주도의 '개방형 AI 컴퓨팅' 전략이 구체화</b>되고 있다는 점에서, 국산 NPU 생태계에 실질적 기회가 열리고 있다.",
+            "duplicate": false
+          },
+          {
+            "title": "SK AX, 오픈AI와 엔터프라이즈 AI 서비스 파트너 계약",
+            "url": "https://www.hankyung.com/article/202605134372g",
+            "source": "한국경제",
+            "pubDate": "2026-05-14",
+            "image": null,
+            "insight": "삼성SDS·LG CNS에 이어 <b>SK AX까지 오픈AI 파트너 대열에 합류</b>하면서, 국내 대기업의 엔터프라이즈 AI 구축 경쟁이 본격화되고 있다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "네이버플러스스토어·카카오쇼핑 만족도 동반 상승…1년 사이 쇼핑 경험 체감 변화",
+            "url": "https://blog.opensurvey.co.kr/article/online_shopping-2026-2/",
+            "source": "오픈서베이 블로그",
+            "pubDate": null,
+            "image": null,
+            "insight": "<b>네이버플러스스토어 만족도가 전년 대비 4.3%p, 카카오쇼핑은 9.4%p 상승</b>했다는 결과는, 커머스 UX 개선 경쟁이 실제 체감 만족도로 이어지고 있음을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "꼬깔콘, 5년 만의 패키지 리뉴얼…삼각뿔 조형으로 브랜드 자산 재정의",
+            "url": "https://designcompass.org/2026/06/18/kokalkon-package-renewal-thomas-studio/",
+            "source": "Design Compass",
+            "pubDate": "2026-06-18",
+            "image": null,
+            "insight": "맛이 아닌 <b>과자의 물리적 형태(삼각뿔)를 핵심 비주얼 자산으로 전환</b>한 전략은, 장수 브랜드가 올드함을 벗는 새로운 리브랜딩 문법을 제시한다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "퓨리오사AI, 8000억원 규모 프리IPO 조달 임박",
+            "url": "https://www.smarttoday.co.kr/ko-kr/articles/101598",
+            "source": "스마트투데이",
+            "pubDate": "2026-08-26",
+            "image": null,
+            "insight": "유암코·시스코 등 <b>새 투자자가 대거 참여해 2.8조원 밸류에이션에도 민간자금 4000억원을 확보</b>했다는 점은, 국산 AI 반도체에 대한 투자 신뢰가 여전히 견고함을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "국내 벤처투자 상반기 8조 8676억원…전년 대비 56% 증가",
+            "url": "https://www.heraldk.com/article/2026090819041422903",
+            "source": "헤럴드경제",
+            "pubDate": "2026-09-08",
+            "image": null,
+            "insight": "바이오·AI 반도체 등 <b>딥테크 분야로 투자가 집중되며 피투자기업당 평균 투자액이 매년 늘고 있다</b>는 점은, 벤처투자 시장이 양보다 질 중심으로 재편되고 있음을 시사한다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  }
+}

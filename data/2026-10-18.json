@@ -1,0 +1,155 @@
+{
+  "intl": {
+    "date": "2026-10-18",
+    "dateLabel": "2026년 10월 18일 일요일",
+    "region": "해외",
+    "takeawayHtml": "<b>FTC가 OpenAI·Anthropic에 안전성 자료 제출을 공식 요구</b>하며 AI 규제 압박이 커지는 가운데, Apple과 Cloudflare는 각각 하드웨어와 개발자 인프라 영역에서 AI 생태계 확장을 이어가고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "FTC, OpenAI·Anthropic에 AI 안전성 관련 자료 제출 요구",
+            "url": "https://engadget.com/2288104/ftc-subpoenas-open-ai-and-anthropic-following-safety-failures",
+            "source": "Engadget",
+            "pubDate": "2026-10-14",
+            "image": null,
+            "insight": "<b>50쪽 분량의 정식 조사 요구서를 받은 것</b>은 AI 안전사고에 대한 미국 정부의 소비자보호 조사가 본격화되고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "ServiceNow, AI 에이전트용 신원 인증 체계 'AI Passport' 발표",
+            "url": "https://www.infoworld.com/article/4235886/servicenow-makes-it-easier-to-build-ai-agents-gives-them-verifiable-identities-2.html",
+            "source": "InfoWorld",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "런타임에서 에이전트의 권한을 검증하고 이탈 시 즉시 차단하는 구조는 <b>AI 에이전트 거버넌스가 선언적 가이드라인에서 기술적 강제로 넘어가고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Apple, 스마트홈 액세서리 신규 라인업 'Apple Home Collection' 공개",
+            "url": "https://www.apple.com/newsroom/2026/10/introducing-apple-home-collection-a-new-lineup-of-smart-home-accessories/",
+            "source": "Apple Newsroom",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "LG전자·슈나이더 일렉트릭과 공동 개발한 제품 라인업은 <b>애플이 스마트홈 하드웨어 디자인을 자체 생태계 확장의 핵심 축으로 삼고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "결제 스타트업 Ramp, 18.5억 달러 투자 유치…기업가치 600억 달러",
+            "url": "https://techstartups.com/2026/10/16/startup-funding-news-today-october-16-2026-ramp-abby-care-origin-north-cloud-mueon-more/",
+            "source": "Tech Startups",
+            "pubDate": "2026-10-16",
+            "image": null,
+            "insight": "드래고니어 인베스트먼트 그룹이 주도한 이번 라운드는 <b>핀테크 자동화 기업에 대한 투자 열기가 여전히 꺾이지 않았음</b>을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "Cloudflare, Node.js 창시자의 런타임 기업 Deno 인수",
+            "url": "https://thenewstack.io/cloudflare-acquires-deno-ryan-dahl/",
+            "source": "The New Stack",
+            "pubDate": "2026-10-09",
+            "image": null,
+            "insight": "독립 런타임이던 Deno가 1년의 유예 기간을 끝으로 단계적으로 종료되고 핵심 기술만 <b>Cloudflare Workers 플랫폼에 흡수</b>되는 수순은, 개발자 런타임 경쟁이 소수 클라우드 플랫폼으로 통합되고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-18",
+    "dateLabel": "2026년 10월 18일 일요일",
+    "region": "국내",
+    "takeawayHtml": "카카오뱅크가 <b>AI 코칭 적금</b>을 내놓고 삼성·LG가 KES 2026에서 생활밀착형 AI 가전을 전면에 세우며, 국내 산업은 AI를 소비자 접점까지 끌어들이는 단계로 들어섰다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오뱅크, AI 코칭 적용한 'AI 목표적금' 출시",
+            "url": "https://biz.sbs.co.kr/amp/article/20000339577",
+            "source": "SBS Biz",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "저축 목표 설정부터 달성까지 AI가 단계별로 조언하는 구조는 <b>금융권 AI 도입이 상담 보조를 넘어 상품 설계 자체에 결합되고 있음</b>을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "삼성·LG, 'KES 2026'서 일상·산업 바꿀 AI 신기술 맞대결",
+            "url": "https://www.mt.co.kr/industry/2026/10/13/2026101309075687443",
+            "source": "머니투데이",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "삼성이 냉장고 내부 카메라로 식재료를 인식하는 'AI 푸드매니저'를 내세우고 LG가 데이터센터용 '칩 투 칠러' 냉각 솔루션까지 전시한 것은, <b>국내 대기업의 AI 경쟁이 생활가전과 산업 인프라 양쪽에서 동시에 벌어지고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "단말기를 깐 '토스', 길을 빌린 '카카오페이'…오프라인 결제 UX 전략",
+            "url": "https://www.mobiinside.co.kr/2026/10/12/offline-payment-ux-infrastructure-strategy/",
+            "source": "모비인사이드",
+            "pubDate": "2026-10-12",
+            "image": null,
+            "insight": "토스페이스페이 가맹점이 37만 곳을 넘어선 가운데 결제 과정의 동작 자체를 줄이는 데 집중한 설계는, <b>오프라인 결제 UX 경쟁의 핵심이 인프라 확보 방식의 차이로 옮겨가고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "호반건설, '호반써밋' 브랜드 7년 만에 리뉴얼…새 BI·슬로건 공개",
+            "url": "https://www.viva100.com/article/20261013500478",
+            "source": "브릿지경제",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "영문 로고를 곡선으로 다듬고 'Where Life Grows'를 새 슬로건으로 내세운 것은, <b>주거 브랜드가 분양 상품을 넘어 거주자의 생활 변화까지 아우르는 디자인 체계로 확장</b>하고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "웨어러블 로봇 휴로틱스, 250억 규모 시리즈A 투자 유치",
+            "url": "https://www.smarttoday.co.kr/ko-kr/articles/112701",
+            "source": "스마트투데이",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "대웅·네이버·롯데 등이 전략적 투자자로 새로 합류한 것은, <b>웨어러블 로봇 기업의 가치가 병원 재활을 넘어 일상 보행 보조 데이터 플랫폼으로까지 확장</b>되고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  }
+}

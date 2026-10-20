@@ -1,0 +1,117 @@
+{
+  "intl": {
+    "date": "2026-10-19",
+    "dateLabel": "2026년 10월 19일 월요일",
+    "region": "해외",
+    "takeawayHtml": "<b>딥시크의 신모델 공개와 오픈웨이트 모델 'Beam'의 등장</b>이 보여주듯, AI 경쟁의 무게중심이 성능 그 자체보다 속도와 비용으로 옮겨가고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "딥시크, 더 빠르고 가벼운 신모델 'V4.1-Flash-1017' 공개",
+            "url": "https://bloomberg.com/news/articles/2026-10-17/deepseek-pushes-out-updated-ai-model-it-says-is-faster-leaner",
+            "source": "Bloomberg",
+            "pubDate": "2026-10-17",
+            "image": null,
+            "insight": "<b>딥시크가 벤치마크와 속도를 모두 개선한 신모델을 즉시 앱과 개발자 플랫폼에 공개</b>한 것은 중국 AI 업체들의 추격 속도가 전혀 느려지지 않았다는 신호다.",
+            "duplicate": false
+          },
+          {
+            "title": "Reflection AI, 오픈웨이트 모델 'Beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워",
+            "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
+            "source": "TechCrunch",
+            "pubDate": "2026-10-05",
+            "image": null,
+            "insight": "<b>오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름</b>은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "Maze, '2026 UX 리서치의 미래' 리포트 공개",
+            "url": "https://maze.co/blog/future-user-research-2026/",
+            "source": "Maze",
+            "pubDate": "2026-03-11",
+            "image": null,
+            "insight": "<b>리서처의 69%가 이미 AI를 리서치 과정에 활용하고 있다는 조사 결과</b>는 UX 리서치가 '사람이 직접 하는 일'에서 'AI와 함께하는 일'로 빠르게 재편되고 있음을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Figma, Config 2026에서 '코드 레이어'와 모션 기능 공개",
+            "url": "https://www.cmswire.com/digital-experience/figma-launches-code-layers-motion-at-config-2026/",
+            "source": "CMSWire",
+            "pubDate": "2026-06-24",
+            "image": null,
+            "insight": "<b>디자인 툴이 코드와 모션 제작 기능까지 통합</b>하면서, 디자이너가 직접 프로덕션 코드베이스를 다루는 흐름이 굳어지고 있다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "브로드컴 CEO 혹 탄, \"AI 투자자들은 도박꾼처럼 행동한다\"",
+            "url": "https://cryptobriefing.com/broadcom-hock-tan-ai-investors-gamblers/",
+            "source": "CryptoBriefing",
+            "pubDate": "2026-10-12",
+            "image": null,
+            "insight": "<b>반도체 공급망 핵심 기업 CEO의 경고</b>는 AI 인프라 투자 과열에 대한 업계 내부의 자성 목소리가 커지고 있음을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-19",
+    "dateLabel": "2026년 10월 19일 월요일",
+    "region": "국내",
+    "takeawayHtml": "<b>카카오가 자체 개발이 아닌 '연결'을 택한 개방형 AI 전략</b>을 공개하며, 국내 빅테크의 AI 경쟁이 플랫폼 생태계 싸움으로 번지고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, 'if(kakao)26'서 개방형 AI 플랫폼 '모두의 AI' 전략 공개",
+            "url": "https://byline.network/2026/10/1014-6/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-10-14",
+            "image": null,
+            "insight": "<b>카카오가 자체 기술 대신 외부 기업·개발자를 연결하는 개방형 플랫폼 전략을 택한 점</b>은 국내 빅테크의 AI 경쟁 축이 '혼자 만들기'에서 '생태계 조립'으로 옮겨가고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "intl": {
+    "date": "2026-10-17",
+    "dateLabel": "2026년 10월 17일 토요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic은 <b>싱가포르 진출과 독립 평가·사이버 검증 체계 확대</b>로 신뢰 기반 확장에 속도를 내는 한편, 해외 SaaS·핀테크 업계에서는 밸류에이션 조정과 M&A가 동시에 진행되고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 싱가포르에 사무소 개소하고 정부와 MOU 체결",
+            "url": "https://www.anthropic.com/news/singapore-office-opening",
+            "source": "Anthropic",
+            "pubDate": "2026-10-14",
+            "image": null,
+            "insight": "<b>싱가포르 정부와의 공식 협력 체결</b>은 Anthropic이 아시아 시장 확장을 가속화하고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "Anthropic, 독립 평가기관(Independent Evaluators) 관련 업데이트 발표",
+            "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+            "source": "Anthropic",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "모델 안전성 검증을 외부에 맡기는 <b>독립 평가 체계 확대</b>는 AI 업계의 투명성 압박이 커지고 있다는 신호다.",
+            "duplicate": false
+          },
+          {
+            "title": "Anthropic, 사이버 검증 프로그램(Cyber Verification Program) 확대",
+            "url": "https://www.anthropic.com/news/cyber-verification-program",
+            "source": "Anthropic",
+            "pubDate": "2026-10-06",
+            "image": null,
+            "insight": "<b>AI 모델의 보안 취약점을 선제적으로 검증</b>하는 체계가 업계 표준으로 자리잡고 있다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "시카고 아테네움, '2026 뉴 모던 퍼니처 + 라이팅' 수상작 발표 및 아테네 전시 개최",
+            "url": "https://globaldesignnews.com/global-design-news-and-the-chicago-athenaeum-announce-the-2026-prize-designs-for-modern-furniture-lighting-winners/",
+            "source": "Global Design News",
+            "pubDate": null,
+            "image": null,
+            "insight": "1949년 MoMA에서 시작된 <b>프라이즈 디자인 전통이 2026년에도 이어지며</b> 가구·조명 디자인의 실험적 흐름을 조명한다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "Bradbury Capital, SPAC 합병 완료하고 나스닥 데뷔…'BBCI'로 거래 시작",
+            "url": "https://pulse2.com/bradbury-capital-completes-business-combination-and-raises-5-million-pipe-ahead-of-nasdaq-debut/",
+            "source": "Pulse2",
+            "pubDate": "2026-10-06",
+            "image": null,
+            "insight": "말레이시아 전자바우처 핀테크 기업의 <b>SPAC 합병을 통한 나스닥 상장</b>은 동남아 핀테크의 글로벌 자본시장 진출 통로가 넓어지고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "Bending Spoons, 소프트웨어 스타트업 Airtable을 22.5억 달러에 인수",
+            "url": "https://www.thestack.technology/bending-spoons-buys-software-startup-airtable-in-2-25bn-deal/",
+            "source": "The Stack",
+            "pubDate": "2026-08-04",
+            "image": null,
+            "insight": "2021년 110억 달러였던 기업가치가 <b>22.5억 달러로 꺾인 채 매각된 사례</b>는 SaaS 밸류에이션 거품이 본격적으로 꺼지고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-17",
+    "dateLabel": "2026년 10월 17일 토요일",
+    "region": "국내",
+    "takeawayHtml": "삼성전자는 KES 2026에서 <b>생활 밀착형 AI 가전</b>을 전면에 내세웠고, 국내 디자인 스튜디오들은 전통 있는 브랜드의 리브랜딩을 통해 정체성 재정의에 나섰다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "[KES2026] 삼성전자 '일상 속 AI' 공개…LG전자는 산업까지 확장",
+            "url": "https://etnews.com/20261013000179",
+            "source": "전자신문",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "삼성전자가 냉장고·세탁기에 <b>AI 푸드매니저, AI 맞춤+ 기능을 탑재</b>하며 가전을 생활 밀착형 AI 플랫폼으로 전환하고 있다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "브랜딩 스튜디오 듀당스, 국보디자인 리브랜딩…'Where Experience Begins' 슬로건 공개",
+            "url": "https://www.hankyung.com/article/202607243592O",
+            "source": "한국경제",
+            "pubDate": "2026-07-24",
+            "image": null,
+            "insight": "14년 연속 시공능력평가 1위 기업이 <b>'완성된 결과물'에서 '경험이 시작되는 과정'으로 브랜드 메시지를 전환</b>한 점이 눈에 띈다.",
+            "duplicate": true
+          },
+          {
+            "title": "네임드, 롯데칠성 RTD 커피 '칸타타 하모니' 비주얼·패키지 디자인 공개",
+            "url": "https://design.co.kr/article/172313/",
+            "source": "월간디자인",
+            "pubDate": null,
+            "image": null,
+            "insight": "강렬한 블랙 대신 <b>바닐라 베이지·돌체 핑크로 색채 전략을 전환</b>해 커피 브랜드의 감성적 포지셔닝을 재정의했다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "8월 국내 비상장 스타트업 투자 195건으로 동월 역대 최고 기록",
+            "url": "https://magazine.hankyung.com/business/article/202609168529b",
+            "source": "한경비즈니스",
+            "pubDate": "2026-09-16",
+            "image": null,
+            "insight": "건수는 역대 최고를 찍었지만 <b>투자금액은 7월과 비슷한 수준에 머물며 건당 투자 규모가 줄어드는 흐름</b>이 뚜렷해지고 있다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  }
+}

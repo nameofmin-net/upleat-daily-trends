@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPLEAT 데일리 트렌드 아카이브</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#2647E6;
+  --accent-dim:#EEF1FD;
+  --ink:#16181D;
+  --sub:#6B7280;
+  --line:#E6E8EC;
+  --bg:#FAFAFB;
+  --card:#FFFFFF;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  line-height:1.6;
+}
+.wrap{max-width:760px;margin:0 auto;padding:48px 20px 96px;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+header.site{margin-bottom:36px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
+h1{font-size:26px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
+.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;margin:18px 0 0;}
+.back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;}
+.day-list{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.day-list li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .15s ease;}
+.day-list li:hover{border-color:var(--accent);}
+.day-list a{display:block;color:var(--ink);}
+.day-list .date{font-weight:700;font-size:15px;}
+.day-list .preview{font-size:13px;color:var(--sub);margin-top:4px;}
+.day-list .preview b{color:var(--ink);font-weight:600;}
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;}
+.daynav .spacer{flex:1;}
+.region-block{margin-bottom:40px;}
+.region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
+.region-date{font-size:20px;font-weight:800;}
+.takeaway{margin:14px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.takeaway b{color:var(--accent);}
+details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--card);overflow:hidden;}
+details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
+details.cat summary::-webkit-details-marker{display:none;}
+details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
+details.cat[open] summary::before{transform:rotate(90deg);}
+.cat-label{color:var(--accent);}
+.cat-count{color:var(--sub);font-weight:500;}
+.cat-body{padding:4px 16px 14px;}
+.empty-note{font-size:13px;color:var(--sub);padding:6px 0 10px;}
+.item{display:block;padding:12px 0;border-top:1px solid var(--line);}
+.item:first-child{border-top:none;}
+.item-title{font-size:14.5px;font-weight:700;color:var(--ink);}
+.item-title:hover{color:var(--accent);}
+.dup-badge{display:inline-block;font-size:10px;font-weight:800;color:#B42318;background:#FEE4E2;border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:middle;}
+.src{font-size:12px;color:var(--sub);margin:3px 0 6px;}
+.insight{font-size:13px;color:#3D4250;line-height:1.55;padding-left:10px;border-left:2px solid var(--line);}
+.insight b{color:var(--accent);}
+footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+<p class="eyebrow">UPLEAT</p>
+<h1>UPLEAT 데일리 트렌드 아카이브</h1>
+<p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 그대로 미러링하며, 새 리포트가 생성될 때마다 자동으로 업데이트됩니다.</p>
+</header>
+<ul class="day-list">
+<li><a href="days/2026-10-20.html">
+<div class="date">2026년 10월 20일 화요일</div>
+<div class="preview"><b>해외</b> AI 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이, OpenAI와 Anthropic은 나란히 비공개 IPO를 준비하며…</div>
+</a></li><li><a href="days/2026-10-19.html">
+<div class="date">2026년 10월 19일 월요일</div>
+<div class="preview"><b>해외</b> 딥시크의 신모델 공개와 오픈웨이트 모델 'Beam'의 등장이 보여주듯, AI 경쟁의 무게중심이 성능 그 자체보다 속도와 비용으…</div>
+</a></li><li><a href="days/2026-10-18.html">
+<div class="date">2026년 10월 18일 일요일</div>
+<div class="preview"><b>해외</b> FTC가 OpenAI·Anthropic에 안전성 자료 제출을 공식 요구하며 AI 규제 압박이 커지는 가운데, Apple과 Cl…</div>
+</a></li><li><a href="days/2026-10-17.html">
+<div class="date">2026년 10월 17일 토요일</div>
+<div class="preview"><b>해외</b> Anthropic은 싱가포르 진출과 독립 평가·사이버 검증 체계 확대로 신뢰 기반 확장에 속도를 내는 한편, 해외 SaaS·핀…</div>
+</a></li><li><a href="days/2026-10-16.html">
+<div class="date">2026년 10월 16일 금요일</div>
+<div class="preview"><b>해외</b> AI 경쟁의 축이 '모델 성능'에서 '도입 속도와 인재'로 옮겨가고 있다 — Anthropic의 1억 달러 인재 투자와 글로벌…</div>
+</a></li><li><a href="days/2026-10-15.html">
+<div class="date">2026년 10월 15일 목요일</div>
+<div class="preview"><b>해외</b> 메타·구글·앤트로픽이 숨가쁜 AI 모델 출시 경쟁을 벌이며 UX 리서치와 디자인 업무 전반을 AI 중심으로 재편하는 동시에, …</div>
+</a></li><li><a href="days/2026-10-14.html">
+<div class="date">2026년 10월 14일 수요일</div>
+<div class="preview"><b>해외</b> 프론티어 AI 모델 경쟁이 성능 그 자체보다 반도체 공급망과 비용 구조 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔버스…</div>
+</a></li><li><a href="days/2026-10-13.html">
+<div class="date">2026년 10월 13일 화요일</div>
+<div class="preview"><b>해외</b> Anthropic·OpenAI·Google이 한 달 새 나란히 저비용·고효율 모델로 세대교체에 나선 가운데, 텐센트의 7조원대…</div>
+</a></li><li><a href="days/2026-10-12.html">
+<div class="date">2026년 10월 12일 월요일</div>
+<div class="preview"><b>해외</b> OpenAI가 GPT-6 Astra를 '사이버보안 중대(Critical)' 등급 모델로 공개하며 AGI 담론에 불을 지핀 날,…</div>
+</a></li><li><a href="days/2026-10-11.html">
+<div class="date">2026년 10월 11일 일요일</div>
+<div class="preview"><b>해외</b> Anthropic과 OpenAI가 한 달 간격으로 플래그십 모델을 교체하며 AI 경쟁의 무게중심이 '성능'에서 '에이전트 실행…</div>
+</a></li><li><a href="days/2026-10-10.html">
+<div class="date">2026년 10월 10일 토요일</div>
+<div class="preview"><b>해외</b> 중국 AI랩 마누스의 메타 결별 후 단독 투자 유치와 AMD의 월드모델 스타트업 인수가 겹치며, AI 산업 자본이 빅테크 인수…</div>
+</a></li>
+</ul>
+<footer class="site">UPLEAT &middot; Daily Trend Archive</footer>
+</div>
+</body>
+</html>

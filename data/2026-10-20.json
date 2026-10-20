@@ -1,0 +1,146 @@
+{
+  "intl": {
+    "date": "2026-10-20",
+    "dateLabel": "2026년 10월 20일 화요일",
+    "region": "해외",
+    "takeawayHtml": "<b>AI 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이</b>, OpenAI와 Anthropic은 나란히 비공개 IPO를 준비하며 자금 조달의 무대를 사모에서 공개 시장으로 옮기고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic 'Claude Opus 5.5' 공개··· OpenAI도 저가형 GPT-6 모델 2종으로 맞대응",
+            "url": "https://siliconangle.com/2026/09/22/anthropic-releases-claude-opus-5-5-and-openai-counters-with-two-cheaper-gpt-6-models/",
+            "source": "SiliconANGLE",
+            "pubDate": "2026-09-22",
+            "image": null,
+            "insight": "<b>성능은 유지하면서 비용은 40% 낮춘 모델 경쟁</b>이 본격화되면서, AI 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다.",
+            "duplicate": false
+          },
+          {
+            "title": "애플, iOS 27.2에서 Siri AI에 한국어 포함 5개 언어 추가",
+            "url": "https://9to5mac.com/2026/09/16/ios-27-2-expands-siri-ai-to-these-new-languages/",
+            "source": "9to5Mac",
+            "pubDate": "2026-09-16",
+            "image": null,
+            "insight": "Siri AI가 영어 단일 언어로 출시된 지 수개월 만에 <b>한국어를 포함한 5개 언어로 확장</b>되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "UX 리서치팀 74%, AI 모더레이션 인터뷰로 디스커버리 서베이 대체",
+            "url": "https://getperspective.ai/blog/state-of-ai-native-ux-research-2026-300-research-teams-replaced-discovery-survey",
+            "source": "Perspective AI",
+            "pubDate": "2026-05-20",
+            "image": null,
+            "insight": "리서치팀 대다수가 <b>AI 모더레이션 인터뷰로 전통적 서베이를 대체</b>하고 있다는 조사는, 정성 리서치의 자동화가 이미 주류가 됐음을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Smashing Magazine, 'AI 시대엔 디자이너의 안목이 더 중요해진다' 뉴스레터 발행",
+            "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-562/",
+            "source": "Smashing Magazine",
+            "pubDate": "2026-06-09",
+            "image": null,
+            "insight": "AI가 반복적인 제작 작업을 대신할수록 <b>디자이너의 심미적 판단과 취향이 핵심 차별화 요소</b>가 된다는 진단은, AI 시대 디자인 역량의 기준이 바뀌고 있음을 시사한다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "OpenAI, Anthropic에 이어 비공개 IPO 신청··· 양사 모두 1조 달러대 밸류 추진",
+            "url": "https://9to5google.com/2026/06/08/openai-not-so-confidentially-submits-its-ipo-filing-just-a-week-after-anthropic/",
+            "source": "9to5Google",
+            "pubDate": "2026-06-08",
+            "image": null,
+            "insight": "AI 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, <b>AI 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동</b>하는 변곡점을 맞고 있다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-20",
+    "dateLabel": "2026년 10월 20일 화요일",
+    "region": "국내",
+    "takeawayHtml": "<b>네이버와 삼성전자가 AI 안전성·활용 체계를 제도화</b>하는 동안, 국내 디자인 스튜디오와 AI 검색 스타트업은 각각 국제 어워드와 투자 유치로 경쟁력을 입증하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버, AI 안전성 체계 적용 사례 공개··· 'AI Safety Progress Report' 첫 발간",
+            "url": "https://byline.network/2026/09/16_29182773-3/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-09-16",
+            "image": null,
+            "insight": "서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, <b>국내 플랫폼도 AI 안전성 검증을 정기 보고 체계로 제도화</b>하고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "삼성전자, DX부문에 제미나이·챗GPT·클로드 등 외부 생성형 AI 6월 공식 도입",
+            "url": "https://www.heraldk.com/article/2026052520140966904",
+            "source": "헤럴드경제",
+            "pubDate": "2026-05-25",
+            "image": null,
+            "insight": "2023년 보안 우려로 챗GPT 사용을 제한했던 삼성전자가 방향을 바꿔 <b>외부 AI를 사내 업무에 전면 허용</b>한 것은, 대기업의 AI 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "LMNT, 전문가 매칭 플랫폼 숨고 BX 리뉴얼··· 2026 iF 디자인 어워드 수상",
+            "url": "https://design.co.kr/focus9/157385/",
+            "source": "월간 디자인",
+            "pubDate": null,
+            "image": null,
+            "insight": "거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 <b>국제 디자인 어워드 수상으로 이어진 것</b>은, 국내 BX 디자인의 완성도가 글로벌 기준에 근접했음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "라이너, 500억원 시리즈C 투자 유치··· 누적 투자 940억원",
+            "url": "https://news.mtn.co.kr/news-detail/2026082508182283668",
+            "source": "머니투데이",
+            "pubDate": "2026-08-25",
+            "image": null,
+            "insight": "오픈AI의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, <b>국내 AI 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁</b>에 들어섰음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "intl": {
+    "date": "2026-10-14",
+    "dateLabel": "2026년 10월 14일 수요일",
+    "region": "해외",
+    "takeawayHtml": "프론티어 AI 모델 경쟁이 <b>성능 그 자체보다 반도체 공급망과 비용 구조</b> 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔버스 안으로 끌어들이는 방향으로 수렴하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "'모델 피로감' 확산…빅테크, 숨 가쁜 속도로 신모델 출시 경쟁",
+            "url": "https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html",
+            "source": "CNBC",
+            "pubDate": "2026-09-06",
+            "image": null,
+            "insight": "며칠 간격으로 신모델이 쏟아지면서 이제 경쟁의 축은 <b>출시 속도가 아니라 실제 채택률</b>로 넘어가고 있다.",
+            "duplicate": false
+          },
+          {
+            "title": "애플, iOS 27.2에서 Siri AI에 한국어·일본어 등 5개 언어 추가",
+            "url": "https://9to5mac.com/2026/09/16/ios-27-2-expands-siri-ai-to-these-new-languages/",
+            "source": "9to5Mac",
+            "pubDate": "2026-09-16",
+            "image": null,
+            "insight": "Siri AI가 영어 단일 언어로 출시된 지 수개월 만에 <b>한국어를 포함한 5개 언어로 확장</b>되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "UX 리서치팀 74%, AI 중심 조사로 디스커버리 서베이 대체",
+            "url": "https://getperspective.ai/blog/state-of-ai-native-ux-research-2026-300-research-teams-replaced-discovery-survey",
+            "source": "Perspective AI",
+            "pubDate": "2026-05-20",
+            "image": null,
+            "insight": "리서치팀 대다수가 <b>AI 모더레이션 인터뷰로 전통적 서베이를 대체</b>하고 있다는 조사는, 정성 리서치의 자동화가 이미 주류가 됐음을 보여준다.",
+            "duplicate": true
+          },
+          {
+            "title": "Koji, 'UX 리서치 통계 2026' 발표…디자이너 70%가 직접 인사이트 수집",
+            "url": "https://www.koji.so/blog/ux-research-statistics-2026",
+            "source": "Koji",
+            "pubDate": null,
+            "image": null,
+            "insight": "제품 매니저(42%)보다 디자이너(70%)가 더 적극적으로 사용자 인사이트를 모은다는 통계는, <b>리서치 역할이 전담 조직에서 디자이너 개인으로 분산</b>되고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Dezeen Awards 2026 디자인 부문 쇼트리스트 발표",
+            "url": "https://www.dezeen.com/?p=2367060",
+            "source": "Dezeen",
+            "pubDate": "2026-09-23",
+            "image": null,
+            "insight": "Bocci, Kvadrat, Fuseproject 등이 포함된 쇼트리스트는, <b>올해 제품 디자인 어워드의 중심이 소재와 조명 실험으로 이동</b>했음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "피그마 Config 2026, 코드 레이어·모션·에이전트 전면 공개",
+            "url": "https://forum.figma.com/product-updates-3/everything-announced-at-config-2026-55221",
+            "source": "Figma Forum",
+            "pubDate": "2026-06-24",
+            "image": null,
+            "insight": "캔버스에서 코드를 직접 다루는 '코드 레이어'와 네이티브 애니메이션 도구 'Figma Motion'은, <b>디자인 툴의 경쟁이 비주얼 편집을 넘어 제작 전체를 흡수하는 방향</b>으로 가고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "TSMC, 3분기 매출 전년 대비 50% 급증…AI 반도체 수요가 견인",
+            "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262205755-tsmc-q3-revenue-ai-demand-record-tradingkey",
+            "source": "TradingKey",
+            "pubDate": null,
+            "image": null,
+            "insight": "분기 매출이 자체 가이던스를 넘어선 것은, <b>AI 데이터센터용 반도체 수요가 여전히 공급을 앞서고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-14",
+    "dateLabel": "2026년 10월 14일 수요일",
+    "region": "국내",
+    "takeawayHtml": "카카오가 독립 AI 앱을 접고 카카오톡 중심으로 재편하는 동안, <b>국내 핀테크·디자인 스튜디오는 '10년치 서비스'를 하나의 브랜드 스토리로 묶는 리브랜딩</b>에 집중하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, 독립 AI 앱 '카나나' 10월 15일 종료…카카오톡 중심으로 재편",
+            "url": "https://byline.network/2026/09/15_20218273/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-09-15",
+            "image": null,
+            "insight": "출시 1년여 만에 월간활성사용자가 6만9000명대에서 1만명대로 줄어든 끝에 서비스가 종료된 것은, <b>독립 AI 앱보다 메신저에 기능을 얹는 전략이 더 유효함</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "HCI & UX 코리아 2026, 'AI가 UX를 어떻게 바꾸는가' 공통 질문으로",
+            "url": "https://m.etnews.com/20260121000300",
+            "source": "전자신문",
+            "pubDate": "2026-01-21",
+            "image": null,
+            "insight": "키노트 전반에서 더블 다이아몬드 기반 기존 프로세스의 한계가 제기된 것은, <b>국내 UX 업계도 AI 네이티브 설계 방식으로 전환이 불가피</b>함을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "토스, 홈페이지 전면 개편…10년의 서비스 확장 과정을 하나의 스토리로",
+            "url": "https://toss.im/newsroom/toss-new-homepage",
+            "source": "토스 뉴스룸",
+            "pubDate": "2026-08-18",
+            "image": null,
+            "insight": "인트로 영상은 생성형 AI로, 정교한 카메라 워크는 3D로 제작한 것은, <b>국내 핀테크 기업도 브랜드 사이트 제작에 AI와 3D를 결합</b>하기 시작했음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "스튜디오 듀당스, 국보디자인 BI·BX 체계 재구성",
+            "url": "https://www.hankyung.com/article/202607243592O",
+            "source": "한국경제",
+            "pubDate": "2026-07-24",
+            "image": null,
+            "insight": "로고 교체에 그치지 않고 제안서부터 현장 사인물까지 아우르는 아이콘 체계를 설계한 것은, <b>B2B 기업도 전사적 브랜드 경험 재정비에 나서고 있음</b>을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI 반도체 양대산맥 '리벨리온·퓨리오사', 8000억 규모 프리IPO 추진",
+            "url": "https://www.smarttoday.co.kr/ko-kr/articles/101598",
+            "source": "스마트투데이",
+            "pubDate": "2026-08-26",
+            "image": null,
+            "insight": "두 회사 모두 조 단위 밸류에이션으로 프리IPO를 진행 중인 것은, <b>국내 AI 반도체 스타트업에 대한 상장 전 자금 수요가 여전히 뜨겁다</b>는 점을 보여준다.",
+            "duplicate": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "intl": {
+    "date": "2026-10-12",
+    "dateLabel": "2026년 10월 12일 월요일",
+    "region": "해외",
+    "takeawayHtml": "OpenAI가 <b>GPT-6 Astra</b>를 '사이버보안 중대(Critical)' 등급 모델로 공개하며 AGI 담론에 불을 지핀 날, <b>Supabase의 Turso 인수</b>는 AI 에이전트가 직접 데이터베이스를 만드는 시대가 이미 시작됐음을 보여준다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "OpenAI, 'GPT-6 Astra' 공개—AI 안전성 '중대(Critical)' 등급 첫 모델",
+            "url": "https://cryptobriefing.com/openai-highlights-ai-milestone-stresses-urgency-with-gpt-6-astra-launch/",
+            "source": "Cryptobriefing",
+            "pubDate": "2026-09-03",
+            "image": null,
+            "insight": "OpenAI가 <b>사이버보안 위험을 '중대(Critical)' 단계로 규정한 첫 모델</b>을 공개했다는 점은, 모델 성능 경쟁이 이제 안전성 통제 경쟁으로 번지고 있음을 보여준다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Dezeen Awards 2026, 인테리어 디자이너 줄리앙 세방·그래픽 디자이너 나타샤 젠 심사위원 선정",
+            "url": "https://www.dezeen.com/2026/05/25/julien-sebban-natasha-jen-dezeen-awards-2026-judges/",
+            "source": "Dezeen",
+            "pubDate": "2026-05-25",
+            "image": null,
+            "insight": "세계 최대 디자인 어워드가 <b>인테리어·그래픽·건축을 넘나드는 심사위원단</b>을 꾸린 것은, 좋은 제품 디자인이 더는 한 분야의 전문성만으로 평가되지 않는다는 신호다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "Supabase, 1,500억 원 추가 투자 유치하며 Turso 인수—'AI 에이전트 데이터베이스' 정조준",
+            "url": "https://pulse2.com/supabase-raises-150-million-and-acquires-turso/",
+            "source": "Pulse2",
+            "pubDate": "2026-10-02",
+            "image": null,
+            "insight": "Supabase는 <b>신규 데이터베이스의 약 70%가 AI 에이전트에 의해 생성된다</b>고 밝혔는데, 이는 개발자 도구 시장의 주 고객이 인간에서 에이전트로 옮겨가고 있다는 뜻이다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-12",
+    "dateLabel": "2026년 10월 12일 월요일",
+    "region": "국내",
+    "takeawayHtml": "네이버·카카오가 AI 경쟁을 위해 <b>조직 구조 자체를 재편</b>하는 사이, 디자인 업계는 전통 공간과 장수 브랜드를 '복합문화공간'과 '시인성'이라는 키워드로 다시 그리고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버는 '확장', 카카오는 '분할'…AI 패권 경쟁 속 빅테크 거버넌스 승부수",
+            "url": "https://news.mtn.co.kr/news-detail/2026091516152870323",
+            "source": "머니투데이",
+            "pubDate": "2026-09-15",
+            "image": null,
+            "insight": "카카오가 <b>인적분할로 카카오톡과 AI를 한 축으로 묶은 것</b>은, AI 조직을 따로 떼어낼 만큼 메신저 자체를 AI 플랫폼으로 전환하는 일이 시급해졌다는 뜻이다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "쿠팡·네이버플러스스토어·카카오쇼핑, 1년 사이 달라진 온라인 쇼핑 트렌드",
+            "url": "https://blog.opensurvey.co.kr/article/online_shopping-2026-2/",
+            "source": "오픈서베이",
+            "pubDate": null,
+            "image": null,
+            "insight": "<b>네이버플러스스토어가 만족도 84%로 쿠팡(72%)을 앞지른 것</b>은, 배송 속도라는 단일 강점만으로는 더 이상 쇼핑 경험 1위를 지키기 어렵다는 신호다.",
+            "duplicate": true
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "[Project+] 새 옷 입은 63빌딩, 브랜드 아이덴티티 디자인 ① 한화생명",
+            "url": "https://design.co.kr/article/165212/",
+            "source": "월간 디자인",
+            "pubDate": null,
+            "image": null,
+            "insight": "한화생명이 63빌딩을 '오피스'가 아닌 <b>복합문화공간으로 재정의하며 아이덴티티부터 새로 설계</b>한 것은, 공간 리뉴얼이 이제 외관 공사가 아니라 브랜드 전략의 일부로 다뤄지고 있음을 보여준다.",
+            "duplicate": false
+          },
+          {
+            "title": "[Project+] 불사조를 넘어 푸른 불꽃으로, 핫식스 패키지 디자인 리뉴얼 ① 롯데칠성음료",
+            "url": "https://design.co.kr/article/173002/",
+            "source": "월간 디자인",
+            "pubDate": null,
+            "image": null,
+            "insight": "10년 가까이 쓴 <b>불사조 그래픽을 내리고 'HOT6' 레터링과 블루 컬러를 전면에 세운 것</b>은, 장수 브랜드일수록 상징물보다 브랜드명 자체의 시인성이 더 중요해지고 있다는 뜻이다.",
+            "duplicate": false
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "8월 韓 스타트업 투자 6,569억원…해외 성과 검증된 기업에 베팅 집중",
+            "url": "https://wowtale.net/2026/09/01/263756/",
+            "source": "와우테일",
+            "pubDate": "2026-09-01",
+            "image": null,
+            "insight": "투자 건수는 줄었는데 <b>해외 시장에서 성과를 이미 증명한 기업에 투자가 몰렸다</b>는 것은, 국내 투자자들이 검증되지 않은 아이디어보다 확인된 트랙션에 더 베팅하고 있다는 신호다.",
+            "duplicate": false
+          }
+        ]
+      }
+    ]
+  }
+}
