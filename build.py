@@ -96,8 +96,6 @@ header.site{margin-bottom:22px;}
 .region-tab-btn:hover:not(.active){color:var(--ink);}
 h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .note{font-size:13px;color:var(--sub);background:#F7F7F7;padding:14px 16px;margin:16px 0 0;line-height:1.7;}
-.back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
-.back:hover{text-decoration:underline;}
 
 /* GNB search + text-only tabs — right side of the single-row GNB, no chrome */
 .search-box{position:relative;max-width:220px;flex:1;min-width:150px;margin:0;}
@@ -114,10 +112,10 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.feed-list{grid-template-columns:1fr;gap:28px;}}
-.feed-item{padding:0;border-top:none;height:100%;transition:opacity .45s ease;}
+.feed-item{padding:0;border-top:none;height:100%;transition:opacity .55s cubic-bezier(.34,1.56,.64,1), transform .55s cubic-bezier(.34,1.56,.64,1);}
 .feed-link{display:flex;flex-direction:column;height:100%;}
 .feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
-.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
 .feed-item:hover .feed-thumb img{transform:scale(1.06);}
 .feed-thumb-emoji{font-size:34px;opacity:.5;}
 .feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:13px;}
@@ -185,7 +183,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.related-scroll{grid-template-columns:1fr;gap:24px;}}
 .related-tile{width:100%;background:var(--card);display:block;overflow:hidden;}
-.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .4s ease;}
+.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
 .related-tile:hover .rt-art{transform:scale(1.06);}
 .related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 
@@ -243,8 +241,12 @@ FEED_SCRIPT = """
         shown++;
         if (wasHidden) {
           item.style.opacity = '0';
+          item.style.transform = 'translateY(28px)';
           requestAnimationFrame(function(){
-            requestAnimationFrame(function(){ item.style.opacity = '1'; });
+            requestAnimationFrame(function(){
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            });
           });
         }
       }
@@ -460,7 +462,7 @@ def pick_related(articles, idx, limit=4):
     return picked
 
 
-def render_article_page(a, prev_a, next_a, related):
+def render_article_page(a, next_a, related):
     color = CATEGORY_COLOR[a["cat_key"]]
     emoji = CATEGORY_EMOJI.get(a["cat_key"], "📡")
     thumb = find_thumb(a["id"])
@@ -470,7 +472,6 @@ def render_article_page(a, prev_a, next_a, related):
         tags.append(a["source"])
     tags_html = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in tags)
 
-    nav_prev = f'<a href="{prev_a["id"]}.html">← 이전 글</a>' if prev_a else '<span></span>'
     nav_next = f'<a href="{next_a["id"]}.html">다음 글 →</a>' if next_a else '<span></span>'
 
     hero_bg = "" if thumb else f'background:{color}33;'
@@ -498,11 +499,7 @@ def render_article_page(a, prev_a, next_a, related):
 <div class="related-scroll">{"".join(related_tiles)}</div>
 </div>'''
 
-    return f'''<div class="wrap" style="padding-bottom:0;">
-<a class="back" href="../index.html">← 피드로</a>
-</div>
-
-<div class="hero-cover" style="{hero_bg}">
+    return f'''<div class="hero-cover" style="{hero_bg}">
 {hero_photo_html}
 <div class="hero-inner">
 {hero_emoji_html}
@@ -523,9 +520,8 @@ def render_article_page(a, prev_a, next_a, related):
 <div class="detail-note">이 글은 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드 중 하나입니다. 올해 실제로 발행된 기사만 다루며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일 내 동일 URL로 이미 글이 있으면 새로 만들지 않고 걸러냅니다.</div>
 </div>
 
-<div class="daynav">{nav_prev}<span class="spacer"></span>{nav_next}</div>
+<div class="daynav"><span class="spacer"></span>{nav_next}</div>
 {related_html}
-<a class="back" href="../index.html">← 피드로</a>
 {FOOTER_HTML}
 </div>'''
 
@@ -579,10 +575,9 @@ def build():
 
     # ---- article pages ----
     for i, a in enumerate(articles):
-        prev_a = articles[i + 1] if i + 1 < len(articles) else None  # older
         next_a = articles[i - 1] if i - 1 >= 0 else None  # newer
         related = pick_related(articles, i)
-        body = render_article_page(a, prev_a, next_a, related)
+        body = render_article_page(a, next_a, related)
 
         with open(os.path.join(ARTICLES_DIR, f"{a['id']}.html"), "w", encoding="utf-8") as f:
             f.write(
