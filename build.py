@@ -76,7 +76,7 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"Noto Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
@@ -84,12 +84,17 @@ body{
 a{color:inherit;text-decoration:none;}
 .gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
 .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
-.brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);flex:0 0 auto;}
+.brand{font-weight:700;letter-spacing:.02em;font-size:15px;color:var(--ink);flex:0 0 auto;}
 .brand a{color:inherit;}
 .gnb-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap;flex:1;justify-content:flex-end;}
 
 header.site{margin-bottom:22px;}
-h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.region-tab-row{display:flex;gap:20px;flex:0 0 auto;}
+.region-tab-btn{appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:14px;font-weight:600;padding:4px 0;transition:color .12s ease;}
+.region-tab-btn.active{color:var(--ink);font-weight:700;}
+.region-tab-btn:hover:not(.active){color:var(--ink);}
+h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .note{font-size:13px;color:var(--sub);background:#F7F7F7;padding:14px 16px;margin:16px 0 0;line-height:1.7;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
@@ -102,7 +107,7 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .search-icon{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--sub2);pointer-events:none;}
 .pill-row{display:flex;gap:18px;flex-wrap:wrap;flex:0 0 auto;}
 .pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:13px;font-weight:600;padding:7px 0;transition:color .12s ease;}
-.pill-btn.active{color:var(--ink);font-weight:800;}
+.pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
 
 /* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
@@ -115,8 +120,8 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
 .feed-item:hover .feed-thumb img{transform:scale(1.06);}
 .feed-thumb-emoji{font-size:34px;opacity:.5;}
-.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:13px;}
-.feed-title{font-size:20px;font-weight:800;margin:0 0 11px;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(20px*1.4*3);}
+.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:13px;}
+.feed-title{font-size:20px;font-weight:700;margin:0 0 11px;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(20px*1.4*2);}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(16px*1.6*2);}
 .feed-hashtag{display:inline-block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:14px;}
@@ -133,7 +138,7 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 
 /* "최근 핵심 인사이트" — full-width strip below the grid, same 4-col system as the feed */
 .rail-strip{margin-top:52px;padding-top:28px;border-top:1px solid var(--line);}
-.rail-strip h3{font-size:14px;margin:0 0 18px;font-weight:800;}
+.rail-strip h3{font-size:14px;margin:0 0 18px;font-weight:700;}
 .rail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.rail-grid{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.rail-grid{grid-template-columns:1fr;gap:24px;}}
@@ -154,10 +159,10 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .hero-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
 .hero-cover .hero-emoji{font-size:84px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
 .hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
 .detail-card{position:relative;padding:30px 0 0;}
-.detail-card > h1{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.4;}
+.detail-card > h1{font-size:25px;font-weight:700;margin-bottom:14px;line-height:1.4;}
 .byline{display:flex;align-items:center;gap:7px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
 .byline-dot{color:var(--sub2);font-size:13px;}
 .byline-name{font-size:13px;font-weight:700;color:var(--ink);}
@@ -175,7 +180,7 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .daynav .spacer{flex:1;}
 
 .related-strip{margin-bottom:28px;}
-.related-strip h3{font-size:14px;font-weight:800;margin:0 0 18px;}
+.related-strip h3{font-size:14px;font-weight:700;margin:0 0 18px;}
 .related-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.related-scroll{grid-template-columns:1fr;gap:24px;}}
@@ -209,14 +214,17 @@ FEED_SCRIPT = """
   var searchInput = document.getElementById('searchInput');
   var searchForm = searchInput ? searchInput.closest('form') : null;
   var pillBtns = Array.prototype.slice.call(document.querySelectorAll('.pill-btn'));
+  var regionBtns = Array.prototype.slice.call(document.querySelectorAll('.region-tab-btn'));
 
   var params = new URLSearchParams(location.search);
-  var state = { cat: params.get('cat') || 'all', q: (params.get('q') || '').trim().toLowerCase(), visible: PAGE_SIZE };
+  var state = { cat: params.get('cat') || 'all', region: params.get('region') || 'all', q: (params.get('q') || '').trim().toLowerCase(), visible: PAGE_SIZE };
   if (searchInput && params.get('q')) searchInput.value = params.get('q');
   pillBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.cat === state.cat); });
+  regionBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.region === state.region); });
 
   function matches(item){
     if (state.cat !== 'all' && item.dataset.cat !== state.cat) return false;
+    if (state.region !== 'all' && item.dataset.region !== state.region) return false;
     if (state.q && item.dataset.search.indexOf(state.q) === -1) return false;
     return true;
   }
@@ -267,6 +275,15 @@ FEED_SCRIPT = """
       render();
     });
   });
+  regionBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      regionBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.region = btn.dataset.region;
+      state.visible = PAGE_SIZE;
+      render();
+    });
+  });
   loadBtn.addEventListener('click', loadMore);
 
   render();
@@ -293,7 +310,7 @@ HEAD = """<!DOCTYPE html>
 <title>{title}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{style}</style>
 </head>
 <body>
@@ -393,7 +410,7 @@ def render_feed_item(a):
     else:
         thumb_html = f'<span class="feed-thumb-emoji">{CATEGORY_EMOJI.get(a["cat_key"], "📡")}</span>'
 
-    return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-search="{search_bits}">
+    return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-region="{a['region_key']}" data-search="{search_bits}">
 <a class="feed-link" href="articles/{a['id']}.html">
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
   <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
@@ -517,7 +534,14 @@ def build():
 
     index_body = f'''<div class="wrap">
 <header class="site">
-<h1>UPLEAT 데일리 트렌드 아카이브</h1>
+<div class="header-row">
+  <h1>UPLEAT 데일리 트렌드 아카이브</h1>
+  <div class="region-tab-row" id="regionTabRow">
+    <button class="region-tab-btn active" data-region="all">전체</button>
+    <button class="region-tab-btn" data-region="domestic">국내</button>
+    <button class="region-tab-btn" data-region="intl">해외</button>
+  </div>
+</div>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
 </header>
 
