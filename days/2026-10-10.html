@@ -96,11 +96,37 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page (kept simpler, same design tokens) */
-.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;}
+/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
+.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
+.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:22px;}
+.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
+.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
+.index-box ol{margin:0;padding-left:18px;}
+.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
+.index-box a{color:var(--ink);}
+.index-box a:hover{color:var(--accent);}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
+.detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
+
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:16px 0 28px;font-size:14px;font-weight:600;background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;}
 .daynav a{color:var(--accent);}
 .daynav .spacer{flex:1;}
-.region-block{margin-bottom:36px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:22px 22px 10px;}
+
+.related-strip{margin-bottom:28px;}
+.related-strip h3{font-size:14px;font-weight:800;margin:0 0 12px;}
+.related-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;}
+.related-tile{flex:0 0 auto;width:120px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;display:block;}
+.related-tile .rt-art{height:64px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;}
+.related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
+.related-tile.current{outline:2px solid var(--accent);}
+
+.region-block{margin-bottom:36px;}
 .region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
 .region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
 .region-date{font-size:19px;font-weight:800;}
@@ -133,11 +159,21 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </div>
 <div class="wrap">
 <a class="back" href="../index.html">← 전체 목록</a>
-<header class="site">
-<p class="eyebrow">UPLEAT Daily Brief</p>
-<h1>2026년 10월 10일 토요일</h1>
-</header>
-<section class="region-block">
+
+<div class="hero-cover" style="background:linear-gradient(135deg,#F2767A,#E8515E)"><div class="hero-emoji">📡</div>
+<div class="hero-info"><span class="hero-tag">UPLEAT Daily Brief</span><span class="hero-date">2026년 10월 10일 토요일</span></div>
+</div>
+
+<div class="detail-card">
+<h1>2026년 10월 10일 토요일 트렌드 브리프</h1>
+<div class="index-box">
+<div class="index-title">INDEX</div>
+<ol>
+<li><a href="#intl">🌐 해외 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
+<li><a href="#domestic">🇰🇷 국내 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
+</ol>
+</div>
+<section class="region-block" id="intl">
 <div class="region-head"><span class="region-badge">🌐 해외</span><span class="region-date">2026년 10월 10일 토요일</span></div>
 <div class="takeaway"><b>중국 AI랩 마누스의 메타 결별 후 단독 투자 유치</b>와 AMD의 월드모델 스타트업 인수가 겹치며, AI 산업 자본이 빅테크 인수 실패를 독립 자금력으로 돌파하거나 반도체 기업의 수직통합으로 흡수되는 두 갈래로 갈라지고 있다.</div>
 <details class="cat">
@@ -186,7 +222,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </div></div>
 </details>
 </section>
-<section class="region-block">
+<section class="region-block" id="domestic">
 <div class="region-head"><span class="region-badge">🇰🇷 국내</span><span class="region-date">2026년 10월 10일 토요일</span></div>
 <div class="takeaway"><b>SKT·KT·카카오가 추석 연휴에도 매달린 '모두의 AI' 10월 베타 출범</b>이 임박하며, 정부 주도 국민 AI 서비스가 일정 지연 없이 현실화되는 단계에 들어섰다.</div>
 <details class="cat">
@@ -207,7 +243,21 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <div class="cat-body"><div class="empty-note">2026년 발행 기사를 찾지 못했습니다.</div></div>
 </details>
 </section>
+<div class="tag-cloud"><span class="tag-pill">#해외</span><span class="tag-pill">#국내</span><span class="tag-pill">#AI</span><span class="tag-pill">#DESIGN</span><span class="tag-pill">#TECH &amp; BIZ</span><span class="tag-pill">#TechCrunch</span><span class="tag-pill">#Dezeen</span><span class="tag-pill">#SiliconANGLE</span><span class="tag-pill">#idnfinancials.com</span><span class="tag-pill">#머니투데이방송(MTN)</span></div>
+<div class="detail-note">이 리포트는 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드입니다. 올해 실제로 발행된 기사만 사용하며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일과 중복된 기사는 "중복" 뱃지로 표시됩니다.</div>
+</div>
+
 <div class="daynav"><span></span><span class="spacer"></span><a href="2026-10-11.html">다음날 →</a></div>
+<div class="related-strip">
+<h3>다른 날짜 보기</h3>
+<div class="related-scroll"><a class="related-tile" href="2026-10-11.html">
+<div class="rt-art" style="background:linear-gradient(135deg,#F2A93B,#F08424)">11</div>
+<div class="rt-label">일요일</div>
+</a><a class="related-tile" href="2026-10-12.html">
+<div class="rt-art" style="background:linear-gradient(135deg,#8F8CF5,#6A63E8)">12</div>
+<div class="rt-label">월요일</div>
+</a></div>
+</div>
 <a class="back" href="../index.html">← 전체 목록</a>
 <footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
 </div>

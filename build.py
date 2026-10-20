@@ -127,11 +127,37 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* day detail page (kept simpler, same design tokens) */
-.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;}
+/* day detail page — hero cover + single white content card (wiseapp detail-page pattern) */
+.hero-cover{height:200px;border-radius:16px;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:-28px;overflow:hidden;}
+.hero-cover .hero-emoji{font-size:64px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+.hero-info{position:absolute;left:20px;bottom:16px;display:flex;align-items:center;gap:8px;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.25);}
+.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:44px 28px 30px;}
+.detail-card > h1{font-size:23px;margin-bottom:22px;}
+.index-box{background:#F7F8FA;border-radius:10px;padding:18px 22px;margin-bottom:28px;}
+.index-box .index-title{font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--sub2);margin-bottom:10px;}
+.index-box ol{margin:0;padding-left:18px;}
+.index-box li{font-size:13.5px;font-weight:600;margin-bottom:6px;}
+.index-box a{color:var(--ink);}
+.index-box a:hover{color:var(--accent);}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
+.detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
+
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:16px 0 28px;font-size:14px;font-weight:600;background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;}
 .daynav a{color:var(--accent);}
 .daynav .spacer{flex:1;}
-.region-block{margin-bottom:36px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:22px 22px 10px;}
+
+.related-strip{margin-bottom:28px;}
+.related-strip h3{font-size:14px;font-weight:800;margin:0 0 12px;}
+.related-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;}
+.related-tile{flex:0 0 auto;width:120px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;display:block;}
+.related-tile .rt-art{height:64px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;}
+.related-tile .rt-label{font-size:11.5px;font-weight:700;padding:8px 10px 10px;color:var(--ink);}
+.related-tile.current{outline:2px solid var(--accent);}
+
+.region-block{margin-bottom:36px;}
 .region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
 .region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
 .region-date{font-size:19px;font-weight:800;}
@@ -295,7 +321,7 @@ def render_items(items):
     return "\n".join(parts)
 
 
-def render_region(day):
+def render_region(day, anchor_id):
     region_label = "🌐 해외" if day["region"] == "해외" else "🇰🇷 국내"
     cats_html = []
     for cat in day["categories"]:
@@ -304,11 +330,30 @@ def render_region(day):
 <summary><span class="cat-label">{cat['label']}</span><span class="cat-count">({n})</span></summary>
 <div class="cat-body">{render_items(cat['items'])}</div>
 </details>''')
-    return f'''<section class="region-block">
+    return f'''<section class="region-block" id="{anchor_id}">
 <div class="region-head"><span class="region-badge">{region_label}</span><span class="region-date">{day['dateLabel']}</span></div>
 <div class="takeaway">{day['takeawayHtml']}</div>
 {"".join(cats_html)}
 </section>'''
+
+
+def collect_tags(d):
+    tags = ["해외", "국내"]
+    sources = []
+    for region_key in ("intl", "domestic"):
+        for cat in d[region_key]["categories"]:
+            if cat["items"]:
+                tags.append(cat["label"])
+            for item in cat["items"]:
+                src = item.get("source")
+                if src and src not in sources:
+                    sources.append(src)
+    # de-dup category labels while preserving order
+    seen = []
+    for t in tags:
+        if t not in seen:
+            seen.append(t)
+    return seen + sources[:8]
 
 
 def takeaway_preview(text_html, limit=68):
@@ -440,20 +485,60 @@ def build():
     # ---- day pages ----
     for i, d in enumerate(days):
         date = d["intl"]["date"]
+        label = d["intl"]["dateLabel"]
+        gradient = GRADIENTS[i % len(GRADIENTS)]
         prev_day = days[i + 1]["intl"]["date"] if i + 1 < len(days) else None  # older
         next_day = days[i - 1]["intl"]["date"] if i - 1 >= 0 else None  # newer
 
         nav_prev = f'<a href="{prev_day}.html">← 전날</a>' if prev_day else '<span></span>'
         nav_next = f'<a href="{next_day}.html">다음날 →</a>' if next_day else '<span></span>'
 
+        tags_html = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in collect_tags(d))
+
+        # related strip: up to 2 newer + 2 older neighbors, oldest-first
+        window = [j for j in (i - 2, i - 1, i + 1, i + 2) if 0 <= j < len(days)]
+        window.sort(reverse=True)
+        related_tiles = []
+        for j in window:
+            rd = days[j]
+            rdate = rd["intl"]["date"]
+            rlabel = rd["intl"]["dateLabel"]
+            day_num = rdate.split("-")[-1]
+            weekday = rlabel.split(" ")[-1].replace("요일", "")
+            related_tiles.append(f'''<a class="related-tile" href="{rdate}.html">
+<div class="rt-art" style="background:{GRADIENTS[j % len(GRADIENTS)]}">{day_num}</div>
+<div class="rt-label">{weekday}요일</div>
+</a>''')
+        related_html = ""
+        if related_tiles:
+            related_html = f'''<div class="related-strip">
+<h3>다른 날짜 보기</h3>
+<div class="related-scroll">{"".join(related_tiles)}</div>
+</div>'''
+
         body = f'''<a class="back" href="../index.html">← 전체 목록</a>
-<header class="site">
-<p class="eyebrow">UPLEAT Daily Brief</p>
-<h1>{d['intl']['dateLabel']}</h1>
-</header>
-{render_region(d['intl'])}
-{render_region(d['domestic'])}
+
+<div class="hero-cover" style="background:{gradient}"><div class="hero-emoji">📡</div>
+<div class="hero-info"><span class="hero-tag">UPLEAT Daily Brief</span><span class="hero-date">{label}</span></div>
+</div>
+
+<div class="detail-card">
+<h1>{label} 트렌드 브리프</h1>
+<div class="index-box">
+<div class="index-title">INDEX</div>
+<ol>
+<li><a href="#intl">🌐 해외 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
+<li><a href="#domestic">🇰🇷 국내 트렌드 — AI · UX · DESIGN · TECH &amp; BIZ</a></li>
+</ol>
+</div>
+{render_region(d['intl'], 'intl')}
+{render_region(d['domestic'], 'domestic')}
+<div class="tag-cloud">{tags_html}</div>
+<div class="detail-note">이 리포트는 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드입니다. 올해 실제로 발행된 기사만 사용하며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일과 중복된 기사는 "중복" 뱃지로 표시됩니다.</div>
+</div>
+
 <div class="daynav">{nav_prev}<span class="spacer"></span>{nav_next}</div>
+{related_html}
 <a class="back" href="../index.html">← 전체 목록</a>'''
 
         with open(os.path.join(DAYS_DIR, f"{date}.html"), "w", encoding="utf-8") as f:
