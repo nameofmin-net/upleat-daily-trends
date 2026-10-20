@@ -4,50 +4,109 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPLEAT 데일리 트렌드 아카이브</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
 :root{
-  --accent:#2647E6;
-  --accent-dim:#EEF1FD;
+  --accent:#1868E0;
+  --accent-dim:#EAF2FE;
   --ink:#16181D;
-  --sub:#6B7280;
-  --line:#E6E8EC;
-  --bg:#FAFAFB;
+  --sub:#656973;
+  --sub2:#8B92A0;
+  --line:#E9EBEF;
+  --bg:#F3F5F7;
   --card:#FFFFFF;
+  --shadow:0 4px 10px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
   line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:760px;margin:0 auto;padding:48px 20px 96px;}
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;}
-header.site{margin-bottom:36px;}
+.wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
+a{color:inherit;text-decoration:none;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
+.brand a{color:inherit;}
+.topbar .gh{font-size:13px;color:var(--sub);}
+.topbar .gh:hover{color:var(--accent);}
+
+header.site{margin-bottom:22px;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
-h1{font-size:26px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
-.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;margin:18px 0 0;}
-.back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;}
-.day-list{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
-.day-list li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .15s ease;}
-.day-list li:hover{border-color:var(--accent);}
-.day-list a{display:block;color:var(--ink);}
-.day-list .date{font-weight:700;font-size:15px;}
-.day-list .preview{font-size:13px;color:var(--sub);margin-top:4px;}
-.day-list .preview b{color:var(--ink);font-weight:600;}
+h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
+.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;margin:16px 0 0;}
+.back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
+.back:hover{text-decoration:underline;}
+
+/* region text-tabs */
+.tabs-row{display:flex;gap:22px;margin:26px 0 0;border-bottom:1px solid var(--line);}
+.tab-btn{appearance:none;background:none;border:none;cursor:pointer;font-family:inherit;padding:10px 2px 12px;font-size:15px;font-weight:600;color:var(--sub2);border-bottom:2px solid transparent;margin-bottom:-1px;}
+.tab-btn.active{color:var(--ink);border-bottom-color:var(--ink);}
+.tab-btn:hover{color:var(--ink);}
+
+/* search + pill filters row */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 26px;}
+.search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
+.search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
+.search-box input:focus{outline:none;border-color:var(--accent);}
+.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap;}
+.pill-btn{appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
+.pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+.pill-btn:hover:not(.active){border-color:var(--sub2);}
+
+/* layout: grid + aside */
+.content-layout{display:grid;grid-template-columns:1fr 272px;gap:24px;align-items:start;}
+@media (max-width:860px){.content-layout{grid-template-columns:1fr;}}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media (max-width:860px){.card-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.card-grid{grid-template-columns:1fr;}}
+
+.day-card{display:block;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;transition:transform .15s ease, box-shadow .15s ease;}
+.day-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(16,24,40,.12);}
+.day-card .art{height:88px;display:flex;align-items:center;justify-content:center;font-size:30px;position:relative;}
+.day-card .art .badges{position:absolute;top:10px;left:10px;display:flex;gap:5px;}
+.day-card .rbadge{font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
+.day-card .body{padding:14px 16px 16px;}
+.day-card .date{font-weight:700;font-size:15px;margin-bottom:5px;letter-spacing:-.01em;}
+.day-card .preview{font-size:12.5px;color:var(--sub);line-height:1.55;min-height:38px;}
+.day-card .preview b{color:var(--ink);font-weight:700;}
+.day-card .meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.cat-chip{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;}
+.hidden-initial{display:none;}
+
+.loadmore-wrap{text-align:center;margin-top:24px;}
+.loadmore-btn{appearance:none;cursor:pointer;font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--sub);font-weight:700;font-size:14px;padding:13px 0;width:100%;border-radius:10px;box-shadow:var(--shadow);}
+.loadmore-btn:hover{border-color:var(--accent);color:var(--accent);}
+.no-results{font-size:14px;color:var(--sub);padding:40px 0;text-align:center;}
+
+aside.rail{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:18px;}
+aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
+.rail-item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);}
+.rail-item:first-of-type{border-top:none;padding-top:0;}
+.rail-num{font-size:13px;font-weight:800;color:var(--accent);flex:0 0 auto;}
+.rail-text{font-size:12.5px;color:var(--ink);line-height:1.5;}
+.rail-text b{color:var(--accent);}
+.rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:2px;}
+
+.scrolltop{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:50;}
+.scrolltop.show{opacity:1;pointer-events:auto;}
+.scrolltop:hover{transform:translateY(-2px);}
+
+/* day detail page (kept simpler, same design tokens) */
 .daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;}
+.daynav a{color:var(--accent);}
 .daynav .spacer{flex:1;}
-.region-block{margin-bottom:40px;}
+.region-block{margin-bottom:36px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:22px 22px 10px;}
 .region-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
 .region-badge{font-size:11px;font-weight:800;letter-spacing:.03em;padding:3px 10px;border-radius:999px;background:var(--accent-dim);color:var(--accent);}
-.region-date{font-size:20px;font-weight:800;}
-.takeaway{margin:14px 0 20px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
+.region-date{font-size:19px;font-weight:800;}
+.takeaway{margin:14px 0 18px;padding:14px 16px;background:var(--accent-dim);border-radius:10px;font-size:14px;font-weight:600;}
 .takeaway b{color:var(--accent);}
-details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--card);overflow:hidden;}
+details.cat{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;overflow:hidden;}
 details.cat summary{cursor:pointer;list-style:none;padding:12px 16px;font-size:13px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
 details.cat summary::-webkit-details-marker{display:none;}
 details.cat summary::before{content:"▸";color:var(--accent);transition:transform .15s ease;}
@@ -68,49 +127,257 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </style>
 </head>
 <body>
+<div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
+  <div class="brand"><a href="index.html">UPLEAT · Daily Trend Archive</a></div>
+  <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
 <div class="wrap">
 <header class="site">
 <p class="eyebrow">UPLEAT</p>
 <h1>UPLEAT 데일리 트렌드 아카이브</h1>
-<p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 그대로 미러링하며, 새 리포트가 생성될 때마다 자동으로 업데이트됩니다.</p>
+<p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 그대로 미러링하며, 새 리포트가 생성될 때마다 자동으로 업데이트됩니다. 총 11일치 수록.</p>
 </header>
-<ul class="day-list">
-<li><a href="days/2026-10-20.html">
-<div class="date">2026년 10월 20일 화요일</div>
-<div class="preview"><b>해외</b> AI 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이, OpenAI와 Anthropic은 나란히 비공개 IPO를 준비하며…</div>
-</a></li><li><a href="days/2026-10-19.html">
-<div class="date">2026년 10월 19일 월요일</div>
-<div class="preview"><b>해외</b> 딥시크의 신모델 공개와 오픈웨이트 모델 'Beam'의 등장이 보여주듯, AI 경쟁의 무게중심이 성능 그 자체보다 속도와 비용으…</div>
-</a></li><li><a href="days/2026-10-18.html">
-<div class="date">2026년 10월 18일 일요일</div>
-<div class="preview"><b>해외</b> FTC가 OpenAI·Anthropic에 안전성 자료 제출을 공식 요구하며 AI 규제 압박이 커지는 가운데, Apple과 Cl…</div>
-</a></li><li><a href="days/2026-10-17.html">
-<div class="date">2026년 10월 17일 토요일</div>
-<div class="preview"><b>해외</b> Anthropic은 싱가포르 진출과 독립 평가·사이버 검증 체계 확대로 신뢰 기반 확장에 속도를 내는 한편, 해외 SaaS·핀…</div>
-</a></li><li><a href="days/2026-10-16.html">
-<div class="date">2026년 10월 16일 금요일</div>
-<div class="preview"><b>해외</b> AI 경쟁의 축이 '모델 성능'에서 '도입 속도와 인재'로 옮겨가고 있다 — Anthropic의 1억 달러 인재 투자와 글로벌…</div>
-</a></li><li><a href="days/2026-10-15.html">
-<div class="date">2026년 10월 15일 목요일</div>
-<div class="preview"><b>해외</b> 메타·구글·앤트로픽이 숨가쁜 AI 모델 출시 경쟁을 벌이며 UX 리서치와 디자인 업무 전반을 AI 중심으로 재편하는 동시에, …</div>
-</a></li><li><a href="days/2026-10-14.html">
-<div class="date">2026년 10월 14일 수요일</div>
-<div class="preview"><b>해외</b> 프론티어 AI 모델 경쟁이 성능 그 자체보다 반도체 공급망과 비용 구조 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔버스…</div>
-</a></li><li><a href="days/2026-10-13.html">
-<div class="date">2026년 10월 13일 화요일</div>
-<div class="preview"><b>해외</b> Anthropic·OpenAI·Google이 한 달 새 나란히 저비용·고효율 모델로 세대교체에 나선 가운데, 텐센트의 7조원대…</div>
-</a></li><li><a href="days/2026-10-12.html">
-<div class="date">2026년 10월 12일 월요일</div>
-<div class="preview"><b>해외</b> OpenAI가 GPT-6 Astra를 '사이버보안 중대(Critical)' 등급 모델로 공개하며 AGI 담론에 불을 지핀 날,…</div>
-</a></li><li><a href="days/2026-10-11.html">
-<div class="date">2026년 10월 11일 일요일</div>
-<div class="preview"><b>해외</b> Anthropic과 OpenAI가 한 달 간격으로 플래그십 모델을 교체하며 AI 경쟁의 무게중심이 '성능'에서 '에이전트 실행…</div>
-</a></li><li><a href="days/2026-10-10.html">
-<div class="date">2026년 10월 10일 토요일</div>
-<div class="preview"><b>해외</b> 중국 AI랩 마누스의 메타 결별 후 단독 투자 유치와 AMD의 월드모델 스타트업 인수가 겹치며, AI 산업 자본이 빅테크 인수…</div>
-</a></li>
-</ul>
-<footer class="site">UPLEAT &middot; Daily Trend Archive</footer>
+
+<div class="tabs-row">
+  <button class="tab-btn active" data-region="all">전체</button>
+  <button class="tab-btn" data-region="해외">해외</button>
+  <button class="tab-btn" data-region="국내">국내</button>
 </div>
+
+<div class="filter-row">
+  <div class="search-box"><input id="searchInput" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색"></div>
+  <div class="pill-row"><button class="pill-btn active" data-cat="all">전체</button><button class="pill-btn" data-cat="ai">AI</button><button class="pill-btn" data-cat="ux">UX</button><button class="pill-btn" data-cat="design">DESIGN</button><button class="pill-btn" data-cat="biz">TECH & BIZ</button></div>
+</div>
+
+<div class="content-layout">
+  <div>
+    <div class="card-grid" id="cardGrid">
+<a class="day-card" href="days/2026-10-20.html" data-cats="ai biz design ux" data-search="2026년 10월 20일 화요일 ai 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이, openai와 anthropic은 나란히 비공개 ipo를 준비하며 자금 조달의 무대를 사모에서 공개 시장으로 옮기고 있다. anthropic 'claude opus 5.5' 공개··· openai도 저가형 gpt-6 모델 2종으로 맞대응 애플, ios 27.2에서 siri ai에 한국어 포함 5개 언어 추가 ux 리서치팀 74%, ai 모더레이션 인터뷰로 디스커버리 서베이 대체 smashing magazine, 'ai 시대엔 디자이너의 안목이 더 중요해진다' 뉴스레터 발행 openai, anthropic에 이어 비공개 ipo 신청··· 양사 모두 1조 달러대 밸류 추진 네이버와 삼성전자가 ai 안전성·활용 체계를 제도화하는 동안, 국내 디자인 스튜디오와 ai 검색 스타트업은 각각 국제 어워드와 투자 유치로 경쟁력을 입증하고 있다. 네이버, ai 안전성 체계 적용 사례 공개··· 'ai safety progress report' 첫 발간 삼성전자, dx부문에 제미나이·챗gpt·클로드 등 외부 생성형 ai 6월 공식 도입 lmnt, 전문가 매칭 플랫폼 숨고 bx 리뉴얼··· 2026 if 디자인 어워드 수상 라이너, 500억원 시리즈c 투자 유치··· 누적 투자 940억원">
+<div class="art" style="background:linear-gradient(135deg,#8F8CF5,#6A63E8)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 20일 화요일</div>
+  <div class="preview preview-intl"><b>해외</b> AI 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이, OpenAI와 Anthropic은 나란히 비공개 IPO를 준비…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 네이버와 삼성전자가 AI 안전성·활용 체계를 제도화하는 동안, 국내 디자인 스튜디오와 AI 검색 스타트업은 각각 국제 어워…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-19.html" data-cats="ai biz design ux" data-search="2026년 10월 19일 월요일 딥시크의 신모델 공개와 오픈웨이트 모델 'beam'의 등장이 보여주듯, ai 경쟁의 무게중심이 성능 그 자체보다 속도와 비용으로 옮겨가고 있다. 딥시크, 더 빠르고 가벼운 신모델 'v4.1-flash-1017' 공개 reflection ai, 오픈웨이트 모델 'beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워 maze, '2026 ux 리서치의 미래' 리포트 공개 figma, config 2026에서 '코드 레이어'와 모션 기능 공개 브로드컴 ceo 혹 탄, "ai 투자자들은 도박꾼처럼 행동한다" 카카오가 자체 개발이 아닌 '연결'을 택한 개방형 ai 전략을 공개하며, 국내 빅테크의 ai 경쟁이 플랫폼 생태계 싸움으로 번지고 있다. 카카오, 'if(kakao)26'서 개방형 ai 플랫폼 '모두의 ai' 전략 공개">
+<div class="art" style="background:linear-gradient(135deg,#F2A93B,#F08424)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 19일 월요일</div>
+  <div class="preview preview-intl"><b>해외</b> 딥시크의 신모델 공개와 오픈웨이트 모델 'Beam'의 등장이 보여주듯, AI 경쟁의 무게중심이 성능 그 자체보다 속도와 비…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 카카오가 자체 개발이 아닌 '연결'을 택한 개방형 AI 전략을 공개하며, 국내 빅테크의 AI 경쟁이 플랫폼 생태계 싸움으로…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-18.html" data-cats="ai biz design ux" data-search="2026년 10월 18일 일요일 ftc가 openai·anthropic에 안전성 자료 제출을 공식 요구하며 ai 규제 압박이 커지는 가운데, apple과 cloudflare는 각각 하드웨어와 개발자 인프라 영역에서 ai 생태계 확장을 이어가고 있다. ftc, openai·anthropic에 ai 안전성 관련 자료 제출 요구 servicenow, ai 에이전트용 신원 인증 체계 'ai passport' 발표 apple, 스마트홈 액세서리 신규 라인업 'apple home collection' 공개 결제 스타트업 ramp, 18.5억 달러 투자 유치…기업가치 600억 달러 cloudflare, node.js 창시자의 런타임 기업 deno 인수 카카오뱅크가 ai 코칭 적금을 내놓고 삼성·lg가 kes 2026에서 생활밀착형 ai 가전을 전면에 세우며, 국내 산업은 ai를 소비자 접점까지 끌어들이는 단계로 들어섰다. 카카오뱅크, ai 코칭 적용한 'ai 목표적금' 출시 삼성·lg, 'kes 2026'서 일상·산업 바꿀 ai 신기술 맞대결 단말기를 깐 '토스', 길을 빌린 '카카오페이'…오프라인 결제 ux 전략 호반건설, '호반써밋' 브랜드 7년 만에 리뉴얼…새 bi·슬로건 공개 웨어러블 로봇 휴로틱스, 250억 규모 시리즈a 투자 유치">
+<div class="art" style="background:linear-gradient(135deg,#F2767A,#E8515E)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 18일 일요일</div>
+  <div class="preview preview-intl"><b>해외</b> FTC가 OpenAI·Anthropic에 안전성 자료 제출을 공식 요구하며 AI 규제 압박이 커지는 가운데, Apple과 …</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 카카오뱅크가 AI 코칭 적금을 내놓고 삼성·LG가 KES 2026에서 생활밀착형 AI 가전을 전면에 세우며, 국내 산업은 …</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-17.html" data-cats="ai biz design" data-search="2026년 10월 17일 토요일 anthropic은 싱가포르 진출과 독립 평가·사이버 검증 체계 확대로 신뢰 기반 확장에 속도를 내는 한편, 해외 saas·핀테크 업계에서는 밸류에이션 조정과 m&amp;a가 동시에 진행되고 있다. anthropic, 싱가포르에 사무소 개소하고 정부와 mou 체결 anthropic, 독립 평가기관(independent evaluators) 관련 업데이트 발표 anthropic, 사이버 검증 프로그램(cyber verification program) 확대 시카고 아테네움, '2026 뉴 모던 퍼니처 + 라이팅' 수상작 발표 및 아테네 전시 개최 bradbury capital, spac 합병 완료하고 나스닥 데뷔…'bbci'로 거래 시작 bending spoons, 소프트웨어 스타트업 airtable을 22.5억 달러에 인수 삼성전자는 kes 2026에서 생활 밀착형 ai 가전을 전면에 내세웠고, 국내 디자인 스튜디오들은 전통 있는 브랜드의 리브랜딩을 통해 정체성 재정의에 나섰다. [kes2026] 삼성전자 '일상 속 ai' 공개…lg전자는 산업까지 확장 브랜딩 스튜디오 듀당스, 국보디자인 리브랜딩…'where experience begins' 슬로건 공개 네임드, 롯데칠성 rtd 커피 '칸타타 하모니' 비주얼·패키지 디자인 공개 8월 국내 비상장 스타트업 투자 195건으로 동월 역대 최고 기록">
+<div class="art" style="background:linear-gradient(135deg,#2BC9AE,#17AE98)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 17일 토요일</div>
+  <div class="preview preview-intl"><b>해외</b> Anthropic은 싱가포르 진출과 독립 평가·사이버 검증 체계 확대로 신뢰 기반 확장에 속도를 내는 한편, 해외 SaaS…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 삼성전자는 KES 2026에서 생활 밀착형 AI 가전을 전면에 내세웠고, 국내 디자인 스튜디오들은 전통 있는 브랜드의 리브…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-16.html" data-cats="ai biz design" data-search="2026년 10월 16일 금요일 ai 경쟁의 축이 '모델 성능'에서 '도입 속도와 인재'로 옮겨가고 있다 — anthropic의 1억 달러 인재 투자와 글로벌 은행의 전사적 도입, 오라클의 구조조정이 같은 흐름 위에서 동시에 벌어지고 있다. anthropic, 엔지니어 1만 명 양성에 1억 달러 투자 barclays, claude를 전사 운영 인프라로 확대 적용 anthropic, 핵심 인프라 보안을 위한 'cyber mission' 출범 figma, config 2026에서 '코드 레이어'와 figma motion 공개 tsmc, ai 반도체 수요 힘입어 3분기 역대급 매출 기록 오라클, 자발적 퇴사 프로그램 확대 검토…구조조정 지속 국내 대기업은 ai를 단순 '도입'하는 단계를 넘어 자사 핵심 공정에 특화된 ai를 직접 설계하는 단계로 들어섰고, 정부도 산업ai를 국가 플랫폼 단위로 묶기 시작했다. 삼성전자, 미스트랄 ai와 전략적 파트너십…반도체 특화 ai 공동 개발 '2026 산업ai expo' 개최 예고…정부 주도 'k connect ai' 플랫폼과 연계 롯데웰푸드, 꼬깔콘 패키지 5년 만에 리뉴얼…토마스 스튜디오와 협업 토스, 창립 10년 맞아 홈페이지 전면 개편 상반기 신규 벤처투자 8.9조원…전년 대비 56% 증가 토스쇼핑, 오아시스마켓 전용관 오픈…새벽배송까지 확장">
+<div class="art" style="background:linear-gradient(135deg,#8F8CF5,#6A63E8)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 16일 금요일</div>
+  <div class="preview preview-intl"><b>해외</b> AI 경쟁의 축이 '모델 성능'에서 '도입 속도와 인재'로 옮겨가고 있다 — Anthropic의 1억 달러 인재 투자와 글…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 국내 대기업은 AI를 단순 '도입'하는 단계를 넘어 자사 핵심 공정에 특화된 AI를 직접 설계하는 단계로 들어섰고, 정부도…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-15.html" data-cats="ai biz design ux" data-search="2026년 10월 15일 목요일 메타·구글·앤트로픽이 숨가쁜 ai 모델 출시 경쟁을 벌이며 ux 리서치와 디자인 업무 전반을 ai 중심으로 재편하는 동시에, 브로드컴 ceo의 '카지노' 경고와 게티이미지의 비상장화는 이 ai 붐에 숨은 거품 리스크를 보여준다. meta releases its first frontier model, muse wonder google launches gemini 4 argon, gives cyber defenders first access claude haiku 5.5 debuts as anthropic's faster small ai model the future of user research report 2026: trends &amp; insights state of ai-native ux research 2026: 300 research teams replaced discovery survey ai in design report 2026 ux tools survey: spring 2026 getty going private as the beleaguered stock photo brand files for bankruptcy broadcom ceo hock tan says many ai investors act like gamblers mistral ai raises €3 billion in record european tech funding round 삼성·카카오의 ai 전환 가속, 토스뱅크·카카오뱅크의 ai 기반 ux 고도화, 국보디자인·당근·s2w의 리브랜딩이 겹치며, 오늘 국내 트렌드는 결국 ai를 축으로 한 사업·경험·브랜드의 동시 재설계로 요약된다. 삼성전자, '에이전틱 시프트' 주제로 '삼성 ai 포럼 2026' 개최 카카오, 오는 10월 기술 컨퍼런스 'if(kakao)26' 개최…ai 전략 공개 "이 자리 뜻깊다" 배경훈 부총리, 이해민·하정우에 축하받은 사연은? "내 카드 언제와?" 한마디면, 토스뱅크 ai가 30초 만에 답한다 "모든 계좌 한눈에" 카카오뱅크, 홈 화면 개편 s2w, 창립 8주년 맞아 bi 개편...서상덕 대표 "새로운 도약의 분기점" 당근, 디자인 시스템 'seed' 브랜드 아이덴티티 공개 듀당스, 국보디자인 리브랜딩 '새 bi' 공개..."시공 넘어 공간 경험 기업으로" 리벨리온, 업스테이지 라이벌 의식 속 4분기 예심 청구 전망 레니게이드 양산·유럽 검증 병행…퓨리오사ai 8000억 클로징 초읽기 위로보틱스, 950억 규모 시리즈b 투자 유치…휴머노이드 사업 본격화">
+<div class="art" style="background:linear-gradient(135deg,#F2A93B,#F08424)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 15일 목요일</div>
+  <div class="preview preview-intl"><b>해외</b> 메타·구글·앤트로픽이 숨가쁜 AI 모델 출시 경쟁을 벌이며 UX 리서치와 디자인 업무 전반을 AI 중심으로 재편하는 동시에…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 삼성·카카오의 AI 전환 가속, 토스뱅크·카카오뱅크의 AI 기반 UX 고도화, 국보디자인·당근·S2W의 리브랜딩이 겹치며,…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-14.html" data-cats="ai biz design ux" data-search="2026년 10월 14일 수요일 프론티어 ai 모델 경쟁이 성능 그 자체보다 반도체 공급망과 비용 구조 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔버스 안으로 끌어들이는 방향으로 수렴하고 있다. '모델 피로감' 확산…빅테크, 숨 가쁜 속도로 신모델 출시 경쟁 애플, ios 27.2에서 siri ai에 한국어·일본어 등 5개 언어 추가 ux 리서치팀 74%, ai 중심 조사로 디스커버리 서베이 대체 koji, 'ux 리서치 통계 2026' 발표…디자이너 70%가 직접 인사이트 수집 dezeen awards 2026 디자인 부문 쇼트리스트 발표 피그마 config 2026, 코드 레이어·모션·에이전트 전면 공개 tsmc, 3분기 매출 전년 대비 50% 급증…ai 반도체 수요가 견인 카카오가 독립 ai 앱을 접고 카카오톡 중심으로 재편하는 동안, 국내 핀테크·디자인 스튜디오는 '10년치 서비스'를 하나의 브랜드 스토리로 묶는 리브랜딩에 집중하고 있다. 카카오, 독립 ai 앱 '카나나' 10월 15일 종료…카카오톡 중심으로 재편 hci &amp; ux 코리아 2026, 'ai가 ux를 어떻게 바꾸는가' 공통 질문으로 토스, 홈페이지 전면 개편…10년의 서비스 확장 과정을 하나의 스토리로 스튜디오 듀당스, 국보디자인 bi·bx 체계 재구성 ai 반도체 양대산맥 '리벨리온·퓨리오사', 8000억 규모 프리ipo 추진">
+<div class="art" style="background:linear-gradient(135deg,#F2767A,#E8515E)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 14일 수요일</div>
+  <div class="preview preview-intl"><b>해외</b> 프론티어 AI 모델 경쟁이 성능 그 자체보다 반도체 공급망과 비용 구조 싸움으로 번지는 가운데, 디자인 툴은 에이전트를 캔…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 카카오가 독립 AI 앱을 접고 카카오톡 중심으로 재편하는 동안, 국내 핀테크·디자인 스튜디오는 '10년치 서비스'를 하나의…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-13.html" data-cats="ai biz ux" data-search="2026년 10월 13일 화요일 anthropic·openai·google이 한 달 새 나란히 저비용·고효율 모델로 세대교체에 나선 가운데, 텐센트의 7조원대 칩 임대 딜은 ai 인프라 경쟁이 모델 성능을 넘어 자본과 공급망으로 번지고 있음을 보여준다. anthropic, 초저비용 모델 'claude haiku 5.5' 출시 openai, 'gpt-6 astra'급 성능을 5분의 1 가격에 제공하는 'gpt-6.1 sol' 출시 구글, 이미지 생성 모델 'nano banana 2.1' 정식 출시 baymard, 자동 ux 감사 도구 'ux-ray'를 209개 휴리스틱으로 확장 userlytics, 실시간 협업 워크스페이스 'study pulse'와 ai 분석 도구 모음 공개 텐센트, 오라클과 5년간 ai 칩 10만 개 임대…7조원 규모 해외 딜 결제 스타트업 ramp, 3개월 만에 몸값 74%↑…600억 달러 밸류 투자 논의 국내에선 ai 풀스택 스타트업 엘리스그룹이 몸값 1조원 상장을 추진하며, ai 기업의 국내 자본시장 데뷔 행렬이 하반기에도 이어지고 있음을 보여준다. ai 풀스택 '엘리스그룹', 몸값 1조 코스닥 상장 청약 돌입">
+<div class="art" style="background:linear-gradient(135deg,#2BC9AE,#17AE98)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 13일 화요일</div>
+  <div class="preview preview-intl"><b>해외</b> Anthropic·OpenAI·Google이 한 달 새 나란히 저비용·고효율 모델로 세대교체에 나선 가운데, 텐센트의 7조…</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 국내에선 AI 풀스택 스타트업 엘리스그룹이 몸값 1조원 상장을 추진하며, AI 기업의 국내 자본시장 데뷔 행렬이 하반기에도…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-12.html" data-cats="ai biz design ux" data-search="2026년 10월 12일 월요일 openai가 gpt-6 astra를 '사이버보안 중대(critical)' 등급 모델로 공개하며 agi 담론에 불을 지핀 날, supabase의 turso 인수는 ai 에이전트가 직접 데이터베이스를 만드는 시대가 이미 시작됐음을 보여준다. openai, 'gpt-6 astra' 공개—ai 안전성 '중대(critical)' 등급 첫 모델 dezeen awards 2026, 인테리어 디자이너 줄리앙 세방·그래픽 디자이너 나타샤 젠 심사위원 선정 supabase, 1,500억 원 추가 투자 유치하며 turso 인수—'ai 에이전트 데이터베이스' 정조준 네이버·카카오가 ai 경쟁을 위해 조직 구조 자체를 재편하는 사이, 디자인 업계는 전통 공간과 장수 브랜드를 '복합문화공간'과 '시인성'이라는 키워드로 다시 그리고 있다. 네이버는 '확장', 카카오는 '분할'…ai 패권 경쟁 속 빅테크 거버넌스 승부수 쿠팡·네이버플러스스토어·카카오쇼핑, 1년 사이 달라진 온라인 쇼핑 트렌드 [project+] 새 옷 입은 63빌딩, 브랜드 아이덴티티 디자인 ① 한화생명 [project+] 불사조를 넘어 푸른 불꽃으로, 핫식스 패키지 디자인 리뉴얼 ① 롯데칠성음료 8월 韓 스타트업 투자 6,569억원…해외 성과 검증된 기업에 베팅 집중">
+<div class="art" style="background:linear-gradient(135deg,#8F8CF5,#6A63E8)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 12일 월요일</div>
+  <div class="preview preview-intl"><b>해외</b> OpenAI가 GPT-6 Astra를 '사이버보안 중대(Critical)' 등급 모델로 공개하며 AGI 담론에 불을 지핀 …</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 네이버·카카오가 AI 경쟁을 위해 조직 구조 자체를 재편하는 사이, 디자인 업계는 전통 공간과 장수 브랜드를 '복합문화공간…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-11.html" data-cats="ai biz design ux" data-search="2026년 10월 11일 일요일 anthropic과 openai가 한 달 간격으로 플래그십 모델을 교체하며 ai 경쟁의 무게중심이 '성능'에서 '에이전트 실행력'으로 옮겨가는 가운데, 오라클·테슬라의 실적은 ai 투자 부담과 수요 둔화가 동시에 진행 중임을 보여준다. anthropic, 'claude opus 5.5' 공식 출시…비용 40% 절감 openai, 컴퓨터 사용 에이전트 모델 'gpt-6 astra' 출시 ai 네이티브 ux 리서치 확산…리서치팀 74%가 ai 모더레이션 인터뷰로 전환 figma, 캔버스 안에 자연어 기반 ai 디자인 에이전트 정식 출시 오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널 테슬라, 2026년 3분기 차량 48만 6532대 인도…시장 예상치 상회 과기정통부가 amd와 손잡고 국산 npu 연계 '개방형 ai 컴퓨팅' 전략을 구체화하는 한편, 퓨리오사ai의 대규모 프리ipo와 국내 벤처투자 회복세가 ai 반도체 생태계에 대한 투자 신뢰를 뒷받침하고 있다. 과기정통부-amd, 국내 ai 반도체 기업과 라운드테이블…이기종 컴퓨팅 협력 sk ax, 오픈ai와 엔터프라이즈 ai 서비스 파트너 계약 네이버플러스스토어·카카오쇼핑 만족도 동반 상승…1년 사이 쇼핑 경험 체감 변화 꼬깔콘, 5년 만의 패키지 리뉴얼…삼각뿔 조형으로 브랜드 자산 재정의 퓨리오사ai, 8000억원 규모 프리ipo 조달 임박 국내 벤처투자 상반기 8조 8676억원…전년 대비 56% 증가">
+<div class="art" style="background:linear-gradient(135deg,#F2A93B,#F08424)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 11일 일요일</div>
+  <div class="preview preview-intl"><b>해외</b> Anthropic과 OpenAI가 한 달 간격으로 플래그십 모델을 교체하며 AI 경쟁의 무게중심이 '성능'에서 '에이전트 …</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> 과기정통부가 AMD와 손잡고 국산 NPU 연계 '개방형 AI 컴퓨팅' 전략을 구체화하는 한편, 퓨리오사AI의 대규모 프리I…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2A93B22;color:#F2A93B">UX</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a><a class="day-card" href="days/2026-10-10.html" data-cats="ai biz design" data-search="2026년 10월 10일 토요일 중국 ai랩 마누스의 메타 결별 후 단독 투자 유치와 amd의 월드모델 스타트업 인수가 겹치며, ai 산업 자본이 빅테크 인수 실패를 독립 자금력으로 돌파하거나 반도체 기업의 수직통합으로 흡수되는 두 갈래로 갈라지고 있다. 중국 ai랩 마누스, 메타와의 인수 결렬 후 첫 펀딩에서 5억 달러 이상 유치 cal ai 창업자, 19세에 두 번째 ai 스타트업 'persona'로 1000만 달러 유치 ai 코딩 스타트업 factory, khosla와의 공개 설전 후 menlo ventures 투자 유치 호주 워크플레이스 브랜드 제니스, 1970년대 이탈리아 가구에서 영감받은 'profondo' 시팅 컬렉션 공개 데젠, 가을 시즌 맞춤 소파·체어 8종 쇼룸 기획 공개 오픈ai 매출 부진·모델 경쟁 요동 속 트럼프 행정부, 테크 인력 그린카드 단속 나서 amd, 페이페이 리의 월드모델 스타트업 '월드랩스' 82억 달러에 인수 skt·kt·카카오가 추석 연휴에도 매달린 '모두의 ai' 10월 베타 출범이 임박하며, 정부 주도 국민 ai 서비스가 일정 지연 없이 현실화되는 단계에 들어섰다. '추석 지나면 ai가 일상으로'…skt·kt·카카오 '모두의 ai' 10월 베타 돌입">
+<div class="art" style="background:linear-gradient(135deg,#F2767A,#E8515E)">
+  <div class="badges"><span class="rbadge">🌐 해외</span><span class="rbadge">🇰🇷 국내</span></div>
+  <span>📡</span>
+</div>
+<div class="body">
+  <div class="date">2026년 10월 10일 토요일</div>
+  <div class="preview preview-intl"><b>해외</b> 중국 AI랩 마누스의 메타 결별 후 단독 투자 유치와 AMD의 월드모델 스타트업 인수가 겹치며, AI 산업 자본이 빅테크 …</div>
+  <div class="preview preview-domestic" style="display:none"><b>국내</b> SKT·KT·카카오가 추석 연휴에도 매달린 '모두의 AI' 10월 베타 출범이 임박하며, 정부 주도 국민 AI 서비스가 일…</div>
+  <div class="meta"><span class="cat-chip" style="background:#8F8CF522;color:#8F8CF5">AI</span><span class="cat-chip" style="background:#F2767A22;color:#F2767A">DESIGN</span><span class="cat-chip" style="background:#2BC9AE22;color:#2BC9AE">TECH & BIZ</span></div>
+</div>
+</a>
+    </div>
+    <div class="no-results" id="noResults" style="display:none">검색 결과가 없습니다.</div>
+    <div class="loadmore-wrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
+  </div>
+  <aside class="rail">
+<h3>최근 핵심 키워드</h3>
+<div class="rail-item">
+<a href="days/2026-10-20.html" class="rail-text"><b>AI 모델들이 '더 저렴하고 빠르게'를 앞다퉈 외치는 사이</b><span class="rail-date">2026년 10월 20일 화요일</span></a>
+</div><div class="rail-item">
+<a href="days/2026-10-19.html" class="rail-text"><b>딥시크의 신모델 공개와 오픈웨이트 모델 'Beam'의 등장</b><span class="rail-date">2026년 10월 19일 월요일</span></a>
+</div><div class="rail-item">
+<a href="days/2026-10-18.html" class="rail-text"><b>FTC가 OpenAI·Anthropic에 안전성 자료 제출을 공식 요구</b><span class="rail-date">2026년 10월 18일 일요일</span></a>
+</div><div class="rail-item">
+<a href="days/2026-10-17.html" class="rail-text"><b>싱가포르 진출과 독립 평가·사이버 검증 체계 확대</b><span class="rail-date">2026년 10월 17일 토요일</span></a>
+</div><div class="rail-item">
+<a href="days/2026-10-16.html" class="rail-text"><b>AI 경쟁의 축이 '모델 성능'에서 '도입 속도와 인재'로</b><span class="rail-date">2026년 10월 16일 금요일</span></a>
+</div>
+</aside>
+</div>
+<script>
+(function(){
+  var PAGE_SIZE = 9;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.day-card'));
+  var grid = document.getElementById('cardGrid');
+  var loadBtn = document.getElementById('loadMoreBtn');
+  var noResults = document.getElementById('noResults');
+  var searchInput = document.getElementById('searchInput');
+  var regionTabs = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var pillBtns = Array.prototype.slice.call(document.querySelectorAll('.pill-btn'));
+
+  var state = { region: 'all', cat: 'all', q: '', visible: PAGE_SIZE };
+
+  function matches(card){
+    if (state.cat !== 'all' && card.dataset.cats.indexOf(state.cat) === -1) return false;
+    if (state.q && card.dataset.search.indexOf(state.q) === -1) return false;
+    return true;
+  }
+
+  function render(){
+    var shown = 0, matched = 0;
+    cards.forEach(function(card){
+      var ok = matches(card);
+      if (ok) matched++;
+      var within = ok && shown < state.visible;
+      card.style.display = ok ? '' : 'none';
+      card.classList.toggle('hidden-initial', ok && !within);
+      if (within) shown++;
+      // region preview toggle
+      var intlP = card.querySelector('.preview-intl');
+      var domP = card.querySelector('.preview-domestic');
+      if (intlP && domP) {
+        if (state.region === '국내') { intlP.style.display = 'none'; domP.style.display = ''; }
+        else if (state.region === '해외') { intlP.style.display = ''; domP.style.display = 'none'; }
+        else { intlP.style.display = ''; domP.style.display = 'none'; }
+      }
+    });
+    loadBtn.style.display = (matched > state.visible) ? '' : 'none';
+    noResults.style.display = (matched === 0) ? '' : 'none';
+  }
+
+  searchInput.addEventListener('input', function(){
+    state.q = this.value.trim().toLowerCase();
+    state.visible = PAGE_SIZE;
+    render();
+  });
+  regionTabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      regionTabs.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.region = btn.dataset.region;
+      render();
+    });
+  });
+  pillBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      pillBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.cat = btn.dataset.cat;
+      state.visible = PAGE_SIZE;
+      render();
+    });
+  });
+  loadBtn.addEventListener('click', function(){
+    state.visible += PAGE_SIZE;
+    render();
+  });
+
+  render();
+})();
+</script>
+
+<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight</footer>
+</div>
+
+<button class="scrolltop" id="scrolltop" aria-label="맨 위로">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrolltop');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 400) btn.classList.add('show'); else btn.classList.remove('show');
+  });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+
 </body>
 </html>
