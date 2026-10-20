@@ -71,6 +71,7 @@ STYLE = """
   --shadow:0 4px 10px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
 }
 *{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
@@ -79,7 +80,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:100%;margin:0 auto;padding:36px 20px 80px;}
+.wrap{max-width:1440px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
 .gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
 .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
@@ -108,15 +109,17 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.feed-list{grid-template-columns:1fr;gap:28px;}}
-.feed-item{padding:0;border-top:none;height:100%;}
+.feed-item{padding:0;border-top:none;height:100%;transition:opacity .45s ease;}
 .feed-link{display:flex;flex-direction:column;height:100%;}
 .feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
-.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.feed-item:hover .feed-thumb img{transform:scale(1.06);}
 .feed-thumb-emoji{font-size:34px;opacity:.5;}
 .feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:13px;}
 .feed-title{font-size:20px;font-weight:800;margin:0 0 11px;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(20px*1.4*3);}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 16px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(16px*1.6*2);}
+.feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(16px*1.6*2);}
+.feed-hashtag{display:inline-block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:14px;}
 .feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:3px;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
@@ -148,7 +151,7 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:640px){.hero-cover{height:320px;}}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
-.hero-inner{max-width:100%;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
 .hero-cover .hero-emoji{font-size:84px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
 .hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
@@ -224,12 +227,28 @@ FEED_SCRIPT = """
       var ok = matches(item);
       if (ok) matched++;
       var within = ok && shown < state.visible;
+      var wasHidden = item.style.display === 'none' || item.classList.contains('hidden-initial');
       item.style.display = ok ? '' : 'none';
       item.classList.toggle('hidden-initial', ok && !within);
-      if (within) shown++;
+      if (within) {
+        shown++;
+        if (wasHidden) {
+          item.style.opacity = '0';
+          requestAnimationFrame(function(){
+            requestAnimationFrame(function(){ item.style.opacity = '1'; });
+          });
+        }
+      }
     });
-    loadBtn.style.display = (matched > state.visible) ? '' : 'none';
+    var hasMore = matched > state.visible;
+    loadBtn.style.display = hasMore ? '' : 'none';
     noResults.style.display = (matched === 0) ? '' : 'none';
+    return hasMore;
+  }
+
+  function loadMore(){
+    state.visible += PAGE_SIZE;
+    render();
   }
 
   if (searchForm) searchForm.addEventListener('submit', function(e){ e.preventDefault(); });
@@ -248,12 +267,20 @@ FEED_SCRIPT = """
       render();
     });
   });
-  loadBtn.addEventListener('click', function(){
-    state.visible += PAGE_SIZE;
-    render();
-  });
+  loadBtn.addEventListener('click', loadMore);
 
   render();
+
+  // auto-expand as the user scrolls near the load-more button, no click needed
+  if ('IntersectionObserver' in window) {
+    var sentinel = document.getElementById('loadMoreWrap') || loadBtn;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && loadBtn.style.display !== 'none') loadMore();
+      });
+    }, { rootMargin: '600px 0px' });
+    io.observe(sentinel);
+  }
 })();
 </script>
 """
@@ -369,9 +396,10 @@ def render_feed_item(a):
     return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-search="{search_bits}">
 <a class="feed-link" href="articles/{a['id']}.html">
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
-  <div class="feed-eyebrow"><span>{emoji}</span><span>{a['cat_label']}</span></div>
+  <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
   <h2 class="feed-title">{a['title']}</h2>
   <p class="feed-summary">{preview_text(a['insight'], limit=80)}</p>
+  <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
   <div class="feed-meta"><span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span></div>
 </a>
 </article>'''
@@ -497,7 +525,7 @@ def build():
 {feed_html}
 </div>
 <div class="no-results" id="noResults" style="display:none">검색 결과가 없습니다.</div>
-<div class="loadmore-wrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
+<div class="loadmore-wrap" id="loadMoreWrap"><button class="loadmore-btn" id="loadMoreBtn">더보기</button></div>
 
 {rail_html}
 {FOOTER_HTML}
