@@ -28,7 +28,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
+.wrap{max-width:100%;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
 .gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
 .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
@@ -62,12 +62,11 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .feed-thumb-emoji{font-size:34px;opacity:.5;}
-.feed-eyebrow{font-size:11px;font-weight:800;letter-spacing:.05em;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:10px;}
 .feed-title{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.45;letter-spacing:-.005em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(15.5px*1.45*3);}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:12.5px;color:var(--sub);line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(12.5px*1.55*2);}
 .feed-meta{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:2px;}
-.feed-src-icon{width:18px;height:18px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800;flex:0 0 auto;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
 .feed-date{font-size:11px;color:var(--sub2);flex:0 0 auto;}
@@ -98,15 +97,15 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:640px){.hero-cover{height:320px;}}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
-.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-inner{max-width:100%;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
 .hero-cover .hero-emoji{font-size:84px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
 .hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
 .detail-card{position:relative;padding:30px 0 0;}
 .detail-card > h1{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.4;}
-.byline{display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
-.byline-icon{width:40px;height:40px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex:0 0 auto;}
+.byline{display:flex;align-items:center;gap:7px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline-dot{color:var(--sub2);font-size:13px;}
 .byline-name{font-size:13px;font-weight:700;color:var(--ink);}
 .byline-role{font-size:11.5px;color:var(--sub2);}
 .insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
@@ -135,7 +134,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </head>
 <body>
 <div class="gnb-sticky">
-<div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
+<div class="topbar wrap" style="padding-top:0;padding-bottom:0;">
   <div class="brand"><a href="../index.html">UPLEAT · Daily Trend Archive</a></div>
   <div class="gnb-right">
     <form class="search-box" action="../index.html" method="get">
@@ -162,8 +161,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <div class="detail-card">
 <h1>S2W, 창립 8주년 맞아 BI 개편...서상덕 대표 "새로운 도약의 분기점"</h1>
 <div class="byline">
-  <div class="byline-icon" style="background:#F2767A">아</div>
-  <div><div class="byline-name">아이뉴스24</div><div class="byline-role">2026-09-15</div></div>
+  <span class="byline-name">아이뉴스24</span><span class="byline-dot">&middot;</span><span class="byline-role">2026-09-15</span>
 </div>
 <div class="insight">S2W가 심볼을 걷어내고 워드마크 중심으로 CI를 재구성하며, <b>보안 기업에서 데이터 인텔리전스 기업</b>으로의 정체성 전환을 시각적으로 선언했다.</div>
 <a class="source-cta" href="https://inews24.com/view/2005961" target="_blank" rel="noopener">원문 보기 ↗</a>
@@ -175,10 +173,10 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 <div class="related-strip">
 <h3>DESIGN 카테고리의 다른 글</h3>
 <div class="related-scroll"><a class="related-tile" href="2026-10-15-i-design-2.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-15-i-design-2.jpg')"></div>
 <div class="rt-label">UX Tools Survey: Spring 2026</div>
 </a><a class="related-tile" href="2026-10-15-i-design-1.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-15-i-design-1.jpg')"></div>
 <div class="rt-label">AI in Design Report 2026</div>
 </a><a class="related-tile" href="2026-10-14-i-design-2.html">
 <div class="rt-art" style="background:#F2767A33">🎨</div>

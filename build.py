@@ -79,7 +79,7 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
+.wrap{max-width:100%;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
 .gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
 .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
@@ -113,12 +113,11 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .feed-thumb-emoji{font-size:34px;opacity:.5;}
-.feed-eyebrow{font-size:11px;font-weight:800;letter-spacing:.05em;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:10px;}
 .feed-title{font-size:15.5px;font-weight:800;margin:0 0 8px;line-height:1.45;letter-spacing:-.005em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(15.5px*1.45*3);}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:12.5px;color:var(--sub);line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(12.5px*1.55*2);}
 .feed-meta{display:flex;align-items:center;gap:6px;margin-top:auto;padding-top:2px;}
-.feed-src-icon{width:18px;height:18px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800;flex:0 0 auto;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
 .feed-date{font-size:11px;color:var(--sub2);flex:0 0 auto;}
@@ -149,15 +148,15 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:640px){.hero-cover{height:320px;}}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
-.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-inner{max-width:100%;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
 .hero-cover .hero-emoji{font-size:84px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
 .hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
 .detail-card{position:relative;padding:30px 0 0;}
 .detail-card > h1{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.4;}
-.byline{display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
-.byline-icon{width:40px;height:40px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex:0 0 auto;}
+.byline{display:flex;align-items:center;gap:7px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline-dot{color:var(--sub2);font-size:13px;}
 .byline-name{font-size:13px;font-weight:700;color:var(--ink);}
 .byline-role{font-size:11.5px;color:var(--sub2);}
 .insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
@@ -272,7 +271,7 @@ HEAD = """<!DOCTYPE html>
 </head>
 <body>
 <div class="gnb-sticky">
-<div class="topbar wrap" style="padding-top:0;padding-bottom:0;max-width:1100px;">
+<div class="topbar wrap" style="padding-top:0;padding-bottom:0;">
   <div class="brand"><a href="{root_prefix}index.html">UPLEAT · Daily Trend Archive</a></div>
   <div class="gnb-right">
     <form class="search-box" action="{root_prefix}index.html" method="get">
@@ -315,10 +314,6 @@ def find_thumb(article_id):
         if os.path.exists(os.path.join(ASSETS_DIR, article_id + ext)):
             return f"assets/thumbs/{article_id}{ext}"
     return None
-
-
-def source_initial(source):
-    return esc(source.strip()[0]) if source and source.strip() else "?"
 
 
 def render_gnb_pills(root_prefix):
@@ -374,10 +369,10 @@ def render_feed_item(a):
     return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-search="{search_bits}">
 <a class="feed-link" href="articles/{a['id']}.html">
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
-  <div class="feed-eyebrow" style="color:{color}"><span>{emoji}</span><span>{a['cat_label']}</span></div>
+  <div class="feed-eyebrow"><span>{emoji}</span><span>{a['cat_label']}</span></div>
   <h2 class="feed-title">{a['title']}</h2>
   <p class="feed-summary">{preview_text(a['insight'], limit=80)}</p>
-  <div class="feed-meta"><span class="feed-src-icon" style="background:{color}">{source_initial(a['source'])}</span><span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span></div>
+  <div class="feed-meta"><span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span></div>
 </a>
 </article>'''
 
@@ -461,8 +456,7 @@ def render_article_page(a, prev_a, next_a, related):
 <div class="detail-card">
 <h1>{a['title']}</h1>
 <div class="byline">
-  <div class="byline-icon" style="background:{color}">{source_initial(a['source'])}</div>
-  <div><div class="byline-name">{esc(a['source'])}</div><div class="byline-role">{a['pubDate'] or a['dateLabel']}</div></div>
+  <span class="byline-name">{esc(a['source'])}</span><span class="byline-dot">&middot;</span><span class="byline-role">{a['pubDate'] or a['dateLabel']}</span>
 </div>
 <div class="insight">{a['insight']}</div>
 <a class="source-cta" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
