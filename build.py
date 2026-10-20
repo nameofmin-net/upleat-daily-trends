@@ -13,9 +13,16 @@ published within the rolling 7-day dedup window) are skipped entirely —
 they are not given their own post, since that would just republish the same
 URL as a "new" entry.
 
-Design system + interaction patterns adapted from wiseapp.co.kr/insight
-(search box, pill filters, "popular" side rail, load-more button, floating
-scroll-top, full-bleed hero + white content card detail-page pattern).
+Each article looks for a generated thumbnail at assets/thumbs/{id}.{ext}
+(jpg/jpeg/png/webp). If present it's used as the feed-card/hero/related-tile
+image; otherwise a flat category-tinted placeholder is shown instead. Drop
+new thumbnail files in and rerun this script — no other wiring needed.
+
+Design system: single-column editorial feed modeled on magazine-hd.kr
+(flat cards, no radius/shadow on content blocks, colored category eyebrow,
+bold black titles, grey one-line deks, square source-initial "byline" icon,
+Noto Sans KR). Interaction chrome (search, pill filters, buttons) adapted
+from wiseapp.co.kr/insight.
 
 Usage: python3 build.py
 """
@@ -28,6 +35,8 @@ import html as htmllib
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(ROOT, "data")
 ARTICLES_DIR = os.path.join(ROOT, "articles")
+ASSETS_DIR = os.path.join(ROOT, "assets", "thumbs")
+THUMB_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 
 CATEGORY_ORDER = ["ai", "ux", "design", "biz"]
 CATEGORY_LABEL = {
@@ -48,23 +57,16 @@ CATEGORY_EMOJI = {
     "design": "🎨",
     "biz": "📈",
 }
-GRADIENTS = [
-    "linear-gradient(135deg,#8F8CF5,#6A63E8)",
-    "linear-gradient(135deg,#F2A93B,#F08424)",
-    "linear-gradient(135deg,#F2767A,#E8515E)",
-    "linear-gradient(135deg,#2BC9AE,#17AE98)",
-]
-CATEGORY_GRADIENT = dict(zip(CATEGORY_ORDER, GRADIENTS))
 
 STYLE = """
 :root{
   --accent:#1868E0;
   --accent-dim:#EAF2FE;
-  --ink:#16181D;
-  --sub:#656973;
-  --sub2:#8B92A0;
-  --line:#E9EBEF;
-  --bg:#F3F5F7;
+  --ink:#111214;
+  --sub:#525252;
+  --sub2:#8B8B8B;
+  --line:#E5E5E5;
+  --bg:#FFFFFF;
   --card:#FFFFFF;
   --shadow:0 4px 10px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
 }
@@ -73,13 +75,13 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--ink);margin-bottom:28px;}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
 .brand a{color:inherit;}
 .topbar .gh{font-size:13px;color:var(--sub);}
@@ -88,12 +90,12 @@ a{color:inherit;text-decoration:none;}
 header.site{margin-bottom:22px;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
 h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
-.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;margin:16px 0 0;}
+.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;margin:16px 0 0;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* search + pill filters row */
-.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 26px;}
+/* search + pill filters row — interaction chrome stays soft/rounded */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 30px;}
 .search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
 .search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
 .search-box input:focus{outline:none;border-color:var(--accent);}
@@ -104,23 +106,28 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
 /* layout: grid + aside */
-.content-layout{display:grid;grid-template-columns:1fr 272px;gap:24px;align-items:start;}
+.content-layout{display:grid;grid-template-columns:1fr 272px;gap:40px;align-items:start;}
 @media (max-width:860px){.content-layout{grid-template-columns:1fr;}}
 
-/* article feed — single reverse-chronological timeline */
-.feed-list{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:4px 22px;}
-.feed-item{display:block;padding:20px 0;border-top:1px solid var(--line);}
-.feed-item:first-child{border-top:none;}
-.feed-meta{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sub2);margin-bottom:6px;}
-.feed-cat{font-weight:800;}
-.feed-dot{opacity:.6;}
-.feed-title{font-size:16px;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
+/* article feed — flat editorial single-column timeline (magazine-hd.kr pattern) */
+.feed-list{display:flex;flex-direction:column;}
+.feed-item{padding:30px 0;border-top:1px solid var(--line);}
+.feed-item:first-child{border-top:none;padding-top:0;}
+.feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.feed-thumb-emoji{font-size:42px;opacity:.5;}
+.feed-eyebrow{font-size:12px;font-weight:800;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.feed-title{font-size:19px;font-weight:800;margin:0 0 8px;line-height:1.4;letter-spacing:-.01em;color:var(--ink);}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-insight{font-size:13.5px;color:var(--sub);line-height:1.6;margin:0;}
-.feed-insight b{color:var(--ink);}
+.feed-summary{font-size:13.5px;color:var(--sub);line-height:1.65;margin:0 0 14px;}
+.feed-meta{display:flex;align-items:center;gap:8px;}
+.feed-src-icon{width:22px;height:22px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex:0 0 auto;}
+.feed-src-name{font-size:12px;font-weight:600;color:var(--ink);}
+.feed-dot{font-size:12px;color:var(--sub2);}
+.feed-date{font-size:12px;color:var(--sub2);}
 .hidden-initial{display:none;}
 
-.loadmore-wrap{text-align:center;margin-top:24px;}
+.loadmore-wrap{text-align:center;margin-top:8px;}
 .loadmore-btn{appearance:none;cursor:pointer;font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--sub);font-weight:700;font-size:14px;padding:13px 0;width:100%;border-radius:10px;box-shadow:var(--shadow);}
 .loadmore-btn:hover{border-color:var(--accent);color:var(--accent);}
 .no-results{font-size:14px;color:var(--sub);padding:40px 0;text-align:center;}
@@ -137,34 +144,39 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* article detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
-.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
-.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
-.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+/* article detail page — full-bleed flat hero photo + flat content blocks */
+.hero-cover{width:100%;height:320px;position:relative;overflow:hidden;background:#F2F2F2;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;background:rgba(255,255,255,.92);color:#16181D;}
 .hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:10px;}
-.src{font-size:12.5px;color:var(--sub);margin:0 0 18px;}
-.insight{font-size:14.5px;color:#3D4250;line-height:1.7;padding-left:12px;border-left:2px solid var(--line);margin-bottom:22px;}
+.detail-card{position:relative;padding:30px 0 0;}
+.detail-card > h1{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.4;}
+.byline{display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline-icon{width:40px;height:40px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex:0 0 auto;}
+.byline-name{font-size:13px;font-weight:700;color:var(--ink);}
+.byline-role{font-size:11.5px;color:var(--sub2);}
+.insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
 .insight b{color:var(--accent);}
-.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;border-radius:999px;font-size:13.5px;font-weight:700;}
+.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;}
 .source-cta:hover{background:var(--accent);}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
-.detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
+.detail-note{font-size:12.5px;color:var(--sub);background:#F7F7F7;padding:14px 16px;line-height:1.7;}
 
-.daynav{display:flex;justify-content:space-between;align-items:center;margin:16px 0 28px;font-size:14px;font-weight:600;background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;}
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .daynav a{color:var(--accent);}
 .daynav .spacer{flex:1;}
 
 .related-strip{margin-bottom:28px;}
-.related-strip h3{font-size:14px;font-weight:800;margin:0 0 12px;}
-.related-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;}
-.related-tile{flex:0 0 auto;width:160px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;display:block;}
-.related-tile .rt-art{height:56px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;}
-.related-tile .rt-label{font-size:12px;font-weight:700;padding:8px 10px 10px;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.related-strip h3{font-size:14px;font-weight:800;margin:0 0 14px;}
+.related-scroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;}
+.related-tile{flex:0 0 auto;width:180px;background:var(--card);display:block;}
+.related-tile .rt-art{width:180px;height:101px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;}
+.related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 
 footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 """
@@ -244,7 +256,9 @@ HEAD = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>{style}</style>
 </head>
 <body>
@@ -260,7 +274,7 @@ FOOT = """
 </html>
 """
 
-FOOTER_HTML = '<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight &amp; magazine-hd.kr</footer>'
+FOOTER_HTML = '<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: magazine-hd.kr &amp; wiseapp.co.kr/insight</footer>'
 
 
 def esc(s):
@@ -276,6 +290,18 @@ def preview_text(text_html, limit=100):
     if len(text) > limit:
         text = text[:limit] + "…"
     return esc(text)
+
+
+def find_thumb(article_id):
+    """Return the root-relative path to a generated thumbnail, or None."""
+    for ext in THUMB_EXTS:
+        if os.path.exists(os.path.join(ASSETS_DIR, article_id + ext)):
+            return f"assets/thumbs/{article_id}{ext}"
+    return None
+
+
+def source_initial(source):
+    return esc(source.strip()[0]) if source and source.strip() else "?"
 
 
 def build_articles(days):
@@ -314,11 +340,20 @@ def render_feed_item(a):
     emoji = "🌐" if a["region_key"] == "intl" else "🇰🇷"
     short_date = a["date"][5:].replace("-", ".")
     search_bits = esc(" ".join([a["title"], strip_tags(a["insight"]), a["source"], a["dateLabel"]])).lower()
+
+    thumb = find_thumb(a["id"])
+    if thumb:
+        thumb_html = f'<img src="{thumb}" alt="" loading="lazy">'
+    else:
+        thumb_html = f'<span class="feed-thumb-emoji">{CATEGORY_EMOJI.get(a["cat_key"], "📡")}</span>'
+
     return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-search="{search_bits}">
 <a class="feed-link" href="articles/{a['id']}.html">
-  <div class="feed-meta"><span>{emoji}</span><span class="feed-cat" style="color:{color}">{a['cat_label']}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span><span class="feed-dot">&middot;</span><span class="feed-src">{esc(a['source'])}</span></div>
+  <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
+  <div class="feed-eyebrow" style="color:{color}"><span>{emoji}</span><span>{a['cat_label']}</span></div>
   <h2 class="feed-title">{a['title']}</h2>
-  <p class="feed-insight">{preview_text(a['insight'])}</p>
+  <p class="feed-summary">{preview_text(a['insight'])}</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:{color}">{source_initial(a['source'])}</span><span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span></div>
 </a>
 </article>'''
 
@@ -349,28 +384,35 @@ def pick_related(articles, idx, limit=4):
 
 
 def render_article_page(a, prev_a, next_a, related):
-    gradient = CATEGORY_GRADIENT[a["cat_key"]]
+    color = CATEGORY_COLOR[a["cat_key"]]
     emoji = CATEGORY_EMOJI.get(a["cat_key"], "📡")
+    thumb = find_thumb(a["id"])
 
     tags = [a["region"], a["cat_label"]]
     if a["source"]:
         tags.append(a["source"])
     tags_html = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in tags)
 
-    meta_line = esc(a["source"])
-    if a.get("pubDate"):
-        meta_line += f" &middot; {a['pubDate']}"
-
     nav_prev = f'<a href="{prev_a["id"]}.html">← 이전 글</a>' if prev_a else '<span></span>'
     nav_next = f'<a href="{next_a["id"]}.html">다음 글 →</a>' if next_a else '<span></span>'
+
+    hero_bg = "" if thumb else f'background:{color}33;'
+    hero_photo_html = f'<img class="hero-photo" src="../{thumb}" alt="">' if thumb else ""
+    hero_emoji_html = "" if thumb else f'<div class="hero-emoji">{emoji}</div>'
 
     related_tiles = []
     for r in related:
         rcolor = CATEGORY_COLOR[r["cat_key"]]
-        rtitle = r["title"]
+        rthumb = find_thumb(r["id"])
+        if rthumb:
+            rt_style = f"background-image:url('../{rthumb}')"
+            rt_content = ""
+        else:
+            rt_style = f"background:{rcolor}33"
+            rt_content = CATEGORY_EMOJI.get(r['cat_key'], '📡')
         related_tiles.append(f'''<a class="related-tile" href="{r['id']}.html">
-<div class="rt-art" style="background:{rcolor}">{CATEGORY_EMOJI.get(r['cat_key'], '📡')}</div>
-<div class="rt-label">{rtitle}</div>
+<div class="rt-art" style="{rt_style}">{rt_content}</div>
+<div class="rt-label">{r['title']}</div>
 </a>''')
     related_html = ""
     if related_tiles:
@@ -383,17 +425,21 @@ def render_article_page(a, prev_a, next_a, related):
 <a class="back" href="../index.html">← 피드로</a>
 </div>
 
-<div class="hero-cover" style="background:{gradient}">
+<div class="hero-cover" style="{hero_bg}">
+{hero_photo_html}
 <div class="hero-inner">
-<div class="hero-emoji">{emoji}</div>
+{hero_emoji_html}
 <div class="hero-info"><span class="hero-tag">{a['region']} &middot; {a['cat_label']}</span><span class="hero-date">{a['dateLabel']}</span></div>
 </div>
 </div>
 
-<div class="wrap" style="padding-top:28px;">
+<div class="wrap" style="padding-top:0;">
 <div class="detail-card">
 <h1>{a['title']}</h1>
-<div class="src">{meta_line}</div>
+<div class="byline">
+  <div class="byline-icon" style="background:{color}">{source_initial(a['source'])}</div>
+  <div><div class="byline-name">{esc(a['source'])}</div><div class="byline-role">{a['pubDate'] or a['dateLabel']}</div></div>
+</div>
 <div class="insight">{a['insight']}</div>
 <a class="source-cta" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
 <div class="tag-cloud">{tags_html}</div>

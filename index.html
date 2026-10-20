@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPLEAT 데일리 트렌드 아카이브</title>
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --accent:#1868E0;
   --accent-dim:#EAF2FE;
-  --ink:#16181D;
-  --sub:#656973;
-  --sub2:#8B92A0;
-  --line:#E9EBEF;
-  --bg:#F3F5F7;
+  --ink:#111214;
+  --sub:#525252;
+  --sub2:#8B8B8B;
+  --line:#E5E5E5;
+  --bg:#FFFFFF;
   --card:#FFFFFF;
   --shadow:0 4px 10px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
 }
@@ -22,13 +24,13 @@ html,body{margin:0;padding:0;}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1100px;margin:0 auto;padding:36px 20px 80px;}
 a{color:inherit;text-decoration:none;}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:2px solid var(--ink);margin-bottom:28px;}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);}
 .brand a{color:inherit;}
 .topbar .gh{font-size:13px;color:var(--sub);}
@@ -37,12 +39,12 @@ a{color:inherit;text-decoration:none;}
 header.site{margin-bottom:22px;}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
 h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
-.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;margin:16px 0 0;}
+.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;margin:16px 0 0;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* search + pill filters row */
-.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 26px;}
+/* search + pill filters row — interaction chrome stays soft/rounded */
+.filter-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin:18px 0 30px;}
 .search-box{position:relative;max-width:320px;flex:1;min-width:200px;}
 .search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
 .search-box input:focus{outline:none;border-color:var(--accent);}
@@ -53,23 +55,28 @@ h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn:hover:not(.active){border-color:var(--sub2);}
 
 /* layout: grid + aside */
-.content-layout{display:grid;grid-template-columns:1fr 272px;gap:24px;align-items:start;}
+.content-layout{display:grid;grid-template-columns:1fr 272px;gap:40px;align-items:start;}
 @media (max-width:860px){.content-layout{grid-template-columns:1fr;}}
 
-/* article feed — single reverse-chronological timeline */
-.feed-list{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:4px 22px;}
-.feed-item{display:block;padding:20px 0;border-top:1px solid var(--line);}
-.feed-item:first-child{border-top:none;}
-.feed-meta{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sub2);margin-bottom:6px;}
-.feed-cat{font-weight:800;}
-.feed-dot{opacity:.6;}
-.feed-title{font-size:16px;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;}
+/* article feed — flat editorial single-column timeline (magazine-hd.kr pattern) */
+.feed-list{display:flex;flex-direction:column;}
+.feed-item{padding:30px 0;border-top:1px solid var(--line);}
+.feed-item:first-child{border-top:none;padding-top:0;}
+.feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.feed-thumb-emoji{font-size:42px;opacity:.5;}
+.feed-eyebrow{font-size:12px;font-weight:800;letter-spacing:.06em;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.feed-title{font-size:19px;font-weight:800;margin:0 0 8px;line-height:1.4;letter-spacing:-.01em;color:var(--ink);}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-insight{font-size:13.5px;color:var(--sub);line-height:1.6;margin:0;}
-.feed-insight b{color:var(--ink);}
+.feed-summary{font-size:13.5px;color:var(--sub);line-height:1.65;margin:0 0 14px;}
+.feed-meta{display:flex;align-items:center;gap:8px;}
+.feed-src-icon{width:22px;height:22px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex:0 0 auto;}
+.feed-src-name{font-size:12px;font-weight:600;color:var(--ink);}
+.feed-dot{font-size:12px;color:var(--sub2);}
+.feed-date{font-size:12px;color:var(--sub2);}
 .hidden-initial{display:none;}
 
-.loadmore-wrap{text-align:center;margin-top:24px;}
+.loadmore-wrap{text-align:center;margin-top:8px;}
 .loadmore-btn{appearance:none;cursor:pointer;font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--sub);font-weight:700;font-size:14px;padding:13px 0;width:100%;border-radius:10px;box-shadow:var(--shadow);}
 .loadmore-btn:hover{border-color:var(--accent);color:var(--accent);}
 .no-results{font-size:14px;color:var(--sub);padding:40px 0;text-align:center;}
@@ -86,34 +93,39 @@ aside.rail h3{font-size:14px;margin:0 0 14px;font-weight:800;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* article detail page — full-bleed hero + contained content card (wiseapp detail-page pattern) */
-.hero-cover{width:100%;height:220px;position:relative;overflow:hidden;}
-.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;display:flex;align-items:center;justify-content:center;}
-.hero-cover .hero-emoji{font-size:62px;opacity:.9;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15));}
+/* article detail page — full-bleed flat hero photo + flat content blocks */
+.hero-cover{width:100%;height:320px;position:relative;overflow:hidden;background:#F2F2F2;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
+.hero-inner{max-width:1100px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:62px;opacity:.5;}
 .hero-info{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.92);color:#16181D;}
+.hero-tag{font-size:11px;font-weight:800;letter-spacing:.03em;padding:4px 10px;background:rgba(255,255,255,.92);color:#16181D;}
 .hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
-.detail-card{position:relative;background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 30px;}
-.detail-card > h1{font-size:23px;margin-bottom:10px;}
-.src{font-size:12.5px;color:var(--sub);margin:0 0 18px;}
-.insight{font-size:14.5px;color:#3D4250;line-height:1.7;padding-left:12px;border-left:2px solid var(--line);margin-bottom:22px;}
+.detail-card{position:relative;padding:30px 0 0;}
+.detail-card > h1{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.4;}
+.byline{display:flex;align-items:center;gap:10px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline-icon{width:40px;height:40px;background:#999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800;flex:0 0 auto;}
+.byline-name{font-size:13px;font-weight:700;color:var(--ink);}
+.byline-role{font-size:11.5px;color:var(--sub2);}
+.insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
 .insight b{color:var(--accent);}
-.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;border-radius:999px;font-size:13.5px;font-weight:700;}
+.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;}
 .source-cta:hover{background:var(--accent);}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
-.detail-note{font-size:12.5px;color:var(--sub);background:#F7F8FA;border-radius:10px;padding:14px 16px;line-height:1.7;}
+.detail-note{font-size:12.5px;color:var(--sub);background:#F7F7F7;padding:14px 16px;line-height:1.7;}
 
-.daynav{display:flex;justify-content:space-between;align-items:center;margin:16px 0 28px;font-size:14px;font-weight:600;background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:16px 20px;}
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 .daynav a{color:var(--accent);}
 .daynav .spacer{flex:1;}
 
 .related-strip{margin-bottom:28px;}
-.related-strip h3{font-size:14px;font-weight:800;margin:0 0 12px;}
-.related-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:4px;}
-.related-tile{flex:0 0 auto;width:160px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;display:block;}
-.related-tile .rt-art{height:56px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;}
-.related-tile .rt-label{font-size:12px;font-weight:700;padding:8px 10px 10px;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.related-strip h3{font-size:14px;font-weight:800;margin:0 0 14px;}
+.related-scroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:4px;}
+.related-tile{flex:0 0 auto;width:180px;background:var(--card);display:block;}
+.related-tile .rt-art{width:180px;height:101px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;}
+.related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 
 footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </style>
@@ -140,615 +152,819 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
     <div class="feed-list" id="feedList">
 <article class="feed-item" data-cat="ai" data-search="anthropic 'claude opus 5.5' 공개··· openai도 저가형 gpt-6 모델 2종으로 맞대응 성능은 유지하면서 비용은 40% 낮춘 모델 경쟁이 본격화되면서, ai 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다. siliconangle 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">SiliconANGLE</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic 'Claude Opus 5.5' 공개··· OpenAI도 저가형 GPT-6 모델 2종으로 맞대응</h2>
-  <p class="feed-insight">성능은 유지하면서 비용은 40% 낮춘 모델 경쟁이 본격화되면서, AI 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다.</p>
+  <p class="feed-summary">성능은 유지하면서 비용은 40% 낮춘 모델 경쟁이 본격화되면서, AI 모델 전쟁의 축이 '최고 성능'에서 '가격 대 성능'으로 옮겨가고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">S</span><span class="feed-src-name">SiliconANGLE</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="smashing magazine, 'ai 시대엔 디자이너의 안목이 더 중요해진다' 뉴스레터 발행 ai가 반복적인 제작 작업을 대신할수록 디자이너의 심미적 판단과 취향이 핵심 차별화 요소가 된다는 진단은, ai 시대 디자인 역량의 기준이 바뀌고 있음을 시사한다. smashing magazine 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">Smashing Magazine</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Smashing Magazine, 'AI 시대엔 디자이너의 안목이 더 중요해진다' 뉴스레터 발행</h2>
-  <p class="feed-insight">AI가 반복적인 제작 작업을 대신할수록 디자이너의 심미적 판단과 취향이 핵심 차별화 요소가 된다는 진단은, AI 시대 디자인 역량의 기준이 바뀌고 있음을 시사한다.</p>
+  <p class="feed-summary">AI가 반복적인 제작 작업을 대신할수록 디자이너의 심미적 판단과 취향이 핵심 차별화 요소가 된다는 진단은, AI 시대 디자인 역량의 기준이 바뀌고 있음을 시사한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">S</span><span class="feed-src-name">Smashing Magazine</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="openai, anthropic에 이어 비공개 ipo 신청··· 양사 모두 1조 달러대 밸류 추진 ai 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, ai 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동하는 변곡점을 맞고 있다. 9to5google 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">9to5Google</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">OpenAI, Anthropic에 이어 비공개 IPO 신청··· 양사 모두 1조 달러대 밸류 추진</h2>
-  <p class="feed-insight">AI 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, AI 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동하는 변곡점을 맞고 있다.</p>
+  <p class="feed-summary">AI 양대 기업이 한 주 간격으로 나란히 상장을 준비하면서, AI 산업의 자금 조달 축이 사모 투자에서 공개 시장으로 이동하는 변곡점을 맞고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">9</span><span class="feed-src-name">9to5Google</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="네이버, ai 안전성 체계 적용 사례 공개··· 'ai safety progress report' 첫 발간 서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, 국내 플랫폼도 ai 안전성 검증을 정기 보고 체계로 제도화하고 있음을 보여준다. 바이라인네트워크 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">네이버, AI 안전성 체계 적용 사례 공개··· 'AI Safety Progress Report' 첫 발간</h2>
-  <p class="feed-insight">서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, 국내 플랫폼도 AI 안전성 검증을 정기 보고 체계로 제도화하고 있음을 보여준다.</p>
+  <p class="feed-summary">서비스 전 주기에 110개 세부 위험 분류 체계를 적용한 보고서를 처음 공개한 것은, 국내 플랫폼도 AI 안전성 검증을 정기 보고 체계로 제도화하고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="삼성전자, dx부문에 제미나이·챗gpt·클로드 등 외부 생성형 ai 6월 공식 도입 2023년 보안 우려로 챗gpt 사용을 제한했던 삼성전자가 방향을 바꿔 외부 ai를 사내 업무에 전면 허용한 것은, 대기업의 ai 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌고 있음을 보여준다. 헤럴드경제 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-ai-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">헤럴드경제</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">삼성전자, DX부문에 제미나이·챗GPT·클로드 등 외부 생성형 AI 6월 공식 도입</h2>
-  <p class="feed-insight">2023년 보안 우려로 챗GPT 사용을 제한했던 삼성전자가 방향을 바꿔 외부 AI를 사내 업무에 전면 허용한 것은, 대기업의 AI 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌…</p>
+  <p class="feed-summary">2023년 보안 우려로 챗GPT 사용을 제한했던 삼성전자가 방향을 바꿔 외부 AI를 사내 업무에 전면 허용한 것은, 대기업의 AI 활용 정책이 '차단'에서 '관리된 개방'으로 바뀌…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">헤</span><span class="feed-src-name">헤럴드경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="lmnt, 전문가 매칭 플랫폼 숨고 bx 리뉴얼··· 2026 if 디자인 어워드 수상 거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 국제 디자인 어워드 수상으로 이어진 것은, 국내 bx 디자인의 완성도가 글로벌 기준에 근접했음을 보여준다. 월간 디자인 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">월간 디자인</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">LMNT, 전문가 매칭 플랫폼 숨고 BX 리뉴얼··· 2026 iF 디자인 어워드 수상</h2>
-  <p class="feed-insight">거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 국제 디자인 어워드 수상으로 이어진 것은, 국내 BX 디자인…</p>
+  <p class="feed-summary">거래형 플랫폼에서 '라이프스킬 성장 플랫폼'으로 전환한다는 메시지를 한글 로고타입과 보라색 컬러 체계로 구현한 리뉴얼이 국제 디자인 어워드 수상으로 이어진 것은, 국내 BX 디자인…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">월</span><span class="feed-src-name">월간 디자인</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="라이너, 500억원 시리즈c 투자 유치··· 누적 투자 940억원 오픈ai의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, 국내 ai 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁에 들어섰음을 보여준다. 머니투데이 2026년 10월 20일 화요일">
 <a class="feed-link" href="articles/2026-10-20-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">라이너, 500억원 시리즈C 투자 유치··· 누적 투자 940억원</h2>
-  <p class="feed-insight">오픈AI의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, 국내 AI 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁에 들…</p>
+  <p class="feed-summary">오픈AI의 사실 정확도 벤치마크에서 95.3점을 받은 점이 투자 유치의 핵심 근거로 꼽힌 것은, 국내 AI 검색 스타트업도 '정확도'를 투자 유치의 핵심 지표로 내세우는 경쟁에 들…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">머</span><span class="feed-src-name">머니투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.20</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="딥시크, 더 빠르고 가벼운 신모델 'v4.1-flash-1017' 공개 딥시크가 벤치마크와 속도를 모두 개선한 신모델을 즉시 앱과 개발자 플랫폼에 공개한 것은 중국 ai 업체들의 추격 속도가 전혀 느려지지 않았다는 신호다. bloomberg 2026년 10월 19일 월요일">
 <a class="feed-link" href="articles/2026-10-19-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span><span class="feed-dot">&middot;</span><span class="feed-src">Bloomberg</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">딥시크, 더 빠르고 가벼운 신모델 'V4.1-Flash-1017' 공개</h2>
-  <p class="feed-insight">딥시크가 벤치마크와 속도를 모두 개선한 신모델을 즉시 앱과 개발자 플랫폼에 공개한 것은 중국 AI 업체들의 추격 속도가 전혀 느려지지 않았다는 신호다.</p>
+  <p class="feed-summary">딥시크가 벤치마크와 속도를 모두 개선한 신모델을 즉시 앱과 개발자 플랫폼에 공개한 것은 중국 AI 업체들의 추격 속도가 전혀 느려지지 않았다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">B</span><span class="feed-src-name">Bloomberg</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="reflection ai, 오픈웨이트 모델 'beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워 오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다. techcrunch 2026년 10월 19일 월요일">
 <a class="feed-link" href="articles/2026-10-19-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span><span class="feed-dot">&middot;</span><span class="feed-src">TechCrunch</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Reflection AI, 오픈웨이트 모델 'Beam' 공개…중국 모델보다 낮은 컴퓨팅 비용 내세워</h2>
-  <p class="feed-insight">오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다.</p>
+  <p class="feed-summary">오픈소스·저비용을 앞세운 오픈웨이트 모델이 늘어나는 흐름은 선두 기업들의 폐쇄형 모델 전략에 대한 대안이 확산되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechCrunch</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="카카오, 'if(kakao)26'서 개방형 ai 플랫폼 '모두의 ai' 전략 공개 카카오가 자체 기술 대신 외부 기업·개발자를 연결하는 개방형 플랫폼 전략을 택한 점은 국내 빅테크의 ai 경쟁 축이 '혼자 만들기'에서 '생태계 조립'으로 옮겨가고 있음을 보여준다. 바이라인네트워크 2026년 10월 19일 월요일">
 <a class="feed-link" href="articles/2026-10-19-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">카카오, 'if(kakao)26'서 개방형 AI 플랫폼 '모두의 AI' 전략 공개</h2>
-  <p class="feed-insight">카카오가 자체 기술 대신 외부 기업·개발자를 연결하는 개방형 플랫폼 전략을 택한 점은 국내 빅테크의 AI 경쟁 축이 '혼자 만들기'에서 '생태계 조립'으로 옮겨가고 있음을 보여준다…</p>
+  <p class="feed-summary">카카오가 자체 기술 대신 외부 기업·개발자를 연결하는 개방형 플랫폼 전략을 택한 점은 국내 빅테크의 AI 경쟁 축이 '혼자 만들기'에서 '생태계 조립'으로 옮겨가고 있음을 보여준다…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.19</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="ftc, openai·anthropic에 ai 안전성 관련 자료 제출 요구 50쪽 분량의 정식 조사 요구서를 받은 것은 ai 안전사고에 대한 미국 정부의 소비자보호 조사가 본격화되고 있음을 보여준다. engadget 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">Engadget</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">FTC, OpenAI·Anthropic에 AI 안전성 관련 자료 제출 요구</h2>
-  <p class="feed-insight">50쪽 분량의 정식 조사 요구서를 받은 것은 AI 안전사고에 대한 미국 정부의 소비자보호 조사가 본격화되고 있음을 보여준다.</p>
+  <p class="feed-summary">50쪽 분량의 정식 조사 요구서를 받은 것은 AI 안전사고에 대한 미국 정부의 소비자보호 조사가 본격화되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">E</span><span class="feed-src-name">Engadget</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="servicenow, ai 에이전트용 신원 인증 체계 'ai passport' 발표 런타임에서 에이전트의 권한을 검증하고 이탈 시 즉시 차단하는 구조는 ai 에이전트 거버넌스가 선언적 가이드라인에서 기술적 강제로 넘어가고 있음을 보여준다. infoworld 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">InfoWorld</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">ServiceNow, AI 에이전트용 신원 인증 체계 'AI Passport' 발표</h2>
-  <p class="feed-insight">런타임에서 에이전트의 권한을 검증하고 이탈 시 즉시 차단하는 구조는 AI 에이전트 거버넌스가 선언적 가이드라인에서 기술적 강제로 넘어가고 있음을 보여준다.</p>
+  <p class="feed-summary">런타임에서 에이전트의 권한을 검증하고 이탈 시 즉시 차단하는 구조는 AI 에이전트 거버넌스가 선언적 가이드라인에서 기술적 강제로 넘어가고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">I</span><span class="feed-src-name">InfoWorld</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="apple, 스마트홈 액세서리 신규 라인업 'apple home collection' 공개 lg전자·슈나이더 일렉트릭과 공동 개발한 제품 라인업은 애플이 스마트홈 하드웨어 디자인을 자체 생태계 확장의 핵심 축으로 삼고 있음을 보여준다. apple newsroom 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">Apple Newsroom</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Apple, 스마트홈 액세서리 신규 라인업 'Apple Home Collection' 공개</h2>
-  <p class="feed-insight">LG전자·슈나이더 일렉트릭과 공동 개발한 제품 라인업은 애플이 스마트홈 하드웨어 디자인을 자체 생태계 확장의 핵심 축으로 삼고 있음을 보여준다.</p>
+  <p class="feed-summary">LG전자·슈나이더 일렉트릭과 공동 개발한 제품 라인업은 애플이 스마트홈 하드웨어 디자인을 자체 생태계 확장의 핵심 축으로 삼고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">A</span><span class="feed-src-name">Apple Newsroom</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="결제 스타트업 ramp, 18.5억 달러 투자 유치…기업가치 600억 달러 드래고니어 인베스트먼트 그룹이 주도한 이번 라운드는 핀테크 자동화 기업에 대한 투자 열기가 여전히 꺾이지 않았음을 보여준다. tech startups 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">Tech Startups</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">결제 스타트업 Ramp, 18.5억 달러 투자 유치…기업가치 600억 달러</h2>
-  <p class="feed-insight">드래고니어 인베스트먼트 그룹이 주도한 이번 라운드는 핀테크 자동화 기업에 대한 투자 열기가 여전히 꺾이지 않았음을 보여준다.</p>
+  <p class="feed-summary">드래고니어 인베스트먼트 그룹이 주도한 이번 라운드는 핀테크 자동화 기업에 대한 투자 열기가 여전히 꺾이지 않았음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">Tech Startups</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="cloudflare, node.js 창시자의 런타임 기업 deno 인수 독립 런타임이던 deno가 1년의 유예 기간을 끝으로 단계적으로 종료되고 핵심 기술만 cloudflare workers 플랫폼에 흡수되는 수순은, 개발자 런타임 경쟁이 소수 클라우드 플랫폼으로 통합되고 있음을 보여준다. the new stack 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">The New Stack</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Cloudflare, Node.js 창시자의 런타임 기업 Deno 인수</h2>
-  <p class="feed-insight">독립 런타임이던 Deno가 1년의 유예 기간을 끝으로 단계적으로 종료되고 핵심 기술만 Cloudflare Workers 플랫폼에 흡수되는 수순은, 개발자 런타임 경쟁이 소수 클라우…</p>
+  <p class="feed-summary">독립 런타임이던 Deno가 1년의 유예 기간을 끝으로 단계적으로 종료되고 핵심 기술만 Cloudflare Workers 플랫폼에 흡수되는 수순은, 개발자 런타임 경쟁이 소수 클라우…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">The New Stack</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="카카오뱅크, ai 코칭 적용한 'ai 목표적금' 출시 저축 목표 설정부터 달성까지 ai가 단계별로 조언하는 구조는 금융권 ai 도입이 상담 보조를 넘어 상품 설계 자체에 결합되고 있음을 보여준다. sbs biz 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">SBS Biz</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">카카오뱅크, AI 코칭 적용한 'AI 목표적금' 출시</h2>
-  <p class="feed-insight">저축 목표 설정부터 달성까지 AI가 단계별로 조언하는 구조는 금융권 AI 도입이 상담 보조를 넘어 상품 설계 자체에 결합되고 있음을 보여준다.</p>
+  <p class="feed-summary">저축 목표 설정부터 달성까지 AI가 단계별로 조언하는 구조는 금융권 AI 도입이 상담 보조를 넘어 상품 설계 자체에 결합되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">S</span><span class="feed-src-name">SBS Biz</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="삼성·lg, 'kes 2026'서 일상·산업 바꿀 ai 신기술 맞대결 삼성이 냉장고 내부 카메라로 식재료를 인식하는 'ai 푸드매니저'를 내세우고 lg가 데이터센터용 '칩 투 칠러' 냉각 솔루션까지 전시한 것은, 국내 대기업의 ai 경쟁이 생활가전과 산업 인프라 양쪽에서 동시에 벌어지고 있음을 보여준다. 머니투데이 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-d-ai-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">삼성·LG, 'KES 2026'서 일상·산업 바꿀 AI 신기술 맞대결</h2>
-  <p class="feed-insight">삼성이 냉장고 내부 카메라로 식재료를 인식하는 'AI 푸드매니저'를 내세우고 LG가 데이터센터용 '칩 투 칠러' 냉각 솔루션까지 전시한 것은, 국내 대기업의 AI 경쟁이 생활가전과…</p>
+  <p class="feed-summary">삼성이 냉장고 내부 카메라로 식재료를 인식하는 'AI 푸드매니저'를 내세우고 LG가 데이터센터용 '칩 투 칠러' 냉각 솔루션까지 전시한 것은, 국내 대기업의 AI 경쟁이 생활가전과…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">머</span><span class="feed-src-name">머니투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="단말기를 깐 '토스', 길을 빌린 '카카오페이'…오프라인 결제 ux 전략 토스페이스페이 가맹점이 37만 곳을 넘어선 가운데 결제 과정의 동작 자체를 줄이는 데 집중한 설계는, 오프라인 결제 ux 경쟁의 핵심이 인프라 확보 방식의 차이로 옮겨가고 있음을 보여준다. 모비인사이드 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-d-ux-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">모비인사이드</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🇰🇷</span><span>UX</span></div>
   <h2 class="feed-title">단말기를 깐 '토스', 길을 빌린 '카카오페이'…오프라인 결제 UX 전략</h2>
-  <p class="feed-insight">토스페이스페이 가맹점이 37만 곳을 넘어선 가운데 결제 과정의 동작 자체를 줄이는 데 집중한 설계는, 오프라인 결제 UX 경쟁의 핵심이 인프라 확보 방식의 차이로 옮겨가고 있음을 …</p>
+  <p class="feed-summary">토스페이스페이 가맹점이 37만 곳을 넘어선 가운데 결제 과정의 동작 자체를 줄이는 데 집중한 설계는, 오프라인 결제 UX 경쟁의 핵심이 인프라 확보 방식의 차이로 옮겨가고 있음을 …</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">모</span><span class="feed-src-name">모비인사이드</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="호반건설, '호반써밋' 브랜드 7년 만에 리뉴얼…새 bi·슬로건 공개 영문 로고를 곡선으로 다듬고 'where life grows'를 새 슬로건으로 내세운 것은, 주거 브랜드가 분양 상품을 넘어 거주자의 생활 변화까지 아우르는 디자인 체계로 확장하고 있음을 보여준다. 브릿지경제 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">브릿지경제</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">호반건설, '호반써밋' 브랜드 7년 만에 리뉴얼…새 BI·슬로건 공개</h2>
-  <p class="feed-insight">영문 로고를 곡선으로 다듬고 'Where Life Grows'를 새 슬로건으로 내세운 것은, 주거 브랜드가 분양 상품을 넘어 거주자의 생활 변화까지 아우르는 디자인 체계로 확장하고…</p>
+  <p class="feed-summary">영문 로고를 곡선으로 다듬고 'Where Life Grows'를 새 슬로건으로 내세운 것은, 주거 브랜드가 분양 상품을 넘어 거주자의 생활 변화까지 아우르는 디자인 체계로 확장하고…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">브</span><span class="feed-src-name">브릿지경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="웨어러블 로봇 휴로틱스, 250억 규모 시리즈a 투자 유치 대웅·네이버·롯데 등이 전략적 투자자로 새로 합류한 것은, 웨어러블 로봇 기업의 가치가 병원 재활을 넘어 일상 보행 보조 데이터 플랫폼으로까지 확장되고 있음을 보여준다. 스마트투데이 2026년 10월 18일 일요일">
 <a class="feed-link" href="articles/2026-10-18-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span><span class="feed-dot">&middot;</span><span class="feed-src">스마트투데이</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">웨어러블 로봇 휴로틱스, 250억 규모 시리즈A 투자 유치</h2>
-  <p class="feed-insight">대웅·네이버·롯데 등이 전략적 투자자로 새로 합류한 것은, 웨어러블 로봇 기업의 가치가 병원 재활을 넘어 일상 보행 보조 데이터 플랫폼으로까지 확장되고 있음을 보여준다.</p>
+  <p class="feed-summary">대웅·네이버·롯데 등이 전략적 투자자로 새로 합류한 것은, 웨어러블 로봇 기업의 가치가 병원 재활을 넘어 일상 보행 보조 데이터 플랫폼으로까지 확장되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">스</span><span class="feed-src-name">스마트투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.18</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 싱가포르에 사무소 개소하고 정부와 mou 체결 싱가포르 정부와의 공식 협력 체결은 anthropic이 아시아 시장 확장을 가속화하고 있음을 보여준다. anthropic 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 싱가포르에 사무소 개소하고 정부와 MOU 체결</h2>
-  <p class="feed-insight">싱가포르 정부와의 공식 협력 체결은 Anthropic이 아시아 시장 확장을 가속화하고 있음을 보여준다.</p>
+  <p class="feed-summary">싱가포르 정부와의 공식 협력 체결은 Anthropic이 아시아 시장 확장을 가속화하고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 독립 평가기관(independent evaluators) 관련 업데이트 발표 모델 안전성 검증을 외부에 맡기는 독립 평가 체계 확대는 ai 업계의 투명성 압박이 커지고 있다는 신호다. anthropic 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 독립 평가기관(Independent Evaluators) 관련 업데이트 발표</h2>
-  <p class="feed-insight">모델 안전성 검증을 외부에 맡기는 독립 평가 체계 확대는 AI 업계의 투명성 압박이 커지고 있다는 신호다.</p>
+  <p class="feed-summary">모델 안전성 검증을 외부에 맡기는 독립 평가 체계 확대는 AI 업계의 투명성 압박이 커지고 있다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 사이버 검증 프로그램(cyber verification program) 확대 ai 모델의 보안 취약점을 선제적으로 검증하는 체계가 업계 표준으로 자리잡고 있다. anthropic 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-ai-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 사이버 검증 프로그램(Cyber Verification Program) 확대</h2>
-  <p class="feed-insight">AI 모델의 보안 취약점을 선제적으로 검증하는 체계가 업계 표준으로 자리잡고 있다.</p>
+  <p class="feed-summary">AI 모델의 보안 취약점을 선제적으로 검증하는 체계가 업계 표준으로 자리잡고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="시카고 아테네움, '2026 뉴 모던 퍼니처 + 라이팅' 수상작 발표 및 아테네 전시 개최 1949년 moma에서 시작된 프라이즈 디자인 전통이 2026년에도 이어지며 가구·조명 디자인의 실험적 흐름을 조명한다. global design news 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">Global Design News</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">시카고 아테네움, '2026 뉴 모던 퍼니처 + 라이팅' 수상작 발표 및 아테네 전시 개최</h2>
-  <p class="feed-insight">1949년 MoMA에서 시작된 프라이즈 디자인 전통이 2026년에도 이어지며 가구·조명 디자인의 실험적 흐름을 조명한다.</p>
+  <p class="feed-summary">1949년 MoMA에서 시작된 프라이즈 디자인 전통이 2026년에도 이어지며 가구·조명 디자인의 실험적 흐름을 조명한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">G</span><span class="feed-src-name">Global Design News</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="bradbury capital, spac 합병 완료하고 나스닥 데뷔…'bbci'로 거래 시작 말레이시아 전자바우처 핀테크 기업의 spac 합병을 통한 나스닥 상장은 동남아 핀테크의 글로벌 자본시장 진출 통로가 넓어지고 있음을 보여준다. pulse2 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">Pulse2</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Bradbury Capital, SPAC 합병 완료하고 나스닥 데뷔…'BBCI'로 거래 시작</h2>
-  <p class="feed-insight">말레이시아 전자바우처 핀테크 기업의 SPAC 합병을 통한 나스닥 상장은 동남아 핀테크의 글로벌 자본시장 진출 통로가 넓어지고 있음을 보여준다.</p>
+  <p class="feed-summary">말레이시아 전자바우처 핀테크 기업의 SPAC 합병을 통한 나스닥 상장은 동남아 핀테크의 글로벌 자본시장 진출 통로가 넓어지고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">P</span><span class="feed-src-name">Pulse2</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="bending spoons, 소프트웨어 스타트업 airtable을 22.5억 달러에 인수 2021년 110억 달러였던 기업가치가 22.5억 달러로 꺾인 채 매각된 사례는 saas 밸류에이션 거품이 본격적으로 꺼지고 있음을 보여준다. the stack 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">The Stack</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Bending Spoons, 소프트웨어 스타트업 Airtable을 22.5억 달러에 인수</h2>
-  <p class="feed-insight">2021년 110억 달러였던 기업가치가 22.5억 달러로 꺾인 채 매각된 사례는 SaaS 밸류에이션 거품이 본격적으로 꺼지고 있음을 보여준다.</p>
+  <p class="feed-summary">2021년 110억 달러였던 기업가치가 22.5억 달러로 꺾인 채 매각된 사례는 SaaS 밸류에이션 거품이 본격적으로 꺼지고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">The Stack</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="[kes2026] 삼성전자 '일상 속 ai' 공개…lg전자는 산업까지 확장 삼성전자가 냉장고·세탁기에 ai 푸드매니저, ai 맞춤+ 기능을 탑재하며 가전을 생활 밀착형 ai 플랫폼으로 전환하고 있다. 전자신문 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">전자신문</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">[KES2026] 삼성전자 '일상 속 AI' 공개…LG전자는 산업까지 확장</h2>
-  <p class="feed-insight">삼성전자가 냉장고·세탁기에 AI 푸드매니저, AI 맞춤+ 기능을 탑재하며 가전을 생활 밀착형 AI 플랫폼으로 전환하고 있다.</p>
+  <p class="feed-summary">삼성전자가 냉장고·세탁기에 AI 푸드매니저, AI 맞춤+ 기능을 탑재하며 가전을 생활 밀착형 AI 플랫폼으로 전환하고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">전</span><span class="feed-src-name">전자신문</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="네임드, 롯데칠성 rtd 커피 '칸타타 하모니' 비주얼·패키지 디자인 공개 강렬한 블랙 대신 바닐라 베이지·돌체 핑크로 색채 전략을 전환해 커피 브랜드의 감성적 포지셔닝을 재정의했다. 월간디자인 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">월간디자인</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">네임드, 롯데칠성 RTD 커피 '칸타타 하모니' 비주얼·패키지 디자인 공개</h2>
-  <p class="feed-insight">강렬한 블랙 대신 바닐라 베이지·돌체 핑크로 색채 전략을 전환해 커피 브랜드의 감성적 포지셔닝을 재정의했다.</p>
+  <p class="feed-summary">강렬한 블랙 대신 바닐라 베이지·돌체 핑크로 색채 전략을 전환해 커피 브랜드의 감성적 포지셔닝을 재정의했다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">월</span><span class="feed-src-name">월간디자인</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="8월 국내 비상장 스타트업 투자 195건으로 동월 역대 최고 기록 건수는 역대 최고를 찍었지만 투자금액은 7월과 비슷한 수준에 머물며 건당 투자 규모가 줄어드는 흐름이 뚜렷해지고 있다. 한경비즈니스 2026년 10월 17일 토요일">
 <a class="feed-link" href="articles/2026-10-17-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span><span class="feed-dot">&middot;</span><span class="feed-src">한경비즈니스</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">8월 국내 비상장 스타트업 투자 195건으로 동월 역대 최고 기록</h2>
-  <p class="feed-insight">건수는 역대 최고를 찍었지만 투자금액은 7월과 비슷한 수준에 머물며 건당 투자 규모가 줄어드는 흐름이 뚜렷해지고 있다.</p>
+  <p class="feed-summary">건수는 역대 최고를 찍었지만 투자금액은 7월과 비슷한 수준에 머물며 건당 투자 규모가 줄어드는 흐름이 뚜렷해지고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">한</span><span class="feed-src-name">한경비즈니스</span><span class="feed-dot">&middot;</span><span class="feed-date">10.17</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 엔지니어 1만 명 양성에 1억 달러 투자 ai 도입의 최대 걸림돌이 기술이 아니라 '숙련 인력 부족'이라는 점을 가장 앞선 ai 기업이 스스로 증명한 투자다. anthropic 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 엔지니어 1만 명 양성에 1억 달러 투자</h2>
-  <p class="feed-insight">AI 도입의 최대 걸림돌이 기술이 아니라 '숙련 인력 부족'이라는 점을 가장 앞선 AI 기업이 스스로 증명한 투자다.</p>
+  <p class="feed-summary">AI 도입의 최대 걸림돌이 기술이 아니라 '숙련 인력 부족'이라는 점을 가장 앞선 AI 기업이 스스로 증명한 투자다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="barclays, claude를 전사 운영 인프라로 확대 적용 하루 12만 건의 이메일 분류까지 ai에 맡기는 사례는 금융권 ai 도입이 실험 단계를 지나 핵심 업무 영역으로 들어섰음을 보여준다. anthropic 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Barclays, Claude를 전사 운영 인프라로 확대 적용</h2>
-  <p class="feed-insight">하루 12만 건의 이메일 분류까지 AI에 맡기는 사례는 금융권 AI 도입이 실험 단계를 지나 핵심 업무 영역으로 들어섰음을 보여준다.</p>
+  <p class="feed-summary">하루 12만 건의 이메일 분류까지 AI에 맡기는 사례는 금융권 AI 도입이 실험 단계를 지나 핵심 업무 영역으로 들어섰음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 핵심 인프라 보안을 위한 'cyber mission' 출범 전력·수도 같은 운영기술(ot) 영역까지 ai 보안 방어선을 확장하는 행보는, ai가 공격 도구를 넘어 핵심 방어 인프라로 자리잡고 있음을 뜻한다. anthropic 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-ai-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">Anthropic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 핵심 인프라 보안을 위한 'Cyber Mission' 출범</h2>
-  <p class="feed-insight">전력·수도 같은 운영기술(OT) 영역까지 AI 보안 방어선을 확장하는 행보는, AI가 공격 도구를 넘어 핵심 방어 인프라로 자리잡고 있음을 뜻한다.</p>
+  <p class="feed-summary">전력·수도 같은 운영기술(OT) 영역까지 AI 보안 방어선을 확장하는 행보는, AI가 공격 도구를 넘어 핵심 방어 인프라로 자리잡고 있음을 뜻한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">Anthropic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="figma, config 2026에서 '코드 레이어'와 figma motion 공개 디자인 레이어를 코드로 즉시 전환하는 기능은 디자인 툴이 코드를 '또 하나의 디자인 재료'로 흡수하는 흐름을 상징적으로 보여준다. cmswire 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">CMSWire</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Figma, Config 2026에서 '코드 레이어'와 Figma Motion 공개</h2>
-  <p class="feed-insight">디자인 레이어를 코드로 즉시 전환하는 기능은 디자인 툴이 코드를 '또 하나의 디자인 재료'로 흡수하는 흐름을 상징적으로 보여준다.</p>
+  <p class="feed-summary">디자인 레이어를 코드로 즉시 전환하는 기능은 디자인 툴이 코드를 '또 하나의 디자인 재료'로 흡수하는 흐름을 상징적으로 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">C</span><span class="feed-src-name">CMSWire</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="tsmc, ai 반도체 수요 힘입어 3분기 역대급 매출 기록 ai 반도체 수요가 실제 매출로 숫자화되고 있다는 점에서, ai 투자 거품론보다 실적 전환이 앞서가고 있다. kaohoon international 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">Kaohoon International</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">TSMC, AI 반도체 수요 힘입어 3분기 역대급 매출 기록</h2>
-  <p class="feed-insight">AI 반도체 수요가 실제 매출로 숫자화되고 있다는 점에서, AI 투자 거품론보다 실적 전환이 앞서가고 있다.</p>
+  <p class="feed-summary">AI 반도체 수요가 실제 매출로 숫자화되고 있다는 점에서, AI 투자 거품론보다 실적 전환이 앞서가고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">K</span><span class="feed-src-name">Kaohoon International</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="오라클, 자발적 퇴사 프로그램 확대 검토…구조조정 지속 ai 인프라 투자 확대와 인력 구조조정이 동시에 진행되는 빅테크의 전형적 패턴이 오라클에서도 반복되고 있다. stocktwits 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">Stocktwits</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">오라클, 자발적 퇴사 프로그램 확대 검토…구조조정 지속</h2>
-  <p class="feed-insight">AI 인프라 투자 확대와 인력 구조조정이 동시에 진행되는 빅테크의 전형적 패턴이 오라클에서도 반복되고 있다.</p>
+  <p class="feed-summary">AI 인프라 투자 확대와 인력 구조조정이 동시에 진행되는 빅테크의 전형적 패턴이 오라클에서도 반복되고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">S</span><span class="feed-src-name">Stocktwits</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="삼성전자, 미스트랄 ai와 전략적 파트너십…반도체 특화 ai 공동 개발 외부 클라우드 대신 온프레미스로 운영한다는 점에서, ai 경쟁력을 보안·공정 데이터와 함께 내부에 완전히 흡수하려는 삼성의 전략이 드러난다. 머니투데이 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">삼성전자, 미스트랄 AI와 전략적 파트너십…반도체 특화 AI 공동 개발</h2>
-  <p class="feed-insight">외부 클라우드 대신 온프레미스로 운영한다는 점에서, AI 경쟁력을 보안·공정 데이터와 함께 내부에 완전히 흡수하려는 삼성의 전략이 드러난다.</p>
+  <p class="feed-summary">외부 클라우드 대신 온프레미스로 운영한다는 점에서, AI 경쟁력을 보안·공정 데이터와 함께 내부에 완전히 흡수하려는 삼성의 전략이 드러난다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">머</span><span class="feed-src-name">머니투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="'2026 산업ai expo' 개최 예고…정부 주도 'k connect ai' 플랫폼과 연계 정부가 산업ai를 국가 플랫폼 단위로 묶어내는 행보는 개별 기업의 ai 도입을 넘어 산업 생태계 표준화를 겨냥하고 있다. 전자신문 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-ai-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">전자신문</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">'2026 산업AI EXPO' 개최 예고…정부 주도 'K Connect AI' 플랫폼과 연계</h2>
-  <p class="feed-insight">정부가 산업AI를 국가 플랫폼 단위로 묶어내는 행보는 개별 기업의 AI 도입을 넘어 산업 생태계 표준화를 겨냥하고 있다.</p>
+  <p class="feed-summary">정부가 산업AI를 국가 플랫폼 단위로 묶어내는 행보는 개별 기업의 AI 도입을 넘어 산업 생태계 표준화를 겨냥하고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">전</span><span class="feed-src-name">전자신문</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="롯데웰푸드, 꼬깔콘 패키지 5년 만에 리뉴얼…토마스 스튜디오와 협업 삼각형 틀을 실제 과자 모양인 삼각뿔로 바꾼 선택은, 장수 브랜드가 잘파세대를 겨냥해 디자인 문법 자체를 재정의하고 있음을 보여준다. 디자인하우스 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">디자인하우스</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">롯데웰푸드, 꼬깔콘 패키지 5년 만에 리뉴얼…토마스 스튜디오와 협업</h2>
-  <p class="feed-insight">삼각형 틀을 실제 과자 모양인 삼각뿔로 바꾼 선택은, 장수 브랜드가 잘파세대를 겨냥해 디자인 문법 자체를 재정의하고 있음을 보여준다.</p>
+  <p class="feed-summary">삼각형 틀을 실제 과자 모양인 삼각뿔로 바꾼 선택은, 장수 브랜드가 잘파세대를 겨냥해 디자인 문법 자체를 재정의하고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">디</span><span class="feed-src-name">디자인하우스</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="상반기 신규 벤처투자 8.9조원…전년 대비 56% 증가 ipo 비중이 꾸준히 올라가는 동시에 투자금이 검증된 우량기업으로만 쏠리는 현상이 심해지고 있다는 점이 회복의 그늘이다. 한국경제 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">한국경제</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">상반기 신규 벤처투자 8.9조원…전년 대비 56% 증가</h2>
-  <p class="feed-insight">IPO 비중이 꾸준히 올라가는 동시에 투자금이 검증된 우량기업으로만 쏠리는 현상이 심해지고 있다는 점이 회복의 그늘이다.</p>
+  <p class="feed-summary">IPO 비중이 꾸준히 올라가는 동시에 투자금이 검증된 우량기업으로만 쏠리는 현상이 심해지고 있다는 점이 회복의 그늘이다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">한</span><span class="feed-src-name">한국경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="토스쇼핑, 오아시스마켓 전용관 오픈…새벽배송까지 확장 금융 슈퍼앱이 신선식품 새벽배송까지 흡수하는 모습은, 토스의 경쟁 상대가 이제 커머스·유통 플랫폼으로 확장되고 있음을 보여준다. 바이라인네트워크 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-biz-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">토스쇼핑, 오아시스마켓 전용관 오픈…새벽배송까지 확장</h2>
-  <p class="feed-insight">금융 슈퍼앱이 신선식품 새벽배송까지 흡수하는 모습은, 토스의 경쟁 상대가 이제 커머스·유통 플랫폼으로 확장되고 있음을 보여준다.</p>
+  <p class="feed-summary">금융 슈퍼앱이 신선식품 새벽배송까지 흡수하는 모습은, 토스의 경쟁 상대가 이제 커머스·유통 플랫폼으로 확장되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.16</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="meta releases its first frontier model, muse wonder 메타가 처음으로 프론티어급 모델 '뮤즈 원더'를 공개하며 빅테크 ai 모델 경쟁이 오픈ai·구글·앤트로픽을 넘어 메타까지 전면전으로 확대되고 있다. techcrunch 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">TechCrunch</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Meta releases its first frontier model, Muse Wonder</h2>
-  <p class="feed-insight">메타가 처음으로 프론티어급 모델 '뮤즈 원더'를 공개하며 빅테크 AI 모델 경쟁이 오픈AI·구글·앤트로픽을 넘어 메타까지 전면전으로 확대되고 있다.</p>
+  <p class="feed-summary">메타가 처음으로 프론티어급 모델 '뮤즈 원더'를 공개하며 빅테크 AI 모델 경쟁이 오픈AI·구글·앤트로픽을 넘어 메타까지 전면전으로 확대되고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechCrunch</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="google launches gemini 4 argon, gives cyber defenders first access 구글이 사이버 보안 전문가에게 먼저 공개한 '제미니 4 아르곤'은 ai가 공격이 아닌 방어의 핵심 무기로 자리잡는 전환점을 보여준다. techrepublic 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">TechRepublic</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Google Launches Gemini 4 Argon, Gives Cyber Defenders First Access</h2>
-  <p class="feed-insight">구글이 사이버 보안 전문가에게 먼저 공개한 '제미니 4 아르곤'은 AI가 공격이 아닌 방어의 핵심 무기로 자리잡는 전환점을 보여준다.</p>
+  <p class="feed-summary">구글이 사이버 보안 전문가에게 먼저 공개한 '제미니 4 아르곤'은 AI가 공격이 아닌 방어의 핵심 무기로 자리잡는 전환점을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechRepublic</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="claude haiku 5.5 debuts as anthropic's faster small ai model 앤트로픽이 비용을 75% 낮춘 '클로드 하이쿠 5.5'를 내놓으며 고성능 ai의 대중화와 가격 경쟁이 동시에 가속화되고 있음을 증명했다. yourstory 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-ai-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">YourStory</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Claude Haiku 5.5 debuts as Anthropic's faster small AI model</h2>
-  <p class="feed-insight">앤트로픽이 비용을 75% 낮춘 '클로드 하이쿠 5.5'를 내놓으며 고성능 AI의 대중화와 가격 경쟁이 동시에 가속화되고 있음을 증명했다.</p>
+  <p class="feed-summary">앤트로픽이 비용을 75% 낮춘 '클로드 하이쿠 5.5'를 내놓으며 고성능 AI의 대중화와 가격 경쟁이 동시에 가속화되고 있음을 증명했다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">Y</span><span class="feed-src-name">YourStory</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="the future of user research report 2026: trends &amp; insights maze의 2026 리서치 보고서는 리서처의 69%가 이미 ai를 리서치 업무에 활용하고 있음을 보여주며 ux 리서치의 역할이 근본적으로 재편되고 있음을 시사한다. maze 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-ux-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">Maze</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🌐</span><span>UX</span></div>
   <h2 class="feed-title">The Future of User Research Report 2026: Trends & Insights</h2>
-  <p class="feed-insight">Maze의 2026 리서치 보고서는 리서처의 69%가 이미 AI를 리서치 업무에 활용하고 있음을 보여주며 UX 리서치의 역할이 근본적으로 재편되고 있음을 시사한다.</p>
+  <p class="feed-summary">Maze의 2026 리서치 보고서는 리서처의 69%가 이미 AI를 리서치 업무에 활용하고 있음을 보여주며 UX 리서치의 역할이 근본적으로 재편되고 있음을 시사한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">M</span><span class="feed-src-name">Maze</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="ai in design report 2026 디자이너의 91%가 매주 ai를 사용한다는 조사 결과는 ai가 디자인 워크플로우의 선택이 아닌 필수 요소로 완전히 자리잡았다는 사실을 입증한다. designer fund 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">Designer Fund</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">AI in Design Report 2026</h2>
-  <p class="feed-insight">디자이너의 91%가 매주 AI를 사용한다는 조사 결과는 AI가 디자인 워크플로우의 선택이 아닌 필수 요소로 완전히 자리잡았다는 사실을 입증한다.</p>
+  <p class="feed-summary">디자이너의 91%가 매주 AI를 사용한다는 조사 결과는 AI가 디자인 워크플로우의 선택이 아닌 필수 요소로 완전히 자리잡았다는 사실을 입증한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Designer Fund</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="ux tools survey: spring 2026 figma에 이어 claude가 디자이너들이 가장 많이 쓰는 툴 2위에 오른 결과는 ai 어시스턴트가 이제 디자인 툴 생태계의 핵심 축으로 편입되었다는 신호다. ux tools 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-design-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">UX Tools</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">UX Tools Survey: Spring 2026</h2>
-  <p class="feed-insight">Figma에 이어 Claude가 디자이너들이 가장 많이 쓰는 툴 2위에 오른 결과는 AI 어시스턴트가 이제 디자인 툴 생태계의 핵심 축으로 편입되었다는 신호다.</p>
+  <p class="feed-summary">Figma에 이어 Claude가 디자이너들이 가장 많이 쓰는 툴 2위에 오른 결과는 AI 어시스턴트가 이제 디자인 툴 생태계의 핵심 축으로 편입되었다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">U</span><span class="feed-src-name">UX Tools</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="getty going private as the beleaguered stock photo brand files for bankruptcy 스톡 이미지 공룡 게티이미지가 프리패키지드 파산을 통해 비상장화를 택한 사건은 ai 생성 이미지 확산이 전통 콘텐츠 라이선스 산업의 수익 구조를 무너뜨리고 있다는 경고다. petapixel 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">PetaPixel</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Getty Going Private as the Beleaguered Stock Photo Brand Files for Bankruptcy</h2>
-  <p class="feed-insight">스톡 이미지 공룡 게티이미지가 프리패키지드 파산을 통해 비상장화를 택한 사건은 AI 생성 이미지 확산이 전통 콘텐츠 라이선스 산업의 수익 구조를 무너뜨리고 있다는 경고다.</p>
+  <p class="feed-summary">스톡 이미지 공룡 게티이미지가 프리패키지드 파산을 통해 비상장화를 택한 사건은 AI 생성 이미지 확산이 전통 콘텐츠 라이선스 산업의 수익 구조를 무너뜨리고 있다는 경고다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">P</span><span class="feed-src-name">PetaPixel</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="broadcom ceo hock tan says many ai investors act like gamblers 브로드컴 ceo가 ai 투자자들을 '카지노 도박꾼'에 비유한 발언은 ai 인프라 투자 열풍 속 거품 우려가 업계 최상위층에서도 공식 제기되고 있다는 신호다. cryptobriefing 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">CryptoBriefing</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Broadcom CEO Hock Tan says many AI investors act like gamblers</h2>
-  <p class="feed-insight">브로드컴 CEO가 AI 투자자들을 '카지노 도박꾼'에 비유한 발언은 AI 인프라 투자 열풍 속 거품 우려가 업계 최상위층에서도 공식 제기되고 있다는 신호다.</p>
+  <p class="feed-summary">브로드컴 CEO가 AI 투자자들을 '카지노 도박꾼'에 비유한 발언은 AI 인프라 투자 열풍 속 거품 우려가 업계 최상위층에서도 공식 제기되고 있다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">C</span><span class="feed-src-name">CryptoBriefing</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="mistral ai raises €3 billion in record european tech funding round 삼성전자가 주도한 미스트랄ai의 30억 유로 투자 유치는 유럽이 미국·중국에 맞서는 독자적 ai 주권 확보에 거대 자본을 쏟아붓고 있다는 흐름을 보여준다. euronews 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-i-biz-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">Euronews</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Mistral AI raises €3 billion in record European tech funding round</h2>
-  <p class="feed-insight">삼성전자가 주도한 미스트랄AI의 30억 유로 투자 유치는 유럽이 미국·중국에 맞서는 독자적 AI 주권 확보에 거대 자본을 쏟아붓고 있다는 흐름을 보여준다.</p>
+  <p class="feed-summary">삼성전자가 주도한 미스트랄AI의 30억 유로 투자 유치는 유럽이 미국·중국에 맞서는 독자적 AI 주권 확보에 거대 자본을 쏟아붓고 있다는 흐름을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">E</span><span class="feed-src-name">Euronews</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="삼성전자, '에이전틱 시프트' 주제로 '삼성 ai 포럼 2026' 개최 삼성전자가 챗봇을 넘어 에이전틱 ai를 반도체 r&amp;d와 공장 운영까지 확장하겠다고 선언하며 국내 대기업의 ai 전환 속도를 한층 끌어올렸다. 삼성뉴스룸 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">삼성뉴스룸</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">삼성전자, '에이전틱 시프트' 주제로 '삼성 AI 포럼 2026' 개최</h2>
-  <p class="feed-insight">삼성전자가 챗봇을 넘어 에이전틱 AI를 반도체 R&amp;D와 공장 운영까지 확장하겠다고 선언하며 국내 대기업의 AI 전환 속도를 한층 끌어올렸다.</p>
+  <p class="feed-summary">삼성전자가 챗봇을 넘어 에이전틱 AI를 반도체 R&amp;D와 공장 운영까지 확장하겠다고 선언하며 국내 대기업의 AI 전환 속도를 한층 끌어올렸다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">삼</span><span class="feed-src-name">삼성뉴스룸</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="카카오, 오는 10월 기술 컨퍼런스 'if(kakao)26' 개최…ai 전략 공개 카카오가 '모든 연결에 지능을'을 슬로건으로 내걸고 카나나 기반 에이전틱 ai 전략을 공식화하며 국내 플랫폼 기업의 ai 네이티브 전환에 속도를 낸다. 바이라인네트워크 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-ai-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">카카오, 오는 10월 기술 컨퍼런스 'if(kakao)26' 개최…AI 전략 공개</h2>
-  <p class="feed-insight">카카오가 '모든 연결에 지능을'을 슬로건으로 내걸고 카나나 기반 에이전틱 AI 전략을 공식화하며 국내 플랫폼 기업의 AI 네이티브 전환에 속도를 낸다.</p>
+  <p class="feed-summary">카카오가 '모든 연결에 지능을'을 슬로건으로 내걸고 카나나 기반 에이전틱 AI 전략을 공식화하며 국내 플랫폼 기업의 AI 네이티브 전환에 속도를 낸다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search=""이 자리 뜻깊다" 배경훈 부총리, 이해민·하정우에 축하받은 사연은? 과기정통부 부총리 승격 1년을 맞아 열린 과학기술관계장관회의에 대통령실 ai수석과 국가ai전략위 부위원장이 함께하며, 범부처 ai 컨트롤타워 체제가 본격 가동되고 있음을 보여준다. 머니투데이 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-ai-3.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">"이 자리 뜻깊다" 배경훈 부총리, 이해민·하정우에 축하받은 사연은?</h2>
-  <p class="feed-insight">과기정통부 부총리 승격 1년을 맞아 열린 과학기술관계장관회의에 대통령실 AI수석과 국가AI전략위 부위원장이 함께하며, 범부처 AI 컨트롤타워 체제가 본격 가동되고 있음을 보여준다.</p>
+  <p class="feed-summary">과기정통부 부총리 승격 1년을 맞아 열린 과학기술관계장관회의에 대통령실 AI수석과 국가AI전략위 부위원장이 함께하며, 범부처 AI 컨트롤타워 체제가 본격 가동되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">머</span><span class="feed-src-name">머니투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search=""내 카드 언제와?" 한마디면, 토스뱅크 ai가 30초 만에 답한다 토스뱅크가 생성형 ai 채팅 에이전트를 전 고객으로 확대해 상담 대기시간을 90% 줄이며, ai 기반 고객 경험 재설계가 금융권 ux의 표준으로 자리잡고 있음을 보여준다. 파이낸셜뉴스 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-ux-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">파이낸셜뉴스</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🇰🇷</span><span>UX</span></div>
   <h2 class="feed-title">"내 카드 언제와?" 한마디면, 토스뱅크 AI가 30초 만에 답한다</h2>
-  <p class="feed-insight">토스뱅크가 생성형 AI 채팅 에이전트를 전 고객으로 확대해 상담 대기시간을 90% 줄이며, AI 기반 고객 경험 재설계가 금융권 UX의 표준으로 자리잡고 있음을 보여준다.</p>
+  <p class="feed-summary">토스뱅크가 생성형 AI 채팅 에이전트를 전 고객으로 확대해 상담 대기시간을 90% 줄이며, AI 기반 고객 경험 재설계가 금융권 UX의 표준으로 자리잡고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">파</span><span class="feed-src-name">파이낸셜뉴스</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search=""모든 계좌 한눈에" 카카오뱅크, 홈 화면 개편 카카오뱅크가 계좌를 유형별로 묶고 화면 구성을 직접 편집할 수 있게 홈 화면을 개편하며, 개인화된 정보 구조 설계가 핵심 ux 경쟁력으로 떠오르고 있다. 파이낸셜뉴스 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-ux-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">파이낸셜뉴스</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🇰🇷</span><span>UX</span></div>
   <h2 class="feed-title">"모든 계좌 한눈에" 카카오뱅크, 홈 화면 개편</h2>
-  <p class="feed-insight">카카오뱅크가 계좌를 유형별로 묶고 화면 구성을 직접 편집할 수 있게 홈 화면을 개편하며, 개인화된 정보 구조 설계가 핵심 UX 경쟁력으로 떠오르고 있다.</p>
+  <p class="feed-summary">카카오뱅크가 계좌를 유형별로 묶고 화면 구성을 직접 편집할 수 있게 홈 화면을 개편하며, 개인화된 정보 구조 설계가 핵심 UX 경쟁력으로 떠오르고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">파</span><span class="feed-src-name">파이낸셜뉴스</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="s2w, 창립 8주년 맞아 bi 개편...서상덕 대표 "새로운 도약의 분기점" s2w가 심볼을 걷어내고 워드마크 중심으로 ci를 재구성하며, 보안 기업에서 데이터 인텔리전스 기업으로의 정체성 전환을 시각적으로 선언했다. 아이뉴스24 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">아이뉴스24</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">S2W, 창립 8주년 맞아 BI 개편...서상덕 대표 "새로운 도약의 분기점"</h2>
-  <p class="feed-insight">S2W가 심볼을 걷어내고 워드마크 중심으로 CI를 재구성하며, 보안 기업에서 데이터 인텔리전스 기업으로의 정체성 전환을 시각적으로 선언했다.</p>
+  <p class="feed-summary">S2W가 심볼을 걷어내고 워드마크 중심으로 CI를 재구성하며, 보안 기업에서 데이터 인텔리전스 기업으로의 정체성 전환을 시각적으로 선언했다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">아</span><span class="feed-src-name">아이뉴스24</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="리벨리온, 업스테이지 라이벌 의식 속 4분기 예심 청구 전망 국민성장펀드가 점찍은 두 ai 대어 리벨리온과 업스테이지가 국내 상장 1호 타이틀을 두고 경쟁하며, 국내 ai 유니콘의 ipo 레이스가 본격화되고 있다. 딜사이트 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">딜사이트</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">리벨리온, 업스테이지 라이벌 의식 속 4분기 예심 청구 전망</h2>
-  <p class="feed-insight">국민성장펀드가 점찍은 두 AI 대어 리벨리온과 업스테이지가 국내 상장 1호 타이틀을 두고 경쟁하며, 국내 AI 유니콘의 IPO 레이스가 본격화되고 있다.</p>
+  <p class="feed-summary">국민성장펀드가 점찍은 두 AI 대어 리벨리온과 업스테이지가 국내 상장 1호 타이틀을 두고 경쟁하며, 국내 AI 유니콘의 IPO 레이스가 본격화되고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">딜</span><span class="feed-src-name">딜사이트</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="레니게이드 양산·유럽 검증 병행…퓨리오사ai 8000억 클로징 초읽기 퓨리오사ai가 국민성장펀드를 포함해 8000억원 규모 프리ipo를 마무리 지으며, 국산 ai 반도체 기업에 대한 정책·민간 자금의 동시 베팅이 확인됐다. 딜사이트 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-biz-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">딜사이트</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">레니게이드 양산·유럽 검증 병행…퓨리오사AI 8000억 클로징 초읽기</h2>
-  <p class="feed-insight">퓨리오사AI가 국민성장펀드를 포함해 8000억원 규모 프리IPO를 마무리 지으며, 국산 AI 반도체 기업에 대한 정책·민간 자금의 동시 베팅이 확인됐다.</p>
+  <p class="feed-summary">퓨리오사AI가 국민성장펀드를 포함해 8000억원 규모 프리IPO를 마무리 지으며, 국산 AI 반도체 기업에 대한 정책·민간 자금의 동시 베팅이 확인됐다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">딜</span><span class="feed-src-name">딜사이트</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="위로보틱스, 950억 규모 시리즈b 투자 유치…휴머노이드 사업 본격화 웨어러블 로봇 'wim'으로 쌓은 실사용 데이터를 기반으로 위로보틱스가 950억원을 유치해 휴머노이드 '알렉스' 개발에 나서며, k-휴머노이드 상용화 경쟁에 본격 뛰어들었다. 한국경제 2026년 10월 15일 목요일">
 <a class="feed-link" href="articles/2026-10-15-d-biz-3.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span><span class="feed-dot">&middot;</span><span class="feed-src">한국경제</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">위로보틱스, 950억 규모 시리즈B 투자 유치…휴머노이드 사업 본격화</h2>
-  <p class="feed-insight">웨어러블 로봇 'WIM'으로 쌓은 실사용 데이터를 기반으로 위로보틱스가 950억원을 유치해 휴머노이드 '알렉스' 개발에 나서며, K-휴머노이드 상용화 경쟁에 본격 뛰어들었다.</p>
+  <p class="feed-summary">웨어러블 로봇 'WIM'으로 쌓은 실사용 데이터를 기반으로 위로보틱스가 950억원을 유치해 휴머노이드 '알렉스' 개발에 나서며, K-휴머노이드 상용화 경쟁에 본격 뛰어들었다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">한</span><span class="feed-src-name">한국경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.15</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="'모델 피로감' 확산…빅테크, 숨 가쁜 속도로 신모델 출시 경쟁 며칠 간격으로 신모델이 쏟아지면서 이제 경쟁의 축은 출시 속도가 아니라 실제 채택률로 넘어가고 있다. cnbc 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">CNBC</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">'모델 피로감' 확산…빅테크, 숨 가쁜 속도로 신모델 출시 경쟁</h2>
-  <p class="feed-insight">며칠 간격으로 신모델이 쏟아지면서 이제 경쟁의 축은 출시 속도가 아니라 실제 채택률로 넘어가고 있다.</p>
+  <p class="feed-summary">며칠 간격으로 신모델이 쏟아지면서 이제 경쟁의 축은 출시 속도가 아니라 실제 채택률로 넘어가고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">C</span><span class="feed-src-name">CNBC</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="애플, ios 27.2에서 siri ai에 한국어·일본어 등 5개 언어 추가 siri ai가 영어 단일 언어로 출시된 지 수개월 만에 한국어를 포함한 5개 언어로 확장되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다. 9to5mac 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">9to5Mac</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">애플, iOS 27.2에서 Siri AI에 한국어·일본어 등 5개 언어 추가</h2>
-  <p class="feed-insight">Siri AI가 영어 단일 언어로 출시된 지 수개월 만에 한국어를 포함한 5개 언어로 확장되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다.</p>
+  <p class="feed-summary">Siri AI가 영어 단일 언어로 출시된 지 수개월 만에 한국어를 포함한 5개 언어로 확장되는 것은, 애플이 생성형 비서 경쟁에서 속도를 내고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">9</span><span class="feed-src-name">9to5Mac</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="koji, 'ux 리서치 통계 2026' 발표…디자이너 70%가 직접 인사이트 수집 제품 매니저(42%)보다 디자이너(70%)가 더 적극적으로 사용자 인사이트를 모은다는 통계는, 리서치 역할이 전담 조직에서 디자이너 개인으로 분산되고 있음을 보여준다. koji 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-ux-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">Koji</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🌐</span><span>UX</span></div>
   <h2 class="feed-title">Koji, 'UX 리서치 통계 2026' 발표…디자이너 70%가 직접 인사이트 수집</h2>
-  <p class="feed-insight">제품 매니저(42%)보다 디자이너(70%)가 더 적극적으로 사용자 인사이트를 모은다는 통계는, 리서치 역할이 전담 조직에서 디자이너 개인으로 분산되고 있음을 보여준다.</p>
+  <p class="feed-summary">제품 매니저(42%)보다 디자이너(70%)가 더 적극적으로 사용자 인사이트를 모은다는 통계는, 리서치 역할이 전담 조직에서 디자이너 개인으로 분산되고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">K</span><span class="feed-src-name">Koji</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="dezeen awards 2026 디자인 부문 쇼트리스트 발표 bocci, kvadrat, fuseproject 등이 포함된 쇼트리스트는, 올해 제품 디자인 어워드의 중심이 소재와 조명 실험으로 이동했음을 보여준다. dezeen 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">Dezeen</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Dezeen Awards 2026 디자인 부문 쇼트리스트 발표</h2>
-  <p class="feed-insight">Bocci, Kvadrat, Fuseproject 등이 포함된 쇼트리스트는, 올해 제품 디자인 어워드의 중심이 소재와 조명 실험으로 이동했음을 보여준다.</p>
+  <p class="feed-summary">Bocci, Kvadrat, Fuseproject 등이 포함된 쇼트리스트는, 올해 제품 디자인 어워드의 중심이 소재와 조명 실험으로 이동했음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Dezeen</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="피그마 config 2026, 코드 레이어·모션·에이전트 전면 공개 캔버스에서 코드를 직접 다루는 '코드 레이어'와 네이티브 애니메이션 도구 'figma motion'은, 디자인 툴의 경쟁이 비주얼 편집을 넘어 제작 전체를 흡수하는 방향으로 가고 있음을 보여준다. figma forum 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-design-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">Figma Forum</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">피그마 Config 2026, 코드 레이어·모션·에이전트 전면 공개</h2>
-  <p class="feed-insight">캔버스에서 코드를 직접 다루는 '코드 레이어'와 네이티브 애니메이션 도구 'Figma Motion'은, 디자인 툴의 경쟁이 비주얼 편집을 넘어 제작 전체를 흡수하는 방향으로 가고 …</p>
+  <p class="feed-summary">캔버스에서 코드를 직접 다루는 '코드 레이어'와 네이티브 애니메이션 도구 'Figma Motion'은, 디자인 툴의 경쟁이 비주얼 편집을 넘어 제작 전체를 흡수하는 방향으로 가고 …</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">F</span><span class="feed-src-name">Figma Forum</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="tsmc, 3분기 매출 전년 대비 50% 급증…ai 반도체 수요가 견인 분기 매출이 자체 가이던스를 넘어선 것은, ai 데이터센터용 반도체 수요가 여전히 공급을 앞서고 있음을 보여준다. tradingkey 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">TradingKey</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">TSMC, 3분기 매출 전년 대비 50% 급증…AI 반도체 수요가 견인</h2>
-  <p class="feed-insight">분기 매출이 자체 가이던스를 넘어선 것은, AI 데이터센터용 반도체 수요가 여전히 공급을 앞서고 있음을 보여준다.</p>
+  <p class="feed-summary">분기 매출이 자체 가이던스를 넘어선 것은, AI 데이터센터용 반도체 수요가 여전히 공급을 앞서고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">TradingKey</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="카카오, 독립 ai 앱 '카나나' 10월 15일 종료…카카오톡 중심으로 재편 출시 1년여 만에 월간활성사용자가 6만9000명대에서 1만명대로 줄어든 끝에 서비스가 종료된 것은, 독립 ai 앱보다 메신저에 기능을 얹는 전략이 더 유효함을 보여준다. 바이라인네트워크 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">카카오, 독립 AI 앱 '카나나' 10월 15일 종료…카카오톡 중심으로 재편</h2>
-  <p class="feed-insight">출시 1년여 만에 월간활성사용자가 6만9000명대에서 1만명대로 줄어든 끝에 서비스가 종료된 것은, 독립 AI 앱보다 메신저에 기능을 얹는 전략이 더 유효함을 보여준다.</p>
+  <p class="feed-summary">출시 1년여 만에 월간활성사용자가 6만9000명대에서 1만명대로 줄어든 끝에 서비스가 종료된 것은, 독립 AI 앱보다 메신저에 기능을 얹는 전략이 더 유효함을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="hci &amp; ux 코리아 2026, 'ai가 ux를 어떻게 바꾸는가' 공통 질문으로 키노트 전반에서 더블 다이아몬드 기반 기존 프로세스의 한계가 제기된 것은, 국내 ux 업계도 ai 네이티브 설계 방식으로 전환이 불가피함을 보여준다. 전자신문 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-d-ux-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">전자신문</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🇰🇷</span><span>UX</span></div>
   <h2 class="feed-title">HCI & UX 코리아 2026, 'AI가 UX를 어떻게 바꾸는가' 공통 질문으로</h2>
-  <p class="feed-insight">키노트 전반에서 더블 다이아몬드 기반 기존 프로세스의 한계가 제기된 것은, 국내 UX 업계도 AI 네이티브 설계 방식으로 전환이 불가피함을 보여준다.</p>
+  <p class="feed-summary">키노트 전반에서 더블 다이아몬드 기반 기존 프로세스의 한계가 제기된 것은, 국내 UX 업계도 AI 네이티브 설계 방식으로 전환이 불가피함을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">전</span><span class="feed-src-name">전자신문</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="토스, 홈페이지 전면 개편…10년의 서비스 확장 과정을 하나의 스토리로 인트로 영상은 생성형 ai로, 정교한 카메라 워크는 3d로 제작한 것은, 국내 핀테크 기업도 브랜드 사이트 제작에 ai와 3d를 결합하기 시작했음을 보여준다. 토스 뉴스룸 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">토스 뉴스룸</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">토스, 홈페이지 전면 개편…10년의 서비스 확장 과정을 하나의 스토리로</h2>
-  <p class="feed-insight">인트로 영상은 생성형 AI로, 정교한 카메라 워크는 3D로 제작한 것은, 국내 핀테크 기업도 브랜드 사이트 제작에 AI와 3D를 결합하기 시작했음을 보여준다.</p>
+  <p class="feed-summary">인트로 영상은 생성형 AI로, 정교한 카메라 워크는 3D로 제작한 것은, 국내 핀테크 기업도 브랜드 사이트 제작에 AI와 3D를 결합하기 시작했음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">토</span><span class="feed-src-name">토스 뉴스룸</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="스튜디오 듀당스, 국보디자인 bi·bx 체계 재구성 로고 교체에 그치지 않고 제안서부터 현장 사인물까지 아우르는 아이콘 체계를 설계한 것은, b2b 기업도 전사적 브랜드 경험 재정비에 나서고 있음을 보여준다. 한국경제 2026년 10월 14일 수요일">
 <a class="feed-link" href="articles/2026-10-14-d-design-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span><span class="feed-dot">&middot;</span><span class="feed-src">한국경제</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">스튜디오 듀당스, 국보디자인 BI·BX 체계 재구성</h2>
-  <p class="feed-insight">로고 교체에 그치지 않고 제안서부터 현장 사인물까지 아우르는 아이콘 체계를 설계한 것은, B2B 기업도 전사적 브랜드 경험 재정비에 나서고 있음을 보여준다.</p>
+  <p class="feed-summary">로고 교체에 그치지 않고 제안서부터 현장 사인물까지 아우르는 아이콘 체계를 설계한 것은, B2B 기업도 전사적 브랜드 경험 재정비에 나서고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">한</span><span class="feed-src-name">한국경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.14</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 초저비용 모델 'claude haiku 5.5' 출시 앤트로픽이 이전 모델보다 약 75% 낮은 비용으로 대량 작업을 처리하는 모델을 내놓은 것은, 플래그십 경쟁 못지않게 저비용 서브 에이전트 확보 경쟁이 치열해지고 있음을 보여준다. let's data science 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">Let's Data Science</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 초저비용 모델 'Claude Haiku 5.5' 출시</h2>
-  <p class="feed-insight">앤트로픽이 이전 모델보다 약 75% 낮은 비용으로 대량 작업을 처리하는 모델을 내놓은 것은, 플래그십 경쟁 못지않게 저비용 서브 에이전트 확보 경쟁이 치열해지고 있음을 보여준다.</p>
+  <p class="feed-summary">앤트로픽이 이전 모델보다 약 75% 낮은 비용으로 대량 작업을 처리하는 모델을 내놓은 것은, 플래그십 경쟁 못지않게 저비용 서브 에이전트 확보 경쟁이 치열해지고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">L</span><span class="feed-src-name">Let's Data Science</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="openai, 'gpt-6 astra'급 성능을 5분의 1 가격에 제공하는 'gpt-6.1 sol' 출시 최상위 모델인 gpt-6 astra에 근접한 성능을 5분의 1 가격으로 내놓은 것은, 모델 경쟁의 축이 최고 성능 하나보다 가격 대 성능 조합으로 옮겨가고 있음을 보여준다. aph networks 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">APH Networks</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">OpenAI, 'GPT-6 Astra'급 성능을 5분의 1 가격에 제공하는 'GPT-6.1 Sol' 출시</h2>
-  <p class="feed-insight">최상위 모델인 GPT-6 Astra에 근접한 성능을 5분의 1 가격으로 내놓은 것은, 모델 경쟁의 축이 최고 성능 하나보다 가격 대 성능 조합으로 옮겨가고 있음을 보여준다.</p>
+  <p class="feed-summary">최상위 모델인 GPT-6 Astra에 근접한 성능을 5분의 1 가격으로 내놓은 것은, 모델 경쟁의 축이 최고 성능 하나보다 가격 대 성능 조합으로 옮겨가고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">A</span><span class="feed-src-name">APH Networks</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="구글, 이미지 생성 모델 'nano banana 2.1' 정식 출시 멀티턴 캐릭터 일관성과 텍스트 렌더링을 개선하면서도 개발자 api 비용을 50% 낮춘 것은, 생성 이미지 모델 경쟁에서도 품질과 비용 효율을 동시에 요구받고 있음을 보여준다. let's data science 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-ai-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">Let's Data Science</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">구글, 이미지 생성 모델 'Nano Banana 2.1' 정식 출시</h2>
-  <p class="feed-insight">멀티턴 캐릭터 일관성과 텍스트 렌더링을 개선하면서도 개발자 API 비용을 50% 낮춘 것은, 생성 이미지 모델 경쟁에서도 품질과 비용 효율을 동시에 요구받고 있음을 보여준다.</p>
+  <p class="feed-summary">멀티턴 캐릭터 일관성과 텍스트 렌더링을 개선하면서도 개발자 API 비용을 50% 낮춘 것은, 생성 이미지 모델 경쟁에서도 품질과 비용 효율을 동시에 요구받고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">L</span><span class="feed-src-name">Let's Data Science</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="baymard, 자동 ux 감사 도구 'ux-ray'를 209개 휴리스틱으로 확장 자동 진단 도구가 209개의 연구 기반 ux 휴리스틱에서 95% 정확도를 낸다는 결과는, 정성 리서치의 반복 작업 상당 부분이 ai 기반 자동 감사로 대체될 수 있음을 보여준다. baymard institute 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-ux-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">Baymard Institute</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🌐</span><span>UX</span></div>
   <h2 class="feed-title">Baymard, 자동 UX 감사 도구 'UX-Ray'를 209개 휴리스틱으로 확장</h2>
-  <p class="feed-insight">자동 진단 도구가 209개의 연구 기반 UX 휴리스틱에서 95% 정확도를 낸다는 결과는, 정성 리서치의 반복 작업 상당 부분이 AI 기반 자동 감사로 대체될 수 있음을 보여준다.</p>
+  <p class="feed-summary">자동 진단 도구가 209개의 연구 기반 UX 휴리스틱에서 95% 정확도를 낸다는 결과는, 정성 리서치의 반복 작업 상당 부분이 AI 기반 자동 감사로 대체될 수 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">B</span><span class="feed-src-name">Baymard Institute</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="userlytics, 실시간 협업 워크스페이스 'study pulse'와 ai 분석 도구 모음 공개 모집부터 세션 진행, 결과 분석까지 실시간 상태 뷰 하나로 통합한 것은, ux 리서치 플랫폼들이 속도와 통합을 동시에 요구받는 경쟁에 들어섰음을 보여준다. userlytics 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-ux-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">Userlytics</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🌐</span><span>UX</span></div>
   <h2 class="feed-title">Userlytics, 실시간 협업 워크스페이스 'Study Pulse'와 AI 분석 도구 모음 공개</h2>
-  <p class="feed-insight">모집부터 세션 진행, 결과 분석까지 실시간 상태 뷰 하나로 통합한 것은, UX 리서치 플랫폼들이 속도와 통합을 동시에 요구받는 경쟁에 들어섰음을 보여준다.</p>
+  <p class="feed-summary">모집부터 세션 진행, 결과 분석까지 실시간 상태 뷰 하나로 통합한 것은, UX 리서치 플랫폼들이 속도와 통합을 동시에 요구받는 경쟁에 들어섰음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">U</span><span class="feed-src-name">Userlytics</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="텐센트, 오라클과 5년간 ai 칩 10만 개 임대…7조원 규모 해외 딜 중국 내 반입이 막힌 첨단 칩을 동남아 데이터센터 임대로 우회 확보한 것은, 수출 규제가 ai 칩의 '소유'를 막아도 '사용'까지는 막지 못하고 있음을 보여준다. the next web 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">The Next Web</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">텐센트, 오라클과 5년간 AI 칩 10만 개 임대…7조원 규모 해외 딜</h2>
-  <p class="feed-insight">중국 내 반입이 막힌 첨단 칩을 동남아 데이터센터 임대로 우회 확보한 것은, 수출 규제가 AI 칩의 '소유'를 막아도 '사용'까지는 막지 못하고 있음을 보여준다.</p>
+  <p class="feed-summary">중국 내 반입이 막힌 첨단 칩을 동남아 데이터센터 임대로 우회 확보한 것은, 수출 규제가 AI 칩의 '소유'를 막아도 '사용'까지는 막지 못하고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">The Next Web</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="결제 스타트업 ramp, 3개월 만에 몸값 74%↑…600억 달러 밸류 투자 논의 6월 440억 달러였던 기업가치가 석 달 만에 600억 달러 논의로 뛴 것은, 핀테크 자동화 기업에 대한 투자 열기가 ai 섹터 밖에서도 꺾이지 않고 있음을 보여준다. cryptobriefing 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">Cryptobriefing</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">결제 스타트업 Ramp, 3개월 만에 몸값 74%↑…600억 달러 밸류 투자 논의</h2>
-  <p class="feed-insight">6월 440억 달러였던 기업가치가 석 달 만에 600억 달러 논의로 뛴 것은, 핀테크 자동화 기업에 대한 투자 열기가 AI 섹터 밖에서도 꺾이지 않고 있음을 보여준다.</p>
+  <p class="feed-summary">6월 440억 달러였던 기업가치가 석 달 만에 600억 달러 논의로 뛴 것은, 핀테크 자동화 기업에 대한 투자 열기가 AI 섹터 밖에서도 꺾이지 않고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">C</span><span class="feed-src-name">Cryptobriefing</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="ai 풀스택 '엘리스그룹', 몸값 1조 코스닥 상장 청약 돌입 ai 클라우드·교육 풀스택 기업이 공모가 상단 기준 시가총액 1조원으로 상장을 추진하는 것은, 국내 ai 기업의 자본시장 데뷔가 올 하반기에도 끊이지 않고 이어지고 있음을 보여준다. 아이뉴스24 2026년 10월 13일 화요일">
 <a class="feed-link" href="articles/2026-10-13-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span><span class="feed-dot">&middot;</span><span class="feed-src">아이뉴스24</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">AI 풀스택 '엘리스그룹', 몸값 1조 코스닥 상장 청약 돌입</h2>
-  <p class="feed-insight">AI 클라우드·교육 풀스택 기업이 공모가 상단 기준 시가총액 1조원으로 상장을 추진하는 것은, 국내 AI 기업의 자본시장 데뷔가 올 하반기에도 끊이지 않고 이어지고 있음을 보여준다…</p>
+  <p class="feed-summary">AI 클라우드·교육 풀스택 기업이 공모가 상단 기준 시가총액 1조원으로 상장을 추진하는 것은, 국내 AI 기업의 자본시장 데뷔가 올 하반기에도 끊이지 않고 이어지고 있음을 보여준다…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">아</span><span class="feed-src-name">아이뉴스24</span><span class="feed-dot">&middot;</span><span class="feed-date">10.13</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="openai, 'gpt-6 astra' 공개—ai 안전성 '중대(critical)' 등급 첫 모델 openai가 사이버보안 위험을 '중대(critical)' 단계로 규정한 첫 모델을 공개했다는 점은, 모델 성능 경쟁이 이제 안전성 통제 경쟁으로 번지고 있음을 보여준다. cryptobriefing 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">Cryptobriefing</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">OpenAI, 'GPT-6 Astra' 공개—AI 안전성 '중대(Critical)' 등급 첫 모델</h2>
-  <p class="feed-insight">OpenAI가 사이버보안 위험을 '중대(Critical)' 단계로 규정한 첫 모델을 공개했다는 점은, 모델 성능 경쟁이 이제 안전성 통제 경쟁으로 번지고 있음을 보여준다.</p>
+  <p class="feed-summary">OpenAI가 사이버보안 위험을 '중대(Critical)' 단계로 규정한 첫 모델을 공개했다는 점은, 모델 성능 경쟁이 이제 안전성 통제 경쟁으로 번지고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">C</span><span class="feed-src-name">Cryptobriefing</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="dezeen awards 2026, 인테리어 디자이너 줄리앙 세방·그래픽 디자이너 나타샤 젠 심사위원 선정 세계 최대 디자인 어워드가 인테리어·그래픽·건축을 넘나드는 심사위원단을 꾸린 것은, 좋은 제품 디자인이 더는 한 분야의 전문성만으로 평가되지 않는다는 신호다. dezeen 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">Dezeen</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Dezeen Awards 2026, 인테리어 디자이너 줄리앙 세방·그래픽 디자이너 나타샤 젠 심사위원 선정</h2>
-  <p class="feed-insight">세계 최대 디자인 어워드가 인테리어·그래픽·건축을 넘나드는 심사위원단을 꾸린 것은, 좋은 제품 디자인이 더는 한 분야의 전문성만으로 평가되지 않는다는 신호다.</p>
+  <p class="feed-summary">세계 최대 디자인 어워드가 인테리어·그래픽·건축을 넘나드는 심사위원단을 꾸린 것은, 좋은 제품 디자인이 더는 한 분야의 전문성만으로 평가되지 않는다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Dezeen</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="supabase, 1,500억 원 추가 투자 유치하며 turso 인수—'ai 에이전트 데이터베이스' 정조준 supabase는 신규 데이터베이스의 약 70%가 ai 에이전트에 의해 생성된다고 밝혔는데, 이는 개발자 도구 시장의 주 고객이 인간에서 에이전트로 옮겨가고 있다는 뜻이다. pulse2 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">Pulse2</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">Supabase, 1,500억 원 추가 투자 유치하며 Turso 인수—'AI 에이전트 데이터베이스' 정조준</h2>
-  <p class="feed-insight">Supabase는 신규 데이터베이스의 약 70%가 AI 에이전트에 의해 생성된다고 밝혔는데, 이는 개발자 도구 시장의 주 고객이 인간에서 에이전트로 옮겨가고 있다는 뜻이다.</p>
+  <p class="feed-summary">Supabase는 신규 데이터베이스의 약 70%가 AI 에이전트에 의해 생성된다고 밝혔는데, 이는 개발자 도구 시장의 주 고객이 인간에서 에이전트로 옮겨가고 있다는 뜻이다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">P</span><span class="feed-src-name">Pulse2</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="네이버는 '확장', 카카오는 '분할'…ai 패권 경쟁 속 빅테크 거버넌스 승부수 카카오가 인적분할로 카카오톡과 ai를 한 축으로 묶은 것은, ai 조직을 따로 떼어낼 만큼 메신저 자체를 ai 플랫폼으로 전환하는 일이 시급해졌다는 뜻이다. 머니투데이 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">네이버는 '확장', 카카오는 '분할'…AI 패권 경쟁 속 빅테크 거버넌스 승부수</h2>
-  <p class="feed-insight">카카오가 인적분할로 카카오톡과 AI를 한 축으로 묶은 것은, AI 조직을 따로 떼어낼 만큼 메신저 자체를 AI 플랫폼으로 전환하는 일이 시급해졌다는 뜻이다.</p>
+  <p class="feed-summary">카카오가 인적분할로 카카오톡과 AI를 한 축으로 묶은 것은, AI 조직을 따로 떼어낼 만큼 메신저 자체를 AI 플랫폼으로 전환하는 일이 시급해졌다는 뜻이다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">머</span><span class="feed-src-name">머니투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="[project+] 새 옷 입은 63빌딩, 브랜드 아이덴티티 디자인 ① 한화생명 한화생명이 63빌딩을 '오피스'가 아닌 복합문화공간으로 재정의하며 아이덴티티부터 새로 설계한 것은, 공간 리뉴얼이 이제 외관 공사가 아니라 브랜드 전략의 일부로 다뤄지고 있음을 보여준다. 월간 디자인 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">월간 디자인</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">[Project+] 새 옷 입은 63빌딩, 브랜드 아이덴티티 디자인 ① 한화생명</h2>
-  <p class="feed-insight">한화생명이 63빌딩을 '오피스'가 아닌 복합문화공간으로 재정의하며 아이덴티티부터 새로 설계한 것은, 공간 리뉴얼이 이제 외관 공사가 아니라 브랜드 전략의 일부로 다뤄지고 있음을 보…</p>
+  <p class="feed-summary">한화생명이 63빌딩을 '오피스'가 아닌 복합문화공간으로 재정의하며 아이덴티티부터 새로 설계한 것은, 공간 리뉴얼이 이제 외관 공사가 아니라 브랜드 전략의 일부로 다뤄지고 있음을 보…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">월</span><span class="feed-src-name">월간 디자인</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="[project+] 불사조를 넘어 푸른 불꽃으로, 핫식스 패키지 디자인 리뉴얼 ① 롯데칠성음료 10년 가까이 쓴 불사조 그래픽을 내리고 'hot6' 레터링과 블루 컬러를 전면에 세운 것은, 장수 브랜드일수록 상징물보다 브랜드명 자체의 시인성이 더 중요해지고 있다는 뜻이다. 월간 디자인 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-d-design-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">월간 디자인</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">[Project+] 불사조를 넘어 푸른 불꽃으로, 핫식스 패키지 디자인 리뉴얼 ① 롯데칠성음료</h2>
-  <p class="feed-insight">10년 가까이 쓴 불사조 그래픽을 내리고 'HOT6' 레터링과 블루 컬러를 전면에 세운 것은, 장수 브랜드일수록 상징물보다 브랜드명 자체의 시인성이 더 중요해지고 있다는 뜻이다.</p>
+  <p class="feed-summary">10년 가까이 쓴 불사조 그래픽을 내리고 'HOT6' 레터링과 블루 컬러를 전면에 세운 것은, 장수 브랜드일수록 상징물보다 브랜드명 자체의 시인성이 더 중요해지고 있다는 뜻이다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">월</span><span class="feed-src-name">월간 디자인</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="8월 韓 스타트업 투자 6,569억원…해외 성과 검증된 기업에 베팅 집중 투자 건수는 줄었는데 해외 시장에서 성과를 이미 증명한 기업에 투자가 몰렸다는 것은, 국내 투자자들이 검증되지 않은 아이디어보다 확인된 트랙션에 더 베팅하고 있다는 신호다. 와우테일 2026년 10월 12일 월요일">
 <a class="feed-link" href="articles/2026-10-12-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span><span class="feed-dot">&middot;</span><span class="feed-src">와우테일</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">8월 韓 스타트업 투자 6,569억원…해외 성과 검증된 기업에 베팅 집중</h2>
-  <p class="feed-insight">투자 건수는 줄었는데 해외 시장에서 성과를 이미 증명한 기업에 투자가 몰렸다는 것은, 국내 투자자들이 검증되지 않은 아이디어보다 확인된 트랙션에 더 베팅하고 있다는 신호다.</p>
+  <p class="feed-summary">투자 건수는 줄었는데 해외 시장에서 성과를 이미 증명한 기업에 투자가 몰렸다는 것은, 국내 투자자들이 검증되지 않은 아이디어보다 확인된 트랙션에 더 베팅하고 있다는 신호다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">와</span><span class="feed-src-name">와우테일</span><span class="feed-dot">&middot;</span><span class="feed-date">10.12</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="anthropic, 'claude opus 5.5' 공식 출시…비용 40% 절감 opus 5.5는 이전 모델보다 비용을 40% 낮추면서도 최고 성능을 확보해, 고성능 모델의 가격 장벽이 빠르게 무너지고 있음을 보여준다. thurrott 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Thurrott</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Anthropic, 'Claude Opus 5.5' 공식 출시…비용 40% 절감</h2>
-  <p class="feed-insight">Opus 5.5는 이전 모델보다 비용을 40% 낮추면서도 최고 성능을 확보해, 고성능 모델의 가격 장벽이 빠르게 무너지고 있음을 보여준다.</p>
+  <p class="feed-summary">Opus 5.5는 이전 모델보다 비용을 40% 낮추면서도 최고 성능을 확보해, 고성능 모델의 가격 장벽이 빠르게 무너지고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">Thurrott</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="openai, 컴퓨터 사용 에이전트 모델 'gpt-6 astra' 출시 gpt-6 astra는 양식 작성·리서치·문서 초안까지 대신 처리하는 에이전트형 모델로, ai 경쟁의 축이 '대화'에서 '실제 업무 대행'으로 옮겨가고 있음을 보여준다. constellation research 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Constellation Research</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">OpenAI, 컴퓨터 사용 에이전트 모델 'GPT-6 Astra' 출시</h2>
-  <p class="feed-insight">GPT-6 Astra는 양식 작성·리서치·문서 초안까지 대신 처리하는 에이전트형 모델로, AI 경쟁의 축이 '대화'에서 '실제 업무 대행'으로 옮겨가고 있음을 보여준다.</p>
+  <p class="feed-summary">GPT-6 Astra는 양식 작성·리서치·문서 초안까지 대신 처리하는 에이전트형 모델로, AI 경쟁의 축이 '대화'에서 '실제 업무 대행'으로 옮겨가고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">C</span><span class="feed-src-name">Constellation Research</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="ux" data-search="ai 네이티브 ux 리서치 확산…리서치팀 74%가 ai 모더레이션 인터뷰로 전환 조사 대상 리서치팀의 74%가 설문 기반 디스커버리를 ai 모더레이션 인터뷰로 대체했다는 결과는, ux 리서치 실행 단계가 이미 ai 중심으로 넘어갔음을 시사한다. perspective ai 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-ux-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2A93B">UX</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Perspective AI</span></div>
+  <div class="feed-thumb" style="background:#F2A93B22"><span class="feed-thumb-emoji">🧭</span></div>
+  <div class="feed-eyebrow" style="color:#F2A93B"><span>🌐</span><span>UX</span></div>
   <h2 class="feed-title">AI 네이티브 UX 리서치 확산…리서치팀 74%가 AI 모더레이션 인터뷰로 전환</h2>
-  <p class="feed-insight">조사 대상 리서치팀의 74%가 설문 기반 디스커버리를 AI 모더레이션 인터뷰로 대체했다는 결과는, UX 리서치 실행 단계가 이미 AI 중심으로 넘어갔음을 시사한다.</p>
+  <p class="feed-summary">조사 대상 리서치팀의 74%가 설문 기반 디스커버리를 AI 모더레이션 인터뷰로 대체했다는 결과는, UX 리서치 실행 단계가 이미 AI 중심으로 넘어갔음을 시사한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2A93B">P</span><span class="feed-src-name">Perspective AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="figma, 캔버스 안에 자연어 기반 ai 디자인 에이전트 정식 출시 에이전트가 실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성한다는 점은, ai 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는 단계에 들어섰음을 뜻한다. figma 공식 포럼 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Figma 공식 포럼</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">Figma, 캔버스 안에 자연어 기반 AI 디자인 에이전트 정식 출시</h2>
-  <p class="feed-insight">에이전트가 실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성한다는 점은, AI 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는 단계에 들어섰음을 뜻한다.</p>
+  <p class="feed-summary">에이전트가 실제 컴포넌트·토큰·변수를 그대로 활용해 화면을 생성한다는 점은, AI 생성 디자인이 시안 수준을 넘어 실제 디자인 시스템에 통합되는 단계에 들어섰음을 뜻한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">F</span><span class="feed-src-name">Figma 공식 포럼</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널 구조조정 비용이 총 28억 달러까지 불어났다는 점은, ai 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다. data center dynamics 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Data Center Dynamics</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">오라클, 구조조정 비용 7억 달러 추가 반영…감원 장기화 시그널</h2>
-  <p class="feed-insight">구조조정 비용이 총 28억 달러까지 불어났다는 점은, AI 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다.</p>
+  <p class="feed-summary">구조조정 비용이 총 28억 달러까지 불어났다는 점은, AI 인프라 투자 부담이 감원 규모를 계속 밀어 올리고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">D</span><span class="feed-src-name">Data Center Dynamics</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="테슬라, 2026년 3분기 차량 48만 6532대 인도…시장 예상치 상회 전년 동기보다는 줄었지만 시장 예상치를 2만 대 이상 웃돌았다는 점은, 수요 둔화 우려 속에서도 테슬라가 가격·재고 조정으로 방어선을 지켰음을 보여준다. tesla north 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Tesla North</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">테슬라, 2026년 3분기 차량 48만 6532대 인도…시장 예상치 상회</h2>
-  <p class="feed-insight">전년 동기보다는 줄었지만 시장 예상치를 2만 대 이상 웃돌았다는 점은, 수요 둔화 우려 속에서도 테슬라가 가격·재고 조정으로 방어선을 지켰음을 보여준다.</p>
+  <p class="feed-summary">전년 동기보다는 줄었지만 시장 예상치를 2만 대 이상 웃돌았다는 점은, 수요 둔화 우려 속에서도 테슬라가 가격·재고 조정으로 방어선을 지켰음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">T</span><span class="feed-src-name">Tesla North</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="과기정통부-amd, 국내 ai 반도체 기업과 라운드테이블…이기종 컴퓨팅 협력 엔비디아 의존도를 낮추려는 정부 주도의 '개방형 ai 컴퓨팅' 전략이 구체화되고 있다는 점에서, 국산 npu 생태계에 실질적 기회가 열리고 있다. 바이라인네트워크 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">바이라인네트워크</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">과기정통부-AMD, 국내 AI 반도체 기업과 라운드테이블…이기종 컴퓨팅 협력</h2>
-  <p class="feed-insight">엔비디아 의존도를 낮추려는 정부 주도의 '개방형 AI 컴퓨팅' 전략이 구체화되고 있다는 점에서, 국산 NPU 생태계에 실질적 기회가 열리고 있다.</p>
+  <p class="feed-summary">엔비디아 의존도를 낮추려는 정부 주도의 '개방형 AI 컴퓨팅' 전략이 구체화되고 있다는 점에서, 국산 NPU 생태계에 실질적 기회가 열리고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">바</span><span class="feed-src-name">바이라인네트워크</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="sk ax, 오픈ai와 엔터프라이즈 ai 서비스 파트너 계약 삼성sds·lg cns에 이어 sk ax까지 오픈ai 파트너 대열에 합류하면서, 국내 대기업의 엔터프라이즈 ai 구축 경쟁이 본격화되고 있다. 한국경제 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-d-ai-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">한국경제</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">SK AX, 오픈AI와 엔터프라이즈 AI 서비스 파트너 계약</h2>
-  <p class="feed-insight">삼성SDS·LG CNS에 이어 SK AX까지 오픈AI 파트너 대열에 합류하면서, 국내 대기업의 엔터프라이즈 AI 구축 경쟁이 본격화되고 있다.</p>
+  <p class="feed-summary">삼성SDS·LG CNS에 이어 SK AX까지 오픈AI 파트너 대열에 합류하면서, 국내 대기업의 엔터프라이즈 AI 구축 경쟁이 본격화되고 있다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">한</span><span class="feed-src-name">한국경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="꼬깔콘, 5년 만의 패키지 리뉴얼…삼각뿔 조형으로 브랜드 자산 재정의 맛이 아닌 과자의 물리적 형태(삼각뿔)를 핵심 비주얼 자산으로 전환한 전략은, 장수 브랜드가 올드함을 벗는 새로운 리브랜딩 문법을 제시한다. design compass 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-d-design-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">Design Compass</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🇰🇷</span><span>DESIGN</span></div>
   <h2 class="feed-title">꼬깔콘, 5년 만의 패키지 리뉴얼…삼각뿔 조형으로 브랜드 자산 재정의</h2>
-  <p class="feed-insight">맛이 아닌 과자의 물리적 형태(삼각뿔)를 핵심 비주얼 자산으로 전환한 전략은, 장수 브랜드가 올드함을 벗는 새로운 리브랜딩 문법을 제시한다.</p>
+  <p class="feed-summary">맛이 아닌 과자의 물리적 형태(삼각뿔)를 핵심 비주얼 자산으로 전환한 전략은, 장수 브랜드가 올드함을 벗는 새로운 리브랜딩 문법을 제시한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Design Compass</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="퓨리오사ai, 8000억원 규모 프리ipo 조달 임박 유암코·시스코 등 새 투자자가 대거 참여해 2.8조원 밸류에이션에도 민간자금 4000억원을 확보했다는 점은, 국산 ai 반도체에 대한 투자 신뢰가 여전히 견고함을 보여준다. 스마트투데이 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-d-biz-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">스마트투데이</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">퓨리오사AI, 8000억원 규모 프리IPO 조달 임박</h2>
-  <p class="feed-insight">유암코·시스코 등 새 투자자가 대거 참여해 2.8조원 밸류에이션에도 민간자금 4000억원을 확보했다는 점은, 국산 AI 반도체에 대한 투자 신뢰가 여전히 견고함을 보여준다.</p>
+  <p class="feed-summary">유암코·시스코 등 새 투자자가 대거 참여해 2.8조원 밸류에이션에도 민간자금 4000억원을 확보했다는 점은, 국산 AI 반도체에 대한 투자 신뢰가 여전히 견고함을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">스</span><span class="feed-src-name">스마트투데이</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="국내 벤처투자 상반기 8조 8676억원…전년 대비 56% 증가 바이오·ai 반도체 등 딥테크 분야로 투자가 집중되며 피투자기업당 평균 투자액이 매년 늘고 있다는 점은, 벤처투자 시장이 양보다 질 중심으로 재편되고 있음을 시사한다. 헤럴드경제 2026년 10월 11일 일요일">
 <a class="feed-link" href="articles/2026-10-11-d-biz-2.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span><span class="feed-dot">&middot;</span><span class="feed-src">헤럴드경제</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">국내 벤처투자 상반기 8조 8676억원…전년 대비 56% 증가</h2>
-  <p class="feed-insight">바이오·AI 반도체 등 딥테크 분야로 투자가 집중되며 피투자기업당 평균 투자액이 매년 늘고 있다는 점은, 벤처투자 시장이 양보다 질 중심으로 재편되고 있음을 시사한다.</p>
+  <p class="feed-summary">바이오·AI 반도체 등 딥테크 분야로 투자가 집중되며 피투자기업당 평균 투자액이 매년 늘고 있다는 점은, 벤처투자 시장이 양보다 질 중심으로 재편되고 있음을 시사한다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">헤</span><span class="feed-src-name">헤럴드경제</span><span class="feed-dot">&middot;</span><span class="feed-date">10.11</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="중국 ai랩 마누스, 메타와의 인수 결렬 후 첫 펀딩에서 5억 달러 이상 유치 메타의 20억 달러 인수가 무산된 지 한 달여 만에 기존 투자자들의 재신임을 받아 5억 달러 넘는 단독 투자를 유치한 것은, 중국 ai 스타트업이 빅테크 인수 실패를 자금력으로 돌파하고 있음을 보여준다. techcrunch 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-ai-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">TechCrunch</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">중국 AI랩 마누스, 메타와의 인수 결렬 후 첫 펀딩에서 5억 달러 이상 유치</h2>
-  <p class="feed-insight">메타의 20억 달러 인수가 무산된 지 한 달여 만에 기존 투자자들의 재신임을 받아 5억 달러 넘는 단독 투자를 유치한 것은, 중국 AI 스타트업이 빅테크 인수 실패를 자금력으로 돌…</p>
+  <p class="feed-summary">메타의 20억 달러 인수가 무산된 지 한 달여 만에 기존 투자자들의 재신임을 받아 5억 달러 넘는 단독 투자를 유치한 것은, 중국 AI 스타트업이 빅테크 인수 실패를 자금력으로 돌…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechCrunch</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="cal ai 창업자, 19세에 두 번째 ai 스타트업 'persona'로 1000만 달러 유치 바이럴 앱 cal ai를 성공시킨 19세 창업자가 곧바로 개인용 ai 에이전트로 1000만 달러를 유치한 것은, 'z세대 바이럴 창업'이 반복 가능한 투자 테마로 자리잡고 있음을 보여준다. techcrunch 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-ai-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">TechCrunch</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">Cal AI 창업자, 19세에 두 번째 AI 스타트업 'Persona'로 1000만 달러 유치</h2>
-  <p class="feed-insight">바이럴 앱 Cal AI를 성공시킨 19세 창업자가 곧바로 개인용 AI 에이전트로 1000만 달러를 유치한 것은, 'Z세대 바이럴 창업'이 반복 가능한 투자 테마로 자리잡고 있음을 …</p>
+  <p class="feed-summary">바이럴 앱 Cal AI를 성공시킨 19세 창업자가 곧바로 개인용 AI 에이전트로 1000만 달러를 유치한 것은, 'Z세대 바이럴 창업'이 반복 가능한 투자 테마로 자리잡고 있음을 …</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechCrunch</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="ai 코딩 스타트업 factory, khosla와의 공개 설전 후 menlo ventures 투자 유치 경쟁 벤처캐피털과의 공개 설전이 오히려 새 투자자의 자발적 투자 선언으로 이어진 것은, ai 코딩 도구 시장을 둘러싼 투자 경쟁이 노이즈마저 마케팅으로 흡수할 만큼 과열됐음을 보여준다. techcrunch 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-ai-3.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">TechCrunch</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🌐</span><span>AI</span></div>
   <h2 class="feed-title">AI 코딩 스타트업 Factory, Khosla와의 공개 설전 후 Menlo Ventures 투자 유치</h2>
-  <p class="feed-insight">경쟁 벤처캐피털과의 공개 설전이 오히려 새 투자자의 자발적 투자 선언으로 이어진 것은, AI 코딩 도구 시장을 둘러싼 투자 경쟁이 노이즈마저 마케팅으로 흡수할 만큼 과열됐음을 보여…</p>
+  <p class="feed-summary">경쟁 벤처캐피털과의 공개 설전이 오히려 새 투자자의 자발적 투자 선언으로 이어진 것은, AI 코딩 도구 시장을 둘러싼 투자 경쟁이 노이즈마저 마케팅으로 흡수할 만큼 과열됐음을 보여…</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">T</span><span class="feed-src-name">TechCrunch</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="호주 워크플레이스 브랜드 제니스, 1970년대 이탈리아 가구에서 영감받은 'profondo' 시팅 컬렉션 공개 조각적인 형태의 소파·암체어로 구성된 이 컬렉션은, 오피스 가구 디자인이 과거의 조형 언어를 재해석해 개성을 되찾는 흐름을 보여준다. dezeen 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-design-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">Dezeen</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">호주 워크플레이스 브랜드 제니스, 1970년대 이탈리아 가구에서 영감받은 'Profondo' 시팅 컬렉션 공개</h2>
-  <p class="feed-insight">조각적인 형태의 소파·암체어로 구성된 이 컬렉션은, 오피스 가구 디자인이 과거의 조형 언어를 재해석해 개성을 되찾는 흐름을 보여준다.</p>
+  <p class="feed-summary">조각적인 형태의 소파·암체어로 구성된 이 컬렉션은, 오피스 가구 디자인이 과거의 조형 언어를 재해석해 개성을 되찾는 흐름을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Dezeen</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="design" data-search="데젠, 가을 시즌 맞춤 소파·체어 8종 쇼룸 기획 공개 계절에 맞춰 여러 브랜드의 제품을 묶어 소개하는 이 기획은, 시즌별 테마 편집이 가구·제품 디자인 매체의 핵심 콘텐츠 전략으로 자리잡았음을 보여준다. dezeen 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-design-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#F2767A">DESIGN</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">Dezeen</span></div>
+  <div class="feed-thumb" style="background:#F2767A22"><span class="feed-thumb-emoji">🎨</span></div>
+  <div class="feed-eyebrow" style="color:#F2767A"><span>🌐</span><span>DESIGN</span></div>
   <h2 class="feed-title">데젠, 가을 시즌 맞춤 소파·체어 8종 쇼룸 기획 공개</h2>
-  <p class="feed-insight">계절에 맞춰 여러 브랜드의 제품을 묶어 소개하는 이 기획은, 시즌별 테마 편집이 가구·제품 디자인 매체의 핵심 콘텐츠 전략으로 자리잡았음을 보여준다.</p>
+  <p class="feed-summary">계절에 맞춰 여러 브랜드의 제품을 묶어 소개하는 이 기획은, 시즌별 테마 편집이 가구·제품 디자인 매체의 핵심 콘텐츠 전략으로 자리잡았음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#F2767A">D</span><span class="feed-src-name">Dezeen</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="오픈ai 매출 부진·모델 경쟁 요동 속 트럼프 행정부, 테크 인력 그린카드 단속 나서 오픈ai의 매출이 기대치에 못 미치는 가운데 정부가 테크 인력 그린카드까지 단속에 나선 것은, ai 기업들이 수익성과 인재 확보 양쪽에서 동시에 압박받고 있음을 보여준다. siliconangle 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-biz-1.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">SiliconANGLE</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">오픈AI 매출 부진·모델 경쟁 요동 속 트럼프 행정부, 테크 인력 그린카드 단속 나서</h2>
-  <p class="feed-insight">오픈AI의 매출이 기대치에 못 미치는 가운데 정부가 테크 인력 그린카드까지 단속에 나선 것은, AI 기업들이 수익성과 인재 확보 양쪽에서 동시에 압박받고 있음을 보여준다.</p>
+  <p class="feed-summary">오픈AI의 매출이 기대치에 못 미치는 가운데 정부가 테크 인력 그린카드까지 단속에 나선 것은, AI 기업들이 수익성과 인재 확보 양쪽에서 동시에 압박받고 있음을 보여준다.</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">S</span><span class="feed-src-name">SiliconANGLE</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="amd, 페이페이 리의 월드모델 스타트업 '월드랩스' 82억 달러에 인수 반도체 기업이 칩 판매를 넘어 월드모델 스타트업을 82억 달러에 전량 인수한 것은, ai 하드웨어 기업들이 소프트웨어·모델 자산까지 직접 흡수하는 수직통합 경쟁에 뛰어들고 있음을 보여준다. idnfinancials.com 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-i-biz-2.html">
-  <div class="feed-meta"><span>🌐</span><span class="feed-cat" style="color:#2BC9AE">TECH & BIZ</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">idnfinancials.com</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-eyebrow" style="color:#2BC9AE"><span>🌐</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">AMD, 페이페이 리의 월드모델 스타트업 '월드랩스' 82억 달러에 인수</h2>
-  <p class="feed-insight">반도체 기업이 칩 판매를 넘어 월드모델 스타트업을 82억 달러에 전량 인수한 것은, AI 하드웨어 기업들이 소프트웨어·모델 자산까지 직접 흡수하는 수직통합 경쟁에 뛰어들고 있음을 …</p>
+  <p class="feed-summary">반도체 기업이 칩 판매를 넘어 월드모델 스타트업을 82억 달러에 전량 인수한 것은, AI 하드웨어 기업들이 소프트웨어·모델 자산까지 직접 흡수하는 수직통합 경쟁에 뛰어들고 있음을 …</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#2BC9AE">i</span><span class="feed-src-name">idnfinancials.com</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article><article class="feed-item" data-cat="ai" data-search="'추석 지나면 ai가 일상으로'…skt·kt·카카오 '모두의 ai' 10월 베타 돌입 skt·kt·카카오가 추석 연휴에도 개발에 매달려 '모두의 ai' 10월 베타 완성을 서두른 것은, 정부 주도 국민 ai 서비스가 일정 지연 없이 현실화될 만큼 정치적 우선순위가 높다는 신호다. 머니투데이방송(mtn) 2026년 10월 10일 토요일">
 <a class="feed-link" href="articles/2026-10-10-d-ai-1.html">
-  <div class="feed-meta"><span>🇰🇷</span><span class="feed-cat" style="color:#8F8CF5">AI</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span><span class="feed-dot">&middot;</span><span class="feed-src">머니투데이방송(MTN)</span></div>
+  <div class="feed-thumb" style="background:#8F8CF522"><span class="feed-thumb-emoji">🧠</span></div>
+  <div class="feed-eyebrow" style="color:#8F8CF5"><span>🇰🇷</span><span>AI</span></div>
   <h2 class="feed-title">'추석 지나면 AI가 일상으로'…SKT·KT·카카오 '모두의 AI' 10월 베타 돌입</h2>
-  <p class="feed-insight">SKT·KT·카카오가 추석 연휴에도 개발에 매달려 '모두의 AI' 10월 베타 완성을 서두른 것은, 정부 주도 국민 AI 서비스가 일정 지연 없이 현실화될 만큼 정치적 우선순위가 …</p>
+  <p class="feed-summary">SKT·KT·카카오가 추석 연휴에도 개발에 매달려 '모두의 AI' 10월 베타 완성을 서두른 것은, 정부 주도 국민 AI 서비스가 일정 지연 없이 현실화될 만큼 정치적 우선순위가 …</p>
+  <div class="feed-meta"><span class="feed-src-icon" style="background:#8F8CF5">머</span><span class="feed-src-name">머니투데이방송(MTN)</span><span class="feed-dot">&middot;</span><span class="feed-date">10.10</span></div>
 </a>
 </article>
     </div>
@@ -770,7 +986,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </div>
 </aside>
 </div>
-<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: wiseapp.co.kr/insight &amp; magazine-hd.kr</footer>
+<footer class="site">UPLEAT &middot; Daily Trend Archive &middot; 구조/디자인 레퍼런스: magazine-hd.kr &amp; wiseapp.co.kr/insight</footer>
 </div>
 <script>
 (function(){
