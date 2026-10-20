@@ -426,6 +426,17 @@ def find_thumb(article_id):
     return None
 
 
+def resolve_thumb(article):
+    """(src, is_local). Prefers a locally generated thumbnail, falls back to the
+    source article's own og:image (hotlinked), else (None, False)."""
+    local = find_thumb(article["id"])
+    if local:
+        return local, True
+    if article.get("src_image"):
+        return article["src_image"], False
+    return None, False
+
+
 def render_gnb_pills(root_prefix):
     pills = [f'<a class="pill-btn" data-cat="all" href="{root_prefix}index.html">전체</a>']
     for key in CATEGORY_ORDER:
@@ -460,6 +471,7 @@ def build_articles(days):
                         "source": item.get("source", ""),
                         "pubDate": item.get("pubDate"),
                         "insight": item["insight"],
+                        "src_image": item.get("image"),
                     })
     return articles
 
@@ -470,7 +482,7 @@ def render_feed_item(a):
     short_date = a["date"][5:].replace("-", ".")
     search_bits = esc(" ".join([a["title"], strip_tags(a["insight"]), a["source"], a["dateLabel"]])).lower()
 
-    thumb = find_thumb(a["id"])
+    thumb, _ = resolve_thumb(a)
     if thumb:
         thumb_html = f'<img src="{thumb}" alt="" loading="lazy">'
     else:
@@ -501,7 +513,7 @@ def render_today_carousel(articles):
     for i, a in enumerate(todays):
         color = CATEGORY_COLOR[a["cat_key"]]
         emoji = "🌐" if a["region_key"] == "intl" else "🇰🇷"
-        thumb = find_thumb(a["id"])
+        thumb, _ = resolve_thumb(a)
         bg = f"background-image:url('{thumb}');" if thumb else f"background:{color}33;"
         slides.append(f'''<a class="hero-slide" href="articles/{a['id']}.html" style="{bg}">
   <div class="hero-slide-inner">
@@ -558,7 +570,7 @@ def pick_related(articles, idx, limit=4):
 def render_article_page(a, next_a, related):
     color = CATEGORY_COLOR[a["cat_key"]]
     emoji = CATEGORY_EMOJI.get(a["cat_key"], "📡")
-    thumb = find_thumb(a["id"])
+    thumb, thumb_local = resolve_thumb(a)
 
     tags = [a["region"], a["cat_label"]]
     if a["source"]:
@@ -567,16 +579,18 @@ def render_article_page(a, next_a, related):
 
     nav_next = f'<a href="{next_a["id"]}.html">다음 글 →</a>' if next_a else '<span></span>'
 
-    hero_bg = "" if thumb else f'background:{color}33;'
-    hero_photo_html = f'<img class="hero-photo" src="../{thumb}" alt="">' if thumb else ""
-    hero_emoji_html = "" if thumb else f'<div class="hero-emoji">{emoji}</div>'
+    hero_src = (f"../{thumb}" if thumb_local else thumb) if thumb else None
+    hero_bg = "" if hero_src else f'background:{color}33;'
+    hero_photo_html = f'<img class="hero-photo" src="{hero_src}" alt="">' if hero_src else ""
+    hero_emoji_html = "" if hero_src else f'<div class="hero-emoji">{emoji}</div>'
 
     related_tiles = []
     for r in related:
         rcolor = CATEGORY_COLOR[r["cat_key"]]
-        rthumb = find_thumb(r["id"])
+        rthumb, rthumb_local = resolve_thumb(r)
         if rthumb:
-            rt_style = f"background-image:url('../{rthumb}')"
+            rsrc = f"../{rthumb}" if rthumb_local else rthumb
+            rt_style = f"background-image:url('{rsrc}')"
             rt_content = ""
         else:
             rt_style = f"background:{rcolor}33"

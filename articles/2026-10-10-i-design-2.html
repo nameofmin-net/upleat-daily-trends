@@ -57,6 +57,30 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
 
+/* "오늘의 트렌드" — full-width, one-at-a-time hero slider */
+.today-carousel{margin-bottom:52px;}
+.today-carousel h2{font-size:20px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em;}
+.carousel-date{font-size:13px;color:var(--sub2);margin:0 0 18px;}
+
+.hero-slider{position:relative;width:100%;height:440px;overflow:hidden;background:#F2F2F2;}
+@media (max-width:640px){.hero-slider{height:320px;}}
+.hero-slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.65,0,.35,1);}
+.hero-slide{flex:0 0 100%;width:100%;height:100%;position:relative;display:block;background-size:cover;background-position:center;}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%);}
+.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;z-index:2;}
+.hero-slide-title{font-size:26px;font-weight:700;color:#fff;margin:10px 0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:760px;}
+@media (max-width:640px){.hero-slide-title{font-size:19px;}}
+.hero-slide-meta{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85);}
+
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.85);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:background .15s ease;}
+@media (max-width:640px){.slider-arrow{top:18px;transform:none;width:36px;height:36px;font-size:18px;}}
+.slider-arrow:hover{background:#fff;}
+.slider-prev{left:20px;}
+.slider-next{right:20px;}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.slider-dot{width:7px;height:7px;border-radius:50%;border:none;padding:0;background:var(--line);cursor:pointer;}
+.slider-dot.active{background:var(--ink);}
+
 /* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
@@ -175,13 +199,13 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 <div class="related-strip">
 <h3>DESIGN 카테고리의 다른 글</h3>
 <div class="related-scroll"><a class="related-tile" href="2026-10-12-d-design-2.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-12-d-design-2.jpg')"></div>
 <div class="rt-label">[Project+] 불사조를 넘어 푸른 불꽃으로, 핫식스 패키지 디자인 리뉴얼 ① 롯데칠성음료</div>
 </a><a class="related-tile" href="2026-10-11-i-design-1.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-11-i-design-1.jpg')"></div>
 <div class="rt-label">Figma, 캔버스 안에 자연어 기반 AI 디자인 에이전트 정식 출시</div>
 </a><a class="related-tile" href="2026-10-11-d-design-1.html">
-<div class="rt-art" style="background:#F2767A33">🎨</div>
+<div class="rt-art" style="background-image:url('../assets/thumbs/2026-10-11-d-design-1.jpg')"></div>
 <div class="rt-label">꼬깔콘, 5년 만의 패키지 리뉴얼…삼각뿔 조형으로 브랜드 자산 재정의</div>
 </a><a class="related-tile" href="2026-10-10-i-design-1.html">
 <div class="rt-art" style="background:#F2767A33">🎨</div>
