@@ -34,26 +34,24 @@ a{color:inherit;text-decoration:none;}
 .topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
 .brand{font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--ink);flex:0 0 auto;}
 .brand a{color:inherit;}
-.gnb-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;flex:1;justify-content:flex-end;}
-.gnb-right .gh{font-size:13px;color:var(--sub);flex:0 0 auto;}
-.gnb-right .gh:hover{color:var(--accent);}
+.gnb-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap;flex:1;justify-content:flex-end;}
 
 header.site{margin-bottom:22px;}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
 h1{font-size:28px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em;}
-.note{font-size:13px;color:var(--sub);background:var(--accent-dim);border-left:3px solid var(--accent);padding:12px 14px;margin:16px 0 0;}
+.note{font-size:13px;color:var(--sub);background:#F7F7F7;padding:14px 16px;margin:16px 0 0;line-height:1.7;}
 .back{display:inline-block;margin-bottom:20px;font-size:14px;font-weight:600;color:var(--accent);}
 .back:hover{text-decoration:underline;}
 
-/* GNB search + pill filters — right side of the single-row GNB */
-.search-box{position:relative;max-width:260px;flex:1;min-width:180px;margin:0;}
-.search-box input{width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:13.5px;background:var(--card);color:var(--ink);}
-.search-box input:focus{outline:none;border-color:var(--accent);}
-.search-box::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5;z-index:1;}
-.pill-row{display:flex;gap:8px;flex-wrap:wrap;flex:0 0 auto;}
-.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;transition:all .12s ease;}
-.pill-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
-.pill-btn:hover:not(.active){border-color:var(--sub2);}
+/* GNB search + text-only tabs — right side of the single-row GNB, no chrome */
+.search-box{position:relative;max-width:220px;flex:1;min-width:150px;margin:0;}
+.search-box input{width:100%;padding:6px 6px 6px 22px;border:none;background:none;font-family:inherit;font-size:13.5px;color:var(--ink);}
+.search-box input:focus{outline:none;}
+.search-box input::placeholder{color:var(--sub2);}
+.search-icon{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--sub2);pointer-events:none;}
+.pill-row{display:flex;gap:18px;flex-wrap:wrap;flex:0 0 auto;}
+.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:13px;font-weight:600;padding:7px 0;transition:color .12s ease;}
+.pill-btn.active{color:var(--ink);font-weight:800;}
+.pill-btn:hover:not(.active){color:var(--ink);}
 
 /* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
 .feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
@@ -141,16 +139,15 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
   <div class="brand"><a href="index.html">UPLEAT · Daily Trend Archive</a></div>
   <div class="gnb-right">
     <form class="search-box" action="index.html" method="get">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
     </form>
     <div class="pill-row"><a class="pill-btn" data-cat="all" href="index.html">전체</a><a class="pill-btn" data-cat="ai" href="index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="index.html?cat=biz">TECH & BIZ</a></div>
-    <a class="gh" href="https://github.com/nameofmin-net/upleat-daily-trends" target="_blank" rel="noopener">GitHub ↗</a>
   </div>
 </div>
 </div>
 <div class="wrap">
 <header class="site">
-<p class="eyebrow">UPLEAT</p>
 <h1>UPLEAT 데일리 트렌드 아카이브</h1>
 <p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 102개의 글 수록.</p>
 </header>
@@ -462,7 +459,7 @@ footer.site{margin-top:48px;font-size:12px;color:var(--sub);text-align:center;}
 </a>
 </article><article class="feed-item" data-cat="biz" data-search="상반기 신규 벤처투자 8.9조원…전년 대비 56% 증가 ipo 비중이 꾸준히 올라가는 동시에 투자금이 검증된 우량기업으로만 쏠리는 현상이 심해지고 있다는 점이 회복의 그늘이다. 한국경제 2026년 10월 16일 금요일">
 <a class="feed-link" href="articles/2026-10-16-d-biz-1.html">
-  <div class="feed-thumb" style="background:#2BC9AE22"><span class="feed-thumb-emoji">📈</span></div>
+  <div class="feed-thumb" style="background:#2BC9AE22"><img src="assets/thumbs/2026-10-16-d-biz-1.jpg" alt="" loading="lazy"></div>
   <div class="feed-eyebrow" style="color:#2BC9AE"><span>🇰🇷</span><span>TECH & BIZ</span></div>
   <h2 class="feed-title">상반기 신규 벤처투자 8.9조원…전년 대비 56% 증가</h2>
   <p class="feed-summary">IPO 비중이 꾸준히 올라가는 동시에 투자금이 검증된 우량기업으로만 쏠리는 현상이 심해지고 있다는 점이 회복의 그늘이다.</p>
