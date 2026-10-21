@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>구글, 우주 AI 데이터센터 실험 첫발… TPU 4개 실은 위성 궤도 안착 · UPLEAT Daily Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#1868E0;
+  --accent-dim:#EAF2FE;
+  --ink:#111214;
+  --sub:#525252;
+  --sub2:#8B8B8B;
+  --line:#E5E5E5;
+  --bg:#FFFFFF;
+  --card:#FFFFFF;
+  --shadow:0 4px 10px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1440px;margin:0 auto;padding:36px 20px 80px;}
+a{color:inherit;text-decoration:none;}
+.gnb-sticky{position:sticky;top:0;z-index:40;background:#fff;margin-bottom:28px;}
+.topbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:16px 0;border-bottom:2px solid var(--ink);}
+.brand{font-weight:700;letter-spacing:.02em;font-size:15px;color:var(--ink);flex:0 0 auto;}
+.brand a{color:inherit;}
+.gnb-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap;flex:1;justify-content:flex-end;}
+
+header.site{margin-bottom:22px;}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.region-tab-row{display:flex;gap:20px;flex:0 0 auto;}
+.region-tab-btn{appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:14px;font-weight:600;padding:4px 0;transition:color .12s ease;}
+.region-tab-btn.active{color:var(--ink);font-weight:700;}
+.region-tab-btn:hover:not(.active){color:var(--ink);}
+h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
+.note{font-size:13px;color:var(--sub);background:#F7F7F7;padding:14px 16px;margin:16px 0 0;line-height:1.7;}
+
+/* GNB search + text-only tabs — right side of the single-row GNB, no chrome */
+.search-box{position:relative;max-width:220px;flex:1;min-width:150px;margin:0;}
+.search-box input{width:100%;padding:6px 6px 6px 22px;border:none;background:none;font-family:inherit;font-size:13.5px;color:var(--ink);}
+.search-box input:focus{outline:none;}
+.search-box input::placeholder{color:var(--sub2);}
+.search-icon{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--sub2);pointer-events:none;}
+.pill-row{display:flex;gap:18px;flex-wrap:wrap;flex:0 0 auto;}
+.pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:13px;font-weight:600;padding:7px 0;transition:color .12s ease;}
+.pill-btn.active{color:var(--ink);font-weight:700;}
+.pill-btn:hover:not(.active){color:var(--ink);}
+
+/* "오늘의 트렌드" — full-width, one-at-a-time hero slider */
+.today-carousel{margin-bottom:52px;}
+.today-carousel h2{font-size:20px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em;}
+.carousel-date{font-size:13px;color:var(--sub2);margin:0 0 18px;}
+
+.hero-slider{position:relative;width:100%;height:440px;overflow:hidden;background:#F2F2F2;}
+@media (max-width:640px){.hero-slider{height:320px;}}
+.hero-slider-track{display:flex;width:100%;height:100%;transition:transform .5s cubic-bezier(.65,0,.35,1);}
+.hero-slide{flex:0 0 100%;width:100%;height:100%;position:relative;display:block;background-size:cover;background-position:center;}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%);}
+.hero-slide-inner{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;z-index:2;}
+.hero-slide-title{font-size:26px;font-weight:700;color:#fff;margin:10px 0;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-width:760px;}
+@media (max-width:640px){.hero-slide-title{font-size:19px;}}
+.hero-slide-meta{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.85);}
+
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.85);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:background .15s ease;}
+@media (max-width:640px){.slider-arrow{top:18px;transform:none;width:36px;height:36px;font-size:18px;}}
+.slider-arrow:hover{background:#fff;}
+.slider-prev{left:20px;}
+.slider-next{right:20px;}
+.slider-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.slider-dot{width:7px;height:7px;border-radius:50%;border:none;padding:0;background:var(--line);cursor:pointer;}
+.slider-dot.active{background:var(--ink);}
+
+/* article feed — full-width 4-col grid (magazine-hd.kr archive density) */
+.feed-list{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+@media (max-width:860px){.feed-list{grid-template-columns:repeat(2,1fr);gap:24px;}}
+@media (max-width:560px){.feed-list{grid-template-columns:1fr;gap:28px;}}
+.feed-item{padding:0;border-top:none;height:100%;transition:opacity .55s cubic-bezier(.34,1.56,.64,1), transform .55s cubic-bezier(.34,1.56,.64,1);}
+.feed-link{display:flex;flex-direction:column;height:100%;}
+.feed-thumb{width:100%;aspect-ratio:16/9;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+.feed-item:hover .feed-thumb img{transform:scale(1.06);}
+.feed-thumb-emoji{font-size:34px;opacity:.5;}
+.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:13px;}
+.feed-title{font-size:20px;font-weight:700;margin:0 0 11px;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(20px*1.4*2);}
+.feed-item:hover .feed-title{color:var(--accent);}
+.feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(16px*1.6*2);}
+.feed-hashtag{display:block;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:14px;}
+.feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:3px;}
+.feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
+.feed-date{font-size:11px;color:var(--sub2);flex:0 0 auto;}
+.hidden-initial{display:none;}
+
+.loadmore-wrap{text-align:center;margin-top:36px;}
+.loadmore-btn{appearance:none;cursor:pointer;font-family:inherit;background:var(--card);border:1px solid var(--line);color:var(--sub);font-weight:700;font-size:14px;padding:13px 0;width:100%;border-radius:10px;box-shadow:var(--shadow);}
+.loadmore-btn:hover{border-color:var(--accent);color:var(--accent);}
+.no-results{font-size:14px;color:var(--sub);padding:40px 0;text-align:center;}
+
+/* "최근 핵심 인사이트" — full-width strip below the grid, same 4-col system as the feed */
+.rail-strip{margin-top:52px;padding-top:28px;border-top:1px solid var(--line);}
+.rail-strip h3{font-size:14px;margin:0 0 18px;font-weight:700;}
+.rail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+@media (max-width:860px){.rail-grid{grid-template-columns:repeat(2,1fr);gap:24px;}}
+@media (max-width:560px){.rail-grid{grid-template-columns:1fr;gap:24px;}}
+.rail-item{padding:0;}
+.rail-text{font-size:12.5px;color:var(--ink);line-height:1.5;}
+.rail-text b{color:var(--accent);}
+.rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:4px;}
+
+.scrolltop{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:50;}
+.scrolltop.show{opacity:1;pointer-events:auto;}
+.scrolltop:hover{transform:translateY(-2px);}
+
+/* article detail page — full-bleed flat hero photo + flat content blocks */
+.hero-cover{width:100%;height:480px;position:relative;overflow:hidden;background:#F2F2F2;}
+@media (max-width:640px){.hero-cover{height:320px;}}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
+.hero-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-cover .hero-emoji{font-size:84px;opacity:.5;}
+.hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
+.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.detail-card{position:relative;padding:30px 0 0;}
+.detail-card > h1{font-size:25px;font-weight:700;margin-bottom:14px;line-height:1.4;}
+.byline{display:flex;align-items:center;gap:7px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline-dot{color:var(--sub2);font-size:13px;}
+.byline-name{font-size:13px;font-weight:700;color:var(--ink);}
+.byline-role{font-size:11.5px;color:var(--sub2);}
+.insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
+.insight b{color:var(--accent);}
+.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;}
+.source-cta:hover{background:var(--accent);}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
+.tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
+.detail-note{font-size:12.5px;color:var(--sub);background:#F7F7F7;padding:14px 16px;line-height:1.7;}
+
+.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.daynav a{color:var(--accent);}
+.daynav .spacer{flex:1;}
+
+.related-strip{margin-bottom:28px;}
+.related-strip h3{font-size:14px;font-weight:700;margin:0 0 18px;}
+.related-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+@media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
+@media (max-width:560px){.related-scroll{grid-template-columns:1fr;gap:24px;}}
+.related-tile{width:100%;background:var(--card);display:block;overflow:hidden;}
+.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+.related-tile:hover .rt-art{transform:scale(1.06);}
+.related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+</style>
+</head>
+<body>
+<div class="gnb-sticky">
+<div class="topbar wrap" style="padding-top:0;padding-bottom:0;">
+  <div class="brand"><a href="../index.html">UPLEAT · Daily Trend Archive</a></div>
+  <div class="gnb-right">
+    <form class="search-box" action="../index.html" method="get">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
+    </form>
+    <div class="pill-row"><a class="pill-btn" data-cat="all" href="../index.html">전체</a><a class="pill-btn" data-cat="ai" href="../index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="../index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="../index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="../index.html?cat=biz">TECH & BIZ</a></div>
+  </div>
+</div>
+</div>
+<div class="hero-cover" style="background:#8F8CF533;">
+
+<div class="hero-inner">
+<div class="hero-emoji">🧠</div>
+<div class="hero-info"><span class="hero-tag">해외</span><span class="hero-date">2026년 10월 22일 목요일</span></div>
+</div>
+</div>
+
+<div class="wrap" style="padding-top:0;">
+<div class="detail-card">
+<h1>구글, 우주 AI 데이터센터 실험 첫발… TPU 4개 실은 위성 궤도 안착</h1>
+<div class="byline">
+  <span class="byline-name">KUOW (NPR)</span><span class="byline-dot">&middot;</span><span class="byline-role">2026-10-01</span>
+</div>
+<div class="insight"><b>구글이 10월 1일 스페이스X 트랜스포터-18 발사에 실어 'Project Suncatcher'의 첫 시험 위성을 궤도에 올렸다.</b> 냉장고 크기의 이 위성에는 구글이 자체 설계한 TPU(텐서 처리 장치) 4개가 탑재돼, 머신러닝 모델 젬마(Gemma)의 한 버전을 열 관리 제약 때문에 한 번에 15분씩 구동할 계획이다. 목표 운영 기간은 1년이다.<br><br><b>이번 발사의 목적은 우주 환경이 AI 칩에 미치는 영향을 검증하는 것이지, 당장 작동하는 데이터센터를 만드는 것이 아니다.</b> 프로젝트 책임자 트래비스 빌스는 발사 진동, 우주 방사선, 극한 온도를 칩이 견딜 수 있는지 확인하는 '매우 최소한의 시험'이라고 설명했다. 구글은 위성 파트너 플래닛과 함께 장기적으로 수십 개의 TPU를 실은 위성들이 레이저로 서로 통신하는 군집을 구상하고 있으며, 내년에는 위성 2기를 추가로 쏘아 연결 시험에 나설 예정이다.<br><br><b>다만 경제성 확보까지는 갈 길이 멀다는 지적도 나온다.</b> 빌스 책임자는 "향후 5년 안에 이 방식이 더 저렴해질 것으로는 보지 않는다"고 말했고, 카네기멜런대 브랜던 루시아 교수는 우주 환경에서는 비용과 복잡성이 지상보다 10배, 100배로 커진다고 지적했다. 순다르 피차이 구글 CEO는 올해 자본지출을 1,800억~1,900억 달러로 예상한다고 밝힌 바 있다.</div>
+<span class="feed-hashtag">#AI</span>
+<a class="source-cta" href="https://www.kuow.org/npr-news/2026-10-01/google-launches-project-suncatcher-a-step-towards-ai-data-centers-in-space" target="_blank" rel="noopener">원문 보기 ↗</a>
+<div class="tag-cloud"><span class="tag-pill">#해외</span><span class="tag-pill">#AI</span><span class="tag-pill">#KUOW (NPR)</span></div>
+<div class="detail-note">이 글은 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드 중 하나입니다. 올해 실제로 발행된 기사만 다루며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일 내 동일 URL로 이미 글이 있으면 새로 만들지 않고 걸러냅니다.</div>
+</div>
+
+<div class="daynav"><span class="spacer"></span><a href="2026-10-22-i-ai-1.html">다음 글 →</a></div>
+<div class="related-strip">
+<h3>AI 카테고리의 다른 글</h3>
+<div class="related-scroll"><a class="related-tile" href="2026-10-22-i-ai-3.html">
+<div class="rt-art" style="background:#8F8CF533">🧠</div>
+<div class="rt-label">오픈AI 안전보고서 책임자 사임… "회사 문화가 망가졌다"</div>
+</a><a class="related-tile" href="2026-10-22-i-ai-1.html">
+<div class="rt-art" style="background:#8F8CF533">🧠</div>
+<div class="rt-label">앤트로픽, 1억 달러 투입해 '프런티어 배치 엔지니어' 1만 명 양성 나서</div>
+</a><a class="related-tile" href="2026-10-22-d-ai-1.html">
+<div class="rt-art" style="background:#8F8CF533">🧠</div>
+<div class="rt-label">업스테이지, 코스피 상장 앞두고 2000억원 규모 프리IPO 추진</div>
+</a><a class="related-tile" href="2026-10-21-i-ai-1.html">
+<div class="rt-art" style="background-image:url('https://apicms.thestar.com.my/uploads/images/2026/10/15/4162692.jpg')"></div>
+<div class="rt-label">앤트로픽, 3분기 매출 168억 달러로 급증··· 흑자 전환도 처음 달성</div>
+</a></div>
+</div>
+</div>
+
+<button class="scrolltop" id="scrolltop" aria-label="맨 위로">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('scrolltop');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 400) btn.classList.add('show'); else btn.classList.remove('show');
+  });
+  btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+
+</body>
+</html>
