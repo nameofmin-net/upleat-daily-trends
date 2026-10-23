@@ -103,31 +103,30 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 
 /* article feed — left-thumbnail / right-content list rows, full insight inline */
 .feed-list{display:flex;flex-direction:column;}
-.feed-item{position:relative;border-bottom:1px solid var(--line);transition:opacity .4s ease, transform .4s ease;}
+.feed-item{border-bottom:1px solid var(--line);transition:opacity .4s ease, transform .4s ease;}
 .feed-item:first-child{border-top:none;}
 .feed-row{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
 .feed-thumb{flex:0 0 200px;width:200px;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
 @media (max-width:640px){.feed-thumb{flex:0 0 120px;width:120px;}}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .feed-thumb-emoji{font-size:28px;opacity:.5;}
-.feed-content{flex:1;min-width:0;display:flex;flex-direction:column;padding-right:88px;}
-.feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:9px;}
+.feed-content{flex:1;min-width:0;display:flex;flex-direction:column;}
+.feed-top-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;}
+.feed-eyebrow{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;}
+.feed-hashtag{font-size:12px;font-weight:700;color:var(--accent);}
 .feed-title-row{display:flex;align-items:center;gap:7px;margin:0 0 6px;}
 .badge-new{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:3px;background:#E0352B;color:#fff;font-size:10px;font-weight:800;line-height:1;}
 .feed-title{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:16px;color:var(--sub);line-height:1.7;margin:0 0 10px;}
 .feed-summary b{color:var(--accent);}
-.feed-hashtag{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;}
 .feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;flex-wrap:wrap;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
 .feed-date{font-size:11px;color:var(--sub2);flex:0 0 auto;}
-.comment-fab{position:absolute;right:0;bottom:24px;z-index:2;display:inline-flex;align-items:center;gap:5px;appearance:none;cursor:pointer;font-family:inherit;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--sub);}
+.comment-fab{display:inline-flex;align-self:flex-start;align-items:center;gap:5px;cursor:pointer;font-family:inherit;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--sub);margin-bottom:10px;}
 .comment-fab:hover{border-color:var(--accent);color:var(--accent);}
 .comment-fab svg{width:14px;height:14px;flex:0 0 auto;}
-@media (max-width:640px){.comment-fab{position:static;display:inline-flex;margin:0 0 12px;}
-.feed-content{padding-right:0;}}
 .hidden-initial{display:none;}
 
 .loadmore-wrap{text-align:center;margin-top:36px;}
@@ -420,7 +419,15 @@ COMMENT_PANEL_SCRIPT = """
   document.querySelectorAll('.comment-fab').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.preventDefault();
+      e.stopPropagation();
       openPanel(btn.dataset.id, btn.dataset.title);
+    });
+    btn.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        e.stopPropagation();
+        openPanel(btn.dataset.id, btn.dataset.title);
+      }
     });
   });
   document.querySelectorAll('.rail-text[data-id]').forEach(function(el){
@@ -598,16 +605,18 @@ def render_feed_item(a, today_date):
 <a class="feed-row" href="{a['url']}" target="_blank" rel="noopener">
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
   <div class="feed-content">
-    <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
+    <div class="feed-top-row">
+      <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
+      <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
+    </div>
     <div class="feed-title-row"><h2 class="feed-title">{a['title']}</h2>{new_badge}</div>
     <div class="feed-summary">{first_paragraph(a['insight'])}</div>
-    <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
+    <span class="comment-fab" role="button" tabindex="0" data-id="{a['id']}" data-title="{esc_attr(a['title'])}" aria-label="댓글 보기">{COMMENT_ICON_SVG}<span class="cc-num"></span></span>
     <div class="feed-meta">
       <span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span>
     </div>
   </div>
 </a>
-<button type="button" class="comment-fab" data-id="{a['id']}" data-title="{esc_attr(a['title'])}" aria-label="댓글 보기">{COMMENT_ICON_SVG}<span class="cc-num"></span></button>
 </article>'''
 
 
