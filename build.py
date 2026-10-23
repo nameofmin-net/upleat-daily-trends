@@ -497,11 +497,10 @@ def strip_tags(s):
     return re.sub(r"</?b>", "", s or "")
 
 
-def preview_text(text_html, limit=100):
-    text = strip_tags(text_html)
-    if len(text) > limit:
-        text = text[:limit] + "…"
-    return esc(text)
+def first_paragraph(text_html):
+    """The insight's first <br><br>-separated paragraph, tags stripped."""
+    first = re.split(r"<br\s*/?>\s*<br\s*/?>", text_html or "", maxsplit=1)[0]
+    return esc(strip_tags(first))
 
 
 def find_thumb(article_id):
@@ -585,7 +584,7 @@ def render_feed_item(a, today_date):
   <div class="feed-content">
     <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
     <div class="feed-title-row"><h2 class="feed-title">{a['title']}</h2>{new_badge}</div>
-    <p class="feed-summary">{preview_text(a['insight'], limit=80)}</p>
+    <p class="feed-summary">{first_paragraph(a['insight'])}</p>
     <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
     <div class="feed-meta">
       <span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span>
