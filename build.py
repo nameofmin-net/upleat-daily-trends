@@ -122,9 +122,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-eyebrow{display:inline-flex;align-self:flex-start;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 9px;border-radius:4px;margin-bottom:9px;}
 .feed-title-row{display:flex;align-items:center;gap:7px;margin:0 0 6px;}
 .badge-new{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:3px;background:#E0352B;color:#fff;font-size:10px;font-weight:800;line-height:1;}
-.feed-title{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.feed-title{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-summary{font-size:14px;color:var(--sub);line-height:1.6;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .feed-summary b{color:var(--accent);}
 @media (max-width:640px){.feed-summary{display:none;}}
 .feed-hashtag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;}
