@@ -41,13 +41,14 @@ export default {
       return json(request, { comments: results });
     }
 
-    // GET /api/comments/counts - public, { counts: { pageId: n, ... } } for every page with >=1 visible comment
+    // GET /api/comments/counts - public, { counts: { pageId: {n, latest}, ... } } for every page with >=1 visible comment
+    // (latest = created_at of the newest comment on that page, used client-side to flag today's comments)
     if (path === "/api/comments/counts" && request.method === "GET") {
       const { results } = await env.DB.prepare(
-        "SELECT page_id, COUNT(*) as n FROM comments WHERE hidden = 0 GROUP BY page_id"
+        "SELECT page_id, COUNT(*) as n, MAX(created_at) as latest FROM comments WHERE hidden = 0 GROUP BY page_id"
       ).all();
       const counts = {};
-      for (const row of results) counts[row.page_id] = row.n;
+      for (const row of results) counts[row.page_id] = { n: row.n, latest: row.latest };
       return json(request, { counts });
     }
 

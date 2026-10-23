@@ -150,16 +150,17 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .scrolltop:hover{transform:translateY(-2px);}
 
 /* floating comment panel (Notion-style) */
-.comment-panel-overlay{position:fixed;inset:0;background:rgba(17,18,20,.25);z-index:99;opacity:0;pointer-events:none;transition:opacity .2s ease;}
-.comment-panel-overlay.open{opacity:1;pointer-events:auto;}
-.comment-panel{position:fixed;top:0;right:0;height:100%;width:400px;max-width:92vw;background:#fff;box-shadow:-12px 0 32px rgba(16,24,40,.14);z-index:100;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;}
-.comment-panel.open{transform:translateX(0);}
-@media (max-width:640px){.comment-panel{width:100%;max-width:100%;}}
-.comment-panel-header{display:flex;align-items:flex-start;gap:12px;padding:20px 20px 16px;border-bottom:1px solid var(--line);}
+.comment-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
+.comment-panel-overlay.open{display:block;}
+.comment-panel{position:fixed;top:90px;right:24px;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 114px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
+.comment-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+@media (max-width:640px){.comment-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
+.comment-panel.open{transform:translateY(0);}}
+.comment-panel-header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);}
 .comment-panel-title{flex:1;font-size:14px;font-weight:700;line-height:1.5;margin:0;}
 .comment-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:22px;color:var(--sub2);line-height:1;padding:0;}
 .comment-panel-close:hover{color:var(--ink);}
-.comment-panel-body{flex:1;overflow-y:auto;padding:20px;}
+.comment-panel-body{flex:1;min-height:0;overflow-y:auto;padding:18px;}
 
 /* comments (reused inside the floating panel) */
 .comments-count{color:var(--sub2);font-weight:600;}
@@ -355,6 +356,15 @@ COMMENT_PANEL_SCRIPT = """
     } catch(e){ return ''; }
   }
 
+  function kstDateStr(d){
+    var kst = new Date(d.getTime() + (9 * 60 - d.getTimezoneOffset()) * 60000);
+    return kst.getFullYear() + '-' + pad2(kst.getMonth()+1) + '-' + pad2(kst.getDate());
+  }
+
+  function isToday(iso){
+    try { return kstDateStr(new Date(iso)) === kstDateStr(new Date()); } catch(e){ return false; }
+  }
+
   var anonName = getAnonName();
   document.getElementById('panelAnonName').textContent = anonName;
 
@@ -368,12 +378,14 @@ COMMENT_PANEL_SCRIPT = """
   var submitBtn = form.querySelector('.comment-submit-btn');
   var currentPageId = null;
 
-  function updateCountBadge(pageId, n){
+  function updateCountBadge(pageId, n, hasToday){
     var item = document.querySelector('.feed-item[data-id="' + pageId + '"]');
     if (!item) return;
     var btn = item.querySelector('.comment-fab');
     if (!btn) return;
     btn.querySelector('.cc-num').textContent = n > 0 ? n : '';
+    var badge = btn.querySelector('.comment-fab-new');
+    if (badge) badge.style.display = hasToday ? 'inline-flex' : 'none';
   }
 
   function renderList(comments){
@@ -384,7 +396,8 @@ COMMENT_PANEL_SCRIPT = """
     }
     emptyEl.style.display = 'none';
     listEl.innerHTML = comments.map(function(c){
-      return '<div class="comment-item"><div class="comment-head"><span class="comment-name">' + escapeHtml(c.name) + '</span><span class="comment-date">' + formatDate(c.created_at) + '</span></div><div class="comment-body">' + escapeHtml(c.body) + '</div></div>';
+      var newBadge = isToday(c.created_at) ? '<span class="badge-new">N</span>' : '';
+      return '<div class="comment-item"><div class="comment-head"><span class="comment-name">' + escapeHtml(c.name) + '</span>' + newBadge + '<span class="comment-date">' + formatDate(c.created_at) + '</span></div><div class="comment-body">' + escapeHtml(c.body) + '</div></div>';
     }).join('');
   }
 
@@ -394,7 +407,7 @@ COMMENT_PANEL_SCRIPT = """
       .then(function(data){
         var comments = data.comments || [];
         if (pageId === currentPageId) renderList(comments);
-        updateCountBadge(pageId, comments.length);
+        updateCountBadge(pageId, comments.length, comments.some(function(c){ return isToday(c.created_at); }));
       })
       .catch(function(){ /* fail quietly */ });
   }
@@ -469,7 +482,10 @@ COMMENT_PANEL_SCRIPT = """
     .then(function(r){ return r.json(); })
     .then(function(data){
       var counts = data.counts || {};
-      Object.keys(counts).forEach(function(pageId){ updateCountBadge(pageId, counts[pageId]); });
+      Object.keys(counts).forEach(function(pageId){
+        var c = counts[pageId];
+        updateCountBadge(pageId, c.n, isToday(c.latest));
+      });
     })
     .catch(function(){ /* fail quietly */ });
 })();
@@ -611,7 +627,7 @@ def render_feed_item(a, today_date):
     </div>
     <div class="feed-title-row"><h2 class="feed-title">{a['title']}</h2>{new_badge}</div>
     <div class="feed-summary">{first_paragraph(a['insight'])}</div>
-    <span class="comment-fab" role="button" tabindex="0" data-id="{a['id']}" data-title="{esc_attr(a['title'])}" aria-label="댓글 보기">{COMMENT_ICON_SVG}<span class="cc-num"></span></span>
+    <span class="comment-fab" role="button" tabindex="0" data-id="{a['id']}" data-title="{esc_attr(a['title'])}" aria-label="댓글 보기">{COMMENT_ICON_SVG}<span class="cc-num"></span><span class="badge-new comment-fab-new" style="display:none">N</span></span>
     <div class="feed-meta">
       <span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span>
     </div>
