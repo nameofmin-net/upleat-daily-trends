@@ -41,6 +41,16 @@ export default {
       return json(request, { comments: results });
     }
 
+    // GET /api/comments/counts - public, { counts: { pageId: n, ... } } for every page with >=1 visible comment
+    if (path === "/api/comments/counts" && request.method === "GET") {
+      const { results } = await env.DB.prepare(
+        "SELECT page_id, COUNT(*) as n FROM comments WHERE hidden = 0 GROUP BY page_id"
+      ).all();
+      const counts = {};
+      for (const row of results) counts[row.page_id] = row.n;
+      return json(request, { counts });
+    }
+
     // POST /api/comments - public, create a comment
     if (path === "/api/comments" && request.method === "POST") {
       let data;
