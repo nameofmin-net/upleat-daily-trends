@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>댓글 관리 · UPLEAT</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;background:#F7F7F7;color:#111214;margin:0;padding:24px;}
+  .wrap{max-width:900px;margin:0 auto;}
+  h1{font-size:18px;margin:0 0 16px;}
+  .login-box{background:#fff;border:1px solid #E5E5E5;border-radius:10px;padding:24px;max-width:400px;margin:40px auto;}
+  .login-box input{width:100%;padding:10px 12px;border:1px solid #E5E5E5;border-radius:8px;font-size:14px;margin-bottom:10px;}
+  .login-box button, .toolbar button{appearance:none;cursor:pointer;background:#111214;color:#fff;border:none;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:8px;}
+  .login-box button:hover, .toolbar button:hover{background:#1868E0;}
+  .toolbar{display:flex;gap:10px;margin-bottom:16px;align-items:center;}
+  .toolbar input{flex:1;padding:8px 10px;border:1px solid #E5E5E5;border-radius:8px;font-size:13px;}
+  .status{font-size:13px;color:#8B8B8B;margin-bottom:12px;}
+  .comment-card{background:#fff;border:1px solid #E5E5E5;border-radius:10px;padding:16px 18px;margin-bottom:12px;}
+  .comment-card.hidden-row{opacity:.5;}
+  .meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+  .name{font-weight:700;font-size:14px;}
+  .page-id{font-size:12px;color:#8B8B8B;}
+  .date{font-size:11.5px;color:#8B8B8B;}
+  .body{font-size:14px;line-height:1.6;white-space:pre-wrap;word-break:break-word;margin-bottom:10px;}
+  .actions{display:flex;gap:8px;}
+  .actions button{appearance:none;cursor:pointer;background:#fff;border:1px solid #E5E5E5;border-radius:6px;font-size:12.5px;padding:6px 12px;}
+  .actions button:hover{border-color:#1868E0;color:#1868E0;}
+  .actions button.danger:hover{border-color:#D23B3B;color:#D23B3B;}
+  .empty{text-align:center;color:#8B8B8B;padding:40px 0;font-size:14px;}
+  .error{color:#D23B3B;font-size:13px;margin-top:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>UPLEAT 트렌드 리포트 · 댓글 관리</h1>
+  <div id="loginView" class="login-box">
+    <input id="tokenInput" type="password" placeholder="관리자 토큰 입력">
+    <button id="loginBtn">접속</button>
+    <div class="error" id="loginError" style="display:none">토큰이 올바르지 않습니다.</div>
+  </div>
+  <div id="adminView" style="display:none">
+    <div class="toolbar">
+      <input id="pageFilter" placeholder="글 id로 필터 (예: 2026-10-23-i-ai-1), 비우면 전체">
+      <button id="refreshBtn">새로고침</button>
+      <button id="logoutBtn" style="background:#fff;color:#111214;border:1px solid #E5E5E5;">로그아웃</button>
+    </div>
+    <div class="status" id="statusLine"></div>
+    <div id="list"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var WORKER_URL = "https://upleat-trend-comments.dkdldb3144.workers.dev";
+  var loginView = document.getElementById('loginView');
+  var adminView = document.getElementById('adminView');
+  var tokenInput = document.getElementById('tokenInput');
+  var loginBtn = document.getElementById('loginBtn');
+  var loginError = document.getElementById('loginError');
+  var pageFilter = document.getElementById('pageFilter');
+  var refreshBtn = document.getElementById('refreshBtn');
+  var logoutBtn = document.getElementById('logoutBtn');
+  var statusLine = document.getElementById('statusLine');
+  var listEl = document.getElementById('list');
+
+  function getToken(){
+    try { return sessionStorage.getItem('upleat_admin_token') || ''; } catch(e){ return ''; }
+  }
+  function setToken(t){
+    try { sessionStorage.setItem('upleat_admin_token', t); } catch(e){}
+  }
+  function clearToken(){
+    try { sessionStorage.removeItem('upleat_admin_token'); } catch(e){}
+  }
+
+  function escapeHtml(s){
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  function showAdmin(){
+    loginView.style.display = 'none';
+    adminView.style.display = '';
+    load();
+  }
+
+  function showLogin(err){
+    adminView.style.display = 'none';
+    loginView.style.display = '';
+    loginError.style.display = err ? '' : 'none';
+  }
+
+  function authFetch(path, opts){
+    opts = opts || {};
+    opts.headers = Object.assign({}, opts.headers, { Authorization: 'Bearer ' + getToken() });
+    return fetch(WORKER_URL + path, opts);
+  }
+
+  function render(comments){
+    if (!comments.length){
+      listEl.innerHTML = '<div class="empty">댓글이 없습니다.</div>';
+      return;
+    }
+    listEl.innerHTML = comments.map(function(c){
+      return '<div class="comment-card' + (c.hidden ? ' hidden-row' : '') + '" data-id="' + c.id + '">' +
+        '<div class="meta"><span class="name">' + escapeHtml(c.name) + '</span><span class="page-id">' + escapeHtml(c.page_id) + '</span><span class="date">' + escapeHtml(c.created_at) + '</span></div>' +
+        '<div class="body">' + escapeHtml(c.body) + '</div>' +
+        '<div class="actions">' +
+          '<button class="toggle-btn" data-hidden="' + c.hidden + '">' + (c.hidden ? '숨김 해제' : '숨기기') + '</button>' +
+          '<button class="danger delete-btn">삭제</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function load(){
+    statusLine.textContent = '불러오는 중...';
+    var page = pageFilter.value.trim();
+    var qs = page ? ('?page=' + encodeURIComponent(page)) : '';
+    authFetch('/api/admin/comments' + qs)
+      .then(function(r){
+        if (r.status === 401) { showLogin(true); clearToken(); throw new Error('unauthorized'); }
+        return r.json();
+      })
+      .then(function(data){
+        var comments = data.comments || [];
+        statusLine.textContent = '총 ' + comments.length + '개';
+        render(comments);
+      })
+      .catch(function(e){
+        if (e.message !== 'unauthorized') statusLine.textContent = '불러오기 실패';
+      });
+  }
+
+  loginBtn.addEventListener('click', function(){
+    var t = tokenInput.value.trim();
+    if (!t) return;
+    setToken(t);
+    authFetch('/api/admin/comments').then(function(r){
+      if (r.status === 401) { loginError.style.display = ''; clearToken(); return; }
+      loginError.style.display = 'none';
+      showAdmin();
+    });
+  });
+  tokenInput.addEventListener('keydown', function(e){ if (e.key === 'Enter') loginBtn.click(); });
+
+  logoutBtn.addEventListener('click', function(){
+    clearToken();
+    showLogin(false);
+  });
+
+  refreshBtn.addEventListener('click', load);
+  pageFilter.addEventListener('keydown', function(e){ if (e.key === 'Enter') load(); });
+
+  listEl.addEventListener('click', function(e){
+    var card = e.target.closest('.comment-card');
+    if (!card) return;
+    var id = card.dataset.id;
+    if (e.target.classList.contains('toggle-btn')){
+      var hidden = e.target.dataset.hidden === '1' || e.target.dataset.hidden === 'true';
+      authFetch('/api/admin/hide', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: Number(id), hidden: !hidden })
+      }).then(load);
+    } else if (e.target.classList.contains('delete-btn')){
+      if (!confirm('이 댓글을 완전히 삭제할까요? 되돌릴 수 없습니다.')) return;
+      authFetch('/api/admin/comments/' + id, { method: 'DELETE' }).then(load);
+    }
+  });
+
+  if (getToken()) showAdmin(); else showLogin(false);
+})();
+</script>
+</body>
+</html>

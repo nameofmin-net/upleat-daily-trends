@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "upleat-trend-comments",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-23",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "upleat_trend_comments",
+      "database_id": "51eee159-a73c-4583-96c1-56a478f6788d"
+    }
+  ]
+}
