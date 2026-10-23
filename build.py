@@ -125,6 +125,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-title{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .feed-item:hover .feed-title{color:var(--accent);}
 .feed-summary{font-size:14px;color:var(--sub);line-height:1.6;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.feed-summary b{color:var(--accent);}
 @media (max-width:640px){.feed-summary{display:none;}}
 .feed-hashtag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;}
 .feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;flex-wrap:wrap;}
@@ -498,9 +499,9 @@ def strip_tags(s):
 
 
 def first_paragraph(text_html):
-    """The insight's first <br><br>-separated paragraph, tags stripped."""
-    first = re.split(r"<br\s*/?>\s*<br\s*/?>", text_html or "", maxsplit=1)[0]
-    return esc(strip_tags(first))
+    """The insight's first <br><br>-separated paragraph, <b> emphasis kept intact
+    (same trusted-HTML handling as the full insight on the article page)."""
+    return re.split(r"<br\s*/?>\s*<br\s*/?>", text_html or "", maxsplit=1)[0]
 
 
 def find_thumb(article_id):
