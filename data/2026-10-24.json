@@ -1,0 +1,146 @@
+{
+  "intl": {
+    "date": "2026-10-24",
+    "dateLabel": "2026년 10월 24일 토요일",
+    "region": "해외",
+    "takeawayHtml": "AI가 매출의 핵심 동력으로 자리잡으면서, <b>그 성과를 인프라·창작·소비자 서비스 전반에 실제로 구현해내는 기업과 그렇지 못한 기업의 격차가 뚜렷해지고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "xAI, 음성 전용 모델 'Grok Voice 3.0' 출시",
+            "url": "https://www.devx.com/artificial-intelligence-ai/what-is-grok-voice-3-0-xai-speech-to-speech-model/",
+            "source": "DevX",
+            "pubDate": "2026-10-14",
+            "image": null,
+            "insight": "xAI가 10월 14일 음성 전용 모델 'Grok Voice 3.0'을 출시하며 보이스 에이전트 API의 기본 모델을 교체했다. <b>텍스트 변환 과정을 거치지 않고 오디오를 직접 처리해 1초 미만의 응답 지연을 구현했으며, 분당 0.08달러로 전작과 동일한 가격을 유지했다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "Maze, 'Future of User Research Report 2026' 공개",
+            "url": "https://maze.co/blog/ux-statistics/",
+            "source": "Maze",
+            "pubDate": null,
+            "image": "https://www.datocms-assets.com/38511/1779797632-seo-image-1.png?auto=format",
+            "insight": "Maze가 발표한 'Future of User Research Report 2026'에 따르면 리서처의 69%가 이미 일부 프로젝트에 AI를 활용하고 있으며, 이는 전년 대비 19%p 늘어난 수치다. 데이터 분석(76%), 전사(轉寫) 자동화(57%), 리서치 질문 생성(55%) 순으로 AI 활용도가 높았다. <b>리서치를 전사 전략 단계까지 필수로 여기는 조직의 비율은 2025년 8%에서 2026년 22%로 뛰었고, 성과를 KPI·OKR로 추적하는 팀도 43%에서 56%로 늘었다</b>. 다만 모바일 사용자의 72.4%는 AI 사용 시 개인정보·투명성·데이터 통제를 우려한다고 답해, 리서치 현장의 AI 도입 속도와 최종 사용자 신뢰 사이에는 여전히 간극이 있다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "어도비, Firefly AI 스튜디오 재설계…'기억하는' 창작 도구로",
+            "url": "https://letsdatascience.com/news/adobe-redesigns-firefly-ai-studio-to-remember-creations-fb1259a9",
+            "source": "Let's Data Science",
+            "pubDate": "2026-06-18",
+            "image": null,
+            "insight": "어도비가 6월 18일 Firefly AI 스튜디오를 재설계하며 비공개 베타를 시작했다. 새로 추가된 'Elements'는 캐릭터·장소·사물을 이름 붙여 저장해 재사용하게 하고, 'Projects'는 세션이 바뀌어도 자산과 맥락을 한곳에 유지하는 허브 역할을 한다. <b>Firefly AI 어시스턴트에는 브랜드 키트·로고 생성과 영상 초벌 편집 도구 'Quick Cut'이 추가됐고, ChatGPT·Claude·Copilot·Gemini·Slack 등 외부 플랫폼과도 연동된다</b>. 어도비의 'Creators' Toolkit' 설문(크리에이터 1만6천명 이상)에서는 75%가 창작용 AI를 이미 통합됐거나 필수적이라고 답했지만, 85%는 최종 창작 결정권은 본인에게 있어야 한다고 답해 통제권에 대한 요구도 뚜렷했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "스페이스X, 3분기 매출 161% 급증…AI 사업이 성장 주도",
+            "url": "https://axios.com/2026/10/20/spacex-earnings-ai-elon-musk",
+            "source": "Axios",
+            "pubDate": "2026-10-20",
+            "image": null,
+            "insight": "스페이스X가 10월 20일 발표한 3분기 실적에서 매출이 전년 대비 161% 늘어난 약 146억 달러를 기록했다고 밝혔다. <b>AI 사업 매출이 전년 8억1300만 달러에서 75억6000만 달러로 급증해 스타링크를 제치고 최대 매출원이 됐으며, 순이익도 전년 10억5000만 달러 적자에서 44억 달러 흑자로 전환됐다</b>."
+          },
+          {
+            "title": "버블, 이타카 홀딩스에 13억 달러 매각 합의",
+            "url": "https://thenextweb.com/news/bumble-ithaca-holdings-1-3bn-deal",
+            "source": "The Next Web",
+            "pubDate": "2026-10-13",
+            "image": "https://media.thenextweb.com/2026/10/whitney-wolfe-herd-onstage-techcrunch-disrupt.jpg",
+            "insight": "데이팅 앱 버블이 10월 13일 투자사 이타카 홀딩스에 전액 현금, 기업가치 약 13억 달러에 인수되기로 합의했다고 발표했다. <b>주당 인수가 6.05달러는 보도 전 종가보다 138% 높은 가격이지만, 2021년 상장 당시 기업가치 약 140억 달러에 비하면 10분의 1 수준으로 줄어든 금액이다</b>. 올해 2분기 매출은 전년 대비 15.2% 줄어든 2억1100만 달러, 유료 사용자는 16.4% 감소한 약 320만 명으로, AI 데이팅 도우미 '비(Bee)' 출시에도 이용자 이탈을 막지 못한 상태에서 나온 결정이다. 거래 후에는 이타카의 공동대표 라비 굽타와 존 헤그먼이 버블 공동대표를 맡고, 창업자 휘트니 울프 허드는 경영에 계속 관여할 예정이다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-24",
+    "dateLabel": "2026년 10월 24일 토요일",
+    "region": "국내",
+    "takeawayHtml": "카카오가 AI를 '보이지 않는 레이어'로 설계해 일상 속에 밀어넣는 사이, <b>국내 투자 시장은 피지컬 AI와 로보틱스처럼 실적이 뒷받침되는 분야로 자금이 몰리는 흐름을 분명히 보여주고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "'K Connect AI' 5대 전시 연계…AMXPO서 피지컬 AI·로봇 전면 배치",
+            "url": "https://hellot.net/news/article.html?no=114708",
+            "source": "헬로티(Hellot)",
+            "pubDate": null,
+            "image": "https://www.hellot.net/data/photos/20260936/art_17883113512037_c5d2b5.jpg",
+            "insight": "50년 역사의 한국기계전(KOMAF)을 리브랜딩한 'AMXPO 2026'이 10월 21일부터 23일까지 킨텍스 제1전시장에서 열렸다. 스마트팩토리·금속가공 등 기존 제조 기술 전시에 자율제조, 피지컬 AI, 로봇, DX 기술이 더해졌고, 두산에너빌리티·주강로보테크 등이 참가했다. <b>이 행사는 산업통상부가 한국전자전·반도체대전·산업AI EXPO·로보월드를 하나로 묶은 'K Connect AI' 플랫폼의 일환으로, 10월 13일부터 11월 7일까지 코엑스·킨텍스에서 전시·컨퍼런스·수출상담회가 연계 운영된다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "카카오 '카나나 스페이스', 두 손가락으로 부르는 AI 레이어로 설계",
+            "url": "https://dealsite.co.kr/articles/170539",
+            "source": "딜사이트",
+            "pubDate": "2026-10-13",
+            "image": "https://dtd31o1ybbmk8.cloudfront.net/photos/2026/10/13/52e61231d1bb4ebc8c7980b06c1f559d/thumb.jpg",
+            "insight": "카카오가 10월 13일 '이프 카카오 2026' 키노트에서 AI 어시스턴트 '카나나 스페이스'를 공개했다. 카카오톡 화면에서 두 손가락으로 쓸어내리면 별도 화면 전환 없이 현재 보던 화면 위에 AI가 뜨는 방식으로, <b>김대년 디자인 총괄 성과리더는 이를 '또 하나의 탭이나 별도 화면이 아니라 카카오톡 어디서나 열리는 AI 레이어'로 설계했다고 설명하며, 기능을 찾는 경험에서 의도를 말하는 경험으로 전환됐다고 밝혔다</b>. 메시지 전송이나 결제 같은 중요한 행동에는 최종 사용자 승인을 거치는 안전장치를 뒀고, 자체 한국어 토크나이저로 응답 속도를 평균 3.9배 끌어올렸다고 밝혔다. 선정된 신청자를 대상으로 12월 이후 순차적으로 베타를 시작할 예정이다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "순하리 레몬진, 'A Whole Lemon' 콘셉트로 BI·패키지 리뉴얼",
+            "url": "https://design.co.kr/focus9/161085/",
+            "source": "디자인(design.co.kr)",
+            "pubDate": null,
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/05/07153849/20260507063843-Lowtag-Extra-03-832x1040.jpg",
+            "insight": "롯데칠성음료의 과일소주 '순하리 레몬진'이 브랜드 디자인 스튜디오 네임드와 함께 BI와 패키지 디자인 시스템을 새로 정비했다. <b>'A Whole Lemon'을 콘셉트로 레몬 고유의 생동감을 강렬한 시각적 인상으로 옮기고, 도수별로 컬러를 구분해 소비자가 제품을 직관적으로 고를 수 있게 했다</b>. 동결 침출 공법, 제로 슈거 같은 핵심 속성도 아이콘과 정보 구조로 정리해 RTD 주류 시장에서 제품의 기능적 차별성을 드러내는 데 초점을 맞췄다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "국내 벤처투자 상반기 8.9조원…IPO 비중 37.9%로 확대",
+            "url": "https://www.heraldk.com/article/2026090719222849500",
+            "source": "헤럴드경제",
+            "pubDate": "2026-09-07",
+            "image": "https://static.heraldcorp.com/wbazic/biz/www/image/heraldsns.png",
+            "insight": "삼정KPMG 보고서에 따르면 2026년 상반기 국내 신규 벤처투자는 8조8676억원으로 전년 동기 대비 56.2% 늘었다. <b>피투자기업당 평균 투자금은 2024년 25억4000만원에서 2026년 상반기 38억6000만원으로 뛰어, 투자가 성장성과 수익성이 검증된 기업으로 쏠리는 현상이 뚜렷해졌다</b>. VC 회수 방식에서 IPO 비중은 2022년 24.3%에서 2026년 상반기 37.9%로 커졌지만, 같은 기간 상장예비심사를 철회하거나 승인받지 못한 기업의 83%가 매출·수익성 문제 때문이었다는 점도 함께 지적됐다."
+          },
+          {
+            "title": "7월 국내 스타트업 투자, 제조·하드웨어가 금액 1위로 올라서",
+            "url": "https://www.innoforest.co.kr/report/559",
+            "source": "혁신의숲",
+            "pubDate": null,
+            "image": "https://s3.ap-northeast-2.amazonaws.com/inno.bucket.live/content/thumbnail/559_20260811162057.png",
+            "insight": "혁신의숲 집계에 따르면 2026년 7월 신규 투자유치에 성공한 국내 스타트업은 140개사, 투자유치 금액은 9821억원으로 전월 대비 각각 21.7%, 39.5% 늘었다. <b>제조·하드웨어 분야가 3146억원(32.0%)으로 처음 금액 기준 1위에 올랐고, 휴머노이드 기업 홀리데이로보틱스는 1550억원 시리즈A로 국내 역대 최대 시리즈A 기록을 세웠다</b>. 건수 기준으로는 AI·딥테크·블록체인이 40건(28.6%)으로 가장 많아, 피지컬 AI·로보틱스를 중심으로 투자가 대형화되는 흐름이 뚜렷했다."
+          }
+        ]
+      }
+    ]
+  }
+}
