@@ -517,6 +517,11 @@ def strip_tags(s):
     return re.sub(r"</?b>", "", s or "")
 
 
+def first_paragraph(text_html):
+    """The insight's first <br><br>-separated paragraph, <b> emphasis kept intact."""
+    return re.split(r"<br\s*/?>\s*<br\s*/?>", text_html or "", maxsplit=1)[0]
+
+
 def find_thumb(article_id):
     """Return the root-relative path to a generated thumbnail, or None."""
     for ext in THUMB_EXTS:
@@ -598,7 +603,7 @@ def render_feed_item(a, today_date):
   <div class="feed-content">
     <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
     <div class="feed-title-row"><h2 class="feed-title">{a['title']}</h2>{new_badge}</div>
-    <div class="feed-summary">{a['insight']}</div>
+    <div class="feed-summary">{first_paragraph(a['insight'])}</div>
     <div class="feed-footer-row">
       <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
       <a class="feed-source-link" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
