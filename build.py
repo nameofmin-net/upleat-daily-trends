@@ -2,27 +2,18 @@
 """Static site generator for the UPLEAT daily trend archive.
 
 Reads data/YYYY-MM-DD.json files (each {"intl": {...}, "domestic": {...}},
-day-grouped with categories of articles) and flattens them into individual
-article posts (a blog/Brunch-style model, not a day-bundle model):
-  - index.html: single reverse-chronological feed (search, category pills,
-    load-more), one row per article
-  - articles/{date}-{i|d}-{cat}-{n}.html: one permalink page per article
+day-grouped with categories of articles) and flattens them into a single
+reverse-chronological feed on index.html (search, category pills, load-more).
+There is no separate per-article detail page — each list row shows the full
+insight inline, a link to the original source, and comments open in a
+floating right-side panel (Notion-style) instead of navigating away.
 
 Articles whose source JSON marks them `duplicate: true` (same URL already
-published within the rolling 7-day dedup window) are skipped entirely —
-they are not given their own post, since that would just republish the same
-URL as a "new" entry.
+published within the rolling 7-day dedup window) are skipped entirely.
 
 Each article looks for a generated thumbnail at assets/thumbs/{id}.{ext}
-(jpg/jpeg/png/webp). If present it's used as the feed-card/hero/related-tile
-image; otherwise a flat category-tinted placeholder is shown instead. Drop
-new thumbnail files in and rerun this script — no other wiring needed.
-
-Design system: single-column editorial feed modeled on magazine-hd.kr
-(flat cards, no radius/shadow on content blocks, colored category eyebrow,
-bold black titles, grey one-line deks, square source-initial "byline" icon,
-Noto Sans KR). Interaction chrome (search, pill filters, buttons) adapted
-from wiseapp.co.kr/insight.
+(jpg/jpeg/png/webp). If present it's used as the row's thumbnail; otherwise a
+flat category-tinted placeholder is shown instead.
 
 Usage: python3 build.py
 """
@@ -30,6 +21,7 @@ import json
 import glob
 import os
 import re
+import shutil
 import html as htmllib
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -109,11 +101,11 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
 
-/* article feed — left-thumbnail / right-content list rows */
+/* article feed — left-thumbnail / right-content list rows, full insight inline */
 .feed-list{display:flex;flex-direction:column;}
 .feed-item{border-bottom:1px solid var(--line);transition:opacity .4s ease, transform .4s ease;}
 .feed-item:first-child{border-top:none;}
-.feed-link{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
+.feed-row{display:flex;gap:24px;padding:24px 0;align-items:flex-start;cursor:pointer;}
 .feed-thumb{flex:0 0 200px;width:200px;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
 @media (max-width:640px){.feed-thumb{flex:0 0 120px;width:120px;}}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -124,10 +116,12 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .badge-new{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:3px;background:#E0352B;color:#fff;font-size:10px;font-weight:800;line-height:1;}
 .feed-title{font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.008em;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .feed-item:hover .feed-title{color:var(--accent);}
-.feed-summary{font-size:16px;color:var(--sub);line-height:1.6;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.feed-summary{font-size:16px;color:var(--sub);line-height:1.7;margin:0 0 10px;}
 .feed-summary b{color:var(--accent);}
-@media (max-width:640px){.feed-summary{display:none;}}
-.feed-hashtag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;}
+.feed-footer-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+.feed-hashtag{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);}
+.feed-source-link{font-size:12px;font-weight:700;color:var(--sub);}
+.feed-source-link:hover{color:var(--accent);text-decoration:underline;}
 .feed-meta{display:flex;align-items:center;gap:7px;margin-top:auto;flex-wrap:wrap;}
 .feed-src-name{font-size:11px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .feed-dot{font-size:11px;color:var(--sub2);flex:0 0 auto;}
@@ -148,7 +142,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:860px){.rail-grid{grid-template-columns:repeat(2,1fr);gap:24px;}}
 @media (max-width:560px){.rail-grid{grid-template-columns:1fr;gap:24px;}}
 .rail-item{padding:0;}
-.rail-text{font-size:12.5px;color:var(--ink);line-height:1.5;}
+.rail-text{font-size:12.5px;color:var(--ink);line-height:1.5;cursor:pointer;}
 .rail-text b{color:var(--accent);}
 .rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:4px;}
 
@@ -156,56 +150,32 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 
-/* article detail page — full-bleed flat hero photo + flat content blocks */
-.hero-cover{width:100%;height:480px;position:relative;overflow:hidden;background:#F2F2F2;}
-@media (max-width:640px){.hero-cover{height:320px;}}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-.hero-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);z-index:1;}
-.hero-inner{max-width:1440px;height:100%;margin:0 auto;padding:0 20px;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
-.hero-cover .hero-emoji{font-size:84px;opacity:.5;}
-.hero-info{position:absolute;left:20px;bottom:28px;display:flex;align-items:center;gap:8px;}
-.hero-tag{font-size:11px;font-weight:700;letter-spacing:.03em;padding:4px 10px;border-radius:4px;background:var(--ink);color:#fff;}
-.hero-date{font-size:13px;font-weight:700;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3);}
-.detail-card{position:relative;padding:30px 0 0;}
-.detail-card > h1{font-size:25px;font-weight:700;margin-bottom:14px;line-height:1.4;}
-.byline{display:flex;align-items:center;gap:7px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
-.byline-dot{color:var(--sub2);font-size:13px;}
-.byline-name{font-size:13px;font-weight:700;color:var(--ink);}
-.byline-role{font-size:11.5px;color:var(--sub2);}
-.insight{font-size:15px;color:#2E3238;line-height:1.8;padding-left:14px;border-left:2px solid var(--ink);margin-bottom:26px;}
-.insight b{color:var(--accent);}
-.source-cta{display:inline-block;margin:0 0 6px;padding:11px 22px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:700;}
-.source-cta:hover{background:var(--accent);}
-.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 22px;padding-top:22px;border-top:1px solid var(--line);}
-.tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
-.detail-note{font-size:12.5px;color:var(--sub);background:#F7F7F7;padding:14px 16px;line-height:1.7;}
+/* floating comment panel (Notion-style) */
+.comment-panel-overlay{position:fixed;inset:0;background:rgba(17,18,20,.25);z-index:99;opacity:0;pointer-events:none;transition:opacity .2s ease;}
+.comment-panel-overlay.open{opacity:1;pointer-events:auto;}
+.comment-panel{position:fixed;top:0;right:0;height:100%;width:400px;max-width:92vw;background:#fff;box-shadow:-12px 0 32px rgba(16,24,40,.14);z-index:100;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;}
+.comment-panel.open{transform:translateX(0);}
+@media (max-width:640px){.comment-panel{width:100%;max-width:100%;}}
+.comment-panel-header{display:flex;align-items:flex-start;gap:12px;padding:20px 20px 16px;border-bottom:1px solid var(--line);}
+.comment-panel-title{flex:1;font-size:14px;font-weight:700;line-height:1.5;margin:0;}
+.comment-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:22px;color:var(--sub2);line-height:1;padding:0;}
+.comment-panel-close:hover{color:var(--ink);}
+.comment-panel-body{flex:1;overflow-y:auto;padding:20px;}
 
-.related-strip{margin:36px 0 0;padding:28px 24px;background:#F7F7F7;}
-.related-strip h3{font-size:14px;font-weight:700;margin:0 0 18px;}
-.related-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
-@media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
-@media (max-width:560px){.related-scroll{grid-template-columns:1fr;gap:24px;}}
-.related-tile{width:100%;background:var(--card);display:block;overflow:hidden;}
-.related-tile .rt-art{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
-.related-tile:hover .rt-art{transform:scale(1.06);}
-.related-tile .rt-label{font-size:12.5px;font-weight:700;padding:10px 0 0;color:var(--ink);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-
-/* comments */
-.comments-section{margin:40px 0 0;padding-top:28px;border-top:1px solid var(--line);}
-.comments-title{font-size:16px;font-weight:700;margin:0 0 14px;}
-.comments-title span{color:var(--sub2);font-weight:600;}
+/* comments (reused inside the floating panel) */
+.comments-count{color:var(--sub2);font-weight:600;}
 .comment-identity{font-size:12.5px;color:var(--sub2);margin-bottom:12px;}
 .comment-identity strong{color:var(--accent);}
-.comment-form{margin-bottom:28px;}
-.comment-textarea{width:100%;min-height:84px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;color:var(--ink);resize:vertical;}
+.comment-form{margin-bottom:24px;}
+.comment-textarea{width:100%;min-height:76px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;color:var(--ink);resize:vertical;}
 .comment-textarea:focus{outline:none;border-color:var(--accent);}
 .comment-submit-btn{appearance:none;cursor:pointer;font-family:inherit;margin-top:10px;background:var(--ink);color:#fff;border:none;font-weight:700;font-size:13.5px;padding:10px 20px;border-radius:8px;}
 .comment-submit-btn:hover{background:var(--accent);}
 .comment-submit-btn:disabled{opacity:.5;cursor:default;}
-.comment-list{display:flex;flex-direction:column;gap:18px;}
-.comment-item{padding-bottom:18px;border-bottom:1px solid var(--line);}
+.comment-list{display:flex;flex-direction:column;gap:16px;}
+.comment-item{padding-bottom:16px;border-bottom:1px solid var(--line);}
 .comment-item:last-child{border-bottom:none;padding-bottom:0;}
-.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;}
 .comment-name{font-size:13px;font-weight:700;color:var(--ink);}
 .comment-date{font-size:11.5px;color:var(--sub2);}
 .comment-body{font-size:14px;color:#2E3238;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
@@ -339,29 +309,23 @@ FEED_SCRIPT = """
 </script>
 """
 
-INDEX_COMMENT_COUNTS_SCRIPT = """
-<script>
-(function(){
-  var WORKER_URL = "%s";
-  fetch(WORKER_URL + '/api/comments/counts')
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      var counts = data.counts || {};
-      document.querySelectorAll('.feed-item').forEach(function(item){
-        var n = counts[item.dataset.id];
-        if (!n) return;
-        var badge = item.querySelector('.comment-count-badge');
-        if (!badge) return;
-        badge.querySelector('.cc-num').textContent = n;
-        badge.style.display = 'inline-flex';
-      });
-    })
-    .catch(function(){ /* fail quietly */ });
-})();
-</script>
-""" % COMMENTS_WORKER_URL
-
-COMMENTS_SCRIPT = """
+COMMENT_PANEL_SCRIPT = """
+<div class="comment-panel-overlay" id="commentPanelOverlay"></div>
+<aside class="comment-panel" id="commentPanel">
+  <div class="comment-panel-header">
+    <h3 class="comment-panel-title" id="commentPanelTitle"></h3>
+    <button class="comment-panel-close" id="commentPanelClose" aria-label="닫기">&times;</button>
+  </div>
+  <div class="comment-panel-body">
+    <p class="comment-identity">지금 <strong class="anon-name" id="panelAnonName">익명</strong>으로 댓글을 남길 수 있어요.</p>
+    <form class="comment-form" id="commentPanelForm">
+      <textarea class="comment-textarea" id="commentPanelTextarea" placeholder="의견을 남겨주세요" maxlength="2000" required></textarea>
+      <button type="submit" class="comment-submit-btn">댓글 등록</button>
+    </form>
+    <div class="comment-list" id="commentPanelList"></div>
+    <p class="comment-empty" id="commentPanelEmpty" style="display:none">아직 댓글이 없어요. 첫 댓글을 남겨보세요.</p>
+  </div>
+</aside>
 <script>
 (function(){
   var WORKER_URL = "%s";
@@ -392,63 +356,118 @@ COMMENTS_SCRIPT = """
     } catch(e){ return ''; }
   }
 
-  document.querySelectorAll('.comments-section').forEach(function(section){
-    var pageId = section.dataset.pageId;
-    var listEl = section.querySelector('.comment-list');
-    var emptyEl = section.querySelector('.comment-empty');
-    var countEl = section.querySelector('.comment-count');
-    var form = section.querySelector('.comment-form');
-    var textarea = section.querySelector('.comment-textarea');
-    var submitBtn = section.querySelector('.comment-submit-btn');
-    var nameEl = section.querySelector('.anon-name');
+  var anonName = getAnonName();
+  document.getElementById('panelAnonName').textContent = anonName;
 
-    var anonName = getAnonName();
-    if (nameEl) nameEl.textContent = anonName;
+  var overlay = document.getElementById('commentPanelOverlay');
+  var panel = document.getElementById('commentPanel');
+  var titleEl = document.getElementById('commentPanelTitle');
+  var listEl = document.getElementById('commentPanelList');
+  var emptyEl = document.getElementById('commentPanelEmpty');
+  var form = document.getElementById('commentPanelForm');
+  var textarea = document.getElementById('commentPanelTextarea');
+  var submitBtn = form.querySelector('.comment-submit-btn');
+  var currentPageId = null;
 
-    function render(comments){
-      if (countEl) countEl.textContent = comments.length ? comments.length : '';
-      if (!comments.length){
-        listEl.innerHTML = '';
-        if (emptyEl) emptyEl.style.display = '';
-        return;
-      }
-      if (emptyEl) emptyEl.style.display = 'none';
-      listEl.innerHTML = comments.map(function(c){
-        return '<div class="comment-item"><div class="comment-head"><span class="comment-name">' + escapeHtml(c.name) + '</span><span class="comment-date">' + formatDate(c.created_at) + '</span></div><div class="comment-body">' + escapeHtml(c.body) + '</div></div>';
-      }).join('');
+  function updateCountBadge(pageId, n){
+    var item = document.querySelector('.feed-item[data-id="' + pageId + '"]');
+    if (!item) return;
+    var badge = item.querySelector('.comment-count-badge');
+    if (!badge) return;
+    badge.querySelector('.cc-num').textContent = n;
+    badge.style.display = n > 0 ? 'inline-flex' : 'none';
+  }
+
+  function renderList(comments){
+    if (!comments.length){
+      listEl.innerHTML = '';
+      emptyEl.style.display = '';
+      return;
     }
+    emptyEl.style.display = 'none';
+    listEl.innerHTML = comments.map(function(c){
+      return '<div class="comment-item"><div class="comment-head"><span class="comment-name">' + escapeHtml(c.name) + '</span><span class="comment-date">' + formatDate(c.created_at) + '</span></div><div class="comment-body">' + escapeHtml(c.body) + '</div></div>';
+    }).join('');
+  }
 
-    function load(){
-      fetch(WORKER_URL + '/api/comments?page=' + encodeURIComponent(pageId))
-        .then(function(r){ return r.json(); })
-        .then(function(data){ render(data.comments || []); })
-        .catch(function(){ /* fail quietly */ });
-    }
+  function loadComments(pageId){
+    fetch(WORKER_URL + '/api/comments?page=' + encodeURIComponent(pageId))
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var comments = data.comments || [];
+        if (pageId === currentPageId) renderList(comments);
+        updateCountBadge(pageId, comments.length);
+      })
+      .catch(function(){ /* fail quietly */ });
+  }
 
-    if (form) {
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        var body = textarea.value.trim();
-        if (!body) return;
-        submitBtn.disabled = true;
-        fetch(WORKER_URL + '/api/comments', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ page: pageId, name: anonName, body: body })
-        }).then(function(r){ return r.json(); })
-          .then(function(res){
-            if (res.ok){
-              textarea.value = '';
-              load();
-            }
-          })
-          .catch(function(){})
-          .finally(function(){ submitBtn.disabled = false; });
-      });
-    }
+  function openPanel(pageId, title){
+    currentPageId = pageId;
+    titleEl.textContent = title || '';
+    listEl.innerHTML = '';
+    emptyEl.style.display = 'none';
+    textarea.value = '';
+    panel.classList.add('open');
+    overlay.classList.add('open');
+    loadComments(pageId);
+  }
 
-    load();
+  function closePanel(){
+    panel.classList.remove('open');
+    overlay.classList.remove('open');
+    currentPageId = null;
+  }
+
+  document.querySelectorAll('.feed-item').forEach(function(item){
+    var row = item.querySelector('.feed-row');
+    if (!row) return;
+    row.addEventListener('click', function(e){
+      if (e.target.closest('.feed-source-link')) return;
+      openPanel(item.dataset.id, item.dataset.title);
+    });
   });
+  document.querySelectorAll('.rail-text[data-id]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      openPanel(el.dataset.id, el.dataset.title);
+    });
+  });
+
+  document.getElementById('commentPanelClose').addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var body = textarea.value.trim();
+    if (!body || !currentPageId) return;
+    var pageId = currentPageId;
+    submitBtn.disabled = true;
+    fetch(WORKER_URL + '/api/comments', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page: pageId, name: anonName, body: body })
+    }).then(function(r){ return r.json(); })
+      .then(function(res){
+        if (res.ok){
+          textarea.value = '';
+          loadComments(pageId);
+        }
+      })
+      .catch(function(){})
+      .finally(function(){ submitBtn.disabled = false; });
+  });
+
+  // initial comment-count badges for every row in the feed
+  fetch(WORKER_URL + '/api/comments/counts')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      var counts = data.counts || {};
+      Object.keys(counts).forEach(function(pageId){ updateCountBadge(pageId, counts[pageId]); });
+    })
+    .catch(function(){ /* fail quietly */ });
 })();
 </script>
 """ % COMMENTS_WORKER_URL
@@ -467,9 +486,9 @@ HEAD = """<!DOCTYPE html>
 <body>
 <div class="gnb-sticky">
 <div class="topbar wrap" style="padding-top:0;padding-bottom:0;">
-  <div class="brand"><a href="{root_prefix}index.html">UPLEAT · Daily Trend Archive</a></div>
+  <div class="brand"><a href="index.html">UPLEAT · Daily Trend Archive</a></div>
   <div class="gnb-right">
-    <form class="search-box" action="{root_prefix}index.html" method="get">
+    <form class="search-box" action="index.html" method="get">
       <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
     </form>
@@ -490,14 +509,12 @@ def esc(s):
     return htmllib.escape(s, quote=False) if s else ""
 
 
+def esc_attr(s):
+    return htmllib.escape(s, quote=True) if s else ""
+
+
 def strip_tags(s):
     return re.sub(r"</?b>", "", s or "")
-
-
-def first_paragraph(text_html):
-    """The insight's first <br><br>-separated paragraph, <b> emphasis kept intact
-    (same trusted-HTML handling as the full insight on the article page)."""
-    return re.split(r"<br\s*/?>\s*<br\s*/?>", text_html or "", maxsplit=1)[0]
 
 
 def find_thumb(article_id):
@@ -519,10 +536,10 @@ def resolve_thumb(article):
     return None, False
 
 
-def render_gnb_pills(root_prefix):
-    pills = [f'<a class="pill-btn" data-cat="all" href="{root_prefix}index.html">전체</a>']
+def render_gnb_pills():
+    pills = ['<a class="pill-btn" data-cat="all" href="index.html">전체</a>']
     for key in CATEGORY_ORDER:
-        pills.append(f'<a class="pill-btn" data-cat="{key}" href="{root_prefix}index.html?cat={key}">{CATEGORY_LABEL[key]}</a>')
+        pills.append(f'<a class="pill-btn" data-cat="{key}" href="index.html?cat={key}">{CATEGORY_LABEL[key]}</a>')
     return "".join(pills)
 
 
@@ -565,7 +582,7 @@ def render_feed_item(a, today_date):
     color = CATEGORY_COLOR[a["cat_key"]]
     emoji = "🌐" if a["region_key"] == "intl" else "🇰🇷"
     short_date = a["date"][5:].replace("-", ".")
-    search_bits = esc(" ".join([a["title"], strip_tags(a["insight"]), a["source"], a["dateLabel"]])).lower()
+    search_bits = esc_attr(" ".join([a["title"], strip_tags(a["insight"]), a["source"], a["dateLabel"]])).lower()
 
     thumb, _ = resolve_thumb(a)
     if thumb:
@@ -575,20 +592,23 @@ def render_feed_item(a, today_date):
 
     new_badge = '<span class="badge-new">N</span>' if a["date"] == today_date else ""
 
-    return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-region="{a['region_key']}" data-id="{a['id']}" data-search="{search_bits}">
-<a class="feed-link" href="articles/{a['id']}.html">
+    return f'''<article class="feed-item" data-cat="{a['cat_key']}" data-region="{a['region_key']}" data-id="{a['id']}" data-title="{esc_attr(a['title'])}" data-search="{search_bits}">
+<div class="feed-row">
   <div class="feed-thumb" style="background:{color}22">{thumb_html}</div>
   <div class="feed-content">
     <div class="feed-eyebrow"><span>{emoji}</span><span>{a['region']}</span></div>
     <div class="feed-title-row"><h2 class="feed-title">{a['title']}</h2>{new_badge}</div>
-    <p class="feed-summary">{first_paragraph(a['insight'])}</p>
-    <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
+    <div class="feed-summary">{a['insight']}</div>
+    <div class="feed-footer-row">
+      <span class="feed-hashtag">#{esc(a['cat_label'])}</span>
+      <a class="feed-source-link" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
+    </div>
     <div class="feed-meta">
       <span class="feed-src-name">{esc(a['source'])}</span><span class="feed-dot">&middot;</span><span class="feed-date">{short_date}</span>
       <span class="comment-count-badge">{COMMENT_ICON_SVG}<span class="cc-num"></span></span>
     </div>
   </div>
-</a>
+</div>
 </article>'''
 
 
@@ -598,96 +618,11 @@ def render_rail(articles, limit=4):
         m = re.search(r"<b>(.*?)</b>", a["insight"])
         phrase = esc(m.group(1)) if m else esc(strip_tags(a["insight"])[:30])
         items.append(f'''<div class="rail-item">
-<a href="articles/{a['id']}.html" class="rail-text"><b>{phrase}</b><span class="rail-date">{a['dateLabel']}</span></a>
+<span class="rail-text" data-id="{a['id']}" data-title="{esc_attr(a['title'])}"><b>{phrase}</b><span class="rail-date">{a['dateLabel']}</span></span>
 </div>''')
     return f'''<div class="rail-strip">
 <h3>최근 핵심 인사이트</h3>
 <div class="rail-grid">{"".join(items)}</div>
-</div>'''
-
-
-def pick_related(articles, idx, limit=4):
-    current = articles[idx]
-    candidates = sorted(
-        (j for j in range(len(articles)) if j != idx and articles[j]["cat_key"] == current["cat_key"]),
-        key=lambda j: abs(j - idx),
-    )[:limit]
-    picked = [articles[j] for j in candidates]
-    picked.sort(key=lambda a: (a["date"], a["id"]), reverse=True)
-    return picked
-
-
-def render_article_page(a, related):
-    color = CATEGORY_COLOR[a["cat_key"]]
-    emoji = CATEGORY_EMOJI.get(a["cat_key"], "📡")
-    thumb, thumb_local = resolve_thumb(a)
-
-    tags = [a["region"], a["cat_label"]]
-    if a["source"]:
-        tags.append(a["source"])
-    tags_html = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in tags)
-
-    hero_src = (f"../{thumb}" if thumb_local else thumb) if thumb else None
-    hero_bg = "" if hero_src else f'background:{color}33;'
-    hero_photo_html = f'<img class="hero-photo" src="{hero_src}" alt="">' if hero_src else ""
-    hero_emoji_html = "" if hero_src else f'<div class="hero-emoji">{emoji}</div>'
-
-    related_tiles = []
-    for r in related:
-        rcolor = CATEGORY_COLOR[r["cat_key"]]
-        rthumb, rthumb_local = resolve_thumb(r)
-        if rthumb:
-            rsrc = f"../{rthumb}" if rthumb_local else rthumb
-            rt_style = f"background-image:url('{rsrc}')"
-            rt_content = ""
-        else:
-            rt_style = f"background:{rcolor}33"
-            rt_content = CATEGORY_EMOJI.get(r['cat_key'], '📡')
-        related_tiles.append(f'''<a class="related-tile" href="{r['id']}.html">
-<div class="rt-art" style="{rt_style}">{rt_content}</div>
-<div class="rt-label">{r['title']}</div>
-</a>''')
-    related_html = ""
-    if related_tiles:
-        related_html = f'''<div class="related-strip">
-<h3>{a['cat_label']} 카테고리의 다른 글</h3>
-<div class="related-scroll">{"".join(related_tiles)}</div>
-</div>'''
-
-    comments_html = f'''<div class="comments-section" data-page-id="{a['id']}">
-<h3 class="comments-title">댓글 <span class="comment-count"></span></h3>
-<p class="comment-identity">지금 <strong class="anon-name">익명</strong>으로 댓글을 남길 수 있어요.</p>
-<form class="comment-form">
-  <textarea class="comment-textarea" placeholder="의견을 남겨주세요" maxlength="2000" required></textarea>
-  <button type="submit" class="comment-submit-btn">댓글 등록</button>
-</form>
-<div class="comment-list"></div>
-<p class="comment-empty" style="display:none">아직 댓글이 없어요. 첫 댓글을 남겨보세요.</p>
-</div>'''
-
-    return f'''<div class="hero-cover" style="{hero_bg}">
-{hero_photo_html}
-<div class="hero-inner">
-{hero_emoji_html}
-<div class="hero-info"><span class="hero-tag">{a['region']}</span><span class="hero-date">{a['dateLabel']}</span></div>
-</div>
-</div>
-
-<div class="wrap" style="padding-top:0;">
-<div class="detail-card">
-<h1>{a['title']}</h1>
-<div class="byline">
-  <span class="byline-name">{esc(a['source'])}</span><span class="byline-dot">&middot;</span><span class="byline-role">{a['pubDate'] or a['dateLabel']}</span>
-</div>
-<div class="insight">{a['insight']}</div>
-<span class="feed-hashtag">#{esc(a['cat_label'])}</span>
-<a class="source-cta" href="{a['url']}" target="_blank" rel="noopener">원문 보기 ↗</a>
-<div class="tag-cloud">{tags_html}</div>
-{comments_html}
-<div class="detail-note">이 글은 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드 중 하나입니다. 올해 실제로 발행된 기사만 다루며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일 내 동일 URL로 이미 글이 있으면 새로 만들지 않고 걸러냅니다.</div>
-</div>
-
-{related_html}
 </div>'''
 
 
@@ -701,9 +636,10 @@ def build():
 
     articles = build_articles(days)
 
-    os.makedirs(ARTICLES_DIR, exist_ok=True)
+    # no more per-article detail pages — remove any left over from earlier builds
+    if os.path.isdir(ARTICLES_DIR):
+        shutil.rmtree(ARTICLES_DIR)
 
-    # ---- index.html ----
     today_date = articles[0]["date"] if articles else None
     feed_html = "".join(render_feed_item(a, today_date) for a in articles)
     rail_html = render_rail(articles)
@@ -732,27 +668,14 @@ def build():
 
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(
-            HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, root_prefix="", gnb_pills=render_gnb_pills(""))
+            HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, gnb_pills=render_gnb_pills())
             + index_body
             + FEED_SCRIPT
-            + INDEX_COMMENT_COUNTS_SCRIPT
+            + COMMENT_PANEL_SCRIPT
             + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
         )
 
-    # ---- article pages ----
-    for i, a in enumerate(articles):
-        related = pick_related(articles, i)
-        body = render_article_page(a, related)
-
-        with open(os.path.join(ARTICLES_DIR, f"{a['id']}.html"), "w", encoding="utf-8") as f:
-            f.write(
-                HEAD.format(title=f"{a['title']} · UPLEAT Daily Brief", style=STYLE, root_prefix="../", gnb_pills=render_gnb_pills("../"))
-                + body
-                + COMMENTS_SCRIPT
-                + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
-            )
-
-    print(f"Built index.html + {len(articles)} article pages from {len(days)} day-files")
+    print(f"Built index.html ({len(articles)} articles from {len(days)} day-files), no detail pages")
 
 
 if __name__ == "__main__":
