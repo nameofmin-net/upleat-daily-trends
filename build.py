@@ -180,11 +180,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .tag-pill{font-size:12px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;}
 .detail-note{font-size:12.5px;color:var(--sub);background:#F7F7F7;padding:14px 16px;line-height:1.7;}
 
-.daynav{display:flex;justify-content:space-between;align-items:center;margin:28px 0;font-size:14px;font-weight:600;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.daynav a{color:var(--accent);}
-.daynav .spacer{flex:1;}
-
-.related-strip{margin-bottom:28px;}
+.related-strip{margin:36px 0 0;padding:28px 24px;background:#F7F7F7;}
 .related-strip h3{font-size:14px;font-weight:700;margin:0 0 18px;}
 .related-scroll{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 @media (max-width:860px){.related-scroll{grid-template-columns:repeat(2,1fr);gap:24px;}}
@@ -621,7 +617,7 @@ def pick_related(articles, idx, limit=4):
     return picked
 
 
-def render_article_page(a, next_a, related):
+def render_article_page(a, related):
     color = CATEGORY_COLOR[a["cat_key"]]
     emoji = CATEGORY_EMOJI.get(a["cat_key"], "📡")
     thumb, thumb_local = resolve_thumb(a)
@@ -630,8 +626,6 @@ def render_article_page(a, next_a, related):
     if a["source"]:
         tags.append(a["source"])
     tags_html = "".join(f'<span class="tag-pill">#{esc(t)}</span>' for t in tags)
-
-    nav_next = f'<a href="{next_a["id"]}.html">다음 글 →</a>' if next_a else '<span></span>'
 
     hero_src = (f"../{thumb}" if thumb_local else thumb) if thumb else None
     hero_bg = "" if hero_src else f'background:{color}33;'
@@ -693,7 +687,6 @@ def render_article_page(a, next_a, related):
 <div class="detail-note">이 글은 UPLEAT가 매일 새벽 자동 수집한 해외·국내 AI/UX/디자인/테크 트렌드 중 하나입니다. 올해 실제로 발행된 기사만 다루며, 지어낸 URL이나 날짜는 포함하지 않습니다. 직전 7일 내 동일 URL로 이미 글이 있으면 새로 만들지 않고 걸러냅니다.</div>
 </div>
 
-<div class="daynav"><span class="spacer"></span>{nav_next}</div>
 {related_html}
 </div>'''
 
@@ -748,9 +741,8 @@ def build():
 
     # ---- article pages ----
     for i, a in enumerate(articles):
-        next_a = articles[i - 1] if i - 1 >= 0 else None  # newer
         related = pick_related(articles, i)
-        body = render_article_page(a, next_a, related)
+        body = render_article_page(a, related)
 
         with open(os.path.join(ARTICLES_DIR, f"{a['id']}.html"), "w", encoding="utf-8") as f:
             f.write(
