@@ -1,0 +1,129 @@
+{
+  "intl": {
+    "date": "2026-10-25",
+    "dateLabel": "2026년 10월 25일 일요일",
+    "region": "해외",
+    "takeawayHtml": "<b>앤트로픽의 잇따른 정보 유출부터 TSMC의 역대급 실적까지, AI 인프라를 둘러싼 빅테크의 민첩함과 취약함이 동시에 드러난 한 주다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic is having a month",
+            "url": "https://techcrunch.com/2026/03/31/anthropic-is-having-a-month/",
+            "source": "TechCrunch",
+            "pubDate": "2026-03-31",
+            "image": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-1570465901.jpg?w=1024",
+            "insight": "앤트로픽은 지난 3월 말 일주일 사이 두 차례 정보 유출 사고를 겪었다. 먼저 미공개 신모델을 설명하는 초안 블로그 글을 포함해 내부 파일 약 3,000개가 외부에 노출됐고, 이어 Claude Code 2.1.88 버전 패키징 과정에서 소스코드 파일 약 2,000개와 51만 2천 줄이 넘는 코드가 실수로 공개됐다. <b>앤트로픽은 이를 \"보안 침해가 아닌 인간 실수로 인한 배포 패키징 문제\"라고 해명했지만, 신중한 AI 기업을 자처해온 회사로서는 체면이 깎이는 사건이었다.</b> 유출된 코드를 분석한 보안 연구자 Chaofan Shou는 모델 자체보다 그 주변의 동작 지침과 도구 구성이 드러났다고 전했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "The Four Design Jobs AI Created (So Far)",
+            "url": "https://www.nngroup.com/articles/design-jobs-ai-created/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-06-05",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/The_Four_Design_Jobs_AI_Created-1.png",
+            "insight": "닐슨노먼그룹의 새러 깁슨스는 'AI 디자인'이라는 말이 실제로는 서로 다른 네 가지 업무를 뭉뚱그린 표현이라고 지적했다. AI로 디자인하기(아이디어·프로토타입 제작), AI 제품을 디자인하기(챗GPT나 Notion AI 같은 인터페이스), AI 에이전트를 위해 디자인하기(에이전트가 읽는 데이터 구조화), AI 자체를 디자인하기(모델의 거부·불확실성 기준 설계)로 구분된다. <b>저자는 \"다른 행동에는 다른 전문성이 필요하다\"며, 에이전트와 모델 행동을 위한 디자인 수요가 그런 인력 공급보다 빠르게 늘고 있다고 경고했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Figma's 2026 AI Report: As Role Boundaries Blur, Design Emerges As The New Competitive Edge",
+            "url": "https://mpost.io/figmas-2026-ai-report-as-role-boundaries-blur-design-emerges-as-the-new-competitive-edge/",
+            "source": "Metaverse Post",
+            "pubDate": "2026-07-08",
+            "image": "https://mpost.io/wp-content/uploads/IMG_9271.jpg",
+            "insight": "피그마가 3년간 응답 8,403건과 10개국 639건의 심층 인터뷰를 더해 내놓은 2026 AI 리포트는 역할 경계가 빠르게 흐려지고 있음을 보여준다. 디자인 업무를 하는 개발자 비율은 1년 만에 44%에서 60%로, 개발 업무를 하는 디자이너 비율은 21%에서 41%로 거의 두 배 늘었다. <b>AI 기반 제품을 만드는 응답자의 90%는 AI 도입 이후에도 디자인의 중요성이 줄지 않았다고 답했고, 57%는 오히려 더 커졌다고 밝혔다.</b> 응답자의 76%는 업무의 절반 이상이 '캔버스' 위에서 이뤄진다고 답해, 캔버스가 직군을 넘나드는 협업의 중심 공간이 되고 있음을 시사한다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "TSMC Reports Third Quarter EPS of NT$29.43",
+            "url": "https://pr.tsmc.com/english/news/3346",
+            "source": "TSMC",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "TSMC가 발표한 2026년 3분기 실적에 따르면 매출은 전년 동기 대비 50.9% 늘어난 1조4,942억 대만달러(약 467억 2천만 달러), 순이익은 68.7% 증가한 7,630억 6천만 대만달러를 기록했다. 희석 주당순이익은 29.43대만달러이며, 매출총이익률 66.4%, 영업이익률 58.7%를 나타냈다. <b>2나노 공정이 이미 전체 웨이퍼 매출의 8%를 차지하며 가파르게 램프업하는 가운데, 웬델 황 CFO는 \"최선단 공정 기술에 대한 강한 수요가 실적을 뒷받침했다\"고 밝혔다.</b> 회사는 4분기 매출을 523억~543억 달러로 전망했다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-25",
+    "dateLabel": "2026년 10월 25일 일요일",
+    "region": "국내",
+    "takeawayHtml": "<b>삼성전자의 AI 가전 공세와 리벨리온의 6,400억원 프리IPO가 보여주듯, 국내 AI 산업은 제품과 자본 양면에서 속도를 내고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성전자, 'KES 2026' 참가해 AI 가전·모바일 신제품 공개",
+            "url": "https://fnnews.com/news/202610131002365350",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-10-13",
+            "image": "https://image.fnnews.com/resource/media/image/2026/10/13/202610131007489283_e.jpg",
+            "insight": "삼성전자는 13일 개막한 'KES 2026(한국전자전)'에 약 869㎡(263평) 규모의 체험 공간을 꾸리고 AI 가전·모바일 신제품을 선보였다. '비스포크 AI 패밀리허브' 냉장고는 내부 카메라로 식재료를 인식해 관리하는 'AI 푸드매니저'를 탑재했고, '비스포크 AI 콤보' 세탁건조기는 'AI 커스텀+'로 세탁물에 맞춰 세기와 온도를 자동 설정한다. <b>전시장 입구에는 폴더블폰 28대와 조명 조형물 '프로젝트 루나'로 삼성의 AI 생태계를 표현한 미디어아트가 설치돼 눈길을 끌었다.</b> 갤럭시 Z 폴드8 울트라 등 신규 모바일 라인업도 함께 공개됐다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "부르면 어디든 향하는 태도를 담은, 출장타코서비스 BX 디자인",
+            "url": "https://design.co.kr/focus9/175080/#002",
+            "source": "디자인플러스 (Focus 9)",
+            "pubDate": "2026-10-02",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "스튜디오 서비스센터는 평일엔 방위산업 일을 하고 주말엔 타코를 굽는 대표의 독특한 이력에서 출발해 '출장타코서비스'의 BX를 설계했다. 멕시코 '죽은 자의 날'에서 가져온 해골 캐릭터 두 종으로 '출장 중'과 '매장 영업'이라는 사업의 두 얼굴을 표현한 점이 특징이다. <b>색과 장식을 최소화하고 타이포그래피로 현장 정보의 가독성을 높인 점이 돋보인다.</b>"
+          },
+          {
+            "title": "환아 보호자의 회복을 돕는 디자인, '보이스 포 롱 나이츠' 웰니스 키트",
+            "url": "https://design.co.kr/focus9/175080/#003",
+            "source": "디자인플러스 (Focus 9)",
+            "pubDate": "2026-10-02",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "스튜디오 오케이고는 한화손해보험과 함께 병원에서 밤을 지키는 환아 보호자를 위한 웰니스 키트 '보이스 포 롱 나이츠'를 디자인했다. 실제 보호자들의 목소리를 녹음해 패키지 전면에 흐르는 시각적 패턴으로 변환했고, 전용 베개와 수면안대 같은 실질적인 위로 아이템을 담았다. <b>NFC가 내장된 '보이스 노트'를 통해 경험이 많은 선배 보호자의 응원 메시지를 들을 수 있도록 한 점이 눈에 띈다.</b> 이 프로젝트는 일회성 기부를 넘어 병원학교 개설로까지 이어졌다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "리벨리온, 국민성장펀드 등으로부터 6,400억원 프리IPO 투자 유치",
+            "url": "https://www.mt.co.kr/future/2026/03/31/2026033111025632012",
+            "source": "머니투데이",
+            "pubDate": "2026-03-31",
+            "image": "https://thumb.mt.co.kr/cdn-cgi/image/w=1200,h=801,fit=cover,bg=white,f=auto,quality=high,sharpen=2,g=face/21/2026/03/2026033111025632012_1.jpg",
+            "insight": "AI 반도체 스타트업 리벨리온이 국민성장펀드의 2,500억원 직접투자를 포함해 총 6,400억원 규모의 프리IPO 투자를 유치했다고 밝혔다. 이번 라운드로 누적 투자유치액은 1조3,000억원, 기업가치는 3조4,000억원까지 높아졌으며 미래에셋벤처투자가 투자를 주도했다. <b>회사는 조달한 자금으로 공격적인 인재 채용과 조직 확장에 나서고, 신규 반도체 '리벨 100' 출시 속도를 높이겠다고 밝혔다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
