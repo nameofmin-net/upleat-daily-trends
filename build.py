@@ -107,7 +107,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .feed-item:first-child{border-top:none;}
 .feed-row{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
 .feed-thumb{flex:0 0 200px;width:200px;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
-@media (max-width:640px){.feed-thumb{flex:0 0 120px;width:120px;}}
+@media (max-width:640px){.feed-row{flex-direction:column;gap:14px;}.feed-thumb{flex:0 0 auto;width:100%;aspect-ratio:16/9;}}
 .feed-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
 .feed-thumb-emoji{font-size:28px;opacity:.5;}
 .feed-content{flex:1;min-width:0;display:flex;flex-direction:column;}
