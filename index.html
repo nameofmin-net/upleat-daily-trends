@@ -140,37 +140,38 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 /* Nexty AI 트렌드 Q&A floating button + panel */
 .ai-ask-wrap{position:fixed;right:20px;bottom:80px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
 @media (max-width:640px){.ai-ask-wrap{bottom:76px;right:20px;}}
-.ai-ask-fab{position:static;display:inline-flex;align-items:center;gap:8px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:8px 18px 8px 8px;font-size:13.5px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
+.ai-ask-fab{position:static;display:inline-flex;align-items:center;gap:9px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:9px 20px 9px 9px;font-size:15px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
 .ai-ask-fab:hover{transform:translateY(-2px);}
-.nexty-avatar{width:36px;height:36px;flex:0 0 auto;display:block;animation-name:nexty-float, nexty-wiggle;animation-duration:2.4s, 6s;animation-timing-function:ease-in-out, ease-in-out;animation-iteration-count:infinite, infinite;}
+.nexty-avatar{width:46px;height:46px;flex:0 0 auto;display:block;animation-name:nexty-float, nexty-wiggle;animation-duration:2.4s, 6s;animation-timing-function:ease-in-out, ease-in-out;animation-iteration-count:infinite, infinite;}
 @keyframes nexty-float{0%,100%{translate:0 0;}50%{translate:0 -4px;}}
 @keyframes nexty-wiggle{0%,83%,100%{rotate:0deg;}86%{rotate:-10deg;}89%{rotate:9deg;}92%{rotate:-7deg;}95%{rotate:4deg;}98%{rotate:0deg;}}
-.nexty-callout{background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:8px 13px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.16);position:relative;opacity:0;translate:0 6px;pointer-events:none;animation:nexty-callout-pop 8s ease-in-out infinite;}
+.nexty-callout{background:#fff;color:var(--ink);font-size:13.5px;font-weight:700;padding:9px 14px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.16);position:relative;opacity:0;translate:0 6px;pointer-events:none;animation:nexty-callout-pop 8s ease-in-out infinite;}
 .nexty-callout::after{content:'';position:absolute;right:22px;bottom:-5px;width:10px;height:10px;background:#fff;rotate:45deg;}
 @keyframes nexty-callout-pop{0%,55%{opacity:0;translate:0 6px;}62%,80%{opacity:1;translate:0 0;}88%,100%{opacity:0;translate:0 6px;}}
 .ai-ask-wrap.panel-open{display:none;}
 @media (prefers-reduced-motion: reduce){.nexty-avatar{animation:none;}.nexty-callout{animation:none;opacity:0;}}
 .ai-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
 .ai-panel-overlay.open{display:block;}
-.ai-panel{position:fixed;right:20px;bottom:144px;top:auto;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 170px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(10px) scale(.98);transform-origin:bottom right;pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
+.ai-panel{position:fixed;right:20px;bottom:160px;top:auto;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 186px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(10px) scale(.98);transform-origin:bottom right;pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
 .ai-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
 @media (max-width:640px){.ai-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
 .ai-panel.open{transform:translateY(0);}}
 .ai-panel-header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);}
-.ai-panel-avatar{width:28px;height:28px;flex:0 0 auto;display:block;margin-top:2px;}
-.ai-panel-title{flex:1;font-size:14px;font-weight:700;line-height:1.5;margin:0;}
-.ai-panel-sub{font-size:11.5px;color:var(--sub2);margin:2px 0 0;}
-.ai-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:22px;color:var(--sub2);line-height:1;padding:0;}
+.ai-panel-avatar{width:36px;height:36px;flex:0 0 auto;display:block;margin-top:2px;}
+.ai-panel-title{flex:1;font-size:16.5px;font-weight:700;line-height:1.5;margin:0;}
+.ai-panel-sub{font-size:13px;color:var(--sub2);margin:2px 0 0;}
+.ai-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:26px;color:var(--sub2);line-height:1;padding:0;}
 .ai-panel-close:hover{color:var(--ink);}
 .ai-panel-body{flex:1;min-height:0;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
-.ai-msg{font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.ai-msg{font-size:15.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.ai-msg strong{font-weight:700;color:var(--accent);}
 .ai-msg-user{align-self:flex-end;max-width:85%;background:var(--ink);color:#fff;border-radius:12px 12px 2px 12px;padding:9px 13px;}
 .ai-msg-bot{align-self:flex-start;max-width:92%;background:#F2F2F2;color:var(--ink);border-radius:12px 12px 12px 2px;padding:9px 13px;}
 .ai-msg-bot.loading{color:var(--sub2);font-style:italic;}
 .ai-panel-form{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);flex:0 0 auto;}
-.ai-panel-input{flex:1;min-width:0;padding:10px 13px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;color:var(--ink);}
+.ai-panel-input{flex:1;min-width:0;padding:11px 14px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:15.5px;color:var(--ink);}
 .ai-panel-input:focus{outline:none;border-color:var(--accent);}
-.ai-panel-send{flex:0 0 auto;appearance:none;cursor:pointer;font-family:inherit;background:var(--ink);color:#fff;border:none;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:8px;}
+.ai-panel-send{flex:0 0 auto;appearance:none;cursor:pointer;font-family:inherit;background:var(--ink);color:#fff;border:none;font-weight:700;font-size:15px;padding:11px 18px;border-radius:8px;}
 .ai-panel-send:hover{background:var(--accent);}
 .ai-panel-send:disabled{opacity:.5;cursor:default;}
 </style>
@@ -3109,24 +3110,53 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
     return div;
   }
 
+  function parseBoldSegments(text){
+    var segments = [];
+    var re = /\*\*(.+?)\*\*/g;
+    var lastIndex = 0;
+    var m;
+    while ((m = re.exec(text)) !== null) {
+      if (m.index > lastIndex) segments.push({ text: text.slice(lastIndex, m.index), bold: false });
+      segments.push({ text: m[1], bold: true });
+      lastIndex = re.lastIndex;
+    }
+    if (lastIndex < text.length) segments.push({ text: text.slice(lastIndex), bold: false });
+    return segments;
+  }
+
   function typeIntoElement(el, text){
     el.textContent = '';
-    var i = 0;
+    var segments = parseBoldSegments(text);
+    var segIdx = 0, charIdx = 0;
+    var container = null;
     var CHARS_PER_TICK = 2;
     var TICK_MS = 16;
     function tick(){
       var n = 0;
-      while (i < text.length && n < CHARS_PER_TICK) {
-        var ch = text.charAt(i);
-        if (ch === '\n') {
-          el.appendChild(document.createElement('br'));
-        } else {
-          el.appendChild(document.createTextNode(ch));
+      while (segIdx < segments.length && n < CHARS_PER_TICK) {
+        var seg = segments[segIdx];
+        if (charIdx >= seg.text.length) {
+          segIdx++; charIdx = 0; container = null;
+          continue;
         }
-        i++; n++;
+        var target = el;
+        if (seg.bold) {
+          if (!container) {
+            container = document.createElement('strong');
+            el.appendChild(container);
+          }
+          target = container;
+        }
+        var ch = seg.text.charAt(charIdx);
+        if (ch === '\n') {
+          target.appendChild(document.createElement('br'));
+        } else {
+          target.appendChild(document.createTextNode(ch));
+        }
+        charIdx++; n++;
       }
       body.scrollTop = body.scrollHeight;
-      if (i < text.length) setTimeout(tick, TICK_MS);
+      if (segIdx < segments.length) setTimeout(tick, TICK_MS);
     }
     tick();
   }
