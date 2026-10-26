@@ -152,7 +152,7 @@ export default {
           ],
           max_tokens: 900,
         });
-        const answer = aiResponse.response || "답변을 생성하지 못했습니다.";
+        const answer = (aiResponse.response || "답변을 생성하지 못했습니다.").trim();
         return json(request, { answer });
       } catch (e) {
         return json(request, { error: "ai request failed" }, 500);

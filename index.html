@@ -152,7 +152,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @media (prefers-reduced-motion: reduce){.nexty-avatar{animation:none;}.nexty-callout{animation:none;opacity:0;}}
 .ai-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
 .ai-panel-overlay.open{display:block;}
-.ai-panel{position:fixed;top:90px;right:24px;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 114px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
+.ai-panel{position:fixed;right:20px;bottom:144px;top:auto;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 170px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(10px) scale(.98);transform-origin:bottom right;pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
 .ai-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
 @media (max-width:640px){.ai-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
 .ai-panel.open{transform:translateY(0);}}
@@ -3109,6 +3109,28 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
     return div;
   }
 
+  function typeIntoElement(el, text){
+    el.textContent = '';
+    var i = 0;
+    var CHARS_PER_TICK = 2;
+    var TICK_MS = 16;
+    function tick(){
+      var n = 0;
+      while (i < text.length && n < CHARS_PER_TICK) {
+        var ch = text.charAt(i);
+        if (ch === '\n') {
+          el.appendChild(document.createElement('br'));
+        } else {
+          el.appendChild(document.createTextNode(ch));
+        }
+        i++; n++;
+      }
+      body.scrollTop = body.scrollHeight;
+      if (i < text.length) setTimeout(tick, TICK_MS);
+    }
+    tick();
+  }
+
   function openPanel(){
     panel.classList.add('open');
     overlay.classList.add('open');
@@ -3145,9 +3167,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
     }).then(function(r){ return r.json().then(function(data){ return { ok: r.ok, data: data }; }); })
       .then(function(res){
         loadingEl.classList.remove('loading');
-        if (res.ok && res.data.answer) {
-          loadingEl.textContent = '';
-          loadingEl.innerHTML = escapeHtml(res.data.answer).replace(/\n/g, '<br>');
+        var answer = res.ok && res.data.answer ? res.data.answer.trim() : '';
+        if (answer) {
+          typeIntoElement(loadingEl, answer);
         } else if (res.data && res.data.error === 'daily limit reached') {
           loadingEl.textContent = '오늘 질문 가능 횟수를 모두 사용했어요. 내일 다시 시도해주세요.';
         } else {
