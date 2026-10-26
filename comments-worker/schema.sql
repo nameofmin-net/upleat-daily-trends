@@ -8,3 +8,10 @@ CREATE TABLE IF NOT EXISTS comments (
 );
 
 CREATE INDEX IF NOT EXISTS idx_comments_page_id ON comments(page_id);
+
+CREATE TABLE IF NOT EXISTS ask_usage (
+  ip TEXT NOT NULL,
+  day TEXT NOT NULL,
+  count INTEGER NOT NULL DEFAULT 0,
+  PRIMARY KEY (ip, day)
+);

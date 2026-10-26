@@ -180,6 +180,34 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .comment-date{font-size:11.5px;color:var(--sub2);}
 .comment-body{font-size:14px;color:#2E3238;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
 .comment-empty{font-size:13px;color:var(--sub2);padding:12px 0;}
+
+/* AI 트렌드 Q&A floating button + panel */
+.ai-ask-fab{position:fixed;right:24px;bottom:80px;z-index:50;display:inline-flex;align-items:center;gap:7px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:12px 18px 12px 14px;font-size:13.5px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
+.ai-ask-fab:hover{transform:translateY(-2px);}
+.ai-ask-fab svg{width:18px;height:18px;flex:0 0 auto;}
+@media (max-width:640px){.ai-ask-fab{padding:10px 14px 10px 12px;font-size:12.5px;bottom:76px;}}
+.ai-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
+.ai-panel-overlay.open{display:block;}
+.ai-panel{position:fixed;top:90px;right:24px;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 114px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
+.ai-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+@media (max-width:640px){.ai-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
+.ai-panel.open{transform:translateY(0);}}
+.ai-panel-header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);}
+.ai-panel-title{flex:1;font-size:14px;font-weight:700;line-height:1.5;margin:0;}
+.ai-panel-sub{font-size:11.5px;color:var(--sub2);margin:2px 0 0;}
+.ai-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:22px;color:var(--sub2);line-height:1;padding:0;}
+.ai-panel-close:hover{color:var(--ink);}
+.ai-panel-body{flex:1;min-height:0;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
+.ai-msg{font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
+.ai-msg-user{align-self:flex-end;max-width:85%;background:var(--ink);color:#fff;border-radius:12px 12px 2px 12px;padding:9px 13px;}
+.ai-msg-bot{align-self:flex-start;max-width:92%;background:#F2F2F2;color:var(--ink);border-radius:12px 12px 12px 2px;padding:9px 13px;}
+.ai-msg-bot.loading{color:var(--sub2);font-style:italic;}
+.ai-panel-form{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);flex:0 0 auto;}
+.ai-panel-input{flex:1;min-width:0;padding:10px 13px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:14px;color:var(--ink);}
+.ai-panel-input:focus{outline:none;border-color:var(--accent);}
+.ai-panel-send{flex:0 0 auto;appearance:none;cursor:pointer;font-family:inherit;background:var(--ink);color:#fff;border:none;font-weight:700;font-size:13.5px;padding:10px 16px;border-radius:8px;}
+.ai-panel-send:hover{background:var(--accent);}
+.ai-panel-send:disabled{opacity:.5;cursor:default;}
 """
 
 SCROLLTOP_SCRIPT = """
@@ -492,6 +520,108 @@ COMMENT_PANEL_SCRIPT = """
 </script>
 """ % COMMENTS_WORKER_URL
 
+AI_ASK_SCRIPT = """
+<button class="ai-ask-fab" id="aiAskFab">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+  AI에게 묻기
+</button>
+<div class="ai-panel-overlay" id="aiPanelOverlay"></div>
+<aside class="ai-panel" id="aiPanel">
+  <div class="ai-panel-header">
+    <div style="flex:1">
+      <h3 class="ai-panel-title">트렌드 AI 도우미</h3>
+      <p class="ai-panel-sub">최근 며칠간의 트렌드 기사를 바탕으로 답해요</p>
+    </div>
+    <button class="ai-panel-close" id="aiPanelClose" aria-label="닫기">&times;</button>
+  </div>
+  <div class="ai-panel-body" id="aiPanelBody">
+    <div class="ai-msg ai-msg-bot">안녕하세요! 최근 UPLEAT 트렌드 기사에 대해 궁금한 걸 물어보세요. (예: "오늘 AI 쪽 트렌드 뭐가 있었어?")</div>
+  </div>
+  <form class="ai-panel-form" id="aiPanelForm">
+    <input class="ai-panel-input" id="aiPanelInput" type="text" placeholder="질문을 입력하세요" maxlength="300" required autocomplete="off">
+    <button type="submit" class="ai-panel-send">전송</button>
+  </form>
+</aside>
+<script>
+(function(){
+  var WORKER_URL = "%s";
+  var fab = document.getElementById('aiAskFab');
+  var overlay = document.getElementById('aiPanelOverlay');
+  var panel = document.getElementById('aiPanel');
+  var body = document.getElementById('aiPanelBody');
+  var form = document.getElementById('aiPanelForm');
+  var input = document.getElementById('aiPanelInput');
+  var sendBtn = form.querySelector('.ai-panel-send');
+
+  function escapeHtml(s){
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  function addMsg(text, who){
+    var div = document.createElement('div');
+    div.className = 'ai-msg ai-msg-' + who;
+    div.innerHTML = escapeHtml(text).replace(/\\n/g, '<br>');
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+    return div;
+  }
+
+  function openPanel(){
+    panel.classList.add('open');
+    overlay.classList.add('open');
+    setTimeout(function(){ input.focus(); }, 50);
+  }
+
+  function closePanel(){
+    panel.classList.remove('open');
+    overlay.classList.remove('open');
+  }
+
+  fab.addEventListener('click', openPanel);
+  document.getElementById('aiPanelClose').addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = input.value.trim();
+    if (!q) return;
+    addMsg(q, 'user');
+    input.value = '';
+    sendBtn.disabled = true;
+    var loadingEl = addMsg('생각 중...', 'bot');
+    loadingEl.classList.add('loading');
+    fetch(WORKER_URL + '/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q })
+    }).then(function(r){ return r.json().then(function(data){ return { ok: r.ok, data: data }; }); })
+      .then(function(res){
+        loadingEl.classList.remove('loading');
+        if (res.ok && res.data.answer) {
+          loadingEl.textContent = '';
+          loadingEl.innerHTML = escapeHtml(res.data.answer).replace(/\\n/g, '<br>');
+        } else if (res.data && res.data.error === 'daily limit reached') {
+          loadingEl.textContent = '오늘 질문 가능 횟수를 모두 사용했어요. 내일 다시 시도해주세요.';
+        } else {
+          loadingEl.textContent = '답변을 가져오지 못했어요. 잠시 후 다시 시도해주세요.';
+        }
+        body.scrollTop = body.scrollHeight;
+      })
+      .catch(function(){
+        loadingEl.classList.remove('loading');
+        loadingEl.textContent = '네트워크 오류로 답변을 가져오지 못했어요.';
+      })
+      .finally(function(){ sendBtn.disabled = false; });
+  });
+})();
+</script>
+""" % COMMENTS_WORKER_URL
+
 HEAD = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -696,6 +826,7 @@ def build():
             + index_body
             + FEED_SCRIPT
             + COMMENT_PANEL_SCRIPT
+            + AI_ASK_SCRIPT
             + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)
         )
 
