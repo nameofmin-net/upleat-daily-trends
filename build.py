@@ -209,6 +209,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .ai-panel-body{flex:1;min-height:0;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px;}
 .ai-msg{font-size:15.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
 .ai-msg strong{font-weight:700;color:var(--accent);}
+.ai-suggestions{display:flex;flex-wrap:wrap;gap:8px;}
+.ai-suggestion-chip{appearance:none;cursor:pointer;font-family:inherit;background:var(--accent-dim);color:var(--accent);border:1px solid transparent;border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:600;text-align:left;transition:background .15s ease;}
+.ai-suggestion-chip:hover{background:#DCE9FD;}
 .ai-msg-user{align-self:flex-end;max-width:85%;background:var(--ink);color:#fff;border-radius:12px 12px 2px 12px;padding:9px 13px;}
 .ai-msg-bot{align-self:flex-start;max-width:92%;background:#F2F2F2;color:var(--ink);border-radius:12px 12px 12px 2px;padding:9px 13px;}
 .ai-msg-bot.loading{color:var(--sub2);font-style:italic;}
@@ -549,7 +552,12 @@ AI_ASK_SCRIPT = """
     <button class="ai-panel-close" id="aiPanelClose" aria-label="닫기">&times;</button>
   </div>
   <div class="ai-panel-body" id="aiPanelBody">
-    <div class="ai-msg ai-msg-bot">안녕하세요, 저는 Nexty예요! 최근 UPLEAT 트렌드 기사에 대해 궁금한 걸 물어보세요. (예: "오늘 AI 쪽 트렌드 뭐가 있었어?")</div>
+    <div class="ai-msg ai-msg-bot">안녕하세요, 저는 Nexty예요! 최근 UPLEAT 트렌드 기사에 대해 궁금한 걸 물어보세요.</div>
+    <div class="ai-suggestions" id="aiSuggestions">
+      <button type="button" class="ai-suggestion-chip" data-q="오늘 AI 쪽 트렌드 뭐가 있었어?">오늘 AI 쪽 트렌드 뭐가 있었어?</button>
+      <button type="button" class="ai-suggestion-chip" data-q="최근 UX 트렌드 알려줘">최근 UX 트렌드 알려줘</button>
+      <button type="button" class="ai-suggestion-chip" data-q="국내 소식만 요약해줘">국내 소식만 요약해줘</button>
+    </div>
   </div>
   <form class="ai-panel-form" id="aiPanelForm">
     <input class="ai-panel-input" id="aiPanelInput" type="text" placeholder="질문을 입력하세요" maxlength="300" required autocomplete="off">
@@ -654,10 +662,11 @@ AI_ASK_SCRIPT = """
     if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
   });
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var q = input.value.trim();
+  function askQuestion(q){
+    q = q.trim();
     if (!q) return;
+    var suggestions = document.getElementById('aiSuggestions');
+    if (suggestions) suggestions.style.display = 'none';
     addMsg(q, 'user');
     input.value = '';
     sendBtn.disabled = true;
@@ -685,6 +694,17 @@ AI_ASK_SCRIPT = """
         loadingEl.textContent = '네트워크 오류로 답변을 가져오지 못했어요.';
       })
       .finally(function(){ sendBtn.disabled = false; });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    askQuestion(input.value);
+  });
+
+  document.querySelectorAll('.ai-suggestion-chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      askQuestion(chip.dataset.q || chip.textContent);
+    });
   });
 })();
 </script>
