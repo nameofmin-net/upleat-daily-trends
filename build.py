@@ -103,8 +103,13 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 
 /* article feed — left-thumbnail / right-content list rows, full insight inline */
 .feed-list{display:flex;flex-direction:column;}
-.feed-item{border-bottom:1px solid var(--line);transition:opacity .4s ease, transform .4s ease;}
+.feed-item{border-bottom:1px solid var(--line);}
 .feed-item:first-child{border-top:none;}
+
+/* scroll-reveal: fade+rise applied site-wide as content enters the viewport (JS adds the class, flips .in-view via IntersectionObserver) */
+.scroll-reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.6,.2,1), transform .6s cubic-bezier(.2,.6,.2,1);}
+.scroll-reveal.in-view{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){.scroll-reveal{opacity:1;transform:none;transition:none;}}
 .feed-row{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
 .feed-thumb{flex:0 0 200px;width:200px;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
 @media (max-width:640px){.feed-row{flex-direction:column;gap:14px;}.feed-thumb{flex:0 0 auto;width:100%;aspect-ratio:16/9;}}
@@ -267,22 +272,9 @@ FEED_SCRIPT = """
       var ok = matches(item);
       if (ok) matched++;
       var within = ok && shown < state.visible;
-      var wasHidden = item.style.display === 'none' || item.classList.contains('hidden-initial');
       item.style.display = ok ? '' : 'none';
       item.classList.toggle('hidden-initial', ok && !within);
-      if (within) {
-        shown++;
-        if (wasHidden) {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(28px)';
-          requestAnimationFrame(function(){
-            requestAnimationFrame(function(){
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            });
-          });
-        }
-      }
+      if (within) shown++;
     });
     var hasMore = matched > state.visible;
     loadBtn.style.display = hasMore ? '' : 'none';
@@ -346,6 +338,30 @@ FEED_SCRIPT = """
       if (r.top < window.innerHeight + 600) loadMore();
     });
   }, { passive: true });
+})();
+</script>
+"""
+
+SCROLL_REVEAL_SCRIPT = """
+<script>
+(function(){
+  var targets = Array.prototype.slice.call(document.querySelectorAll('.feed-item, .rail-item'));
+  if (!targets.length) return;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  targets.forEach(function(el){ el.classList.add('scroll-reveal'); });
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
 """
@@ -856,10 +872,10 @@ def render_feed_item(a, today_date):
 
 def render_rail(articles, limit=4):
     items = []
-    for a in articles[:limit]:
+    for i, a in enumerate(articles[:limit]):
         m = re.search(r"<b>(.*?)</b>", a["insight"])
         phrase = esc(m.group(1)) if m else esc(strip_tags(a["insight"])[:30])
-        items.append(f'''<div class="rail-item">
+        items.append(f'''<div class="rail-item" style="transition-delay:{i * 70}ms">
 <span class="rail-text" data-id="{a['id']}" data-title="{esc_attr(a['title'])}"><b>{phrase}</b><span class="rail-date">{a['dateLabel']}</span></span>
 </div>''')
     return f'''<div class="rail-strip">
@@ -913,6 +929,7 @@ def build():
             HEAD.format(title="UPLEAT 데일리 트렌드 아카이브", style=STYLE, gnb_pills=render_gnb_pills())
             + index_body
             + FEED_SCRIPT
+            + SCROLL_REVEAL_SCRIPT
             + COMMENT_PANEL_SCRIPT
             + AI_ASK_SCRIPT
             + FOOT.format(scrolltop=SCROLLTOP_SCRIPT)

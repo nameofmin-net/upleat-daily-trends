@@ -59,8 +59,13 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 
 /* article feed — left-thumbnail / right-content list rows, full insight inline */
 .feed-list{display:flex;flex-direction:column;}
-.feed-item{border-bottom:1px solid var(--line);transition:opacity .4s ease, transform .4s ease;}
+.feed-item{border-bottom:1px solid var(--line);}
 .feed-item:first-child{border-top:none;}
+
+/* scroll-reveal: fade+rise applied site-wide as content enters the viewport (JS adds the class, flips .in-view via IntersectionObserver) */
+.scroll-reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.6,.2,1), transform .6s cubic-bezier(.2,.6,.2,1);}
+.scroll-reveal.in-view{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){.scroll-reveal{opacity:1;transform:none;transition:none;}}
 .feed-row{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
 .feed-thumb{flex:0 0 200px;width:200px;aspect-ratio:16/10;background:#F2F2F2;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
 @media (max-width:640px){.feed-row{flex-direction:column;gap:14px;}.feed-thumb{flex:0 0 auto;width:100%;aspect-ratio:16/9;}}
@@ -2757,13 +2762,13 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 
 <div class="rail-strip">
 <h3>최근 핵심 인사이트</h3>
-<div class="rail-grid"><div class="rail-item">
+<div class="rail-grid"><div class="rail-item" style="transition-delay:0ms">
 <span class="rail-text" data-id="2026-10-26-i-ai-1" data-title="Anthropic took down thousands of GitHub repos trying to yank its leaked source code, a move the company says was an accident"><b>Claude Code를 총괄하는 보리스 체르니는 이를 실수라고 인정하며 대부분의 삭제 요청을 철회했고, 결국 유출된 코드가 담긴 저장소 1개와 포크 96개로 범위를 좁혔다.</b><span class="rail-date">2026년 10월 26일 월요일</span></span>
-</div><div class="rail-item">
+</div><div class="rail-item" style="transition-delay:70ms">
 <span class="rail-text" data-id="2026-10-26-i-ai-2" data-title="Some Claude users are mad that Anthropic&#x27;s new watermarks will catch them cheating at their jobs, classes"><b>한 비판자는 자신이 '지시와 맥락, 결정, 수없는 수정'을 모두 제공했는데 클로드가 생성한 코드에 워터마크를 찍는다면 대체 클로드가 무엇을 자기 몫이라고 주장하는 것이냐고 되물었다.</b><span class="rail-date">2026년 10월 26일 월요일</span></span>
-</div><div class="rail-item">
+</div><div class="rail-item" style="transition-delay:140ms">
 <span class="rail-text" data-id="2026-10-26-i-ux-1" data-title="UX Roundup: AI as Interviewer"><b>진짜 의미를 더 파고드는 심층 질문은 전체 턴의 4.9%에 불과했고, 한 번에 질문 하나만 하라는 지침에도 29%는 두 개 이상의 질문을 동시에 던져 응답자가 하나만 답하고 넘어가는 손실이 발생했다.</b><span class="rail-date">2026년 10월 26일 월요일</span></span>
-</div><div class="rail-item">
+</div><div class="rail-item" style="transition-delay:210ms">
 <span class="rail-text" data-id="2026-10-26-i-design-1" data-title="Figma adds code layers to the canvas and lets users build custom AI plugins at Config 2026"><b>최고제품책임자 유키 야마시타는 이 기능이 디자이너뿐 아니라 엔지니어와 PM의 행동 방식까지 바꿔놓을 것이라고 말했다.</b><span class="rail-date">2026년 10월 26일 월요일</span></span>
 </div></div>
 </div>
@@ -2798,22 +2803,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
       var ok = matches(item);
       if (ok) matched++;
       var within = ok && shown < state.visible;
-      var wasHidden = item.style.display === 'none' || item.classList.contains('hidden-initial');
       item.style.display = ok ? '' : 'none';
       item.classList.toggle('hidden-initial', ok && !within);
-      if (within) {
-        shown++;
-        if (wasHidden) {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(28px)';
-          requestAnimationFrame(function(){
-            requestAnimationFrame(function(){
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            });
-          });
-        }
-      }
+      if (within) shown++;
     });
     var hasMore = matched > state.visible;
     loadBtn.style.display = hasMore ? '' : 'none';
@@ -2877,6 +2869,28 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
       if (r.top < window.innerHeight + 600) loadMore();
     });
   }, { passive: true });
+})();
+</script>
+
+<script>
+(function(){
+  var targets = Array.prototype.slice.call(document.querySelectorAll('.feed-item, .rail-item'));
+  if (!targets.length) return;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  targets.forEach(function(el){ el.classList.add('scroll-reveal'); });
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function(el){ el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ io.observe(el); });
 })();
 </script>
 
