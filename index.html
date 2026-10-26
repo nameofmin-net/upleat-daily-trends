@@ -137,11 +137,19 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .comment-body{font-size:14px;color:#2E3238;line-height:1.7;white-space:pre-wrap;word-break:break-word;}
 .comment-empty{font-size:13px;color:var(--sub2);padding:12px 0;}
 
-/* AI 트렌드 Q&A floating button + panel */
-.ai-ask-fab{position:fixed;right:24px;bottom:80px;z-index:50;display:inline-flex;align-items:center;gap:7px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:12px 18px 12px 14px;font-size:13.5px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
+/* Nexty AI 트렌드 Q&A floating button + panel */
+.ai-ask-wrap{position:fixed;right:20px;bottom:80px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+@media (max-width:640px){.ai-ask-wrap{bottom:76px;right:20px;}}
+.ai-ask-fab{position:static;display:inline-flex;align-items:center;gap:8px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:8px 18px 8px 8px;font-size:13.5px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
 .ai-ask-fab:hover{transform:translateY(-2px);}
-.ai-ask-fab svg{width:18px;height:18px;flex:0 0 auto;}
-@media (max-width:640px){.ai-ask-fab{padding:10px 14px 10px 12px;font-size:12.5px;bottom:76px;}}
+.nexty-avatar{width:36px;height:36px;flex:0 0 auto;display:block;animation-name:nexty-float, nexty-wiggle;animation-duration:2.4s, 6s;animation-timing-function:ease-in-out, ease-in-out;animation-iteration-count:infinite, infinite;}
+@keyframes nexty-float{0%,100%{translate:0 0;}50%{translate:0 -4px;}}
+@keyframes nexty-wiggle{0%,83%,100%{rotate:0deg;}86%{rotate:-10deg;}89%{rotate:9deg;}92%{rotate:-7deg;}95%{rotate:4deg;}98%{rotate:0deg;}}
+.nexty-callout{background:#fff;color:var(--ink);font-size:12px;font-weight:700;padding:8px 13px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.16);position:relative;opacity:0;translate:0 6px;pointer-events:none;animation:nexty-callout-pop 8s ease-in-out infinite;}
+.nexty-callout::after{content:'';position:absolute;right:22px;bottom:-5px;width:10px;height:10px;background:#fff;rotate:45deg;}
+@keyframes nexty-callout-pop{0%,55%{opacity:0;translate:0 6px;}62%,80%{opacity:1;translate:0 0;}88%,100%{opacity:0;translate:0 6px;}}
+.ai-ask-wrap.panel-open{display:none;}
+@media (prefers-reduced-motion: reduce){.nexty-avatar{animation:none;}.nexty-callout{animation:none;opacity:0;}}
 .ai-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
 .ai-panel-overlay.open{display:block;}
 .ai-panel{position:fixed;top:90px;right:24px;width:400px;max-width:calc(100vw - 32px);max-height:calc(100vh - 114px);background:#fff;border-radius:16px;box-shadow:0 20px 48px rgba(16,24,40,.18), 0 2px 10px rgba(16,24,40,.08);z-index:100;opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:opacity .18s ease, transform .18s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden;}
@@ -149,6 +157,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:640px){.ai-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
 .ai-panel.open{transform:translateY(0);}}
 .ai-panel-header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);}
+.ai-panel-avatar{width:28px;height:28px;flex:0 0 auto;display:block;margin-top:2px;}
 .ai-panel-title{flex:1;font-size:14px;font-weight:700;line-height:1.5;margin:0;}
 .ai-panel-sub{font-size:11.5px;color:var(--sub2);margin:2px 0 0;}
 .ai-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:22px;color:var(--sub2);line-height:1;padding:0;}
@@ -3048,21 +3057,25 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 })();
 </script>
 
-<button class="ai-ask-fab" id="aiAskFab">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
-  AI에게 묻기
-</button>
+<div class="ai-ask-wrap" id="aiAskWrap">
+  <span class="nexty-callout">저한테 물어보세요!</span>
+  <button class="ai-ask-fab" id="aiAskFab">
+    <img class="nexty-avatar" src="assets/brand/nexty.png" alt="Nexty" width="36" height="36">
+    Nexty에게 묻기
+  </button>
+</div>
 <div class="ai-panel-overlay" id="aiPanelOverlay"></div>
 <aside class="ai-panel" id="aiPanel">
   <div class="ai-panel-header">
+    <img class="ai-panel-avatar" src="assets/brand/nexty.png" alt="Nexty" width="28" height="28">
     <div style="flex:1">
-      <h3 class="ai-panel-title">트렌드 AI 도우미</h3>
+      <h3 class="ai-panel-title">Nexty</h3>
       <p class="ai-panel-sub">최근 며칠간의 트렌드 기사를 바탕으로 답해요</p>
     </div>
     <button class="ai-panel-close" id="aiPanelClose" aria-label="닫기">&times;</button>
   </div>
   <div class="ai-panel-body" id="aiPanelBody">
-    <div class="ai-msg ai-msg-bot">안녕하세요! 최근 UPLEAT 트렌드 기사에 대해 궁금한 걸 물어보세요. (예: "오늘 AI 쪽 트렌드 뭐가 있었어?")</div>
+    <div class="ai-msg ai-msg-bot">안녕하세요, 저는 Nexty예요! 최근 UPLEAT 트렌드 기사에 대해 궁금한 걸 물어보세요. (예: "오늘 AI 쪽 트렌드 뭐가 있었어?")</div>
   </div>
   <form class="ai-panel-form" id="aiPanelForm">
     <input class="ai-panel-input" id="aiPanelInput" type="text" placeholder="질문을 입력하세요" maxlength="300" required autocomplete="off">
@@ -3072,6 +3085,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 <script>
 (function(){
   var WORKER_URL = "https://upleat-trend-comments.dkdldb3144.workers.dev";
+  var wrap = document.getElementById('aiAskWrap');
   var fab = document.getElementById('aiAskFab');
   var overlay = document.getElementById('aiPanelOverlay');
   var panel = document.getElementById('aiPanel');
@@ -3098,12 +3112,14 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
   function openPanel(){
     panel.classList.add('open');
     overlay.classList.add('open');
+    wrap.classList.add('panel-open');
     setTimeout(function(){ input.focus(); }, 50);
   }
 
   function closePanel(){
     panel.classList.remove('open');
     overlay.classList.remove('open');
+    wrap.classList.remove('panel-open');
   }
 
   fab.addEventListener('click', openPanel);

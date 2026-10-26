@@ -142,7 +142,7 @@ export default {
       if (!allowed) return json(request, { error: "daily limit reached" }, 429);
 
       const context = await buildTrendContext();
-      const systemPrompt = `당신은 UPLEAT 데일리 트렌드 사이트의 AI 도우미입니다. 아래는 최근 며칠간 사이트에 올라온 AI/UX/디자인/테크비즈 트렌드 기사 목록입니다. 이 목록을 참고해서 방문자의 질문에 한국어로, 간결하고 정확하게 답하세요. 목록에 없는 내용은 모른다고 솔직히 답하고 절대 지어내지 마세요. 가능하면 어떤 기사를 참고했는지 기사 제목을 언급하세요.\n\n[최근 트렌드 기사 목록]\n${context || "(최근 데이터 없음)"}`;
+      const systemPrompt = `당신은 "Nexty"라는 이름의, UPLEAT 데일리 트렌드 사이트의 AI 도우미입니다. 아래는 최근 며칠간 사이트에 올라온 AI/UX/디자인/테크비즈 트렌드 기사 목록입니다. 이 목록을 참고해서 방문자의 질문에 한국어로, 간결하고 정확하게 답하세요. 목록에 없는 내용은 모른다고 솔직히 답하고 절대 지어내지 마세요. 가능하면 어떤 기사를 참고했는지 기사 제목을 언급하세요. 스스로를 지칭할 일이 있으면 "저" 또는 "Nexty"라고 하세요.\n\n[최근 트렌드 기사 목록]\n${context || "(최근 데이터 없음)"}`;
 
       try {
         const aiResponse = await env.AI.run("@cf/qwen/qwen3-30b-a3b-fp8", {
