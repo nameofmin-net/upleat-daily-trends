@@ -1,0 +1,137 @@
+{
+  "intl": {
+    "date": "2026-10-28",
+    "dateLabel": "2026년 10월 28일 수요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic이 SEC에 S-1을 제출하며 <b>프런티어 AI 기업의 첫 상장 레이스가 현실이 됐고</b>, 동시에 더 싸고 빠른 Haiku 5.5가 에이전트 하부구조를 채우기 시작했다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 역대 가장 빠르고 저렴한 소형 모델 \"Claude Haiku 5.5\" 출시",
+            "url": "https://www.anthropic.com/news/claude-haiku-5-5",
+            "source": "Anthropic",
+            "pubDate": "2026-10-07",
+            "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/89e9b0fbfe0181f6ca565d913686ce8e49b5e9c2-1200x630.jpg",
+            "insight": "Anthropic이 공개한 Haiku 5.5는 평균 비용이 전작 대비 약 75% 낮아졌으면서도 OSWorld 컴퓨터 사용 벤치마크에서 72.4%(전작 15.7%), Terminal-Bench 에이전틱 코딩에서 39.2%(전작 0.0%)를 기록했다. <b>효율성 조절 기능이 처음 들어간 소형 모델로, Opus·Sonnet과 함께 서브에이전트로 쓰도록 설계됐다는 점이 핵심이다.</b> 요약·분류·DB 조회 같은 반복 작업과 실시간 고객지원처럼 속도가 중요한 영역을 저비용으로 흡수하려는 전략으로 읽힌다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "NN/g, \"합성 사용자 vs 실제 응답자\" 비교 연구 공개",
+            "url": "https://www.nngroup.com/articles/synthetic-users-vs-human-respondents/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-10-16",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Synthetic_Users_vs._Human_Respondents__Same_Conclusion_Less_Variation.png",
+            "insight": "604명의 실제 응답자와 120명의 합성 응답자에게 같은 개방형 질문을 던진 결과, 전체 결론은 같았지만 합성 응답자의 84%가 UX 관련 용어를 썼던 반면(실제 응답자 70%) 사용한 표현의 폭은 실제 응답자 50여 종에서 합성 응답자 약 12종으로 크게 좁아졌다. <b>합성 사용자는 지배적인 패턴을 비교적 정확히 재현하지만, 흔치 않은 소수 의견과 하위 집단 간 차이는 지워버린다는 것이 핵심 발견이다.</b> 저자는 가설 수립이나 큰 흐름 확인에는 합성 사용자를, 희귀 반응이 중요한 조사에는 실제 참가자를 쓰라고 권고한다."
+          },
+          {
+            "title": "NN/g, AI 활용이 UX 업무 속도를 높이지만 실무자 반응은 엇갈려",
+            "url": "https://www.nngroup.com/articles/ai-work-study-guide/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-09-04",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/UX_-Study-Guide-1_1.png",
+            "insight": "NN/g가 정리한 연구 가이드에 따르면 GitHub Copilot 사용 개발자의 처리량은 126% 늘었고 생성형 AI 활용 시 평균 업무 산출량도 66% 증가했지만, UX 리서치 영역에서는 결과가 더 조심스럽다. AI 모더레이션 인터뷰는 심층 인터뷰를 대체하지 못하고 AI가 작성한 서베이 초안도 사람의 검토가 필요하다는 것이다. <b>속도는 분명히 빨라졌지만 품질을 보장하지는 않으며, 사람의 판단이 여전히 핵심이라는 결론이다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "Anthropic, SEC에 S-1 제출하며 나스닥 상장 절차 공식 개시",
+            "url": "https://www.anthropic.com/news/s1-sec",
+            "source": "Anthropic",
+            "pubDate": "2026-10-26",
+            "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+            "insight": "Anthropic이 10월 26일 미국 증권거래위원회(SEC)에 클래스 A 보통주 기업공개(IPO)를 위한 S-1 등록신고서를 제출했다. 나스닥 글로벌 셀렉트 마켓에 티커 \"ANT\"로 상장할 계획이며, 공모 주식 수와 가격 범위는 아직 확정되지 않았고 주관사는 골드만삭스와 모건스탠리다. <b>프런티어 AI 기업 중 사실상 처음으로 공개 증시 상장 절차에 들어간 사례로, 등록신고서는 제출됐을 뿐 아직 효력이 발생하지 않은 상태다.</b>"
+          },
+          {
+            "title": "테슬라 3분기 실적, 매출은 정체인데 순이익 43% 감소",
+            "url": "https://electrek.co/2026/10/21/tesla-tsla-q3-2026-financial-results/",
+            "source": "Electrek",
+            "pubDate": "2026-10-21",
+            "image": "https://electrek.co/wp-content/uploads/sites/3/2026/10/Tesla-Q3-2026-earnings.jpg?quality=82&strip=all&resize=1200,628",
+            "insight": "테슬라의 3분기 매출은 280.5억 달러로 전년과 거의 같았지만 GAAP 기준 순이익은 43% 감소한 7억8700만 달러에 그쳤다. 매출원가 개선으로 매출총이익률은 19.6%로 높아졌지만 R&D 비용이 69% 급증하면서 영업이익은 56% 줄었고, 레귤러토리 크레딧 매출도 73% 감소했다. <b>인도량은 48만6532대로 전년보다 줄었는데, 회사는 \"배터리 공급이 이번 분기 생산량 확대의 제약 요인이었다\"고 설명했다.</b> 반면 FSD 구독자는 174만 명으로 67% 늘며 서비스 매출은 역대 최대 이익을 냈다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-28",
+    "dateLabel": "2026년 10월 28일 수요일",
+    "region": "국내",
+    "takeawayHtml": "무신사가 코스피 상장 예심을 청구하며 유통 대어 IPO 레이스에 본격 합류했고, <b>삼성·LG는 KES 2026에서 AI를 가전과 산업 현장 깊숙이 밀어넣는 모습을 보여줬다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성·LG, 한국전자전서 AI 가전·산업 로봇 대거 공개",
+            "url": "https://www.fnnews.com/news/202610131524018623",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-10-13",
+            "image": "https://image.fnnews.com/resource/media/image/2026/10/13/202610131537516007_e.jpg",
+            "insight": "10월 13일 코엑스에서 개막한 한국전자전(KES 2026)에서 삼성전자는 식재료를 인식하는 비스포크 AI 패밀리허브 냉장고와 세탁물에 맞춰 세기를 조절하는 AI 콤보 세탁건조기 등을 전시했고, LG전자는 자율주행 협동로봇 \"LG 모마\" 3대가 스마트팩토리에서 자재를 옮기는 모습을 시연했다. <b>가전은 사용자의 생활 패턴에 반응하는 방향으로, 산업 현장은 로봇의 자율 이동과 협업으로 AI 적용이 구체화되고 있다는 것이 이번 전시의 공통된 흐름이다.</b> LG이노텍은 12년 만에 KES에 복귀해 FC-BGA 장기공급계약이 이어지고 있다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "오픈서베이, 실제 소비자 데이터 기반 \"합성 페르소나\" 리서치 방법론 공개",
+            "url": "https://blog.opensurvey.co.kr/article/synthetic-persona/",
+            "source": "오픈서베이 블로그",
+            "pubDate": "2026-08-05",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/08/blog_Synthetic-persona-03.png",
+            "insight": "오픈서베이는 일반 LLM이 생성하는 합성 소비자와 달리, 세그먼트당 최소 30명의 실제 응답 데이터로 검증한 뒤 페르소나를 만들고 답변마다 근거를 표시하는 방식을 소개했다. 데이터 검색→통계적으로 유의미한 세그먼트 분류→페르소나 생성→근거 기반 대화의 4단계 파이프라인을 거친다. <b>웨비나 참가자 76명 중 52.9%가 타깃 세그먼트·페르소나 탐색을 합성 소비자의 첫 적용 분야로 꼽았다는 점에서, 가설 수립 단계의 보조 도구로 자리잡고 있음을 보여준다.</b> 정량 검증을 대체하는 것이 아니라 가설을 빠르게 좁히는 탐색 도구라는 점을 강조한다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "studio fnt, 63빌딩을 \"물리적 상징에서 정서적 가치로\" 재해석한 브랜드 아이덴티티 공개",
+            "url": "https://design.co.kr/article/165225/",
+            "source": "월간 디자인",
+            "pubDate": "2026-08-12",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/08/12133848/20260812043847-KakaoTalk_20260812_133737518_02.jpg",
+            "insight": "한화생명이 문화 복합공간으로 재개장한 63빌딩의 브랜드 아이덴티티를 studio fnt가 맡아, 건물의 황금빛 창문 그리드와 \"63\"이라는 숫자를 네잎클로버 형상으로 재해석했다. 황금빛을 바탕으로 석양·불꽃의 앰버, 공원의 그린, 한강의 블루를 더한 \"어반 플로우\" 팔레트를 구축하고 사이니지부터 굿즈까지 전 접점에 일관되게 적용했다. <b>작업은 2024년 리네이밍 검토까지 거친 뒤 기존 \"63\"이라는 이름과 자산을 유지하기로 결정하며 시작됐고, 스튜디오는 이를 \"물리적 상징에서 정서적 가치로의 전환\"이라고 설명했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "무신사, 코스피 상장 예비심사 청구…상반기 매출 22.5% 증가",
+            "url": "https://dealsite.co.kr/articles/168601",
+            "source": "딜사이트",
+            "pubDate": "2026-09-07",
+            "image": "https://dtd31o1ybbmk8.cloudfront.net/photos/2026/08/31/c41e1a3be4a04969902ad6d63b29daf0/thumb.jpg",
+            "insight": "무신사가 9월 7일 한국거래소에 코스피 상장예비심사신청서를 제출하며 \"글로벌 기업으로 성장하기 위한 자금 조달 옵션으로서 상장의 타당성을 살펴보기 위한 목적\"이라고 설명했다. 상반기 연결 매출은 8217억 원으로 전년 동기 대비 22.5% 늘어 반기 기준 최대치를 기록했지만, 물류비 증가와 글로벌·오프라인 사업 투자로 영업이익은 11.2% 줄었다. <b>해외 13개 지역에서 운영 중인 \"무신사 글로벌 스토어\"의 2025년 수출액은 489억 원으로 전년 대비 10배 넘게 늘어, 해외 확장이 상장 추진의 핵심 명분이 되고 있다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
