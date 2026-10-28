@@ -1,0 +1,169 @@
+{
+  "intl": {
+    "date": "2026-10-29",
+    "dateLabel": "2026년 10월 29일 목요일",
+    "region": "해외",
+    "takeawayHtml": "스마트폰 앱이 AI 에이전트로 대체될 것이라는 전망부터 메타의 95조 원 규모 증자 계획까지, <b>AI 인프라를 둘러싼 베팅이 산업 전반의 화두로 떠올랐다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Nothing CEO 칼 페이 \"스마트폰 앱 사라지고 AI 에이전트가 자리 대체할 것\"",
+            "url": "https://techcrunch.com/2026/03/18/nothing-ceo-carl-pei-says-smartphone-apps-will-disappear-as-ai-agents-take-their-place/",
+            "source": "TechCrunch",
+            "pubDate": "2026-03-18",
+            "image": "https://techcrunch.com/wp-content/uploads/2025/09/Carl-Pei-Nothing.jpg?resize=1200,675",
+            "insight": "Nothing의 공동창업자 칼 페이는 SXSW 인터뷰에서 항공권 예약처럼 명령을 대신 수행하는 1단계 AI는 \"지루하다\"고 평가하며, 진짜 변화는 사용자가 떠올리지 못한 제안까지 미리 건네는 의도 학습 단계에서 온다고 말했다. 그는 <b>핵심 가치가 앱 자체에 있는 스타트업은 원하든 원치 않든 disrupt될 것</b>이라며, 기업들이 사람이 누르는 화면이 아니라 AI 에이전트가 쓸 수 있는 인터페이스를 따로 설계해야 한다고 주장했다. 다만 앱이 가까운 시일 내 사라지지는 않을 것이라는 단서도 덧붙였다."
+          },
+          {
+            "title": "메타, AI 확장 자금 마련 위해 950억 달러 규모 증자 추진",
+            "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html",
+            "source": "CNBC",
+            "pubDate": "2026-10-26",
+            "image": null,
+            "insight": "메타가 AI 인프라와 슈퍼인텔리전스 개발 자금을 마련하기 위해 950억 달러 규모의 증자를 계획하고 있는 것으로 전해졌다. <b>엔비디아, AMD, 브로드컴이 각각 최대 50억 달러 규모의 지분 매입에 관심을 보이고 있다</b>는 보도가 나왔다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "가트너 '2026 UX 하이프 사이클', AI 에이전트를 새로운 '사용자'로 규정",
+            "url": "https://maze.co/resources/latest/gartner-report-ux-hype-cycle/",
+            "source": "Gartner (via Maze)",
+            "pubDate": "2026-05-13",
+            "image": "https://www.datocms-assets.com/38511/1762727117-og-image-default.jpg?auto=format",
+            "insight": "가트너는 「Hype Cycle for User Experience, 2026」에서 AI 에이전트가 제품팀이 고려해야 할 새로운 유형의 사용자로 떠오르고 있다고 짚었다. 리포트는 프로토타입의 역할이 넓어지고 AI가 UX 업무 수행 방식 자체를 바꾸는 흐름을 다루며, <b>합성 리서치와 적응형 경험이 AI 기반 UX의 핵심 축으로 부상하고 있다</b>고 분석했다. 동시에 AI가 증강한 워크플로에서도 사람의 참여는 여전히 필수적이라고 강조했다."
+          },
+          {
+            "title": "UX 리서처가 직접 만든 AI 에이전트, 흐름도 작성 자동화에 도전하다",
+            "url": "https://www.uxstudioteam.com/ux-blog/first-ai-agent-for-ux-research",
+            "source": "UX studio",
+            "pubDate": "2026-08-06",
+            "image": "https://cdn.prod.website-files.com/666aa4fbe0e580742d2d8407/6a743fc5b6815eb1f04b1dbb_cover%20(1).png",
+            "insight": "UX studio의 리서처 미리암 라이헤르트는 Cursor와 Miro API를 연결해 제품 화면 흐름을 자동으로 지도화하는 AI 에이전트를 직접 만들었다. 기본 버전은 30분 만에 완성됐지만 겹침 방지 배치, 품질 자동 점검 같은 기능을 더하는 데 3시간이 더 걸렸고, 실행마다 20~30분이 걸리는 느린 속도와 반복 권한 승인이 한계로 드러났다. 그는 <b>공개 벤치마크보다 자신의 작업에 맞춘 소규모 정답 사례로 환각 빈도와 정확도를 직접 측정해야 한다</b>고 조언했다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "애플은 슬라이더로, 구글은 생성형 UI로—사용자에게 통제권을 넘기는 인터페이스들",
+            "url": "https://www.designsystemscollective.com/ui-trends-that-are-actually-happening-part-2-what-changed-since-spring-and-why-users-now-want-a-b3d2c5b6512e",
+            "source": "Design Systems Collective",
+            "pubDate": "2026-10-19",
+            "image": null,
+            "insight": "디자인 시스템 전문 매체 Design Systems Collective는 모든 디자인 결정을 직접 내려온 애플이 이제 사용자가 슬라이더로 인터페이스 외관을 조정할 수 있게 하고 있다고 짚었다. <b>구글은 질문에 답하는 대신 화면 전체를 생성하는 실험을 진행 중</b>이라며, 봄 이후 UI 트렌드가 고정된 디자인에서 사용자가 조절하는 디자인으로 옮겨가고 있다고 분석했다."
+          },
+          {
+            "title": "2026 UI/UX 트렌드 1순위는 접근성—유럽 접근성법이 만든 의무",
+            "url": "https://fuselabcreative.com/ui-ux-design-trends-2026-modern-ui-trends-ux-trends-guide/",
+            "source": "Fuselab",
+            "pubDate": "2026-10-23",
+            "image": "https://fuselabcreative.com/wp-content/uploads/2024/11/the-future-of-smart-city-management-v2.avif",
+            "insight": "Fuselab의 2026 UI/UX 트렌드 가이드는 2025년 6월 발효된 유럽 접근성법과 미국 Section 508을 근거로, 접근성을 올해 가장 먼저 착수해야 할 트렌드로 꼽았다. <b>대비·포커스 스타일·터치 영역 같은 규칙을 화면마다 고치는 대신 디자인 토큰 단위에서 한 번에 적용하면 비용을 줄일 수 있다</b>고 제안하며, WCAG 2.2 AA를 목표로 하면 EU와 미국 규정이 인용하는 이전 버전도 함께 충족된다고 설명했다. 반면 다크 모드나 Liquid Glass 같은 시각적 유행은 상대적으로 덜 중요한 트렌드로 평가했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "테슬라, 2026년 3분기 인도량 48만 6532대로 시장 예상 상회",
+            "url": "https://electrek.co/2026/10/02/tesla-q3-2026-deliveries-486532/",
+            "source": "Electrek",
+            "pubDate": "2026-10-02",
+            "image": "https://electrek.co/wp-content/uploads/sites/3/2016/03/img_1665-e1457955946161.jpg?quality=82&strip=all&resize=1200,628",
+            "insight": "테슬라는 2026년 3분기 48만 6532대를 인도해 월가 컨센서스(46만 1974대)를 약 2만 4558대 웃돌았다고 발표했다. 전년 동기(49만 7099대) 대비로는 2.1% 줄었지만 전분기보다는 1.3% 늘었으며, <b>생산량이 인도량보다 적어 1분기에 쌓인 초과 재고를 2개 분기 연속으로 소진했다</b>. 에너지 저장장치 배치량은 13.7GWh로 전년 대비 늘었지만 애널리스트 예상치에는 못 미쳤다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-29",
+    "dateLabel": "2026년 10월 29일 목요일",
+    "region": "국내",
+    "takeawayHtml": "제조 현장형 피지컬AI 전시와 AI 스타트업 투자 유치 소식이 한꺼번에 쏟아지며, <b>국내 산업AI 생태계가 빠르게 몸집을 불리고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "'2026 산업AI EXPO' 킨텍스서 개막...국내외 201개사 430부스 참가",
+            "url": "https://kidd.co.kr/news/247819",
+            "source": "산업일보",
+            "pubDate": "2026-10-21",
+            "image": "https://pimg3.daara.co.kr/kidd/photo/2026/10/21/1792568965_82.jpg",
+            "insight": "한국산업지능화협회(KOIIA) 주최로 10월 21일 일산 킨텍스에서 개막한 '2026 산업AI EXPO'에 국내외 201개사가 430부스 규모로 참가했다. 올해 2회째인 이 행사는 'Embodied AI: Beyond Physical AI'를 주제로 12대 산업AI 태스크를 기반으로 전시를 구성했으며, <b>마이크로소프트·메가존·LG CNS 등이 참여하는 산업AI·제조혁신 컨퍼런스와 산업AI 로봇 스타디움에서 라이브 데모가 진행</b>됐다. 주최 측은 지난해보다 약 두 배 많은 4만 명의 관람객을 예상했다."
+          },
+          {
+            "title": "아이엘, '2026 산업AI EXPO'서 텔스타와 현장 데이터 기반 피지컬AI 공개",
+            "url": "https://news.mtn.co.kr/article/2026101915224128172",
+            "source": "MTN",
+            "pubDate": "2026-10-19",
+            "image": "https://files.mtn.co.kr/article-asset/2026/10/19/676b81fe-4e21-4719-a577-e44332f5c9ad.jpg",
+            "insight": "피지컬AI 데이터 플랫폼 기업 아이엘은 전략적 투자자인 텔스타와 함께 '2026 산업AI EXPO'에 참가해 휴머노이드 로봇 '아이엘봇'을 공개했다. 아이엘모빌리티의 자동차 부품 사출공정에 국내 최초로 휴머노이드를 투입해 자재 운반과 공정 간 이동 작업을 수행시키며 운영 데이터를 축적하고 있다고 밝혔다. <b>정문식 최고인공지능책임자(CAIO)는 피지컬AI의 경쟁력이 로봇 하드웨어보다 현장 데이터를 학습으로 연결하는 역량에 있다</b>고 강조하며, 제조를 넘어 물류·시설관리·보안으로 적용 범위를 넓히겠다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "불사조 대신 브랜드명을—토마스 스튜디오, '핫식스' 패키지 리뉴얼",
+            "url": "https://design.co.kr/article/173005/",
+            "source": "월간 디자인",
+            "pubDate": "2026-09-09",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/09/08160148/20260908070147-20260908_070147.jpg",
+            "insight": "롯데칠성음료의 에너지드링크 '핫식스' 패키지를 맡은 토마스 스튜디오는 소비자 조사에서 불사조 심볼이 잘 기억되지 않는다는 결과를 확인하고, 브랜드명 'HOT6' 레터링을 시각적 중심에 두는 방향으로 전환했다. 가장 뜨거운 온도를 상징하는 파란색을 '플레임 블루'로 새롭게 정립해 메인 컬러로 삼았고, <b>숫자 '6'이 'G'로 오인되지 않도록 레터링 기울기를 단계별로 검증</b>하는 등 편의점·마트 매대에서의 식별성을 높이는 데 집중했다. 디자인팀은 이번 작업을 'From Assets to Attitude'로 정의했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI 맛집·여행 지도 '니어', 경기혁신센터서 시드 투자 유치",
+            "url": "https://supple.kr/news/cmvqdlcllcuvcus4ohphkv3er",
+            "source": "서플",
+            "pubDate": "2026-10-27",
+            "image": "https://images.supple.kr/?url=https%3A%2F%2Fthumb.mt.co.kr%2F06%2F2026%2F10%2F2026102715015953257_1.jpg",
+            "insight": "AI 기반 맛집·여행 지도 플랫폼 '니어'를 운영하는 니어랩스가 경기창조경제혁신센터의 스타트업 발굴 프로그램을 통해 시드 투자를 유치했다. 인스타그램과 유튜브의 맛집·여행지 콘텐츠를 AI로 분석해 지도 장소 정보로 자동 변환하며, 합산 팔로워 127만 명 규모의 크리에이터 12개 팀과 협업해 지도 기반 팬 커뮤니티를 운영 중이다. <b>외식업 광고 정산의 불투명성을 줄이기 위해 크리에이터 추천 매장의 선불할인권을 연계해 실사용 금액 기준으로 수수료를 정산하는 모델도 준비하고 있다</b>."
+          },
+          {
+            "title": "AI 영상 제작 '네이션에이', 85억 원 규모 시리즈A 투자 유치",
+            "url": "https://wowtale.net/2026/10/22/266702/",
+            "source": "와우테일",
+            "pubDate": "2026-10-22",
+            "image": null,
+            "insight": "AI 영상 제작 기업 네이션에이가 85억 원 규모의 시리즈A 투자를 유치했다. <b>투자금은 AI 영상 제작 플랫폼 고도화와 GPU 기반 서비스 인프라 강화, 글로벌 고객 확보에 쓰일 예정</b>이다."
+          },
+          {
+            "title": "AI 스타트업 10곳, 투자사 앞에서 IR...267억 원 유치 뒤 480억 원 목표",
+            "url": "https://m.news.nate.com/view/20261027n22958",
+            "source": "동아일보",
+            "pubDate": "2026-10-27",
+            "image": "https://news.nateimg.co.kr/orgImg/do/2026/10/27/134917265.2.jpg",
+            "insight": "인공지능산업융합사업단(AICA)이 서울에서 연 '제13회 AI 스타트업 데이'에서 자동화·의료·헬스케어 등 AI 솔루션을 선보인 스타트업 10곳이 액셀러레이터·벤처캐피털 등 약 50곳의 투자 기관 앞에서 IR을 진행했다. <b>이번 행사까지 누적 투자유치액은 267억 원이며, 올해 총 480억 원 규모의 투자 확보를 목표로 삼았다</b>. 투자사와 스타트업은 이후 2~3개사씩 1대1 미팅을 이어가기로 했다."
+          }
+        ]
+      }
+    ]
+  }
+}
