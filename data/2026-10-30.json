@@ -1,0 +1,121 @@
+{
+  "intl": {
+    "date": "2026-10-30",
+    "dateLabel": "2026년 10월 30일 금요일",
+    "region": "해외",
+    "takeawayHtml": "오픈AI가 대화 자체를 인터페이스로 바꾸는 '인텔리전트 UI'를 전면 배포하는 동안, <b>구글은 AI 인프라 수요에 힘입어 클라우드 매출을 103% 끌어올리며 실적으로 증명했다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "OpenAI, GPT-6와 '인텔리전트 UI'를 챗GPT 전체에 배포",
+            "url": "https://alternativeto.net/news/2026/10/openai-expands-gpt-6-access-with-new-intelligent-ui-capability-for-all-chatgpt-users/",
+            "source": "AlternativeTo",
+            "pubDate": "2026-10-08",
+            "image": null,
+            "insight": "OpenAI가 챗GPT 유료 요금제부터 GPT-6와 함께 응답에 차트·버튼·폼 같은 인터랙티브 요소를 섞어 보여주는 '인텔리전트 UI'를 10월 7일 배포했고, 다음날부터는 무료·Go 요금제로도 확대했다. <b>텍스트 답변을 앱처럼 조작 가능한 요소로 바꾸는 이번 변화는 대화형 AI의 응답 형식 자체를 재정의하려는 시도로 해석된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "AI 도입 후 UX 업무는 빨라졌지만, 실무자 체감은 엇갈려 — NN/g 설문",
+            "url": "https://www.nngroup.com/articles/ai-in-ux-survey-26/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-10-23",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/AI_in_UX__Work_Is_Faster_But_Practitioners_Have_Mixed_Feelings.png",
+            "insight": "닐슨노먼그룹이 UX 실무자 521명을 설문한 결과, 코드 작성·데스크 리서치·데이터 분석 같은 작업에서는 응답자의 약 90%가 AI 덕분에 뚜렷하게 빨라졌다고 답했지만, 사용자 인터뷰나 디자인 테스트처럼 사람을 직접 만나는 작업에서는 체감 효과가 가장 작았다. 전반적인 AI 사용 만족도는 5점 만점에 3.57점으로 '약간 긍정적'인 수준에 그쳤고, 서술형 답변을 남긴 이들 중 69%가 부정적 뉘앙스를 포함했다. <b>가장 큰 장벽은 결과물의 신뢰도 문제(54%)였으며, 많은 실무자가 경영진의 사용 압박을 가장 큰 변화로 꼽았다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "애플, WWDC 2026에서 '리퀴드 글래스' 가독성 논란 손본다",
+            "url": "https://techcrunch.com/2026/06/08/apple-is-tweaking-its-controversial-liquid-glass-design",
+            "source": "TechCrunch",
+            "pubDate": "2026-06-08",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/06/apple-wwdc-liquid-glass.png?resize=1200,656",
+            "insight": "애플이 WWDC 2026에서 지난해 출시 이후 가독성 논란을 빚은 '리퀴드 글래스' 디자인의 기반 구조를 다시 손봤다고 밝혔다. 복잡한 배경 콘텐츠를 패널 뒤에서 흐리게 처리해 콘텐츠 간 깊이와 구분을 분명하게 만들고, 투명도를 완전 투명부터 완전 유채색까지 조절하는 슬라이더를 새로 추가해 사용자가 직접 선택할 수 있게 했다. <b>애플은 \"리퀴드 글래스를 만드는 근본 방식을 업데이트해 뛰어난 가독성을 보장하겠다\"며, 과감한 도약 이후 계속 다듬어가는 과정이라고 설명했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "알파벳, 2026년 3분기 매출 25% 성장…클라우드가 끌었다",
+            "url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
+            "source": "Alphabet Inc. (SEC 공시)",
+            "pubDate": "2026-10-28",
+            "image": null,
+            "insight": "알파벳이 발표한 2026년 3분기 실적에서 전체 매출은 전년 대비 25% 늘어난 1,276억 달러를 기록했고, 구글 클라우드 매출은 AI 인프라 수요에 힘입어 103% 급증한 307억 달러에 달했다. 순다르 피차이 CEO는 \"구글 클라우드 매출이 103% 성장한 것은 AI 인프라와 AI 솔루션에 대한 막대한 수요 덕분\"이라고 말했다. <b>다만 분기 자본지출은 1년 전 240억 달러에서 514억 달러로 두 배 넘게 늘었고, 분기 자유현금흐름은 -91억 달러로 적자 전환했다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-30",
+    "dateLabel": "2026년 10월 30일 금요일",
+    "region": "국내",
+    "takeawayHtml": "삼성전자가 메모리 AI 수요로 분기 영업이익 100조원 시대를 열어젖힌 사이, <b>카카오와 강남언니는 각각 사업구조와 브랜드 경험을 전면 재설계하며 AI·글로벌 시대에 대응하고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, AI 분할 준비 현황 공개…\"전 크루 고용 포괄승계\"",
+            "url": "https://www.kakaocorp.com/page/detail/12165?lang=KOR",
+            "source": "카카오 공식 뉴스룸",
+            "pubDate": "2026-10-16",
+            "image": "https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/news/4020f88a01a100001.png?type=thumb&opt=C800x400",
+            "insight": "카카오가 AI 사업을 전담할 신설법인 '카카오AI'와 투자 사업을 맡을 '카카오X'로의 인적분할을 준비하며 10월 15일 세 번째 '오픈톡'을 열어 임직원들에게 진행 상황을 공유했다. 정신아 대표는 \"쌓아온 것은 더 단단하게 가져가고, 필요한 것은 새롭게 바꾸고 있다\"고 설명했고, 회사는 전 크루의 고용과 근로조건이 그대로 승계된다고 밝혔다. <b>분할은 12월 17일 임시주주총회를 거쳐 2027년 1월 1일 완료되고, 같은 달 27일 카카오AI 재상장이 추진된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "강남언니, '글로벌 뷰티 내비게이터' 선언하며 전면 리브랜딩",
+            "url": "https://designcompass.org/2026/07/09/gangnam-unni-rebrand-2026/",
+            "source": "디자인컴파스",
+            "pubDate": "2026-07-09",
+            "image": "https://designcompass.org/wp-content/uploads/2026/07/13_%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7-2026-07-09-%EC%98%A4%EC%A0%84-9.26.41.jpg",
+            "insight": "미용의료 플랫폼 강남언니를 운영하는 힐링페이퍼가 로고, 심볼, 컬러, 타이포그래피, 일러스트레이션을 아우르는 디자인 시스템을 전면 재정비하며 한국과 일본·태국 등 해외 서비스의 브랜드 경험을 하나로 통합했다. 글로벌 브랜드명은 'Unni'로 통일했고, 기존의 친근한 이미지는 유지하면서도 글로벌 서비스에 맞게 더 간결한 형태로 다듬었다. <b>시술 탐색부터 내원, 사후관리까지 이어지는 여정 전체를 아우르는 '뷰티 내비게이터'로 역할을 넓히겠다는 것이 이번 리브랜딩의 핵심이다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "삼성전자, 3분기 영업이익 107조원…국내 기업 최초로 분기 100조 돌파",
+            "url": "https://www.ytn.co.kr/_ln/0102_202610080945200200",
+            "source": "YTN",
+            "pubDate": "2026-10-08",
+            "image": "https://image.ytn.co.kr/general/jpg/2026/1008/202610080945200200_t.jpg",
+            "insight": "삼성전자가 2026년 3분기 잠정실적으로 매출 195조원, 영업이익 107조4천억원을 기록했다고 공시했다. 영업이익은 전년 동기(12조2천억원) 대비 약 8.8배로 뛰었고, 영업이익률은 55%를 넘어섰다. <b>AI 데이터센터 서버용 메모리 수요와 HBM4 가격 상승이 실적을 끌어올렸고, 이는 국내 기업이 분기 영업이익 100조원을 넘어선 최초의 사례로 평가됐다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
