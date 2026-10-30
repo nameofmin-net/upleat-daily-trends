@@ -1,0 +1,129 @@
+{
+  "intl": {
+    "date": "2026-10-31",
+    "dateLabel": "2026년 10월 31일 토요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic이 나스닥 상장을 위한 IPO 서류를 제출하며 <b>AI 업계 최대 기업공개 레이스의 막이 올랐다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, SEC에 IPO 서류 제출…나스닥 'ANT' 티커로 상장 추진",
+            "url": "https://nairametrics.com/2026/10/26/anthropic-files-for-ipo-plans-nasdaq-listing-under-ticker-ant/",
+            "source": "Nairametrics",
+            "pubDate": "2026-10-26",
+            "image": "https://cdn.nairametrics.com/wp-content/uploads/2026/09/anthropic-1.webp",
+            "insight": "Anthropic이 미국 증권거래위원회(SEC)에 기업공개(IPO) 등록신고서를 제출하며 나스닥에 'ANT' 티커로 상장한다는 계획을 공식화했다. 2026년 상반기 매출은 163억 달러로 전년 동기 12억 달러에서 크게 뛰었지만, 전환사채 등 금융상품의 공정가치 변동 탓에 순손실도 807억 달러로 확대됐다. <b>아직 공모 규모와 가격은 확정되지 않았지만 시장에서는 최대 1,000억 달러 조달과 1.5~2조 달러 수준의 기업가치를 점치고 있다.</b>"
+          },
+          {
+            "title": "메타, 가중치를 공개한 'Muse Spark Open' 모델 출시",
+            "url": "https://itdaily.com/news/innovation/meta-muse-spark-open-weigh/",
+            "source": "ITdaily",
+            "pubDate": "2026-10-15",
+            "image": "https://itdaily.com/wp-content/uploads/2026/03/meta.jpg",
+            "insight": "메타가 총 8,160억 파라미터(활성 파라미터 420억) 규모의 'Muse Spark Open' 모델을 공개하며 가중치를 외부에 개방했다. 100만 토큰 컨텍스트 창을 지원하며, M5 Ultra 칩을 탑재한 맥 스튜디오 두 대로도 로컬 구동이 가능하다. <b>메타는 이를 \"현재까지 가장 강력한 미국산 오픈 웨이트 모델\"이라고 소개했지만, 제한적 상업 조건이 붙은 독자 라이선스를 적용해 완전한 오픈소스와는 거리를 뒀다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "Ipsos 조사 \"신뢰가 AI 시대 UX의 새로운 와이어프레임\"",
+            "url": "https://www.ipsos.com/sites/default/files/Trust%20as%20UX%20Wireframe-2026.pdf",
+            "source": "Ipsos",
+            "pubDate": null,
+            "image": null,
+            "insight": "Ipsos가 발표한 'Trust as the Ultimate Wireframe: UX in the AI Age' 보고서는 AI가 결합된 서비스일수록 사용자 통제권과 시스템의 투명성이 신뢰 형성의 핵심 조건이라고 분석했다. <b>AI 시대의 UX 설계에서는 기능성보다 신뢰를 먼저 설계해야 한다는 메시지가 핵심이다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "유럽 프로덕트 디자인 어워드, 창립 10주년 맞아 2026년 수상작 발표",
+            "url": "https://news.marketersmedia.com/european-product-design-award-announces-2026-winners/89204711",
+            "source": "European Product Design Award",
+            "pubDate": "2026-09-29",
+            "image": null,
+            "insight": "EPDA(유럽 프로덕트 디자인 어워드)가 창립 10주년을 맞아 83개국 이상에서 출품된 2026년 수상작을 발표했다. 올해의 제품 디자인상은 중국 Galbot의 로봇 'Galbot S1'이, 올해의 혁신상은 TECNO의 모듈형 휴대폰이 받았으며, 모듈형 접이식 아기 인큐베이터 'Incuvia'는 인류를 위한 디자인상을 수상했다. <b>시상식은 10월 18일 이탈리아 베네치아에서 베네치아 디자인 위크의 피날레 행사로 열렸다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "TSMC, 3분기 기록적 실적…AI 수요가 공급 능력 웃돌아",
+            "url": "https://letsdatascience.com/news/tsmc-says-ai-demand-still-exceeds-its-supply-capability-as-q-2fed75bf",
+            "source": "Let's Data Science",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "TSMC가 2026년 3분기 매출 1조4,940억 대만달러, 순이익 7,630억 6,000만 대만달러를 기록하며 전년 대비 매출 50.9%, 순이익 68.7% 증가했다고 밝혔다. 4분기 매출 가이던스는 523억~543억 달러로 제시됐다. <b>C.C. 웨이 회장은 AI 수요가 여전히 회사의 공급 능력을 웃돌고 있다며 그 격차를 줄이기 위해 노력하고 있다고 말했다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-10-31",
+    "dateLabel": "2026년 10월 31일 토요일",
+    "region": "국내",
+    "takeawayHtml": "국내 스타트업 투자가 3분기 만에 10조원을 넘어서며 <b>4년 만에 가장 뜨거운 벤처투자 시장이 돌아왔다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "과기정통부, 'AI 주간 2026' 페스타 코엑스에서 개최",
+            "url": "https://newsseoul.co.kr/news/view/1065607803352319",
+            "source": "뉴스서울",
+            "pubDate": "2026-10-06",
+            "image": "http://newsseoul.co.kr/news/data/ptn/20261006/p1065607229211368_408.jpg",
+            "insight": "과학기술정보통신부가 10월 6일부터 8일까지 서울 코엑스에서 국내 최대 규모 AI 행사인 'AI 주간 2026'(AI 페스타)을 열었다. 350여 개 기업·기관이 500여 개 부스를 꾸려 독자 AI 파운데이션 모델, AI 반도체, 피지컬 AI, 국방 AI 등을 선보였다. <b>행사 기간에는 정책 토크쇼와 AI 서밋, 퀀텀 포럼, 사이버보안 컨퍼런스 등 다양한 부대 프로그램도 함께 진행됐다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "K-Design Award 2026, 10월 16일 시그니엘 서울서 시상식",
+            "url": "https://asiadesignprize.com/362853",
+            "source": "Asia Design Prize",
+            "pubDate": "2026-08-20",
+            "image": "https://asiadesignprize.com/./files/attach/images/68/853/362/143fee70f1eb984e5039e68d0eb0a5ad.jpg",
+            "insight": "K-Design Award 2026 수상작 온라인 전시가 공개된 가운데, 최고상인 'KUDOS TO THE BEST'는 일본의 LIGHT WAVE가 받았다. 전체 수상 규모는 그랑프리 12점, 골드 32점, 위너 289점에 이른다. <b>시상식은 10월 16일 오후 5시 서울 시그니엘 그랜드볼룸에서 디자인 컨퍼런스와 함께 열렸다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "올 3분기까지 국내 스타트업 투자 10조 돌파…4년 만에 최대",
+            "url": "https://wowtale.net/2026/10/01/265622/",
+            "source": "와우테일",
+            "pubDate": "2026-10-01",
+            "image": null,
+            "insight": "더브이씨(THE VC) 집계에 따르면 올해 1~3분기 국내 비상장 스타트업·중소기업 투자액은 10조 1,880억원, 건수는 854건으로 나타났다. 연간 투자액이 10조원을 넘은 것은 벤처투자 호황기였던 2022년 이후 처음이다. <b>3분기 단독으로는 286건, 2조 2,097억원이 집계돼 2분기보다는 줄었지만 1분기보다는 늘어난 흐름을 보였다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
