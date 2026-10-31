@@ -1,0 +1,137 @@
+{
+  "intl": {
+    "date": "2026-11-01",
+    "dateLabel": "2026년 11월 1일 일요일",
+    "region": "해외",
+    "takeawayHtml": "<b>미스트랄의 1조 파라미터 모델과 피그마의 코드 생성 기능이 등장한 가운데, 가트너는 AI 투자 수익성에 대한 경고를 거듭했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "미스트랄, 1조 파라미터 '라지 4' 프리뷰 공개",
+            "url": "https://simonwillison.net/2026/oct/6/le-chonk/",
+            "source": "Simon Willison's Weblog",
+            "pubDate": "2026-10-06",
+            "image": "https://static.simonwillison.net/static/2026-10-06/mistral-large-4-pelican.webp",
+            "insight": "미스트랄AI가 10월 6일 총 1조 개, 활성 파라미터 490억 개 규모의 멀티모달 모델 '미스트랄 라지 4'의 프리뷰를 API로 공개했다. 자체 구축한 엔비디아 그레이스 블랙웰 GPU 3,800대 클러스터에서 학습됐으며, 벤치마크 Artificial Analysis 지능 지수에서 38점을 받아 전작 라지 3(9점)보다 크게 상승했다. <b>기술 평론가 사이먼 윌리슨은 이를 \"프런티어 모델에 약 6개월 뒤처진 수준\"으로 평가했으며, 다운로드 가능한 공개 가중치는 10월 말 공개될 예정이다.</b>"
+          },
+          {
+            "title": "가트너, AI 인프라 투자 3.5조 달러 손상 위험 경고",
+            "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-14-gartner-says-over-us-dollars-three-and-a-half-trillion-of-artificial-intelligence-infrastructure-spending-could-be-exposed-to-impairment-by-the-end-of-2030",
+            "source": "Gartner Newsroom",
+            "pubDate": "2026-10-14",
+            "image": null,
+            "insight": "가트너는 현재 속도로 AI 인프라 투자가 이어질 경우 2030년 말까지 3조 5000억 달러 규모의 자산이 손상 위험에 노출될 수 있다고 경고했다. <b>2026년에만 약 1조 달러, 2027~2030년에는 추가로 6조 달러가 투입될 것으로 예상되지만 이를 감당할 AI 매출은 최대 3조 6000억 달러에 그칠 것으로 분석됐으며, 네오클라우드 사업자의 80% 이상이 2030년까지 독립성을 잃을 수 있다고 전망했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "유저인터뷰스 '2026 유저 리서치 현황' 리포트: 번아웃 속 AI 도입 가속",
+            "url": "https://www.usertesting.com/user-interviews-state-of-research-report-2026",
+            "source": "User Interviews / UserTesting",
+            "pubDate": "2026",
+            "image": "https://www.usertesting.com/sites/default/files/usertestingv3/2024-10/IMAGE-meta-social-global-usertesting-1600x900.png",
+            "insight": "유저인터뷰스가 전 세계 리서처 약 500명을 대상으로 진행한 '2026 유저 리서치 현황' 리포트에 따르면, AI를 활용하는 리서처 비율이 전년 대비 24%포인트 오른 80%에 달했지만 41%는 이를 부정적으로 봤다. 가장 큰 우려는 할루시네이션(91%)과 비판적 사고력 저하(63%)였다. <b>2025년 리서처 해고 비율은 21%로 전년과 동일했고, 응답자의 49%는 UX 리서치 직군의 미래를 부정적으로 전망했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "피그마, 캔버스에서 코드 레이어 바로 생성하는 기능 공개",
+            "url": "https://aipicks.jp/news/20261015-figma-figma-ai-11-4",
+            "source": "AI PICKS",
+            "pubDate": "2026-10-15",
+            "image": null,
+            "insight": "피그마가 10월 15일 디자인 캔버스 위에서 텍스트 지시나 기존 코드로 실제 작동하는 프로토타입 화면을 만드는 '코드 레이어' 기능을 공개했다. 디자인 의도와 기술 정보를 정리하는 '피그마 스펙'도 유료 플랜에 추가됐고, 외부 AI 도구가 피그마에 이미지 생성이나 스펙 수정을 지시할 수 있는 연동 파트너도 20곳으로 늘었다. <b>코드 레이어 기능은 11월 4일까지 무료로 제공되며, 디자인과 구현의 경계가 한층 얇아졌다는 평가가 나온다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "가트너, CEO 44% \"AI 투자 수익 증명 어려워\"",
+            "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-20-gartner-says-44-percent-of-ceos-struggle-to-demonstrate-ai-financial-returns-as-technology-becomes-central-to-growth",
+            "source": "Gartner Newsroom",
+            "pubDate": "2026-10-20",
+            "image": null,
+            "insight": "가트너가 글로벌 CEO·고위 경영진 203명을 대상으로 한 CEO 서베이에서 44%가 AI의 재무적 성과를 이해관계자에게 입증하기 어렵다고 답했다. <b>그럼에도 75%는 기술 투자를 늘리겠다고 밝혔고, 63%는 체감할 수 있는 AI 성과를 내기 위해 운영 모델을 과감히 재설계해야 한다고 응답했다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-01",
+    "dateLabel": "2026년 11월 1일 일요일",
+    "region": "국내",
+    "takeawayHtml": "<b>네이버의 엔비디아 투자 납입이 임박했고, 무신사는 코스피 상장을 향한 첫 심사를 청구했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버, 엔비디아 유상증자 납입 앞두고 주가는 하락세",
+            "url": "https://news.bizwatch.co.kr/article/mobile/2026/10/14/0023",
+            "source": "비즈워치",
+            "pubDate": "2026-10-14",
+            "image": "https://cdn.bizwatch.co.kr/news/photo/2026/10/14/fdeba8a51f089fecc1e021e7f87fc217.jpg",
+            "insight": "네이버가 7월 유치한 엔비디아의 10억 달러 투자와 브룩필드의 90억 달러 규모 인프라 조달 계약이 이달 말 최종 확정을 앞두고 있다. 엔비디아는 주당 20만4500원에 신주를 인수해 지분 약 4.5%를 확보하며 국민연금, 블랙록에 이어 3대 주주에 오르지만, 10월 14일 종가(17만9200원)는 발행가보다 14%가량 낮은 상태다. <b>증권업계는 3분기 실적 우려와 AI 팩토리 고객사 공개 지연을 주가 부진의 원인으로 지목했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "유기농 브랜드 '홀베리', BI 전면 리뉴얼",
+            "url": "https://design.co.kr/focus9/175080/#008",
+            "source": "월간 디자인",
+            "pubDate": "2026-10-01",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "디자인 스튜디오 더블디가 홀푸드코리아의 유기농 건강식품 브랜드 '홀베리'의 브랜드 스토리와 아이덴티티 시스템을 전면 리뉴얼했다. 레몬의 곡선과 신선함을 살린 리듬감 있는 워드마크를 새로 만들고, 영문 'B'의 형태적 특징을 한글 '베'까지 이어 국문·영문 로고의 시각적 통일감을 확보했다. <b>월간 '디자인'의 10월 포커스 나인(Focus 9)에 소개된 작업이다.</b>"
+          },
+          {
+            "title": "프리미엄 곶감 브랜드 '설담곶', 패키지 디자인 공개",
+            "url": "https://design.co.kr/focus9/175080/#009",
+            "source": "월간 디자인",
+            "pubDate": "2026-10-01",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "디자인 스튜디오 헤즈가 백수네 상회의 프리미엄 곶감 브랜드 '설담곶'의 그래픽 아이덴티티와 패키지 전반을 설계했다. 곶감에 하얗게 피는 천연 당분을 설산 모티브의 수묵화와 은박 가공으로 표현하고, 수량에 따라 블랙과 화이트로 구획한 구조로 선물용 품격을 높였다. <b>현대적인 영문 로고를 더해 전통 식품 브랜드의 이미지를 새롭게 다듬었다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "무신사, 코스피 상장 예비심사 청구…내년 상반기 목표",
+            "url": "https://www.hankyung.com/article/2026090794401",
+            "source": "한국경제",
+            "pubDate": "2026-09-07",
+            "image": "https://static.hankyung.com/img/logo/logo-news-sns.png",
+            "insight": "무신사가 9월 7일 한국거래소에 상장 예비심사 신청서를 제출하며 본격적인 IPO 절차에 들어갔다. 올해 상반기 매출은 8217억원으로 전년 대비 22.6% 늘며 상반기 기준 최대치를 기록했지만, 영업이익은 523억원으로 11.2% 줄었고 최근 구주 거래가(4조원대 초반)와 목표 기업가치(약 10조원) 간 격차도 크다. <b>서울지방국세청이 조만호 총괄대표의 개인회사 라펠과의 자금거래를 겨냥한 특별 세무조사에 착수해 상장 일정의 변수로 떠올랐다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
