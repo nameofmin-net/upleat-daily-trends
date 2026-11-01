@@ -1,0 +1,144 @@
+{
+  "intl": {
+    "date": "2026-11-02",
+    "dateLabel": "2026년 11월 2일 월요일",
+    "region": "해외",
+    "takeawayHtml": "앤트로픽의 나스닥 상장 추진과 메타의 capex 상향 조정이 한날 겹치며, <b>AI 인프라에 대한 빅테크의 베팅은 그 어느 때보다 공격적으로 커지고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, 나스닥 상장 위해 티커 'ANT'로 S-1 제출",
+            "url": "https://letsdatascience.com/news/anthropic-files-s-1-for-nasdaq-ipo-under-ticker-ant-d013b0b0",
+            "source": "Let's Data Science",
+            "pubDate": "2026-10-26",
+            "image": null,
+            "insight": "앤트로픽이 2026년 10월 26일 SEC에 S-1 신고서를 제출하며 나스닥 글로벌 셀렉트 마켓에 티커 'ANT'로 상장을 추진한다. 골드만삭스와 모건스탠리를 비롯한 22개 은행이 주관사로 참여하며, 공모가와 주식 수는 아직 공개되지 않았다. <b>창업자 그룹이 보유한 클래스 F 주식 1주가 전체 투표권의 50.1%를 가지는 구조로, 상장 후에도 '지배기업(controlled company)' 지위를 유지해 일반 주주의 경영 개입은 제한적일 전망이다.</b>"
+          },
+          {
+            "title": "OpenAI, 구글 클라우드 통해 자사 모델 제공 시작",
+            "url": "https://openai.com/index/openai-models-google-cloud/",
+            "source": "OpenAI",
+            "pubDate": "2026-10-21",
+            "image": null,
+            "insight": "CNBC는 2026년 10월 21일 OpenAI가 구글 클라우드를 통해 자사 모델을 개발자에게 제공한다고 보도했다. <b>구글은 몇 주 안에 AI 모델 마켓플레이스 'Model Garden'과 코딩 도구 'Antigravity'에 OpenAI의 GPT 모델을 추가할 예정이며, 이 경우 OpenAI 모델은 미국 3대 클라우드에서 모두 구동된다.</b> 구매는 구글 클라우드 마켓플레이스를 통해 이뤄지며 기존 클라우드 지출 약정으로도 결제할 수 있다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "피그마, 인도 최대 규모 'Config India 2026' 콘퍼런스 개최",
+            "url": "https://www.figma.com/blog/figma-deepens-investment-in-india/",
+            "source": "Figma",
+            "pubDate": "2026-10-15",
+            "image": "https://cdn.sanity.io/images/599r6htc/regionalized/bbbd715863ae9596492a6b6eda14af49a9b802de-2400x1260.png?w=1200&q=70&fit=max&auto=format",
+            "insight": "피그마가 2026년 10월 15일 인도에서 역대 최대 규모의 해외 콘퍼런스 'Config India 2026'을 열었고, 현장과 온라인을 합쳐 3만 명 이상이 등록했다. 이 자리에서 인도 AI 기업 사르밤(Sarvam)의 '인더스(Indus)'가 피그마의 MCP 파트너 생태계에 합류한다고 발표됐다. <b>피그마 CEO 딜런 필드는 \"코드가 점점 상품화되는 세상에서 디자인이야말로 점점 더 중요한 차별점이 되고 있다\"고 말했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "메타, 3분기 실적 발표 후 2026년 capex 전망 하한선 상향",
+            "url": "https://letsdatascience.com/news/meta-narrows-2026-capital-spending-range-to-135-billion-145-46f12e07",
+            "source": "Let's Data Science",
+            "pubDate": "2026-10-21",
+            "image": null,
+            "insight": "메타가 2026년 10월 21일 발표한 3분기 실적에서 매출은 전년 동기 대비 26% 증가한 644억 달러를 기록했다. 연간 자본지출(capex) 전망은 기존 1,300억~1,450억 달러에서 하한선을 높여 1,350억~1,450억 달러로 좁혔다. <b>같은 분기 자본지출이 349억 달러에 달해 영업활동 현금흐름을 넘어서며, 분기 자유현금흐름은 마이너스 21억 2,000만 달러를 기록했다.</b>"
+          },
+          {
+            "title": "구글 클라우드, 버라이즌과 전사적 AI 전환 위한 전략적 파트너십 체결",
+            "url": "https://www.googlecloudpresscorner.com/2026-08-24-Google-Cloud-Announces-Strategic-Partnership-with-Verizon-to-Scale-Enterprise-AI",
+            "source": "Google Cloud",
+            "pubDate": "2026-08-24",
+            "image": "https://mmx.prnewswire.com/media/MS1189558/Google-Cloud-Logo.jpg?id=OA2903764&p=facebook",
+            "insight": "구글 클라우드와 버라이즌이 2026년 8월 24일 전략적 파트너십을 발표하며, 제미나이 엔터프라이즈(Gemini Enterprise)를 중심으로 고객 경험부터 네트워크 운영까지 전사적 AI 전환을 추진한다고 밝혔다. 제미나이 엔터프라이즈는 버라이즌의 월간 소비자 인바운드 전화·채팅 대부분을 처리해 상담 인력이 복잡한 업무에 집중할 수 있게 한다. <b>버라이즌 최고전환책임자 알폰소 비야누에바는 \"고객 한 명 한 명을 이름으로 응대하려면 모든 단계에서 AI를 우선하는 방식으로 일해야 한다\"고 말했다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-02",
+    "dateLabel": "2026년 11월 2일 월요일",
+    "region": "국내",
+    "takeawayHtml": "AWS코리아 조사에서 나타난 국내 기업 AI 활용률 58%라는 수치처럼, <b>국내 기업들은 이제 AI 도입의 '여부'를 넘어 전사적 확장과 체계화라는 다음 과제를 마주하고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "AWS코리아, '2026년 한국의 AI 잠재력' 보고서 발표…기업 AI 활용률 58%",
+            "url": "https://byline.network/2026/09/0911-9/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-09-14",
+            "image": null,
+            "insight": "AWS코리아가 2026년 9월 11일 발표한 '2026년 한국의 AI 잠재력 실현' 보고서에 따르면 국내 기업의 AI 활용률은 58%로 1년 전보다 10%포인트 올랐고, 지난 1년간 약 62만 4,000개 기업이 새로 AI를 도입했다. AI를 쓰는 기업의 81%가 생산성 향상을 경험해 주당 평균 14시간을 절약했다고 답했다. <b>다만 AI를 전략적 우선순위로 꼽은 기업은 67%였지만 공식적인 전사 전략을 갖춘 곳은 27%에 그쳐, 활용 속도와 체계화 수준 사이의 격차가 뚜렷했다.</b>"
+          },
+          {
+            "title": "삼성전자, 프랑스 미스트랄 AI와 반도체 특화 AI 모델 공동개발 파트너십",
+            "url": "https://news.samsung.com/kr/삼성전자-미스트랄-ai와-전략적-파트너십-체결",
+            "source": "삼성전자 뉴스룸",
+            "pubDate": "2026-09-08",
+            "image": "https://img.kr.news.samsung.com/kr/wp-content/uploads/2026/09/08191530/DS_932x524_0909.jpg",
+            "insight": "삼성전자가 2026년 9월 8일 한·프랑스 정상회담을 계기로 프랑스 AI 기업 미스트랄 AI와 전략적 파트너십을 체결하고 지분 투자를 단행했다. 양사는 삼성전자 DS부문의 반도체 데이터와 미스트랄의 '미스트랄 라지' 모델을 결합해 결함 예측·공정 최적화용 반도체 특화 AI 모델을 공동 개발하며, 이를 삼성전자 내부 인프라에서 온프레미스로 운영해 데이터를 외부로 내보내지 않는다는 방침이다. <b>전영현 삼성전자 DS부문장은 \"미스트랄 AI와 함께 반도체 산업에 특화된 AI 모델과 플랫폼을 구축해 혁신의 새로운 기준을 만들겠다\"고 밝혔다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "다정한 공생을 그린 서울식물원 〈다정한 균형〉 키비주얼",
+            "url": "https://design.co.kr/focus9/175080/#004",
+            "source": "디자인프레스",
+            "pubDate": null,
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "디자인 스튜디오 일상의실천이 서울식물원 전시 〈다정한 균형〉의 키비주얼을 맡아, 인간과 자연의 상호의존을 뜻하는 불교의 '인드라망' 개념을 시각화했다. <b>전시는 서로 다른 존재들이 그물처럼 연결돼 영향을 주고받는다는 생각을 그래픽으로 풀어낸다.</b>"
+          },
+          {
+            "title": "대전철도영화제, 레일과 필름을 잇는 아이덴티티 디자인 공개",
+            "url": "https://design.co.kr/focus9/175080/#007",
+            "source": "디자인프레스",
+            "pubDate": null,
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "디자인 스튜디오 노네임프레스가 제8회 대전철도영화제의 아이덴티티를 새로 디자인했다. 철로와 필름 릴 이미지를 결합해 무한궤도를 뜻하는 숫자 '8' 형태로 완성했다. <b>기차와 영화라는 두 모티프를 하나의 순환 구조로 엮어, 영화제가 여덟 번째 해를 맞았다는 의미를 형태로 담았다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "네이버파이낸셜-두나무 합병, 세 번째 연기…내년 3월 목표",
+            "url": "https://news.mtn.co.kr/news-detail/2026100716464286355",
+            "source": "머니투데이",
+            "pubDate": "2026-10-07",
+            "image": "https://assets.mtn.co.kr/mtn/2026/10/rOOuM4r48eGagOeO/image/20261007_171430//202610071714W2nTZbtm_05.jpg",
+            "insight": "네이버파이낸셜과 두나무의 기업결합이 공정거래위원회 심사 지연으로 세 번째 연기됐다. 주식교환을 결정할 주주총회는 11월 19일에서 내년 2월 26일로, 거래 종결 시점은 12월 31일에서 내년 3월 31일로 각각 약 3개월씩 밀렸다. <b>네이버는 이번 일정 변경이 \"거래를 안정적으로 종결하기 위한 시간을 충분히 확보\"하려는 조치라고 밝혔다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
