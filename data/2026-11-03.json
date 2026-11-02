@@ -1,0 +1,145 @@
+{
+  "intl": {
+    "date": "2026-11-03",
+    "dateLabel": "2026년 11월 3일 화요일",
+    "region": "해외",
+    "takeawayHtml": "구글의 사이버보안 특화 모델 공개와 앤트로픽의 과학 연구 지원 확대가 겹치며, <b>빅테크의 AI 경쟁은 이제 모델 성능 그 자체보다 누가 더 넓은 생태계를 선점하느냐의 싸움으로 번지고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "구글, 사이버보안 특화 AI 모델 '제미나이 4 카본' 출시",
+            "url": "https://letsdatascience.com/news/google-announces-gemini-4-carbon-limiting-first-access-to-cy-f33fd14e",
+            "source": "Let's Data Science",
+            "pubDate": "2026-10-28",
+            "image": null,
+            "insight": "구글이 2026년 10월 28일 사이버보안과 장기 과제 해결에 특화한 차세대 프런티어 모델 '제미나이 4 카본'을 발표했다. 공개 초기에는 페어윈드(Fairwind) 프로그램을 통해 소수의 사이버 보안 전문가들에게만 제한적으로 접근을 허용하며, 구글은 미국 정부의 자발적 사전 출시 모델 테스트 절차에도 참여하고 있다고 밝혔다. <b>이 모델은 아티피셜 애널리시스(Artificial Analysis)의 최신 인텔리전스 지수에서 59점으로 1위에 올랐다.</b>"
+          },
+          {
+            "title": "앤트로픽, 'AI 포 사이언스' 프로그램을 20개 연구기관으로 확대",
+            "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+            "source": "Anthropic",
+            "pubDate": "2026-10-28",
+            "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2c317246f4ac7eaf0667d90a76ac05a7a7b601fc-1200x630.jpg",
+            "insight": "앤트로픽이 2026년 10월 28일 개별 연구자 단위로 운영하던 'AI 포 사이언스' 프로그램을 슬론 재단, 사이먼스 재단, 슈미트 사이언스, 미국 국립과학재단(NSF) 등 20개 과학 재단·연구기관·연구 프로젝트로 확대한다고 발표했다. 이 프로그램은 2025년 5월 시작된 이후 생물학, 의학, 물리학, 화학, 기후과학, 수학 분야의 수백 개 프로젝트에 무료 클로드 크레딧을 지원해왔다. <b>앤트로픽은 또 HHMI 제인리아 리서치 캠퍼스와 손잡고 AI 에이전트가 실험실 기기를 안전하게 조작할 수 있게 하는 '모델 하드웨어 표준'을 리서치 프리뷰로 공개했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "베이마드 인스티튜트, 모바일 이커머스 UX 75%가 '보통' 수준에 그쳐",
+            "url": "https://baymard.com/research-articles/mobile-ux-ecommerce",
+            "source": "Baymard Institute",
+            "pubDate": "2026-07-14",
+            "image": "https://baymard.com/api/og/article/mobile-ux-ecommerce",
+            "insight": "베이마드 인스티튜트가 2026년 업데이트한 모바일 이커머스 UX 벤치마크에서 미국과 유럽의 주요 이커머스 사이트 150여 곳, 7만 1,000개 이상의 모바일 화면 요소를 직접 검토한 결과를 공개했다. <b>조사 대상 사이트의 75%가 '보통(Mediocre)' 등급에 그쳤고, '양호(Good)' 등급은 단 1곳뿐이며 '완벽(Perfect)' 등급은 전혀 없었다.</b> 베이마드는 이들이 UX 예산이 충분한 대형 사이트인 점을 고려하면 중소 사이트의 모바일 UX는 더 열악할 가능성이 크다고 지적했다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "피그마, 마크다운 기반 협업 문서 도구 '스펙스' 오픈 베타 출시",
+            "url": "https://www.figma.com/ko-kr/blog/introducing-figma-specs/",
+            "source": "Figma",
+            "pubDate": "2026-10-15",
+            "image": "https://cdn.sanity.io/images/599r6htc/regionalized/d89a510a2d9768f462349e3355890e600a37c52f-3840x2160.png?w=1200&q=70&fit=max&auto=format",
+            "insight": "피그마가 2026년 10월 15일 유료 요금제 사용자를 대상으로 캔버스 안에서 프로젝트 맥락을 정리하는 신규 도구 '스펙스(Specs)'의 오픈 베타를 시작했다. 기존 마크다운 파일을 끌어다 놓아 변환하고, 피그잼 파일이나 디자인 노드를 문서 안에 직접 임베드할 수 있으며, 피그마 에이전트가 댓글에 답하거나 수정 제안을 작성하는 협업 기능도 포함된다. <b>깃허브 같은 외부 커넥터 연동과 MCP 서버를 통한 코딩 에이전트 전달 기능까지 더해, 디자인 결정과 코드 구현 사이의 문서 공백을 메우는 것이 목표다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "알파벳, 3분기 매출 25% 증가에도 AI 투자 부담에 주가 급락",
+            "url": "https://aiweekly.co/alerts/alphabet-posts-1276b-q3-with-google-cloud-up-103-to-307b-as-2027-capex-set-to",
+            "source": "AI Weekly",
+            "pubDate": "2026-10-28",
+            "image": null,
+            "insight": "알파벳이 2026년 10월 28일 발표한 3분기 실적에서 매출 1,276억 달러(전년 대비 25% 증가), 구글 클라우드 매출 307억 달러(103% 증가)를 기록했지만, 대규모 AI 투자 부담으로 주가는 실적 발표 후 급락했다. <b>3분기 자본지출만 514억 달러에 달해 자유현금흐름이 마이너스 91억 달러를 기록했고, 2027년 자본지출은 3,000억 달러를 넘어설 전망이다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-03",
+    "dateLabel": "2026년 11월 3일 화요일",
+    "region": "국내",
+    "takeawayHtml": "카카오의 에이전트 AI 공개와 삼성전자·LG전자의 호실적 발표가 한 주간 이어지며, <b>국내 빅테크는 AI 에이전트 경쟁과 메모리·전장 사업의 실적 호조를 동시에 보여주고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, 'if(kakao)26'서 카나나 스페이스·칸바스 등 에이전트 AI 공개",
+            "url": "https://www.kakaocorp.com/page/detail/12160",
+            "source": "카카오",
+            "pubDate": "2026-10-13",
+            "image": "https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/news/335f8bc001a100001.jpeg?type=thumb&opt=C800x400",
+            "insight": "카카오가 2026년 10월 13~14일 경기 용인 카카오 AI 캠퍼스에서 열린 'if(kakao)26'에서 카카오톡 화면을 쓸어내리면 등장하는 AI 비서 '카나나 스페이스'와 PC 기반 에이전트 빌더 '칸바스'를 공개했다. 흩어진 사용자 맥락을 연결하는 '프로젝트 모자이크'와 음성 대화형 모델 '카나나-오' 등 자체 AI 스택도 함께 소개됐다. <b>정신아 대표는 \"모두를 위한 연결은 카카오가 지켜온 약속이자 AI 시대에도 이어갈 변함없는 기준\"이라고 말했다.</b> 카나나 스페이스는 12월 비공개 베타를 시작한다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "유럽 포스터 100선을 한자리에, <100 베스테 플라카테 25> 전시",
+            "url": "https://design.co.kr/focus9/175080/#001",
+            "source": "디자인프레스",
+            "pubDate": null,
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "독일, 오스트리아, 스위스를 중심으로 선정된 유럽 최신 포스터 100점을 실물로 보여주는 전시 <100 베스테 플라카테 25>가 두성페이퍼갤러리에서 11월 1일까지 열린다. 로호타입이 두성종이와 '100 베스테 플라카테' 협회와 함께 기획했다. <b>인쇄와 그래픽, 타이포그래피가 교차하는 유럽 포스터 디자인의 현재를 한자리에서 짚어볼 수 있는 자리다.</b>"
+          },
+          {
+            "title": "낯선 여정 속 담대한 태도를 담은 공간, 리드볼트 플래그십 스토어",
+            "url": "https://design.co.kr/focus9/175080/#006",
+            "source": "디자인프레스",
+            "pubDate": null,
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/10/01135950/20261001045945-Designfocus9-07-832x468.jpg",
+            "insight": "여행 브랜드 리드볼트가 코브스튜디오와 함께 첫 플래그십 스토어를 열었다. 입체적으로 구성된 파사드와 브랜드 스토리를 겹겹이 담아낸 내부 공간 구성이 특징이다. <b>낯선 여정에 나서는 담대한 태도라는 브랜드의 정체성을 공간 경험으로 번역해낸 사례다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "삼성전자, 분기 영업이익 100조원 첫 돌파…메모리 호황 지속",
+            "url": "https://news.samsung.com/kr/삼성전자-2026년-3분기-실적-발표",
+            "source": "삼성전자 뉴스룸",
+            "pubDate": "2026-10-29",
+            "image": null,
+            "insight": "삼성전자가 2026년 10월 29일 발표한 3분기 실적에서 매출 195.3조원, 영업이익 107.4조원을 기록하며 글로벌 테크 기업 중 처음으로 분기 영업이익 100조원을 넘어섰다. <b>메모리 사업의 호황이 실적을 이끌었고, 회사는 메모리 공급 부족이 2028년까지 이어질 수 있다고 내다봤다.</b> 3분기 현금배당 총액은 30조원이다."
+          },
+          {
+            "title": "LG전자, 3분기 누적 영업이익 처음으로 4조원 돌파…북미 AI 데이터센터 냉각 수주 확대",
+            "url": "https://www.fnnews.com/news/202610281803230504",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-10-28",
+            "image": "https://image.fnnews.com/resource/media/image/2026/10/28/202610281737330075_e.jpg",
+            "insight": "LG전자가 2026년 10월 28일 발표한 3분기 실적에서 매출 23조8,241억원, 영업이익 7,819억원을 기록해 전년 동기 대비 각각 8.9%, 13.5% 증가했다. 전장(VS) 사업본부는 매출 2조8,261억원, 영업이익 1,903억원으로 3분기 기준 역대 최대 실적을 냈고, 전 사업본부가 흑자를 기록했다. <b>냉각솔루션 누적 수주액이 3조원을 넘어서며 상반기 약 6,000억원에서 크게 늘었고, 미국 버지니아주에 약 2,200억원을 투자해 현지 생산거점을 신설할 계획이다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
