@@ -1,0 +1,101 @@
+{
+  "intl": {
+    "date": "2026-11-04",
+    "dateLabel": "2026년 11월 4일 수요일",
+    "region": "해외",
+    "takeawayHtml": "오늘 해외에서는 구글과 미스트랄이 잇따라 차세대 AI 모델의 접근 범위를 넓히는 가운데, <b>베이마드 인스티튜트는 소비자들이 AI 챗봇의 상품 추천은 반기면서도 AI 생성 이미지와 주문 문제 해결만큼은 여전히 사람의 손길을 원한다는 조사 결과를 내놓았다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "구글, '제미나이 4 아르곤' API·구독 서비스로 확대 공개",
+            "url": "https://letsdatascience.com/news/google-releases-gemini-4-argon-for-scientific-computing-644a49ff",
+            "source": "letsdatascience.com",
+            "pubDate": "2026-10-13",
+            "image": null,
+            "insight": "구글이 지난 9월 30일 일부 사이버 보안 파트너에게만 공개했던 '제미나이 4 아르곤'을 10월 13일 API와 AI 울트라·프로 구독자, 제미나이 앱까지 확대 공개했다. 입력과 출력을 합쳐 최대 104만 8,576토큰의 컨텍스트 윈도우를 지원하며, 코드 실행과 함수 호출 등의 도구를 갖춘 소프트웨어 엔지니어링·과학 문제 해결용 추론 모델로 소개된다. <b>구글은 11월 30일까지 입력 토큰당 2달러, 출력 토큰당 10달러의 도입가를 적용하고 이후 표준 요금으로 전환한다고 밝혔다.</b> 다만 모델 카드에는 '환각과 간헐적인 지연·타임아웃'이 한계로 명시돼 있어, 벤치마크 수치만으로 판단하지 말고 실제 업무에서 직접 검증해볼 필요가 있다."
+          },
+          {
+            "title": "미스트랄, 1조 파라미터 '라지 4' 퍼블릭 프리뷰 공개",
+            "url": "https://letsdatascience.com/news/mistral-debuts-large-4-open-weight-model-preview-cbf9e0b5",
+            "source": "letsdatascience.com",
+            "pubDate": "2026-10-06",
+            "image": null,
+            "insight": "프랑스 AI 기업 미스트랄이 10월 6일 멀티모달 모델 '라지 4'의 퍼블릭 프리뷰를 미스트랄 스튜디오를 통해 공개했다. 전문가 혼합(MoE) 구조로 코딩과 에이전틱 워크플로, 멀티모달 작업에 특화됐으며 컨텍스트 윈도우는 100만 토큰에 달한다. <b>다운로드 가능한 가중치는 아직 공개되지 않았으며, 회사는 사이버보안·공공기관 파트너와의 레드팀 테스트를 거쳐 10월 말까지 가중치를 공개할 계획이라고 밝혔다.</b> 이는 오픈소스 모델 경쟁력 확보를 위한 서구권의 움직임과 맞물린 단계적 공개 전략으로 풀이된다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "베이마드 연구소, \"AI 쇼핑 추천은 반기지만 주문 문제는 사람이 해결해야\"",
+            "url": "https://baymard.com/research-articles/ai-engagement-quantitative-ux-insights-2026",
+            "source": "baymard.com",
+            "pubDate": "2026-10-27",
+            "image": "https://baymard.com/api/og/article/ai-engagement-quantitative-ux-insights-2026",
+            "insight": "베이마드 인스티튜트가 미국 온라인 쇼핑객 2,273명을 설문한 결과, 제품 비교(63%)나 재고 확인(59%) 같은 저위험 탐색 작업에는 AI 챗봇을 선호하는 반면, 배송 오류나 파손 상품 등 주문 문제가 생기면 약 3명 중 2명이 사람 상담원을 원한다는 결과가 나왔다. <b>AI가 생성한 제품 이미지라는 사실을 알게 되면 응답자의 60%가 구매 확신이 줄어든다고 답했고, 17%는 아예 구매하지 않겠다고 밝혔다.</b> 베이마드는 쇼핑 탐색 단계에는 챗봇을 배치하되 문제 해결 시에는 사람 상담으로 쉽게 넘어갈 수 있도록 설계하고, 제품 이미지는 실제 촬영본을 우선해야 한다고 권고했다."
+          },
+          {
+            "title": "베이마드 연구소, \"체크아웃 UX 2026\": 사이트 59%가 '보통 이하' 수준",
+            "url": "https://baymard.com/research-articles/current-state-of-checkout-ux",
+            "source": "baymard.com",
+            "pubDate": "2026-11-03",
+            "image": "https://baymard.com/api/og/article/current-state-of-checkout-ux",
+            "insight": "베이마드 인스티튜트가 44,000건 이상의 체크아웃 사용성 데이터를 분석한 2026년 벤치마크에 따르면 데스크톱과 모바일 사이트의 59%가 '보통' 이하 수준에 머물렀고, '우수' 등급을 받은 곳은 데스크톱 2%, 모바일 1%에 불과했다. <b>설문에 참여한 쇼핑객 1,000여 명 중 17%는 최근 3개월 동안 체크아웃이 너무 길거나 복잡해 구매를 포기한 경험이 있다고 답했다.</b> 수량 입력에 버튼 없이 텍스트 필드만 쓴 사이트가 95%에 달하는 등 사소하지만 반복적인 설계 실수가 많았고, 에이전틱 AI에게 결제를 맡기길 신뢰하는 사용자는 아직 소수에 그쳤다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "구글 애드테크 반독점 소송, 법원이 강제 매각 대신 행동 규제 명령",
+            "url": "https://www.natlawreview.com/article/court-declines-order-adx-divestiture-google-ad-tech-case",
+            "source": "natlawreview.com",
+            "pubDate": "2026-09-16",
+            "image": "https://natlawreview.com/sites/default/files/styles/article_image/public/2026-09/Google%20Ads%20Logo%20Smartphone.jpg.webp?itok=6Rb5xv9y",
+            "insight": "미국 버지니아 동부지방법원 리오니 브링크마 판사가 9월 16일 구글 애드테크 반독점 소송의 106쪽짜리 구제 명령 의견서를 공개했다. 정부가 요구한 애드 익스체인지(AdX) 강제 매각은 '현실적이지도 필요하지도 않다'며 기각했지만, 퍼블리셔 광고 서버(DFP)와 AdX 간 끼워팔기를 금지하고 경쟁 광고 서버에도 동일한 조건으로 AdX 입찰 데이터를 제공하도록 명령했다. <b>법원은 적합한 인수자가 없고 분할에 5~8년이 걸릴 수 있는 반면 행동 규제는 15개월 안에 시행 가능하다는 점을 들어, 정부의 요구가 결국 '구글에 대한 불신'과 '비현실적인 확실성 요구'에 불과하다고 지적했다.</b> 이번 판결은 2025년 구글 검색 반독점 소송에서 크롬 매각이 기각된 선례를 따른 것으로, 최종 판결은 효력 발생 후 6년간 전 세계에 적용된다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-04",
+    "dateLabel": "2026년 11월 4일 수요일",
+    "region": "국내",
+    "takeawayHtml": "국내에서는 삼성전자와 LG전자가 반도체·AI 호황에 힘입어 분기 최대 영업이익을 잇따라 경신하고 네이버·카카오도 11월 중 3분기 실적 발표를 앞둔 가운데, <b>3분기 국내 스타트업 투자액이 AI·로보틱스 중심으로 2022년 이후 처음 연 10조원을 넘어서며 투자 심리가 뚜렷하게 회복되고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": []
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": []
+      }
+    ]
+  }
+}
