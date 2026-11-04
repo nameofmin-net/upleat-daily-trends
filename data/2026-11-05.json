@@ -1,0 +1,178 @@
+{
+  "intl": {
+    "date": "2026-11-05",
+    "dateLabel": "2026년 11월 5일 목요일",
+    "region": "해외",
+    "takeawayHtml": "<b>앤트로픽의 나스닥 상장 추진과 구글의 상시형 에이전트 'Gemini Spark' 공개가 보여주듯, AI 업계의 경쟁은 모델 성능을 넘어 기업가치 입증과 실생활 밀착형 에이전트로 빠르게 옮겨가고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, SEC에 IPO 서류 제출…나스닥 'ANT'로 상장 추진",
+            "url": "https://www.shacknews.com/article/151141/anthropic-claude-stock-ipo",
+            "source": "Shacknews",
+            "pubDate": "2026-10-26",
+            "image": "https://d1lss44hh2trtw.cloudfront.net/assets/article/2026/05/06/anthropic-spacex-compute-deal_feature.jpg",
+            "insight": "앤트로픽이 10월 26일 미국 증권거래위원회(SEC)에 S-1 등록신고서를 제출하며 나스닥 상장을 공식화했다. 거래 티커는 'ANT'로 정해졌으며, 공모 주식 수와 가격 범위는 아직 확정되지 않았다. <b>앞서 6월 비공개로 제출된 초안 당시 제시된 기업가치는 9,650억 달러에 달했고, SEC 제출 자료는 2026년 상반기 27억 달러의 이익을 기록했다고 밝혔다.</b> 올해 스페이스X 상장에 이어 AI 업계의 또 다른 대형 IPO로 주목받고 있다."
+          },
+          {
+            "title": "구글, 메일 작성부터 결제까지 처리하는 상시형 AI 에이전트 'Gemini Spark' 공개",
+            "url": "https://venturebeat.com/technology/googles-new-ai-agent-can-draft-your-emails-monitor-your-inbox-and-eventually-spend-your-money",
+            "source": "VentureBeat",
+            "pubDate": "2026-05-19",
+            "image": null,
+            "insight": "구글이 5월 19일 I/O 2026에서 클라우드 상에서 상시로 작동하는 AI 에이전트 'Gemini Spark'를 공개했다. 노트북을 닫거나 휴대폰이 잠겨 있어도 이메일 초안 작성과 받은편지함 모니터링 등 작업을 이어가며, 출시 시점에는 자동 결제 없이 사용자 승인을 거치지만 향후 정해진 한도 내 자동 구매 기능이 추가될 예정이다. <b>OpenAI의 브라우저 기반 에이전트가 OSWorld 벤치마크에서 38.1%의 성능(사람은 72% 이상)을 보이는 것과 달리, Gemini Spark는 Workspace API와 MCP 연동을 통한 구조화된 방식을 택했다.</b> 월 100달러의 신규 Ultra 요금제 등 구독 체계도 함께 재편됐다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "메이즈, '2026 사용자 리서치의 미래' 보고서 발표…리서치 영향력 3배 커져",
+            "url": "https://maze.co/events/future-user-research-report-2026/",
+            "source": "Maze",
+            "pubDate": null,
+            "image": "https://www.datocms-assets.com/38511/1772666614-event-thumbail-forr-2026-webinar.png?auto=format",
+            "insight": "메이즈(Maze)가 발표한 'Future of User Research Report 2026'에 따르면 조직 내 UX 리서치 수요가 전년 대비 약 20% 증가했다. <b>이사회(보드) 수준에서 리서치가 의사결정에 미치는 영향력도 거의 3배로 커진 것으로 나타나, 리서치가 실무 도구에서 경영 전략의 핵심 입력값으로 위상이 바뀌고 있음을 보여준다.</b>"
+          },
+          {
+            "title": "유저테스팅, 피그마 전용 AI 플러그인 출시…디자인 중에 바로 사용자 테스트",
+            "url": "https://www.businesswire.com/news/home/20260127038899/en",
+            "source": "Business Wire",
+            "pubDate": "2026-01-27",
+            "image": null,
+            "insight": "유저테스팅(UserTesting)이 피그마(Figma)와 손잡고 AI 플러그인을 선보이며, 디자이너가 Figma 안에서 바로 UX 테스트를 실행하고 분석할 수 있게 됐다. <b>해당 플러그인은 AI가 테스트 지시문·과제·후속 질문을 몇 초 만에 자동 생성해 실제 사용자 피드백과 결합하는 방식으로 동작한다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "2026 D&AD 어워드, 펜슬 573개 수여…심사위원이 꼽은 타이포그래피의 공통점",
+            "url": "https://www.dandad.org/work/annual-2026-press-preview/trends-from-the-jury-rooms/what-makes-typography-stand-out-today",
+            "source": "D&AD",
+            "pubDate": null,
+            "image": "https://www.dandad.org/images/social.jpg",
+            "insight": "2026 D&AD 어워드에서 총 573개의 펜슬이 수여됐으며, 최고상인 Black Pencil에는 Coinbase의 'Your Way Out', 퍼블리시스 콘세이·악사(AXA)의 'Three Words', 디오디너리(The Ordinary)의 'The Periodic Fable' 등이 선정됐다. <b>심사위원실의 트렌드 리포트는 올해 두드러진 타이포그래피의 공통점으로 표면적 꾸밈을 넘어선 깊이 있는 메시지 전달을 꼽았다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "엔비디아, 허깅페이스 14조원 인수 협상 막바지…기존 투자자에서 인수자로",
+            "url": "https://news.bgov.com/mergers-and-acquisitions/nvidia-is-said-to-near-14-billion-hugging-face-deal-this-week",
+            "source": "Bloomberg Government",
+            "pubDate": "2026-09-02",
+            "image": null,
+            "insight": "엔비디아가 AI 스타트업 허깅페이스(Hugging Face) 인수를 두고 고위급 협의를 진행 중이며, 거래 규모는 인수 대금 129억 달러에 직원 리텐션 패키지 10억 달러를 더해 총 약 140억 달러에 이를 것으로 전해졌다. <b>최종 합의는 아직 이뤄지지 않았지만, 엔비디아는 이미 구글·아마존·인텔·세일즈포스와 함께 허깅페이스의 기존 투자자로 참여하고 있어 전략적 의미가 크다는 평가다.</b>"
+          },
+          {
+            "title": "챗GPT, 구글 검색량의 12~18% 수준까지 추격…트래픽 유입력은 190배 격차",
+            "url": "https://ahrefs.com/blog/chatgpt-has-12-percent-of-googles-search-volume/",
+            "source": "Ahrefs",
+            "pubDate": "2026-02-11",
+            "image": "https://ahrefs.com/blog/wp-content/uploads/2026/02/chatgpt-has-12-of-googles-search-by-patrick-stox-ai-search-.jpg",
+            "insight": "Ahrefs 분석에 따르면 챗GPT의 하루 처리량은 약 25억 건으로 구글의 하루 검색량(약 137억 건)의 약 18% 수준이며, 전통적 검색 의도로 분류되는 질의만 놓고 보면 약 12%(하루 16억 2,500만 건)로 추산된다. <b>다만 웹사이트로의 트래픽 유입 비중은 구글이 약 40%인 반면 챗GPT는 0.21%에 불과해, 구글이 챗GPT보다 약 190배 많은 트래픽을 사이트에 보내는 것으로 나타났다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-05",
+    "dateLabel": "2026년 11월 5일 목요일",
+    "region": "국내",
+    "takeawayHtml": "<b>산업통상부의 제조AI 확산 전략과 엔비디아 AI데이 서울을 계기로, 국내 대기업들은 AI 인프라 투자를 실제 생산성과 매출로 연결하는 실행 단계에 본격 진입하고 있다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "산업통상부, 'AI 팩토리 전략회의'서 제조AI 확산 전략 발표…생산성 30% 향상",
+            "url": "https://www.fnnews.com/news/202611031228459938",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-11-03",
+            "image": "https://image.fnnews.com/resource/media/image/2026/11/03/202611031557154887_e.jpg",
+            "insight": "산업통상부가 11월 3일 'AI 팩토리 전략회의'에서 개별 공장(점)에서 검증된 AI를 유사 공정(선), 공급망·산업단지(면)로 확산시키는 4단계 전략을 발표했다. 전국 245개 기업 지원 사례 중 우수사례 38개를 분석한 결과 평균 생산성은 30.1% 향상되고 불량률은 15.5% 감소한 것으로 나타났다. <b>정부는 2027년까지 1,200억원을 투입해 '풀스택 AI 팩토리'와 제조AI 파운데이션 모델을 개발하겠다는 목표를 제시했다.</b>"
+          },
+          {
+            "title": "엔비디아 'AI 데이 서울 2026', 11월 9~10일 개최…삼성·SK·LG 등 20개사 참여",
+            "url": "https://www.fnnews.com/news/202611030539118236",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-11-03",
+            "image": "https://image.fnnews.com/resource/media/image/2026/11/03/202611030540118490_e.jpg",
+            "insight": "엔비디아가 11월 9~10일 서울 코엑스에서 'AI 데이 서울 2026'을 열며, 삼성전자·SK하이닉스·LG전자·SK텔레콤·네이버클라우드 등 20개 파트너사가 참여해 피지컬 AI와 에이전틱 AI 적용 사례를 공유한다. <b>삼성전자는 GPU 5만여 개를 도입해 반도체 공정에 디지털 트윈 기반 'AI 팩토리'를 구축하는 방안을 엔비디아와 협의 중이며, 현대차그룹도 GPU 5만 개 규모의 AI 팩토리와 자율주행 개발을 추진하고 있다.</b> 젠슨 황 CEO의 장녀 매디슨 황 수석이사가 올해 네 번째로 방한한다."
+          },
+          {
+            "title": "삼성전자, 기흥에 파운드리 신규 프로젝트 '카이로스'…AI칩 수요 대응",
+            "url": "https://www.fnnews.com/news/202611042120579216",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-11-04",
+            "image": "https://image.fnnews.com/resource/media/image/2026/11/04/202611042120574091_e.jpg",
+            "insight": "삼성전자가 기흥사업장 옛 종합기술원 부지에서 추진하는 신규 파운드리 프로젝트 '카이로스'를 통해 AI·HPC 칩 수요에 대응하는 생산시설을 확충한다. 같은 캠퍼스의 차세대 R&D단지 NRD-K에는 2030년까지 20조원이 투입될 예정이며, 첫 연구라인은 이미 2024년 12월 가동을 시작했다. <b>카이로스는 파운드리 중심으로 설계됐지만 향후 메모리 라인으로 전환할 수 있는 여지도 남겨둔 것으로 전해졌다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "요기요, 2년 만에 앱 전면 개편…'매끄러운 미식 탐험'으로 탐색 단계 줄여",
+            "url": "https://view.asiae.co.kr/en/article/2026060810411128272",
+            "source": "아시아경제",
+            "pubDate": "2026-06-08",
+            "image": null,
+            "insight": "요기요가 6월 8일 2024년 이후 처음으로 앱 UI·UX를 전면 개편하며 '매끄러운 미식 탐험의 시작'을 테마로 탐색부터 주문까지의 단계를 줄였다. 홈 화면에서는 혜택과 음식 카테고리를 한눈에 볼 수 있도록 재구성했고, 적립·포장·선물하기 등 자주 쓰는 기능을 홈에서 바로 접근할 수 있게 했다. <b>AI가 사용자별로 프로모션 배너를 맞춤 노출해 같은 혜택이 반복 노출되지 않도록 했으며, 실제 사용자 설문을 바탕으로 개편 방향을 정했다고 손진형 CTO가 밝혔다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "롯데칠성음료, 핫식스 패키지 3년 만에 전면 리뉴얼…'가장 뜨거운 불꽃'으로",
+            "url": "https://designcompass.org/2026/07/13/hot6-package-redesign-2026/",
+            "source": "디자인컴퍼스",
+            "pubDate": "2026-07-13",
+            "image": "https://designcompass.org/wp-content/uploads/2026/07/hot6-06.jpg",
+            "insight": "롯데칠성음료가 에너지음료 핫식스의 패키지를 3년 만에 전면 리뉴얼했다. 기존 불사조 이미지를 곡선의 날개 그래픽으로 단순화하고, 가장 뜨거운 불꽃을 상징하는 블루 컬러를 전면에 적용해 제품명의 시인성을 높였다. <b>'가장 뜨거운 불꽃을 켜라'를 슬로건으로 6월 29일부터 7월 28일까지 성수·강남 등 서울 주요 지역에서 대형 옥외광고 캠페인을 진행하며 리뉴얼을 알렸다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI 인프라 스타트업 래블업, 공모가 하단 확정하고 11월 코스닥 입성",
+            "url": "https://zdnet.co.kr/view?no=20261023155138",
+            "source": "지디넷코리아",
+            "pubDate": "2026-10-23",
+            "image": "https://image.zdnet.co.kr/2026/10/19/a20fa02c1b5f6766ffdadbd4a1e381ed.jpg",
+            "insight": "AI 컴퓨팅 인프라 관리 플랫폼 래블업이 공모가를 희망범위 하단인 1만 9000원으로 확정하고 11월 코스닥 상장을 앞두고 있다. 기관 수요예측 경쟁률은 284.53대 1을 기록했지만 전체 신청의 49%가 희망범위 하단 미만을 제시해 평가는 보수적이었다. <b>2026년 상반기 매출은 전년 동기 대비 58.2% 증가한 약 47억원이며, 공모자금 중 187억원은 GPU·NPU 테스트팜 등 검증 인프라 구축에 쓰일 계획이다.</b>"
+          },
+          {
+            "title": "업스테이지, 국내 생성형 AI 기업 첫 유니콘 등극…시리즈C로 1800억 유치",
+            "url": "https://www.heraldk.com/article/2026041418441149071",
+            "source": "헤럴드경제",
+            "pubDate": "2026-04-15",
+            "image": null,
+            "insight": "업스테이지가 시리즈C 1차 투자로 1,800억원을 유치하며 국내 생성형 AI 기업 최초로 기업가치 1조원 이상의 유니콘 기업에 올랐다. 실리콘밸리 기반 벤처캐피털 사제파트너스가 리드 투자자로 참여했으며, 누적 투자금은 약 4,000억원에 달한다. <b>2020년 설립 이후 약 5년 만에 이룬 성과로, 회사는 하반기 기업공개(IPO) 추진을 목표로 내걸었다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
