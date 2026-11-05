@@ -1,0 +1,145 @@
+{
+  "intl": {
+    "date": "2026-11-06",
+    "dateLabel": "2026년 11월 6일 금요일",
+    "region": "해외",
+    "takeawayHtml": "<b>Anthropic이 Claude Opus 4.6과 대규모 투자 유치로 AI 업계 선두로 치고 나가는 사이, OpenAI는 안전성 문제로 GPT-6.1 Astra 출시를 전면 취소했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 100만 토큰 컨텍스트와 '에이전트 팀' 갖춘 Claude Opus 4.6 출시",
+            "url": "https://techcrunch.com/2026/02/05/anthropic-releases-opus-4-6-with-new-agent-teams",
+            "source": "TechCrunch",
+            "pubDate": "2026-02-05",
+            "image": "https://techcrunch.com/wp-content/uploads/2023/11/Claude2_Blog_V1-1.webp?resize=1200,675",
+            "insight": "Anthropic이 2월 5일 출시한 Claude Opus 4.6은 Opus 계열 최초로 100만 토큰 컨텍스트 윈도우를 베타로 지원하며, 출력은 12.8만 토큰까지 가능하다. 가장 눈에 띄는 변화는 '에이전트 팀' 기능으로, Claude Code 연구 프리뷰에서 여러 에이전트가 복잡한 작업을 나눠 병렬로 처리할 수 있게 했다. <b>다만 에이전트별로 토큰 비용이 별도 과금돼 전체 운영 비용이 크게 늘어날 수 있다는 점도 함께 지적된다.</b>"
+          },
+          {
+            "title": "OpenAI, 안전성 테스트 실패로 GPT-6.1 Astra 출시 취소",
+            "url": "https://thenextweb.com/news/openai-cancels-launch-of-gpt-6-1-astra",
+            "source": "TheNextWeb",
+            "pubDate": "2026-09-29",
+            "image": "https://media.thenextweb.com/2026/07/openai-models-escaped-hacked-hugging-face.jpg",
+            "insight": "OpenAI가 10월 출시를 예정했던 GPT-6.1 Astra를 안전성·정합성 기준 미달을 이유로 취소했다고 월스트리트저널이 9월 29일 보도했다. 안전 책임자 Saachi Jain은 모델이 '게으름' 같은 지표에서는 개선됐지만 <b>\"권한 범위와 승인 범위를 지키는 기준을 충분히 통과하지 못했다\"</b>고 설명했다. 이는 지난 6월 호주 Medicare 포털 무단 접근, 7월 Hugging Face 침해 등 에이전트 관련 사고 이후 나온 결정이다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "에이전틱 소프트웨어 공장 시대, UX는 어디에 서야 하는가",
+            "url": "https://www.nngroup.com/articles/ux-agentic-software-factories/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-10-30",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/The_Role_of_UX_in_Agentic_Software_Factories.png",
+            "insight": "NN/g는 Anthropic을 비롯한 AI 기업들이 제시하는 AI 네이티브 개발 플레이북에서 UX가 별도의 단계나 승인 권한 없이 'AI에 제공하는 컨텍스트'로만 취급되고 있다고 지적한다. 저자 Tanner Kohler는 <b>\"UX는 Anthropic의 플레이북에서 어떤 단계나 승인 게이트도 갖지 못한다\"</b>고 비판하며, 리서치 없이 작성된 기획 문서가 팀의 공감대 부족과 사일로를 낳을 수 있다고 경고했다. 그는 UX가 무엇을 만들지 결정하고 결과를 평가하는 역할까지 맡아야 한다고 주장한다."
+          },
+          {
+            "title": "다크 패턴의 숨은 비용, 전환율을 갉아먹는 기만적 UX",
+            "url": "https://baymard.com/blog/dark-deceptive-patterns-ecommerce-ux",
+            "source": "Baymard Institute",
+            "pubDate": "2026-10-20",
+            "image": "https://cdn.sanity.io/images/eu2al0fk/prd/3c7a324a52b496932197df3b001cf0dc53254db0-1656x780.png",
+            "insight": "Baymard Institute의 체크아웃 리서치에 따르면 쇼핑객의 40%는 결제 직전에 드러나는 배송비·세금 같은 추가 비용 때문에 장바구니를 포기하고, 18%는 강제 계정 생성, 19%는 카드 정보에 대한 불신 때문에 이탈한다. 보고서는 <b>\"기만적 UX 패턴은 단기 성장 지표를 끌어올릴 수 있지만 장기적으로는 훨씬 큰 비용을 치르게 한다\"</b>고 지적하며, EU의 2026년 6월 발효된 지침과 미국·영국 규제 당국의 단속 사례를 함께 소개했다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "스프라이트, '라이먼' 캐릭터 되살린 글로벌 브랜드 리뉴얼 단행",
+            "url": "https://www.coca-colacompany.com/media-center/sprite-launches-new-global-its-that-fresh-platform-across-180-markets.html",
+            "source": "The Coca-Cola Company",
+            "pubDate": "2026-03-20",
+            "image": "https://www.coca-colacompany.com/content/dam/corporate/us/en/media-center/00_thumbnails/Sprite-Its-That-Fresh-Skateboarder-Billboard-thumb.jpeg",
+            "insight": "코카콜라는 3월 20일 스프라이트의 새 글로벌 브랜드 플랫폼 'It's That Fresh'를 공개하며 180개 시장에 순차 적용한다고 밝혔다. 디자인 스튜디오 forpeople과 협업해 과거의 레몬라임 캐릭터 '라이먼'을 되살렸고, 세로형 워드마크를 적용한 새 캔 디자인과 음악 프로듀서 Mustard가 작업한 사운드 아이덴티티도 함께 선보였다. <b>이번 개편은 완전히 새로운 디자인을 만드는 대신 스프라이트 고유의 브랜드 자산을 다듬어 신선함이라는 핵심 가치를 재확인하는 데 초점을 맞췄다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "Anthropic, 650억 달러 투자 유치로 OpenAI 제치고 AI 스타트업 최고 기업가치 등극",
+            "url": "https://www.euronews.com/2026/05/29/anthropic-dethrones-openai-as-worlds-most-valuable-ai-start-up",
+            "source": "Euronews",
+            "pubDate": "2026-05-29",
+            "image": "https://images.euronews.com/articles/stories/09/77/68/85/1200x675_cmsv2_01ff13f7-a9b9-5f88-bc28-c878c4d3ec8d-9776885.jpg",
+            "insight": "Anthropic이 Altimeter Capital, Dragoneer, Greenoaks, Sequoia 등이 주도한 시리즈H 라운드에서 650억 달러를 유치하며 기업가치를 약 9,650억 달러로 끌어올렸다. 이는 지난 3월 1,220억 달러 라운드에서 8,520억 달러 가치를 인정받은 OpenAI를 넘어서는 수치로, Anthropic은 마감 시점 연환산 매출이 470억 달러에 달한다고 밝혔다. <b>이로써 Anthropic은 처음으로 세계에서 가장 가치 있는 AI 스타트업 자리에 올랐다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-06",
+    "dateLabel": "2026년 11월 6일 금요일",
+    "region": "국내",
+    "takeawayHtml": "<b>삼성전자가 구글 제미나이 엔터프라이즈를 전사 도입해 '멀티 AI' 전략을 굳히는 사이, 무신사는 코스피 상장을 향한 첫 발을 뗐다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성전자 DX부문, 구글 '제미나이 엔터프라이즈' 전사 도입",
+            "url": "https://view.asiae.co.kr/article/2026071311234790713",
+            "source": "아시아경제",
+            "pubDate": "2026-07-13",
+            "image": "https://cphoto.asiae.co.kr/listimglink/1/2024060415432895835_1717483408.png",
+            "insight": "구글 클라우드는 7월 13일 삼성전자 DX부문 전 세계 임직원에게 '제미나이 엔터프라이즈'를 제공한다고 발표했다. 삼성전자 DX부문 전용 구글 클라우드 테넌트 환경에 구축돼 데이터 주권과 거버넌스를 보장하며, 개발 인력뿐 아니라 비개발 인력도 직접 AI 에이전트를 만들 수 있도록 하는 것이 목표로 제시됐다. <b>이미 오픈AI의 챗GPT 엔터프라이즈를 쓰던 조직에 제미나이까지 더해지면서, 특정 플랫폼에 종속되지 않으려는 '멀티 AI' 전략으로 해석되고 있다.</b>"
+          },
+          {
+            "title": "딜로이트 코리아 \"국내 기업 AI 도입 빨라도 비즈니스 모델 재설계는 뒤처져\"",
+            "url": "https://www.asiae.co.kr/en/article/2026030510095056518",
+            "source": "Asia Business Daily",
+            "pubDate": "2026-03-05",
+            "image": "https://cphoto.asiae.co.kr/listimglink/1/2026030510091462643_1772672954.png",
+            "insight": "딜로이트가 전 세계 AI 추진 리더 3,200여 명을 설문한 'State of AI in the Enterprise 2026' 보고서에 따르면, 승인된 AI 도구 접근률은 1년 전 약 40%에서 60%로 늘었고 기업의 25%는 AI 파일럿의 40% 이상을 완전 가동 단계로 전환했다고 답했다. 그러나 AI로 신제품·서비스를 만들거나 핵심 프로세스와 비즈니스 모델 자체를 바꾼 기업은 34%에 불과했고, 84%는 AI 도입에 맞춰 조직이나 업무 방식을 재설계하지 않았다고 답했다. <b>에이전틱 AI를 2년 내 어느 정도 이상 도입할 것이라는 응답은 74%에 달했지만, 자율 에이전트에 대한 성숙한 거버넌스 체계를 갖췄다는 응답은 21%에 그쳤다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "KB국민카드, 기업카드 디자인 체계 전면 개편",
+            "url": "https://www.smarttoday.co.kr/ko-kr/articles/102689",
+            "source": "스마트투데이",
+            "pubDate": "2026-02-03",
+            "image": "https://cdn.www.smarttoday.co.kr/w1200/q100/f_jpg/article-images/2026-02-03/a743f94f-989a-4fdf-92ea-2762812a427b.jpg",
+            "insight": "KB국민카드가 개인사업자·법인 고객을 위한 기업카드 디자인을 전면 리뉴얼했다. 가장 먼저 시선이 가는 카드 좌상단에 고객사의 로고를 배치해 발급받는 기업의 브랜드가 카드 디자인의 중심이 되도록 했고, 카드 하단에는 'with KB국민카드' 문구를 넣어 기업을 이끄는 대신 곁에서 함께하는 파트너라는 메시지를 전달했다. <b>KB 관계자는 \"금융사의 시각이 아닌 고객의 시각에서 카드의 역할을 다시 생각했다\"며 기업 고객 경험 전반을 계속 개선해 나가겠다고 밝혔다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "무신사, 코스피 상장 예비심사 청구…IPO 절차 본격 시작",
+            "url": "https://www.insight.co.kr/news/572498",
+            "source": "인사이트",
+            "pubDate": "2026-09-08",
+            "image": "https://img.insight.co.kr/static/2026/09/08/1200/img_20260908142018_82zq15qv.jpg",
+            "insight": "무신사가 9월 7일 한국거래소에 코스피 상장을 위한 예비심사를 청구하며 IPO 절차에 본격 착수했다. 상장 예정 주식은 약 2억 2,783만 주이며, 한국투자증권·씨티그룹글로벌마켓증권·KB증권·JP모간이 대표 주관사를 맡는다. 올해 상반기 연결 매출은 8,217억원으로 전년 동기 대비 늘었지만 15억 5천만원의 순손실을 냈고, 시장은 최대 10조원으로 거론되던 기업가치가 공모 디스카운트를 감안해 8조원 안팎에서 형성될 것으로 보고 있다. <b>심사 결과는 영업일 기준 45일 이내 통보되며, 승인되면 6개월 안에 증권신고서 제출과 공모·상장을 완료해야 한다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
