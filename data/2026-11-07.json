@@ -1,0 +1,145 @@
+{
+  "intl": {
+    "date": "2026-11-07",
+    "dateLabel": "2026년 11월 7일 토요일",
+    "region": "해외",
+    "takeawayHtml": "구글 Gemini Omni 1.2 Flash, 텐센트 Hy4, OpenAI GPT-6 Cyber까지 한 주 사이 쏟아지며, <b>AI 모델 경쟁이 영상 생성·비전·사이버보안 전반으로 동시다발 확전되고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "구글, 15초 분량 영상 생성·편집 가능한 'Gemini Omni 1.2 Flash' 정식 출시",
+            "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-6-2026/",
+            "source": "The Neuron",
+            "pubDate": "2026-11-05",
+            "image": "https://cdn.theneuron.ai/everything-that-happened-in-ai-today-november-6-2026.png",
+            "insight": "구글이 11월 5일 영상 생성·편집 모델 Gemini Omni 1.2 Flash를 정식 출시(GA)했다. 클립 길이가 기존 10초에서 15초로 늘었고, 후속 프롬프트로 반복 편집이 가능하며 여러 캐릭터와 참조 이미지 간 일관성도 개선됐다. <b>720p 영상 생성 가격은 30% 인하되어 초당 0.07달러로 책정됐다.</b>"
+          },
+          {
+            "title": "텐센트, 시각 이해·컴퓨터 사용 기능 더한 차세대 모델 'Hy4' 공개",
+            "url": "https://www.nocode.mba/ai-release-tracker/2026/11",
+            "source": "nocode.mba AI Release Tracker",
+            "pubDate": "2026-11-04",
+            "image": null,
+            "insight": "텐센트가 11월 4일 시각 이해와 컴퓨터 사용 기능을 새롭게 추가한 대규모 언어 모델 Hy4를 공개했다. <b>모델 가중치와 시스템 카드는 며칠 내 공개될 예정이라고 밝혔다.</b>"
+          },
+          {
+            "title": "OpenAI, 취약점 탐지용 보안 특화 모델 'GPT-6 Cyber' 제한적 공개",
+            "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-6-2026/",
+            "source": "The Neuron",
+            "pubDate": "2026-11-05",
+            "image": "https://cdn.theneuron.ai/everything-that-happened-in-ai-today-november-6-2026.png",
+            "insight": "OpenAI가 11월 5일 승인된 연구자들이 취약점을 찾고 보안 방어를 테스트하기 위한 익스플로잇을 개발하도록 돕는 모델 GPT-6 Cyber를 선보였다. 이 모델의 사이버보안 능력은 'Critical' 등급으로 분류됐으며, 초기 접근은 OpenAI의 선별 프로그램 Daybreak Red 소속 조직으로 제한됐다. <b>강력한 공격 능력을 갖춘 모델인 만큼 접근 범위를 의도적으로 좁게 유지한 것이 특징이다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "영국 UX 브라이턴 2026, '떠오르는 방법론'을 주제로 열려",
+            "url": "https://brightondome.org/whats-on/LSN-ux-brighton-conference-2026-emerging-methods/",
+            "source": "UX Brighton / Brighton Dome",
+            "pubDate": "2026-11-06",
+            "image": "https://brightondome.org/images/uploads/f01e71e71b4f28ee6a61563ee0fbad4e.jpg",
+            "insight": "14번째를 맞은 UX 브라이턴 컨퍼런스가 11월 6일 'Emerging Methods'를 주제로 브라이턴돔에서 열렸다. <b>행사의 핵심 목표는 최근 쏟아지는 새로운 UX 리서치 방법론 중 실제로 유용한 것과 금방 지나갈 유행을 가려내는 것이었다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Qt그룹, 임베디드 UX를 위한 노코드·AI 네이티브 디자인 툴 'Clate' 출시",
+            "url": "https://www.qt.io/blog/meet-clate-the-first-design-tool-for-real-world-experiences",
+            "source": "Qt Group",
+            "pubDate": "2026-10-27",
+            "image": "https://www.qt.io/hubfs/clate-ux-design-tools-icon.png",
+            "insight": "Qt그룹이 임베디드·HMI 애플리케이션을 위한 노코드 AI 네이티브 디자인 툴 Clate를 공개하고 같은 날 베타를 시작했다. Qt 자체 조사에서 임베디드 UX 디자이너의 59%가 새로운 툴이 필요하다고 답한 것이 개발 배경이 됐으며, Clate는 QML 코드를 자동 생성하고 MCP 서버를 내장해 에이전트 연동을 지원한다. <b>정식 출시는 2027년 초로 예정돼 있다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "가트너, 고객서비스 리더 중 AI ROI 달성한 비율 단 4%에 불과",
+            "url": "https://www.gartner.com/en/newsroom/press-releases/2026-11-04-gartner-survey-reveals-just-4-percent-of-customer-service-leaders-have-achieved-the-expected-roi-of-their-ai-initiatives",
+            "source": "Gartner",
+            "pubDate": "2026-11-04",
+            "image": null,
+            "insight": "가트너가 11월 4일 발표한 조사에 따르면 고객서비스·지원 리더 275명 중 AI 이니셔티브에서 기대했던 투자 대비 효과(ROI)를 달성했다고 답한 비율은 단 4%에 그쳤다. <b>해당 조사는 2026년 7~8월 사이 진행됐다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-07",
+    "dateLabel": "2026년 11월 7일 토요일",
+    "region": "국내",
+    "takeawayHtml": "배달의민족이 주문 전 예측까지 나서는 '심리스 시티'를 선언하고 삼성전자가 AI 반도체 패키징 경쟁력에 총력을 기울이면서, <b>국내 산업계는 AI를 서비스 경험의 핵심 동력으로 전면에 내세우고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "배달의민족, AI로 주문 전부터 예측하는 '심리스 시티' 비전 제시",
+            "url": "https://byline.network/2026/10/28_9281873/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-10-28",
+            "image": null,
+            "insight": "배달의민족이 '우아한테크콘퍼런스 2026'에서 고객·가게·라이더·로봇을 하나의 실시간 네트워크로 묶어 대기 시간을 없애는 '심리스 시티' 비전을 공개했다. 조리시간 예측 오차를 평균 50% 줄인 AI 모델과 우천 시 라이더 수급을 자동화해 대응 시간을 80% 줄이는 기술, 고객 변수 3000개를 활용한 초개인화 추천 엔진이 함께 소개됐다. <b>대화형 AI 검색 기능도 시범 도입하며 주문 전 탐색 단계까지 AI가 개입하는 구조를 그렸다.</b>"
+          },
+          {
+            "title": "이재용 삼성전자 회장, 일본 첨단 패키징 연구거점 방문해 AI 반도체 경쟁력 점검",
+            "url": "https://www.fnnews.com/news/202611011836116133",
+            "source": "파이낸셜뉴스",
+            "pubDate": "2026-11-01",
+            "image": "https://image.fnnews.com/resource/media/image/2026/11/01/202611011836097159_e.jpg",
+            "insight": "이재용 삼성전자 회장이 11월 1일 일본 요코하마의 첨단 패키징 연구거점 APL을 찾아 개소 약 두 달 만에 첫 현장 점검을 진행했다. 삼성은 2024년부터 5년간 400억엔을 투자해 이 연구거점을 구축했으며, 저전력·고성능 AI 반도체용 패키징 기술 확보가 핵심 과제로 제시됐다. <b>이 회장은 AI 시대 반도체 경쟁력의 핵심인 첨단 패키징 기술 확보를 현지 소부장 기업들과의 협력을 통해 주문했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "세븐일레븐 코리아, 숫자 '7' 중심으로 새 비주얼 아이덴티티 선보여",
+            "url": "https://designcompass.org/2026/07/14/7-eleven-korea-new-visual-identity/",
+            "source": "디자인컴퍼스",
+            "pubDate": "2026-07-14",
+            "image": "https://designcompass.org/wp-content/uploads/2026/07/seven-eleven.jpg",
+            "insight": "세븐일레븐 코리아가 서울 기반 브랜딩 스튜디오 MHTL과 함께 숫자 '7'을 중심으로 브랜드 시스템을 새롭게 확장한 비주얼 아이덴티티를 공개했다. 기존 로고의 대각선 구조와 초록·주황·빨강 팔레트를 유지하면서도 매장 외관, 패키지, 안내 사인, 모바일 화면까지 일관되게 적용되도록 설계됐다. <b>이 비주얼 아이덴티티는 '2026 레드닷 디자인 어워드' 브랜드&커뮤니케이션 부문 본상을 수상했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "토스페이먼츠 '퀵계좌이체', 월 거래액 1000억원 돌파",
+            "url": "https://www.insight.co.kr/news/572105",
+            "source": "인사이트",
+            "pubDate": "2026-09-06",
+            "image": "https://img.insight.co.kr/static/2026/09/06/1200/img_20260906123956_122kbak0.jpg",
+            "insight": "토스 운영사 비바리퍼블리카가 8월 말 기준 퀵계좌이체의 월 거래액이 1000억원을 돌파했다고 밝혔다. 누적 이용자는 1200만명을 넘어섰으며, 결제 성공률은 92%로 전년 87.2%보다 4.8%포인트 상승했다. <b>2023년 4월 출시 이후 누적 이용자가 650만명에서 1200만명으로 늘어나는 등 빠른 성장세를 보이고 있다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
