@@ -1,0 +1,130 @@
+{
+  "intl": {
+    "date": "2026-11-08",
+    "dateLabel": "2026년 11월 8일 일요일",
+    "region": "해외",
+    "takeawayHtml": "OpenAI가 사이버보안 '심각' 등급의 첫 모델 'GPT-6 Astra'를 내놓고 빅테크가 AI 투자를 725조원까지 늘리는 가운데, <b>가트너는 AI가 '사용자'라는 개념 자체를 다시 쓰고 있다고 진단했다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "OpenAI, 차세대 모델 'GPT-6 Astra' 공개...사이버보안 '심각' 등급 첫 사례",
+            "url": "https://www.foxbusiness.com/technology/openai-unveils-gpt-6-astra-major-advances-ai-capabilities",
+            "source": "Fox Business",
+            "pubDate": "2026-09-03",
+            "image": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2024/07/0/0/OpenAI-ChatGPT-1.jpg?ve=1&tl=1",
+            "insight": "OpenAI가 9월 3일 'GPT-6 Astra'를 제한적으로 공개한 뒤 유료 플랜까지 확대했으며, 토큰당 10달러(입력)·50달러(출력)의 가격을 책정했다. <b>이 모델은 OpenAI의 자체 안전성 체계에서 사이버보안 위험이 '심각(Critical)' 등급으로 분류된 첫 사례로, ARC-AGI-3에서도 자체 하네스 기준 99.9%라는 수치를 내놓았다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "가트너 '2026 UX 하이프 사이클'...AI가 '사용자'의 정의를 바꾼다",
+            "url": "https://www.gartner.com/en/documents/7850881",
+            "source": "Gartner",
+            "pubDate": "2026-05-13",
+            "image": null,
+            "insight": "가트너는 '2026 UX 하이프 사이클' 보고서에서 AI가 '누가 사용자인가'라는 질문 자체를 재구성하며 인터페이스가 제공할 수 있는 경험의 범위와 UX 작업 방식을 바꾸고 있다고 진단했다. <b>보고서는 AI 에이전트를 제품팀이 고려해야 할 새로운 유형의 '사용자'로 규정하고, MCP와 휴먼 인사이트 플랫폼을 떠오르는 카테고리로 분류했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "캔바, 2026년 디자인 트렌드 보고서 발표...'의도된 불완전성'이 새 기준",
+            "url": "https://ditoday.com/?p=139189",
+            "source": "디자인프레스",
+            "pubDate": "2026-01-14",
+            "image": "https://ditoday.com/wp-content/uploads/2026/01/이미지-캔바-2026년-디자인-트렌드-보고서-발표_20260112.jpg",
+            "insight": "캔바는 제3회 연례 디자인 트렌드 보고서에서 AI 활용이 보편화될수록 시각적 진정성이 오히려 차별화 요소가 된다며 'Imperfect by Design(의도된 불완전성)'을 새로운 창작 기준으로 제시했다. 미국·브라질 크리에이터 1,000명 설문에서 77%가 AI를 필수적인 파트너로 인식한다고 답했으며, 현실과 초현실의 경계를 흐리는 'Reality Warp' 관련 검색량은 전년 대비 220% 늘었다. <b>보고서는 질감과 제작 과정의 흔적을 그대로 드러내는 'Texture Check'와 'Notes App Chic' 등을 AI 시대의 반작용적 트렌드로 꼽았다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "빅테크 4사, 2026년 AI 투자 725조원 규모로 확대",
+            "url": "https://www.tomshardware.com/tech-industry/big-tech/big-techs-ai-spending-plans-reach-725-billion",
+            "source": "Tom's Hardware",
+            "pubDate": null,
+            "image": "https://cdn.mos.cms.futurecdn.net/imAAPcMxEKi3AJFyFvaDfH-2000-80.jpg",
+            "insight": "마이크로소프트, 메타, 아마존, 알파벳 등 빅테크 4사의 2026년 AI 관련 자본지출(capex) 합산 전망치가 약 7,250억 달러로, 전년 대비 77% 증가할 것으로 집계됐다. <b>마이크로소프트는 2026년 캘린더 연도 capex를 1,900억 달러로 책정했고, 메타는 메모리 칩과 데이터센터 비용 상승을 이유로 연간 가이던스를 1,250억~1,450억 달러로 올려 잡았다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-08",
+    "dateLabel": "2026년 11월 8일 일요일",
+    "region": "국내",
+    "takeawayHtml": "넥슨이 설문 분석을 3주에서 30분으로 줄인 AI 리서치 툴을 선보이고 모티프테크놀로지스가 마이크로소프트 마켓플레이스에 자체 LLM을 올린 가운데, <b>인베스트 코리아 서밋에서는 해외 기업들의 투자 약속이 역대 최대 규모로 몰렸다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "모티프테크놀로지스, 자체 LLM 'Motif-2' 마이크로소프트 마켓플레이스에 등록",
+            "url": "https://byline.network/2026/08/0811-9/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-08-11",
+            "image": null,
+            "insight": "모티프테크놀로지스가 자체 개발한 추론 특화 LLM 'Motif-2-12.7B'(매개변수 127억 개)를 마이크로소프트 마켓플레이스에 등록해 글로벌 애저 고객에게 공급을 넓힌다고 8월 11일 밝혔다. 기업 고객은 별도 인프라 구축 없이 마켓플레이스에서 모델을 선택해 애저 환경에 API 엔드포인트를 생성해 쓸 수 있으며, 비용은 기존 마이크로소프트 계약·구매 절차와 연계된다. <b>이 모델은 지난해 11월 허깅페이스에 오픈소스로 공개된 직후 AI 성능 평가기관 아티피셜 애널리시스의 AAII 지표에서 국내 1위를 기록했다고 회사 측은 밝혔다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "넥슨, 설문 분석 3주→30분으로 줄인 AI 리서치 툴 'Insight Finder' 공개",
+            "url": "https://labs.invenglobal.com/articles/22842/from-3-weeks-to-30-minutes-nexons-research-analysis-tool-insight-finder",
+            "source": "Inven Global",
+            "pubDate": "2026-06-16",
+            "image": "https://static.invenglobal.com/upload/image/2026/06/16/r1781596764335210.png",
+            "insight": "넥슨코리아 게임 UX 분석팀은 NDC 2026에서 설문 데이터 정제부터 통계 검정, 보고서 작성까지 2~3주 걸리던 작업을 30분 이내로 줄인 자체 분석 툴 'Insight Finder'를 공개했다. 통계 계산과 유의성 판단처럼 정확성이 필수인 작업은 검증된 결정론적 파이프라인이 맡고, 결과의 자연어 해석 같은 언어 중심 작업만 AI가 담당하는 역할 분담 원칙을 세웠다. <b>별도 홍보 없이 4개월 만에 여러 게임팀에서 100명 이상이 자발적으로 사용했고, 설문당 분석 관점도 도입 전 3~4개에서 평균 19개로 늘었다고 발표했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "스튜디오 fnt, 한화생명 '63빌딩' 새 브랜드 아이덴티티 디자인",
+            "url": "https://designcompass.org/2026/06/08/63-building-rebranding/",
+            "source": "디자인컴퍼스",
+            "pubDate": "2026-06-08",
+            "image": "https://designcompass.org/wp-content/uploads/2026/06/63Building-4.jpg",
+            "insight": "한화생명보험은 본사 사옥 63빌딩의 상업시설을 전면 리뉴얼하며 그래픽 디자인 스튜디오 fnt에 새 브랜드 아이덴티티(BI) 작업을 맡겼다. 새 로고는 정식 명칭인 '63스퀘어' 대신 대중에게 익숙한 숫자 '63'을 전면에 내세워, 복잡한 설명 없이 기존 도시 자산으로서의 인지도를 복합문화공간이라는 새 이미지로 연결했다. <b>스튜디오 fnt는 익숙한 이름의 상징성을 그대로 브랜드의 중심에 두는 방식을 택했다고 설명했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "'인베스트 코리아 서밋 2026' 개막...해외 기업 20억달러 투자 역대 최대 유치",
+            "url": "https://biz.heraldcorp.com/article/10924979",
+            "source": "헤럴드경제",
+            "pubDate": "2026-11-04",
+            "image": "https://wimg.heraldcorp.com/news/cms/2026/11/04/rcv.YNA.20261029.PYH2026102911910001300_P1.jpg",
+            "insight": "11월 4일 서울 그랜드인터컨티넨탈에서 개막한 '인베스트 코리아 서밋(IKS) 2026'에서 7개 글로벌 기업이 총 20억 달러(2조6,900억원) 규모의 투자를 약속해 이 행사 사상 최대 기록을 세웠다. <b>약속된 투자액 중 97%(19억7,000만 달러)가 수도권이 아닌 지방에 배정돼, 투자 유치의 지역 분산 효과가 두드러졌다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
