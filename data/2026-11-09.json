@@ -1,0 +1,112 @@
+{
+  "intl": {
+    "date": "2026-11-09",
+    "dateLabel": "2026년 11월 9일 월요일",
+    "region": "해외",
+    "takeawayHtml": "<b>앤트로픽이 Opus 5.5로 비용은 낮추고 코딩 성능은 끌어올렸고, 피그마는 Config 2026에서 디자인과 코드, AI 에이전트를 하나의 캔버스로 통합했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, 새 'Opus 5.5' 모델 공개...비용 40% 절감",
+            "url": "https://www.anthropic.com/news/claude-opus-5-5",
+            "source": "Anthropic",
+            "pubDate": "2026-09-22",
+            "image": "https://assets.claude.com/f4d37a1d1f582f53f4e89440062b649b6273a093.jpg",
+            "insight": "앤트로픽이 Claude 5.5 패밀리의 첫 모델인 Opus 5.5를 공개했다. <b>이번 모델은 코딩 벤치마크 Terminal-Bench 4.0에서 66.4%를 기록해 기존 Opus 5(52.3%)와 GPT-6 Astra(57.9%)를 모두 앞섰다.</b> 가격은 입력 토큰 100만 개당 4달러로 기존보다 20% 낮췄고, 일반적인 작업 기준 전체 비용은 약 40% 줄었다. 안전성 테스트에서는 제한 우회 시도가 이전 모델보다 약 85% 줄어든 것으로 나타났다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "피그마, Config 2026에서 코드와 AI 에이전트를 아우르는 캔버스 공개",
+            "url": "https://www.figma.com/blog/config-2026-recap/",
+            "source": "Figma",
+            "pubDate": "2026-06-24",
+            "image": "https://cdn.sanity.io/images/599r6htc/regionalized/ae0303b2ad7753600fee94eb32a43e026cc220ae-3264x1836.png?w=1200&q=70&fit=max&auto=format",
+            "insight": "피그마가 연례 컨퍼런스 Config 2026에서 디자인과 코드, AI 에이전트를 하나의 캔버스에 통합하는 업데이트를 발표했다. <b>디자인 레이어를 그대로 편집 가능한 코드 레이어로 전환할 수 있는 '코드 레이어' 기능이 7월부터 얼리 액세스로 제공된다.</b> 키프레임 기반 모션 편집 도구 '피그마 모션', 자연어로 셰이더를 만드는 기능, 노션·슬랙과 연동되는 피그마 에이전트도 함께 공개되며 디자인 도구의 역할이 한층 확장됐다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "맥킨지, 2026년 14대 기술 트렌드 발표...에이전틱 AI가 '기업 표준' 됐다",
+            "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-takeaways/the-top-trends-in-tech",
+            "source": "McKinsey & Company",
+            "pubDate": "2026-09-22",
+            "image": null,
+            "insight": "맥킨지가 'Technology Trends Outlook 2026' 보고서에서 14대 기술 트렌드를 제시하며, 여러 단계를 스스로 계획해 처리하는 에이전틱 AI가 파일럿 단계를 지나 기업의 표준이 됐다고 진단했다. <b>조직의 89%가 최소 한 개 업무 영역에서 AI를 정기적으로 활용하지만, 실제로 수익 개선 효과를 보고한 곳은 37%에 그쳤다.</b> 올해 상반기 에이전틱 소프트웨어 개발 분야에만 610억 달러 이상이 투자됐으며, 보고서는 추론(inference) 비용이 2030년까지 데이터센터 컴퓨팅 수요의 30~40%를 차지할 것으로 전망했다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-09",
+    "dateLabel": "2026년 11월 9일 월요일",
+    "region": "국내",
+    "takeawayHtml": "<b>네이버 웨일이 AI 브라우저로 진화하고 토스가 홈페이지를 전면 개편한 가운데, 한국은 인베스트 코리아 서밋에서 역대 최대인 2조 원 규모의 투자를 유치했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버 웨일, 'AI Chat' 정식 출시...AI 브라우저로 진화",
+            "url": "https://www.navercorp.com/media/pressReleasesDetail?seq=10034705",
+            "source": "네이버",
+            "pubDate": "2026-10-01",
+            "image": "https://www.navercorp.com/img/og/OG_TAG_6_Media.png",
+            "insight": "네이버 웨일 브라우저가 'AI Chat' 기능을 정식 출시하며 AI 브라우저로의 전환을 공식화했다. <b>사이드바에서 현재 보고 있는 웹페이지나 선택한 탭을 기반으로 요약·번역·질의응답을 할 수 있고, 네이버 캘린더와 연동해 일정 조회·등록까지 처리할 수 있다.</b> 일정 추가처럼 되돌리기 어려운 작업은 사용자 확인을 먼저 거치도록 설계됐으며, 출시 10주년에 맞춰 로고와 브랜드 컬러도 함께 새로 바꿨다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "토스, 홈페이지 전면 개편...10년 성장 과정을 스크롤로 풀어내다",
+            "url": "https://ditoday.com/토스-홈페이지-전면-개편-발표-10년-비즈니스-확장-과/",
+            "source": "디자인프레스(디투데이)",
+            "pubDate": "2026-08-18",
+            "image": null,
+            "insight": "토스 운영사 비바리퍼블리카가 메인 홈을 포함한 70여 개 페이지를 전면 재구성했다. <b>메인 화면은 스크롤을 시간의 흐름처럼 활용해, 과거 서비스 화면을 실제 앱 스크린 형태로 보여준 뒤 다음 10년의 비전으로 이어지는 타임라인 구조로 설계됐다.</b> 인트로 영상에는 생성형 AI와 3D 기술을 활용했으며, 흩어져 있던 보도자료를 한곳에 모으는 뉴스룸도 새로 열었다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "한국, 인베스트 코리아 서밋에서 역대 최대 2조 원 투자 유치",
+            "url": "https://www.koreaherald.com/article/10925831",
+            "source": "The Korea Herald",
+            "pubDate": "2026-11-04",
+            "image": "https://wimg.heraldcorp.com/news/cms/2026/11/04/news-p.v1.20261104.5a9f4c7b4bc8495a9ed1ef382d285d86_P1.jpg",
+            "insight": "산업통상자원부와 코트라가 주최한 '인베스트 코리아 서밋 2026'에서 한국이 해외 기업 7곳으로부터 총 20억 달러(약 2조 원) 규모의 투자 유치를 확정했다. <b>이는 22년 서밋 역사상 최대 규모로, 유치액의 97%가 수도권 밖 지역에 투자될 예정이다.</b> AI 반도체용 첨단 패키징과 HBM 소재 분야에 투자가 집중됐으며, 에어리퀴드·앰코테크놀로지·헨켈·도쿄일렉트론 등의 참여가 확정됐다."
+          }
+        ]
+      }
+    ]
+  }
+}
