@@ -1,0 +1,218 @@
+{
+  "intl": {
+    "date": "2026-11-10",
+    "dateLabel": "2026년 11월 10일 화요일",
+    "region": "해외",
+    "takeawayHtml": "Meta가 에이전트 전용 경량 모델 'Muse Ember'를 초저가로 선보인 가운데, <b>엔비디아는 젠슨 황 CEO를 둘러싼 스캔들 조사로 리더십 불확실성에 휩싸였다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "메타, 에이전트 실행용 경량 모델 'Muse Ember' 출시",
+            "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-09",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/11/Blog-Header-Visual.png?resize=1200,675",
+            "insight": "Meta Superintelligence Labs가 도구 호출과 데이터 추출처럼 에이전트가 반복 수행하는 작업에 특화된 경량 모델 Muse Ember를 공개했다. <b>입력 토큰 100만 개당 10센트라는 가격은 Anthropic의 Haiku나 OpenAI의 Luna 같은 경쟁 모델보다 현저히 낮다.</b> 텍스트·이미지·오디오를 함께 처리하도록 학습되어 스크린샷이나 회의 녹음까지 다룰 수 있으며, 고성능 모델 Muse Wonder가 규칙을 세우고 Ember가 대량 작업을 처리하는 분업 구조로 설계됐다."
+          },
+          {
+            "title": "Anthropic, '재귀적 자기개선' 임계치에 근접했다고 경고",
+            "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-02",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/11/Recursive-Neural-Spiral-in-Circuitry.png?resize=1200,600",
+            "insight": "Anthropic이 수정된 증권신고서(S-1/A)의 위험 요인 항목에서 내부 추정과 향후 모델 전망에 따라 책임 있는 확장 정책이 정의한 'AI로 인한 급격한 발전 가속' 임계치에 곧 도달할 수 있다고 밝혔다. <b>회사는 현재 어떤 모델도 이 임계치를 넘었다고 지정하지는 않았지만, 가까운 시일 내 Claude가 인간의 의미 있는 감독 없이 차세대 프런티어 모델을 자율적으로 설계하지 않도록 정책을 검토 중이라고 덧붙였다.</b> 공시 문서가 마케팅 성격도 지닌다는 점에서 이 경고를 신중하게 받아들여야 한다는 시각도 있다."
+          },
+          {
+            "title": "OpenAI, 사이버보안 전용 모델 'ChatGPT Cyber' 공개",
+            "url": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-05",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/08/openai-daybreak.jpg?resize=1200,798",
+            "insight": "OpenAI가 공격적 보안 연구자를 위한 사이버보안 전용 모델 ChatGPT Cyber를 공개하고, 핵심 인프라를 지키는 보안 전문가 지원에 10억 달러 규모 이니셔티브를 함께 발표했다. 회사는 이 모델로 리눅스 커널에서 잠재적 문제 948건을, Firefox에서는 신규 취약점 81건을 찾았다고 밝혔다. <b>그러나 한 보안 연구자는 7월 출시된 모델로 서버를 장악할 수 있는 심각한 취약점을 단 2시간, 5,000달러의 비용으로 찾아냈다며 회사의 기존 보안 모델 성능이 최근 약화됐다고 지적했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "디자인 프로세스는 죽지 않았다, 압축됐을 뿐",
+            "url": "https://www.nngroup.com/articles/design-process-isnt-dead/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-03-13",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Course_Card_A.png",
+            "insight": "Nielsen Norman Group의 Sarah Gibbons와 Huei-Hsin Wang은 AI 시대에 디자인 프로세스를 버리고 직관에 의존하라는 주장에 반론을 제기했다. <b>이들은 \"직관이라 불리는 것은 실은 오랜 경험으로 압축되고 내재화된 프로세스\"라며, 주니어 실무자의 직관 부족과 조직의 책임성 요구, 규제 산업의 위험을 근거로 과정을 생략해서는 안 된다고 주장한다.</b> 결론적으로 필요한 역량은 프로세스 폐기가 아니라 문제에 맞는 접근법을 의도적으로 고르는 '프로세스 리터러시'라고 강조한다."
+          },
+          {
+            "title": "UX 리서치 도구에 숨은 방법론적 결함들",
+            "url": "https://www.nngroup.com/articles/research-tool-problems/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-03-13",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Course_Card_B.png",
+            "insight": "Nielsen Norman Group의 Maria Rosala는 AI 기능까지 갖춘 UX 리서치 도구들이 연구 전문가의 충분한 참여 없이 설계돼 방법론적 결함을 안고 있다고 지적한다. <b>그가 평가한 AI 도구 두 개는 참가자를 특정 방향으로 유도하는 과제와 질문을 생성했으며, 이런 결함을 초보 리서처는 알아채기 어렵다는 점을 경고한다.</b> 그는 도구 개발 초기부터 전문 리서처를 참여시키고, 도입 전 실제 연구로 시범 운영할 것을 권고한다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Apple Music, 소리로 만든 새 로고와 브랜드 아이덴티티 공개",
+            "url": "https://9to5mac.com/2026/10/21/apple-music-unveils-new-design-rebrand-with-logo-made-by-sound/",
+            "source": "9to5Mac",
+            "pubDate": "2026-10-21",
+            "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/10/apple-music-rebrand-logo-new.jpg?quality=82&strip=all&resize=1200,628",
+            "insight": "Apple Music이 리브랜딩을 발표하며 새 로고가 \"소리로 만들어졌다\"고 소개했다. <b>싱어송라이터 Fred again..의 작곡과 NEST Acoustics의 협업으로 소리가 로고의 형태를 물리적으로 만들어냈으며, Apple은 컴퓨터 그래픽이 아니라 카메라로 전부 포착된 실제 제작 방식이라고 강조했다.</b> 새 디자인은 다음 주 출시되는 iOS 27.2에서 사용자에게 적용될 예정이다."
+          },
+          {
+            "title": "인튜이트, JKR과 함께 'One Intuit' 브랜드 체계로 재편",
+            "url": "https://designcompass.org/2026/09/29/intuit-rebrand-visual-identity/",
+            "source": "Design Compass",
+            "pubDate": "2026-09-29",
+            "image": "https://designcompass.org/wp-content/uploads/2026/09/Intuit-I-Beam-System-2-scaled.jpg",
+            "insight": "인튜이트가 디자인 에이전시 JKR과 함께 TurboTax, Credit Karma, QuickBooks, Mailchimp을 하나의 금융 기술 플랫폼으로 묶는 브랜드 아이덴티티를 공개했다. <b>재설계된 워드마크는 고정된 로고를 넘어 화면 안에서 형태가 확장되고 연결되는 가변적 인터페이스 요소로 쓰이며, AI와 사람의 전문성이 함께 작동하는 'Intuit Intelligence' 개념과 연결된다.</b> 각 서비스 고유의 색상과 인지 자산은 필요한 곳에 남겨 공통 체계 안에서도 개별 브랜드의 정체성을 유지했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "엔비디아 CEO 젠슨 황, 이사회 조사 속 거취에 '반반' 전망",
+            "url": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-08",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/09/Jensen-Huang.jpg?resize=1200,800",
+            "insight": "엔비디아 이사회가 젠슨 황 CEO의 불륜 상대가 중국 스파이로 의심된다는 사실이 알려진 뒤 독립 조사에 착수했다. 예일대 제프리 소넨펠드 교수는 황 CEO가 자리를 지킬 확률을 \"about a 50-50\"으로 추정하며 이번 판단을 \"remarkably poor judgment\"라고 평가했다. <b>황 CEO는 경영권을 보장하는 초과의결권 주식을 갖고 있지 않으며, 직속 부하 약 60명을 둔 평평한 조직 구조 때문에 뚜렷한 후계자도 없어 이번 사태가 업계 전반에 미칠 파장이 주목된다.</b>"
+          },
+          {
+            "title": "헤지펀드, 사상 최고 속도로 빅테크 주식 매도",
+            "url": "https://www.bloomberg.com/news/articles/2026-11-09/hedge-funds-dump-tech-stocks-at-one-of-fastest-paces-on-record",
+            "source": "Bloomberg",
+            "pubDate": "2026-11-09",
+            "image": null,
+            "insight": "헤지펀드들이 지난주 사상 가장 빠른 속도로 글로벌 기술주를 매도한 것으로 나타났다. <b>정치적 반대 여론이 데이터센터 건설 확대 속도를 늦출 수 있다는 우려가 매도 배경으로 지목된다.</b>"
+          },
+          {
+            "title": "캔바, 성장 둔화 속 전체 인력 22% 감원",
+            "url": "https://techcrunch.com/2026/11/04/canva-lays-off-over-1200-people-amid-slowing-growth/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-04",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/04/GettyImages-2263283392.jpg?resize=1200,786",
+            "insight": "디자인 소프트웨어 기업 캔바가 전체 직원의 22%인 약 1,271명을 감원한다고 밝혔다. <b>회사는 10년 만에 처음으로 성장세가 둔화됐다며 연간 매출 성장률 전망치를 30%에서 20%로 낮췄고, AI 비용 증가를 주요 원인으로 지목했다.</b> 초기 투자자들은 올해 초 캔바의 기업가치를 약 350억 달러로 낮춰 평가했으며, 회사는 제품·성장·플랫폼 조직을 통합하고 하이브리드 근무를 강화하는 조직 개편도 함께 진행한다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-10",
+    "dateLabel": "2026년 11월 10일 화요일",
+    "region": "국내",
+    "takeawayHtml": "네이버와 카카오가 나란히 '통합 AI 에이전트' 경쟁에 속도를 내는 가운데, <b>정부는 AI 3강 도약을 위해 반도체·데이터센터·피지컬 AI에 1500조원을 투입하는 메가 플랜을 내놨다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버, '통합 에이전트' 구축 앞당긴다…카카오·배민도 자연어 AI 검색 확대",
+            "url": "https://www.etnews.com/20261104000273",
+            "source": "전자신문",
+            "pubDate": "2026-11-04",
+            "image": "https://img.etnews.com/news/article/2025/11/06/news-p.v1.20251106.d450bd444c654e64866835488ab2b158_P1.jpg",
+            "insight": "네이버가 검색·쇼핑·지도 등 버티컬 에이전트를 하나로 연결하는 '통합 에이전트' 구축 일정을 앞당기고 있으며, 내년 상반기 출시가 전망된다. <b>카카오는 다음 달 통합 AI 어시스턴트 '카나나 스페이스'의 비공개 베타테스트를 시작해 일정 등록과 웹 검색 등을 지원하고, 배달의민족도 대화형 AI 검색 CBT를 진행 중이어서 플랫폼 경쟁의 축이 '검색'에서 '실행'으로 옮겨가고 있다.</b>"
+          },
+          {
+            "title": "과기정통부, AI 3강 도약 위해 반도체·AI데이터센터·피지컬AI에 1500조원 투자",
+            "url": "https://www.etnews.com/20261028000031",
+            "source": "전자신문",
+            "pubDate": "2026-10-28",
+            "image": "https://img.etnews.com/news/article/2026/10/28/news-p.v1.20261028.58628be5eb254183ac8ad89639a5e325_P1.jpg",
+            "insight": "정부가 미국·중국과의 AI 격차를 좁히기 위해 반도체(800조원 이상), AI 데이터센터(550조원), 피지컬 AI(20조원)를 연계한 3대 메가프로젝트에 민·관 합계 1,500조원을 투자하는 계획을 공개했다. <b>이진수 과학기술정보통신부 인공지능정책기획관은 \"반도체가 두뇌, 데이터센터는 심장, 피지컬 AI는 신체\"라고 설명했으며, 올해 7월 샌프란시스코 AI 서밋에서는 9,500억 달러 규모의 AI 인프라 협약 6건이 체결됐다.</b>"
+          },
+          {
+            "title": "NIPA, 'AI 고속도로' 위해 올해 GPU 1만 9000장 추가 확보",
+            "url": "https://zdnet.co.kr/view/?no=20261015110351",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-10-15",
+            "image": "https://image.zdnet.co.kr/2026/10/15/f3822157f97d94560548f0f597063318.jpg",
+            "insight": "정보통신산업진흥원(NIPA)이 국회 국정감사에서 AI 컴퓨팅 인프라 확충 성과를 밝혔다. <b>박윤규 NIPA 원장은 \"AI 고속도로 구축을 위해 지난해 GPU 1만 5000장을 도입한 데 이어 올해도 GPU 1만 9000장을 선제적으로 확보했다\"고 말했으며, 독자 AI 모델 개발 사업의 성과로 글로벌 평가기관이 한국을 '세계 3위 AI 모델 보유국'으로 평가했다고 설명했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "네이버, 스마트스토어 구매 절차 단축 2차 테스트…쿠팡과 '쇼핑 경험' 경쟁",
+            "url": "https://www.etnews.com/20261104000178",
+            "source": "전자신문",
+            "pubDate": "2026-11-04",
+            "image": "https://img.etnews.com/news/article/2026/11/03/news-p.v1.20261103.1cec1e7ab4ab46d19d5fe229efc1749f_P1.png",
+            "insight": "네이버가 스마트스토어 상품 상세 페이지의 구매 절차를 개선하는 2차 A/B 테스트를 진행했다. <b>옵션이 없거나 하나뿐인 상품은 옵션 선택 화면을 건너뛰고 곧바로 수량 선택과 장바구니·바로구매로 넘어가도록 했으며, 쿠폰 배너와 예상 주문금액 표시 방식도 함께 비교했다.</b> 네이버는 7월 진행한 1차 실험에서 구매 전환과 사용성 지표에 유의미한 변화가 있었다고 밝혔고, 이를 고도화해 전체 적용 여부를 검토 중이다."
+          },
+          {
+            "title": "토스, 서비스를 하나의 흐름으로 묶은 공식 홈페이지 전면 개편",
+            "url": "https://zdnet.co.kr/view/?no=20260818082848",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-08-18",
+            "image": "https://image.zdnet.co.kr/2026/08/18/c3284a049be315a40be51c6c24baadca.jpg",
+            "insight": "토스(비바리퍼블리카)가 송금·자산관리·투자 등 개별로 소개하던 서비스를 하나의 맥락으로 연결해 보여주는 방식으로 공식 홈페이지를 전면 개편했다. <b>토스 측은 \"홈페이지를 둘러보는 것만으로도 토스가 무엇을 하는 회사인지 이해할 수 있도록\" 하는 데 초점을 맞췄다고 밝혔으며, 인트로 영상은 AI로 제작하고 세밀한 카메라 이동이 필요한 구간은 3D로 작업했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "신한은행, 'Embracing Forward' 내세운 비주얼 아이덴티티 리뉴얼",
+            "url": "https://design.co.kr/article/174756/",
+            "source": "월간 디자인",
+            "pubDate": "2026-09-28",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/09/27231309/20260927141307-20260927_141307.jpg",
+            "insight": "신한은행이 디자인 스튜디오 오와이웍스와 함께 \"Embracing Forward\"를 핵심 키워드로 한 비주얼 아이덴티티 리뉴얼을 진행했다. <b>고객 접점을 상징하는 서클과 라인을 기본 모티프로 삼아 신뢰와 전문성을 직관적으로 표현했으며, 과거의 가치와 미래 비전을 잇는다는 방향을 담았다.</b>"
+          },
+          {
+            "title": "유한킴벌리, 캠페인 42주년 맞아 로고·전용 서체·캐릭터 리뉴얼",
+            "url": "https://design.co.kr/article/165017/",
+            "source": "월간 디자인",
+            "pubDate": "2026-06-17",
+            "image": "https://design.co.kr/wp-content/uploads/2026/06/20260616010045-KKG-Brand-Story.gif",
+            "insight": "유한킴벌리가 '우리강산 푸르게 푸르게' 캠페인 42주년을 맞아 디자인 스튜디오 CFC와 함께 BI, 전용 서체, 캐릭터를 함께 리뉴얼했다. <b>1984년 최초 로고의 하트 윤곽선을 현대적으로 되살려 숲·나무·강을 하나의 하트 형태로 엮었고, 폰트릭스와 공동 개발한 전용 서체 '유한킴벌리 푸른숲체'와 함께 \"자연의 소식을 전하는 메신저\" 캐릭터 '우푸'를 새로 선보였다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "한림대기술지주-소풍벤처스, 135억원 규모 강원 전략산업 투자조합 결성",
+            "url": "https://platum.kr/archives/297717",
+            "source": "플래텀",
+            "pubDate": "2026-11-03",
+            "image": null,
+            "insight": "한림대학교기술지주와 소풍벤처스가 강원특별자치도의 전략산업 벤처펀드 운용사로 선정되며 135억원 규모의 '한림대-소풍 강원 전략산업 투자조합'을 결성했다. <b>강원도 공모로 94억원을 출자받고 운용사·민간 출자를 더해 조성된 이 펀드는 8년간 바이오·헬스, 반도체, 미래에너지 등 강원 7대 미래산업 분야 25개 기업에 110억원 규모의 투자를 검토·추진할 계획이다.</b>"
+          },
+          {
+            "title": "더인벤션랩, 실제 영업이익 검증된 라이프스타일 스타트업 4곳에 투자",
+            "url": "https://platum.kr/archives/297868",
+            "source": "플래텀",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "더인벤션랩이 글램핑크·더마포레 브랜드의 더헤리티, 초경량 호보백 브랜드 디프크리에이티브, 온열 패치 브랜드 메디핸즈, 업사이클링 브랜드 오버랩웍스 등 4곳에 신규 투자를 결정했다. <b>회사 측은 실제 영업이익과 글로벌 시장 검증 결과를 투자 선별 기준으로 삼았다고 밝혔으며, 후속 스케일업 자금은 정책자금인 LIPS 매칭융자로 충당할 계획이라고 설명했다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
