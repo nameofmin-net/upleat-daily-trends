@@ -1,0 +1,121 @@
+{
+  "intl": {
+    "date": "2026-11-11",
+    "dateLabel": "2026년 11월 11일 수요일",
+    "region": "해외",
+    "takeawayHtml": "전세계 AI 지출은 빠르게 불어나는데 실제 매출 성장을 체감하는 기업은 소수에 불과해, <b>'AI 투자와 성과 사이의 간극'이 올해 글로벌 기업들의 가장 큰 숙제로 떠올랐다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "가트너, 2026년 전세계 AI 지출 2조 5000억 달러 전망",
+            "url": "https://www.gartner.com/en/newsroom/press-releases/2026-1-15-gartner-says-worldwide-ai-spending-will-total-2-point-5-trillion-dollars-in-2026",
+            "source": "Gartner",
+            "pubDate": "2026-01-15",
+            "image": null,
+            "insight": "가트너는 2026년 전세계 AI 관련 지출이 전년 대비 44% 늘어난 약 2조 5000억 달러에 이를 것으로 전망했다. AI 서버 등 인프라 투자가 핵심 성장축으로 꼽히며, AI 최적화 서버 지출만 49% 증가해 전체 AI 지출의 17%를 차지할 것으로 예상된다. <b>가트너는 AI 서비스 지출이 5886억 달러, AI 소프트웨어 지출이 4525억 달러에 이르며 2027년에는 전체 AI 지출이 3조 3400억 달러까지 늘어날 것으로 내다봤다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "체크아웃 UX, 여전히 대다수 사이트가 평균 이하",
+            "url": "https://baymard.com/blog/current-state-of-checkout-ux",
+            "source": "Baymard Institute",
+            "pubDate": "2026-11-03",
+            "image": "https://baymard.com/api/og/article/current-state-of-checkout-ux",
+            "insight": "Baymard Institute의 최신 벤치마크에 따르면 데스크톱 사이트의 59%, 모바일 앱의 60%가 체크아웃 UX에서 '평균 이하' 평가를 받았으며 '완벽' 등급을 받은 사이트는 하나도 없었다. 최근 3개월 내 체크아웃이 너무 길거나 복잡해 구매를 포기한 쇼핑객은 17%에 달했고, 전화번호 제공을 꺼리는 응답자는 68%였다. <b>가장 흔한 결함은 장바구니 수량 변경에 버튼이나 입력란을 제공하지 않는 것(95%)과 주문 마감 시간을 카운트다운으로 보여주지 않는 것(83%)이었다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "딜로이트, 'AI 도입 기업 66% 생산성 개선 체감, 매출 성장은 20%뿐'",
+            "url": "https://www.deloitte.com/global/en/issues/generative-ai/state-of-ai-in-enterprise.htm",
+            "source": "Deloitte AI Institute",
+            "pubDate": "2026-01-21",
+            "image": "https://media.deloitte.com/is/image/deloitte/state-of-ai-banner:1200-x-627",
+            "insight": "딜로이트 AI 인스티튜트가 24개국 리더 3235명을 대상으로 조사한 'State of AI in the Enterprise' 보고서에 따르면 조직의 66%가 AI 도입으로 생산성과 효율성이 개선됐다고 답했다. 반면 AI로 매출 성장을 기대하는 비율은 74%였지만 실제로 성장을 체감한 조직은 20%에 그쳤다. <b>핵심 프로세스나 비즈니스 모델을 근본적으로 재설계하는 '심층 전환' 단계에 들어선 조직은 34%에 불과했고, 37%는 기존 업무 방식을 거의 바꾸지 않은 표면적 도입 수준에 머물렀다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-11",
+    "dateLabel": "2026년 11월 11일 수요일",
+    "region": "국내",
+    "takeawayHtml": "정부 주도 AIoT 행사와 AI 반도체 스타트업의 대형 투자 유치가 이어지는 가운데, <b>플랫폼 기업들은 점주·파트너 '운영 경험'을 다듬는 UX 개편에 힘을 쏟고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "과기정통부, '2026 AIoT 위크 코리아' 코엑스서 개최",
+            "url": "https://m.etnews.com/20261102000282",
+            "source": "전자신문",
+            "pubDate": "2026-11-02",
+            "image": "https://img.etnews.com/news/article/2026/11/02/news-p.v1.20261102.a70b9a52605f46c5bb74458109f0ab54_P1.png",
+            "insight": "과학기술정보통신부가 11월 3일부터 5일까지 서울 코엑스에서 '2026 AIoT 위크 코리아'를 개최한다. '연결을 넘어, AI가 만드는 새로운 가치'를 주제로 국제전시회, 국제컨퍼런스, 신제품 발표회 등 11개 프로그램이 진행되며, 국내 중소기업 8개사가 참여하는 'AI&IoT 쇼케이스'에서는 산업현장 위험성 평가 자동화, 온디바이스 AI 음성 인터페이스 등의 솔루션이 소개된다. <b>화성특례시와 함께하는 'AI 엑스포 마스 2026'에서는 자율주행, 도심항공교통(UAM), 산업용 로봇 등 피지컬AI 확산 전략이 논의된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "배민, 점주용 운영도구 개편…정산·매장관리 한 화면에 통합",
+            "url": "https://sateconomy.co.kr/news/view/1065579346532324",
+            "source": "대한경제",
+            "pubDate": "2026-10-29",
+            "image": "http://sateconomy.co.kr/news/data/20261029/p1065579346532324_632_thum.png",
+            "insight": "우아한형제들이 배달의민족 점주용 '주문접수PC'를 개편해 신규·재주문 건수, 고객 리뷰 통계, 정산내역을 홈 화면에서 바로 확인할 수 있도록 바꾼다. 정산내역 화면은 매출·비용·실제 입금액을 구분해 표시하고, 배민과 점주가 각각 부담한 할인·마케팅 비용도 따로 보여준다. 정산내역 개편은 11월 4일 서울부터, 주문접수PC 개편은 11월 18일부터 순차 적용된다. <b>고객센터 기능까지 주문접수PC로 옮겨, 점주가 라이더 배차 확인부터 주문 취소 요청, 손실금 환급까지 한 화면에서 처리할 수 있게 된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "빽다방, 영문 BI 'Paik's DABANG'으로 새단장…글로벌 진출 박차",
+            "url": "https://biz.sbs.co.kr/article/20000321099",
+            "source": "SBS Biz",
+            "pubDate": "2026-07-07",
+            "image": "https://img.biz.sbs.co.kr/upload/2026/07/07/hAv1783391699378-850.jpg",
+            "insight": "더본코리아가 빽다방 론칭 20주년을 맞아 신규 BI를 공개했다. 기존 한글 중심 로고 대신 영문 브랜드명 'Paik's DABANG'을 전면에 내세웠고, 백종원 대표의 캐리커처는 제외됐다. 커피 원두를 형상화한 'P' 디자인을 넣어 커피 전문 브랜드 이미지를 직관적으로 드러냈으며, 상징색인 노란색과 파란색은 그대로 유지했다. <b>신규 BI는 8월 일본 도쿄 1호점을 시작으로 해외 신규 출점 매장부터 적용되고, 국내 매장은 본사 지원을 통해 순차적으로 교체된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI 반도체 스타트업 하이퍼엑셀, 시리즈B 1500억원 투자 유치",
+            "url": "https://www.hankyung.com/article/202609078421r",
+            "source": "한국경제",
+            "pubDate": "2026-09-07",
+            "image": "https://img.hankyung.com/photo/202609/01.45590575.1.jpg",
+            "insight": "KAIST 김주영 교수가 2023년 창업한 AI 반도체 팹리스 하이퍼엑셀이 시리즈B로 1500억원을 조달했다. 크래프톤이 전략적투자자로 500억원을 투자했고 KB인베스트먼트, 한국투자파트너스, LB인베스트먼트, 아주IB투자가 참여했다. 하이퍼엑셀은 HBM 대신 저전력 D램을 쓰는 LLM 추론 특화 반도체 'LPU'를 개발 중이며, GPU 대비 가격은 10분의 1, 전력은 3분의 1 수준을 목표로 네이버클라우드·LG전자와 공동 개발하고 있다. <b>추가로 500억원을 더 유치해 최종 조달 규모를 2000억원으로 늘리는 방안도 논의 중이다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
