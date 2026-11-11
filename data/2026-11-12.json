@@ -1,0 +1,128 @@
+{
+  "intl": {
+    "date": "2026-11-12",
+    "dateLabel": "2026년 11월 12일 목요일",
+    "region": "해외",
+    "takeawayHtml": "오늘은 <b>AI 인프라를 향한 빅테크의 베팅이 조 단위로 치닫는 가운데, UX 업계는 'AI 피로' 이후 전략적 깊이를 요구받고 있다</b>는 두 흐름이 눈에 띈다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "텐센트, 비전 이해와 컴퓨터 사용 기능을 갖춘 차세대 모델 'Hy4' 공개",
+            "url": "https://www.siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/",
+            "source": "SiliconANGLE",
+            "pubDate": "2026-11-04",
+            "image": "https://images.siliconangle.com/blogs.dir/1/files/2026/11/Screenshot-2026-11-04-084501.png",
+            "insight": "텐센트가 비전 이해와 컴퓨터 사용 기능을 처음 탑재한 차세대 모델 Hy4를 11월 4일 공개했다. <b>7700억 개의 총 파라미터와 490억 개의 활성 파라미터, 100만 토큰 컨텍스트를 갖춘 이 모델은 CLI와 GUI를 모두 다루며 Blender·CAD 같은 전문 소프트웨어 워크플로를 수행하도록 훈련됐다.</b> 이전 프리뷰 버전 대비 GameDev 벤치마크에서 19.1%, GameLogic에서 9.8% 향상됐으며, 모델 가중치와 시스템 카드는 추후 공개될 예정이다."
+          },
+          {
+            "title": "앤트로픽, 인프라 지출 공약 895조 원 규모로 확대",
+            "url": "https://www.axios.com/2026/11/02/anthropic-spending-revenue-surge",
+            "source": "Axios",
+            "pubDate": "2026-11-02",
+            "image": null,
+            "insight": "Axios에 따르면 앤트로픽의 컴퓨팅·인프라 관련 총 지출 공약이 약 8,954억 달러까지 늘었으며, 구글 1,213억 달러·아마존 1,100억 달러·마이크로소프트 449억 달러 등 빅테크와의 계약이 대부분을 차지한다. <b>3분기 매출은 약 170억 달러로, 올해 1~3분기 누적 매출은 332억 달러에 달했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "닐슨노먼그룹, 'State of UX 2026' 보고서 발표…AI 피로 시대의 차별화 전략 제시",
+            "url": "https://www.nngroup.com/articles/state-of-ux-2026/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-01-16",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Course_Cards_aKYqHSg.png",
+            "insight": "닐슨노먼그룹이 1월 발표한 'State of UX 2026' 보고서는 2025년의 구조조정과 AI 과열기를 지나며 업계가 안정기에 들어섰다고 진단한다. <b>보고서는 표준화된 디자인 시스템과 AI가 화면 설계를 대체하는 상황에서 UI 자체는 더 이상 차별화 요소가 될 수 없으며, 안목·맥락 이해·비판적 사고 같은 자동화하기 어려운 역량이 중요해진다고 강조한다.</b> 저자들은 결과 없는 '디자인 극장'을 경계하고, 연구·전략·리더십을 겸비한 '깊이 있는 사고자'가 되어야 한다고 제언한다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "클라우드플레어, 3분기 매출 7.8억 달러로 39% 성장…연간 가이던스 상향",
+            "url": "https://www.webpronews.com/cloudflare-q3-2026-782-million-lifts-outlook/",
+            "source": "WebProNews",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "클라우드플레어는 11월 5일 3분기 매출이 전년 동기 대비 39% 늘어난 7억 8,250만 달러를 기록했다고 발표하며 연간 매출 가이던스를 29억 6,300만~29억 6,400만 달러로 상향했다. <b>비GAAP 주당순이익은 0.38달러로 시장 예상치를 웃돌았고, 4분기 매출은 8억 4,500만~8억 4,600만 달러로 전망했다.</b>"
+          },
+          {
+            "title": "씽킹머신스랩, 액셀 주도로 50억 달러 투자 유치 추진…기업가치 400억 달러",
+            "url": "https://letsdatascience.com/news/thinking-machines-lab-reportedly-nears-5-billion-round-at-40-fcc2bde1",
+            "source": "LetsDataScience",
+            "pubDate": "2026-11-06",
+            "image": null,
+            "insight": "미라 무라티가 이끄는 AI 스타트업 씽킹머신스랩이 액셀 주도로 50억 달러를 조달해 기업가치 400억 달러(프리머니)를 인정받는 라운드를 마무리하고 있다고 11월 6일 비즈니스 인사이더가 복수의 소식통을 인용해 보도했다. <b>이는 이전 라운드 대비 가치가 3배 이상 뛴 수치지만, 당사자인 두 회사는 공식 확인을 하지 않았다.</b> 회사의 첫 제품은 LLM 파인튜닝 도구 '팅커'이며, 핵심 인력 이탈 속에서도 격화되는 AI 인재 전쟁의 한복판에 있다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-12",
+    "dateLabel": "2026년 11월 12일 목요일",
+    "region": "국내",
+    "takeawayHtml": "오늘은 <b>카카오모빌리티의 자율주행 기술 동맹과 생성형 AI 기업의 코스닥 상장 추진이 겹치며, 국내 AI 산업이 기술 협력과 자본시장 양쪽에서 속도를 내고 있다</b>는 점이 눈에 띈다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오모빌리티-엔비디아, 레벨4 자율주행 기술협력 MOU 체결",
+            "url": "https://www.tech42.co.kr/?p=123493",
+            "source": "테크42",
+            "pubDate": "2026-11-09",
+            "image": "https://tech42.shoplic.cloud/wp-content/uploads/2026/11/123493.png",
+            "insight": "카카오모빌리티가 11월 9일 서울에서 엔비디아와 레벨4 자율주행 기술협력을 위한 업무협약을 체결했다고 밝혔다. <b>엔비디아의 '드라이브 AGX 토르' 2개를 탑재한 자율주행 컴퓨팅 유닛과 레퍼런스 아키텍처 '하이페리온', 통합 안전 시스템 '헤일로스'를 결합해 카카오모빌리티의 엔드투엔드 자율주행 AI를 고도화한다.</b> 이번 기술은 지난 7월 파트너십을 맺은 기아의 목적기반차량(PBV)에 우선 적용될 예정이다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "코오롱FnC, 헬리녹스 웨어 첫 단독 플래그십 도산공원에 오픈",
+            "url": "https://www.hankyung.com/article/202609107693i",
+            "source": "한국경제",
+            "pubDate": "2026-09-10",
+            "image": "https://img.hankyung.com/photo/202609/01.45641155.1.png",
+            "insight": "코오롱FnC가 9월 10일 서울 도산공원 인근에 헬리녹스 웨어의 첫 단독 플래그십 스토어를 열었다. <b>지하 1층부터 5층 루프탑까지 총 6개 층, 약 960㎡ 규모의 매장은 텐트 방수 커버를 본뜬 ETFE 필름 외관으로 '도심 속 부유하는 텐트'를 구현했다.</b> 매장 단독 제품인 이클립스 팩 다운 재킷은 출시 한 달 만에 완판됐으며, 중국 상하이 팝업과 정식 매장 오픈으로 해외 확장도 준비 중이다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "생성형 AI 플랫폼 '제논', 코스닥 상장 추진…공모가 밴드 9,700~12,200원",
+            "url": "https://newstomato.com/ReadNews.aspx?no=1319800",
+            "source": "뉴스토마토",
+            "pubDate": "2026-11-09",
+            "image": "https://image.newstomato.com/newsimg/2026/11/9/1319800/attach.jpg?v=202611091720",
+            "insight": "폐쇄망 기업용 생성형 AI 플랫폼 'GenOS'를 공급하는 제논이 코스닥 상장을 추진하며 희망 공모가를 9,700~12,200원, 공모 규모를 213억~268억 원으로 제시했다. <b>올해 상반기 매출이 전년 동기 대비 331% 늘어난 118억 원을 기록하며 지난해 연간 매출을 이미 넘어섰고, 영업이익도 20억 원으로 흑자 전환했다.</b> 공모자금은 GPU 서버 11대 도입과 피지컬 AI 연구소 구축 등에 투입할 계획이며, 수요예측은 11월 16~20일 진행된다."
+          }
+        ]
+      }
+    ]
+  }
+}
