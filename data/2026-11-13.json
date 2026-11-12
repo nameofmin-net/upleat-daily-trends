@@ -1,0 +1,128 @@
+{
+  "intl": {
+    "date": "2026-11-13",
+    "dateLabel": "2026년 11월 13일 금요일",
+    "region": "해외",
+    "takeawayHtml": "오늘은 <b>OpenAI가 1조 2500억 달러 밸류에이션으로 추가 투자를 유치하며 AI 자본 경쟁이 사상 최고치를 찍는 동시에, AI 사칭 사기 사건 기소로 기술 오남용의 위험도 함께 부각됐다</b>는 두 흐름이 눈에 띈다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "OpenAI, 110억 달러 추가 투자 유치…기업가치 1조 2500억 달러로 등극",
+            "url": "https://techbuzz.ai/articles/openai-hits-1-25t-valuation-on-11b-round",
+            "source": "The Tech Buzz",
+            "pubDate": "2026-11-06",
+            "image": "https://www.techbuzz.ai/cdn-cgi/image/width=1200,height=675,quality=80,format=auto,fit=cover/https://charming-card-d91ad3487b.media.strapiapp.com/openai_hits_1_25t_valuation_on_11b_round_0df1c4a646.jpg",
+            "insight": "OpenAI가 11월 6일 블룸버그 보도를 통해 1조 2500억 달러 기업가치로 110억 달러 규모의 투자 유치를 마감했다고 알려졌다. <b>이는 지난 3월 8520억 달러였던 기업가치보다 47% 높은 수준으로, 스타트업 역사상 최고 밸류에이션으로 소개된다.</b> 당초 1조 4000억 달러 가치로 300억 달러를 모으려 했으나 시장 여건으로 규모가 줄었고, OpenAI는 총 모집액을 200억 달러까지 늘리기 위한 추가 투자를 계속 추진하고 있다."
+          },
+          {
+            "title": "구글, 사이버보안 특화 AI 모델 'Gemini 4 Carbon' 출시",
+            "url": "https://www.khaleejtimes.com/business/google-launches-gemini-4-carbon-ai-model-with-cybersecurity-focus-2?amp=1",
+            "source": "Khaleej Times",
+            "pubDate": "2026-10-28",
+            "image": "https://imgengine.khaleejtimes.com/khaleejtimes-english/2026-10-13/665yac3w/2026newsmlRC29YJADA4C61336090057.jpeg?width=1200&height=630&q=60&format=auto&ogImage=true&mode=fill&fill=blur",
+            "insight": "구글이 10월 28일 사이버보안과 장시간 소요되는 소프트웨어 엔지니어링 작업에 특화한 신규 프런티어 모델 'Gemini 4 Carbon'을 공개했다. <b>구글은 내부 벤치마크에서 보안 코드 생성 성공률이 2주 전 출시한 Gemini 4 Argon의 두 배를 넘는다고 밝혔으며, 취약점 발견부터 분석, 패치까지 사이버보안 전 과정에서 최고 수준의 성능을 낸다고 주장했다.</b> 가격은 입력 토큰 100만 개당 2달러, 출력 토큰 100만 개당 10달러로 Argon과 동일하며, 모델은 우선 '페어윈드 프로그램'을 통해 일부 사이버보안 방어 전문가에게만 제공된다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "닐슨 \"AI 도입의 걸림돌은 기술이 아닌 조직\"…NBER·스탠퍼드 데이터로 진단",
+            "url": "https://jakobnielsenphd.substack.com/p/ai-use",
+            "source": "Jakob Nielsen (Substack)",
+            "pubDate": "2026-04-16",
+            "image": "https://substackcdn.com/image/fetch/$s_!HSkG!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F813c2606-5228-4cce-8e0b-c1595edf83fe_1280x956.jpeg",
+            "insight": "UX 권위자 제이콥 닐슨이 4월 16일 발표한 글에서 NBER 보고서와 스탠퍼드 AI 인덱스 2026을 인용해 기업의 AI 도입 격차가 도구 가격이나 인구구성이 아니라 경영진의 적극적 권장 여부로 설명된다고 분석했다. <b>미국 근로자의 43%가 생성형 AI를 업무에 쓰며 근무시간의 5.2%를 AI에 쓰고 평균 5.8%의 시간을 절약한다고 보고했지만, AI 에이전트의 OSWorld 벤치마크 정확도는 66%에 그쳐 여전히 3분의 1의 작업에서 실패한다.</b> 닐슨은 \"도입은 성숙과 같지 않다\"며 팀 단위 프롬프트 라이브러리와 ROI 대시보드, 고위험 작업에 대한 선택적 검토 단계 도입을 제언했다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI로 임원 목소리 흉내낸 사기조직, 1억 2900만 달러 탈취 혐의로 기소",
+            "url": "https://gizmodo.com/doj-says-deepfaked-ceos-and-lawyers-helped-steal-129-million-from-hospitals-banks-and-others-2000836456",
+            "source": "Gizmodo",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "미국 뉴욕 남부지검이 11월 5일 AI로 기업 임원과 변호사를 사칭해 전 세계 수천 개 기업에서 최소 1억 2900만 달러를 빼돌린 3인조를 전신사기와 신원도용 혐의로 기소했다고 밝혔다. <b>조직은 전자서명 서비스로 가짜 CEO의 비밀거래 제안 이메일을 보낸 뒤 AI로 목소리와 외모를 모방한 화상·음성 통화로 가짜 변호사까지 연결해 피해 기업이 자금을 송금하도록 유도했으며, 피해 기업에는 미주리주 병원(483만 달러), 영국 핀테크(1158만 달러) 등이 포함됐다.</b> 피고 중 한 명은 최근 3년간 4억 달러 이상을 세탁했다고 자랑한 것으로 전해졌으며, 세 사람 모두 유럽에서 체포돼 범죄인 인도 절차가 진행 중이다."
+          },
+          {
+            "title": "AI 추론 스타트업 'fal', 13억 달러 투자 유치로 기업가치 160억 달러 달성",
+            "url": "https://siliconangle.com/2026/11/03/generative-media-inference-startup-fal-raises-1-3b-at-a-16b-valuation/",
+            "source": "SiliconANGLE",
+            "pubDate": "2026-11-03",
+            "image": "https://images.siliconangle.com/blogs.dir/1/files/2026/11/fal-800x446.png",
+            "insight": "AI 이미지·영상·오디오 생성 모델을 서비스하는 클라우드 플랫폼 fal이 11월 3일 베세머벤처파트너스 주도로 13억 달러의 시리즈F 투자를 유치해 기업가치가 160억 달러로 지난 4월 대비 두 배 뛰었다고 블룸버그가 보도했다. <b>엔비디아와 티로프라이스 등이 참여했으며, 연환산 매출은 올해 초 이미 8억 달러를 넘어섰다.</b> CEO 버르카이 구르는 \"올여름 수요 급증으로 고객 요청을 제한해야 하는 지점에 이르렀다\"고 밝혔으며, 투자금은 컴퓨팅 자원 확보와 채용 확대에 쓰일 예정이다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-13",
+    "dateLabel": "2026년 11월 13일 금요일",
+    "region": "국내",
+    "takeawayHtml": "오늘은 <b>카카오가 에이전트용 판단 모델을 오픈소스로 공개하고 엔비디아가 국내 AI 스타트업 투자 계획을 밝히며, 기술 생태계 전반에서 한국 AI 산업에 대한 투자와 협력이 동시에 진행되고 있다</b>는 점이 눈에 띈다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, 에이전트 판단 돕는 멀티모달 모델 'Kanana-2-v-decide' 오픈소스 공개",
+            "url": "https://www.kakaocorp.com/page/detail/12193",
+            "source": "카카오",
+            "pubDate": "2026-11-06",
+            "image": "https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/news/ae1c2d8501a100001.gif?type=thumb&opt=C800x400",
+            "insight": "카카오가 11월 6일 자체 멀티모달 모델 'Kanana-2-v-3b'를 기반으로 한 의사결정 모델 'Kanana-2-v-decide'를 허깅페이스에 오픈소스로 공개했다. <b>이 모델은 문장으로 답하는 대신 확률·선택·점수 형태로 판단 결과만 내놓는 임베딩 기반 구조로, H200 GPU 1장에서 평균 0.04초 이내 응답하며 자체 평가셋 '카나나 디시전 벤치'에서 마이크로소프트·업스테이지 등 비교 모델 중 가장 높은 성능을 기록했다고 밝혔다.</b> 고객 문의 분류나 AI 에이전트의 도구 선택 등에 활용 가능하며, 연구와 상업적 이용이 모두 가능한 '카나나 오픈 라이선스'를 적용했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "유한킴벌리 '화이트', 출시 30주년 맞아 브랜드 아이덴티티 전면 리뉴얼",
+            "url": "https://design.co.kr/focus9/179996/",
+            "source": "디자인정글",
+            "pubDate": "2026-11-05",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/05143517/20261105053514-dd_cimb_0.jpg",
+            "insight": "디자인 스튜디오 베이그가 유한킴벌리의 여성용품 브랜드 '화이트'의 로고와 시각 체계를 30주년에 맞춰 새로 정비했다. <b>'W'와 하트를 결합한 새 심볼을 도입하면서도 브랜드를 상징하던 기존 블루 컬러는 그대로 유지해 연속성과 변화를 동시에 추구했다.</b> 이번 리뉴얼은 디자인 매거진의 11월 포커스나인 특집에 소개됐다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "엔비디아, 'AI 스타트업 파트너십 포럼'서 업스테이지 등 국내 AI 4개사 투자 계획 발표",
+            "url": "https://etoday.co.kr/news/view/2645985",
+            "source": "이투데이",
+            "pubDate": "2026-11-09",
+            "image": "https://img.etoday.co.kr/pto_db/2026/11/20261109194104_2414712_1200_800.jpg",
+            "insight": "엔비디아가 11월 9일 과학기술정보통신부와 함께 서울 코엑스에서 연 'AI 스타트업 파트너십 포럼'에서 AI 인프라 기업 포인트투테크놀로지에 대한 투자를 확정 발표하고, 업스테이지·모티프테크놀로지스·리얼월드 3개사에도 투자를 계획하고 있다고 밝혔다. <b>업스테이지는 진행 중인 시리즈C 2차 투자 라운드에서 엔비디아의 투자를 받을 예정으로, 자체 LLM '솔라'와 문서 AI 기술을 보유하고 있다.</b> 엔비디아는 스타트업 지원 프로그램 '엔비디아 인셉션'의 국내 1,000여 회원사를 기반으로 이날 20곳 이상의 국내 AI 스타트업과 협력 방안을 논의했다."
+          }
+        ]
+      }
+    ]
+  }
+}
