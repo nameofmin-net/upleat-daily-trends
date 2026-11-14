@@ -1,0 +1,186 @@
+{
+  "intl": {
+    "date": "2026-11-15",
+    "dateLabel": "2026년 11월 15일 일요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic과 Google이 AI 모델·인프라 투자를 쏟아내는 사이, <b>UX·디자인 업계는 AI 피로감 해소와 신뢰 회복을 핵심 과제로 꼽고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 코딩·추론 강화한 'Claude Fable 5.2'·'Mythos 5.2' 공개",
+            "url": "https://9to5mac.com/2026/11/09/anthropic-upgrades-claude-with-new-fable-5-2-model-details-here/",
+            "source": "9to5Mac",
+            "pubDate": "2026-11-09",
+            "image": "https://9to5mac.com/wp-content/uploads/sites/6/2026/07/claude.webp?resize=1200,628",
+            "insight": "Anthropic이 11월 9일 코딩과 추론, 비전 성능을 강화한 'Claude Fable 5.2'와 접근이 제한된 'Mythos 5.2'를 동시에 출시했다. 출력 속도는 이전 버전 대비 최대 30% 빨라졌고 가격은 입력 100만 토큰당 8달러·출력 100만 토큰당 40달러로 책정됐다. <b>Anthropic은 핵심 코드베이스에 병합되는 변경 사항의 90% 이상을 이미 Claude가 작성하고 있다고 밝혔으며</b>, 한 에이전트 팀은 프로덕션 서비스를 Python에서 Rust로 옮겨 구동 속도를 약 26배 끌어올렸다고 설명했다."
+          },
+          {
+            "title": "씽킹머신스랩, 400억 달러 밸류에 50억 달러 투자 유치 추진",
+            "url": "https://fourweekmba.com/ai-thinking-machines-nears-5b-raise-at-40b-3-3x-its-seed/",
+            "source": "FourWeekMBA",
+            "pubDate": "2026-11-06",
+            "image": null,
+            "insight": "비즈니스 인사이더는 미라 무라티가 이끄는 씽킹머신스랩이 액셀 주도로 400억 달러 사전 밸류에 50억 달러 규모 투자 유치를 추진 중이라고 11월 6일 보도했다. <b>같은 주 회사는 추론 모델 '잉클링 2 스몰'을 공개했지만, 창립 멤버의 약 3분의 1이 이탈했다는 분석도 함께 제기됐다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "딜로이트 '2026 인적자본 트렌드', 인간-AI 상호작용을 의도적으로 설계하라",
+            "url": "https://www.deloitte.com/us/en/insights/topics/talent/human-capital-trends/2026/human-ai-interaction-design.html",
+            "source": "Deloitte Insights",
+            "pubDate": "2026-03-04",
+            "image": "https://media.deloitte.com/is/image/deloitte/GLOB188558_Social:1200-x-627",
+            "insight": "딜로이트의 '2026 인적자본 트렌드' 보고서는 조직의 59%가 기존 시스템에 AI를 덧붙이는 식으로만 접근하고 있다고 진단하며, 인간과 AI의 상호작용을 의도적으로 설계해야 한다고 강조한다. 한 유럽 통신사 사례에서는 역할 변경 없이 AI를 도입했을 때 생산성이 5% 늘었지만, 예산의 90%를 상호작용 재설계에 투입하자 생산성이 30% 증가했다. <b>이 분야를 선도하는 조직은 더 좋은 재무 성과를 보고할 가능성이 약 2.5배 높았다</b>."
+          },
+          {
+            "title": "닐슨노먼그룹 '2026 UX 현황' 보고서, 커지는 AI 피로감을 짚다",
+            "url": "https://news.designrush.com/ai-fatigue-product-teams",
+            "source": "DesignRush",
+            "pubDate": "2026-07-10",
+            "image": null,
+            "insight": "닐슨노먼그룹의 '2026 UX 현황' 보고서는 급하게 만들어졌거나 사용자 필요와 동떨어진 AI 기능에 대한 피로감이 커지고 있다고 짚었다. UX 팀의 크리스 기거는 \"AI를 추가하는 것 자체는 더 이상 어려운 일이 아니다. 유용하게 만드는 것이 과제\"라고 말했다. <b>신뢰는 자동화가 아니라 명확성을 통해 얻어진다는 것이 보고서의 핵심 메시지다</b>."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "애플, '리퀴드 글래스' 투명도 조절 슬라이더 등 개선안 발표",
+            "url": "https://www.macrumors.com/2026/06/08/apple-announces-liquid-glass-improvements",
+            "source": "MacRumors",
+            "pubDate": "2026-06-08",
+            "image": "https://images.macrumors.com/t/q96hnQQg8tFkLheBcg22O5Upjno=/1600x/article-new/2026/06/liquid-glass-slider.jpg",
+            "insight": "애플은 사용자 피드백을 수용해 '리퀴드 글래스' 디자인을 손본다고 밝혔다. 완전 불투명부터 완전 투명까지 조절할 수 있는 슬라이더가 가장 큰 변화이며, 사이드바의 굴절 효과가 끊기지 않고 이어지도록 개선했다. <b>사이드바 아이콘 색상이 유지되도록 바뀐 점은 출시 초기부터 나온 대표적 불만을 해소한 조치다</b>."
+          },
+          {
+            "title": "피그마, 에이전트 작업 방식을 정의하는 'Figma Specs' 등 신기능 공개",
+            "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/",
+            "source": "TechCrunch",
+            "pubDate": "2026-10-14",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/10/Specs_agent.jpeg?resize=1200,675",
+            "insight": "피그마는 10월 14일 디자인 언어를 마크다운으로 정의하는 'Figma Specs'와 코드 레이어 공개 베타 등 에이전트 중심 신기능을 발표했다. 최고디자인책임자 로레다나 크리산은 AI로 \"과거보다 17배 많은 코드 줄이 생산되지만 릴리스는 1.3배 늘었을 뿐\"이라며 비결정적인 AI 결과물을 예측 가능하게 만드는 도구가 필요하다고 설명했다. <b>인도에서는 뭄바이 증시 상위 100개 기업 중 40%가 피그마를 쓰고 있다</b>."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "美 법무부, AI 딥페이크로 1,300억원대 사기 벌인 3인 기소",
+            "url": "https://www.scmp.com/news/world/united-states-canada/article/3373511/us-accuses-trio-using-ai-impersonate-ceos-and-lawyers-steal-us129-million",
+            "source": "South China Morning Post",
+            "pubDate": "2026-11-06",
+            "image": null,
+            "insight": "미국 법무부는 AI로 임원과 변호사의 음성·영상을 복제해 전 세계 기업에서 약 1억2,900만 달러를 빼낸 혐의로 3명을 기소했다고 밝혔다. <b>이들은 전화·영상 통화에서 AI로 경영진 목소리를 흉내 내 자금 이전을 지시한 뒤, 여러 국가 계좌를 거쳐 암호화폐로 돈을 전환한 것으로 조사됐다</b>."
+          },
+          {
+            "title": "구글, 와이오밍에 170억 달러 규모 첫 데이터센터 건설 발표",
+            "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/wyoming-data-center/",
+            "source": "Google Blog",
+            "pubDate": "2026-11-05",
+            "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Wyoming_hero.width-1300.png",
+            "insight": "구글은 11월 5일 와이오밍주 샤이엔 인근에 170억 달러를 투자해 첫 데이터센터를 짓는다고 발표했다. 702메가와트 규모의 탄소포집형 연료전지 발전 사업으로 전력을 공급하며, 사용하는 전력의 100%에 대한 비용을 직접 부담한다고 밝혔다. <b>데이터센터는 지역 수자원 부담을 줄이기 위해 공랭식으로 설계됐다</b>."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-15",
+    "dateLabel": "2026년 11월 15일 일요일",
+    "region": "국내",
+    "takeawayHtml": "삼성SDS·LG CNS가 AI 데이터센터 수주 경쟁에 속도를 내는 가운데, <b>국내 슈퍼앱들은 사용자 피로감과 AI 전환이라는 이중 과제에 직면했다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성SDS·LG CNS, AI 데이터센터 수주전 가속…구미 60MW·자카르타 30MW",
+            "url": "https://ceoscoredaily.com/page/view/2026110914552767723",
+            "source": "CEO스코어데일리",
+            "pubDate": "2026-11-10",
+            "image": "https://ceoscoredaily.com/photos/2026/11/09/2026110915045604977_l.png",
+            "insight": "삼성SDS는 경북 구미에 4,273억원을 투입해 초기 60MW(최대 120MW) 규모의 AI 전용 데이터센터를 짓고 있으며, 2031년까지 AI 인프라를 800MW 이상으로 늘리겠다는 목표를 제시했다. LG CNS는 인도네시아 자카르타에 30MW급 하이퍼스케일 AI 데이터센터를 완공해 국내 기업 최초로 해외 현지 AI 데이터센터를 구축했다. <b>두 회사 모두 단발성 IT 프로젝트에서 AI 데이터센터 기반의 장기 수익 모델로 사업 구조를 전환하고 있다</b>."
+          },
+          {
+            "title": "이경전 교수 \"AI 확산에 네이버·카카오도 변화 직면...고객 가까운 기업 가치 커질 것\"",
+            "url": "https://news.mtn.co.kr/article/2026102309051249689",
+            "source": "MTN",
+            "pubDate": "2026-10-24",
+            "image": "https://assets.mtn.co.kr/mtn/2026/10/5gudCEWcAVAttWsx/image/20261023_102857//1dfd3-fd304-2a2e0-54f3d1.jpg",
+            "insight": "이경전 경희대 교수는 AI 확산으로 이용자가 검색과 쇼핑까지 AI 에이전트에 맡기게 되면 네이버·카카오 같은 기존 플랫폼의 광고·커머스 수익이 압박받을 수 있다고 전망했다. 그는 2000년 시가총액 1위였던 시스코가 야후·아마존·구글 같은 인터넷 네이티브 기업에 주도권을 넘겨준 사례를 들어 설명했다. <b>그는 네이버·카카오가 독자 AI 개발에 실패해 AI 역량이 상대적으로 약하다고 평가했다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "국내 슈퍼앱들의 딜레마...편의 늘릴수록 커지는 사용자 피로감",
+            "url": "https://ditoday.com/오히려-불편해-다-되는-앱이-마주한-슈퍼앱-딜레/",
+            "source": "디토데이",
+            "pubDate": "2026-08-14",
+            "image": null,
+            "insight": "국내 금융·메신저 앱들이 슈퍼앱 전략을 밀어붙이는 과정에서 사용자 피로감이 커지고 있다. 카카오톡이 친구 탭을 SNS형 피드로 바꾸자 저평점 리뷰가 쏟아져 3개월 만에 기본 화면을 되돌렸고, 삼성금융네트웍스의 통합 앱 '모니모'는 용량 증가와 재인증 절차 때문에 불만을 샀다. <b>윤호영 카카오뱅크 대표도 \"모든 기능을 하나에 담는 슈퍼앱 전략이 복잡한 메뉴와 UX로 고객 피로도를 높이고 있다\"고 인정했다</b>."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "모노타입 코리아 '브랜드톡 코리아 2026', 타이포그래피로 브랜드 경험 지키기",
+            "url": "https://design.co.kr/article/168521/",
+            "source": "디자인정글",
+            "pubDate": "2026-07-24",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/07/20221727/20260720131723-0G2A1709-832x555.jpg",
+            "insight": "모노타입 코리아가 7월 13일 연 '브랜드톡 코리아 2026'에서 찰스 닉스 수석 크리에이티브 디렉터는 서체 하나를 고르는 단발적 결정으로 브랜드 목소리를 지키던 시대는 끝났다고 말했다. 그는 서체가 라이선스와 가이드라인 관리를 거쳐 여러 팀과 채널로 복제되는 과정을 '타이포그래픽 생태계'로 설명하며, AI 생성 콘텐츠 확산으로 서체가 소비자에게 도달하는 경로를 추적하기 더 어려워졌다고 지적했다. <b>그는 \"브랜드는 아이덴티티를 넘어 존재한다\"며 타이포그래피를 브랜드 경험을 지키는 핵심 장치로 제시했다</b>."
+          },
+          {
+            "title": "플러스엑스, 잡코리아 30주년 브랜드 'Worxphere' 아이덴티티 공개",
+            "url": "https://abduzeedo.com/worxphere-brand-identity-plus-x-rebrands-jobkorea-2026",
+            "source": "Abduzeedo",
+            "pubDate": "2026-06-19",
+            "image": "https://cms.abduzeedo.com/sites/default/files/originals/hero_worxphere.jpg",
+            "insight": "국내 브랜딩 스튜디오 플러스엑스는 잡코리아 창립 30주년을 기념해 약 6개월간 개발한 브랜드 아이덴티티 'Worxphere'를 공개했다. 로고의 중앙 'x'는 전체 시스템을 지배하는 동일한 원호 기하 구조에서 만들어졌고, 짙은 네이비 바탕에 단 하나의 강조색인 애시드 그린(#C8E06B)만 컵 뚜껑과 UI의 '생성' 버튼 등 제한된 지점에만 적용했다. <b>구인 정보 서비스에서 업무 경험 플랫폼으로 전환했다는 메시지를 색과 기하학 구조만으로 압축해 전달한 점이 특징이다</b>."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "쿠팡, 3분기 매출 14조원 돌파...물류센터 화재 비용으로 3개 분기 연속 적자",
+            "url": "https://newstomato.com/ReadNews.aspx?no=1319173",
+            "source": "뉴스토마토",
+            "pubDate": "2026-11-04",
+            "image": "https://image.newstomato.com/newsimg/2026/11/4/1319173/attach.jpg?v=202611040707",
+            "insight": "쿠팡Inc의 3분기 매출은 99억6,200만달러(약 14조2,209억원)로 전년보다 11% 늘었지만, 영업손실 4억5,000만달러(약 6,423억원)를 내며 3개 분기 연속 적자를 이어갔다. 7월 인천 물류센터 화재 관련 비용 약 3,540억원을 제외하면 영업손실은 약 2,883억원으로 줄어든다. <b>활성고객 수는 2,520만명으로 늘었고 고객 1인당 매출도 6% 증가해 외형 성장세는 유지됐다</b>."
+          },
+          {
+            "title": "카카오, 3분기 영업이익 2,403억원...톡비즈 광고 매출 두 자릿수 성장",
+            "url": "https://www.kakaocorp.com/page/detail/12190",
+            "source": "카카오 공식 뉴스룸",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "카카오는 11월 5일 3분기 매출 2조867억원, 영업이익 2,403억원(전년 대비 7% 증가)을 기록했다고 발표했다. 플랫폼 부문 매출이 17% 늘며 성장을 이끌었고, 특히 톡 디스플레이 광고 매출은 35% 증가했다. <b>회사는 연내 월간 활성 AI 이용자 1,000만 명 달성을 기대하며 12월 '카나나 스페이스' 파일럿 서비스를 시작한다고 예고했다</b>."
+          }
+        ]
+      }
+    ]
+  }
+}
