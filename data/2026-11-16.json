@@ -1,0 +1,135 @@
+{
+  "intl": {
+    "date": "2026-11-16",
+    "dateLabel": "2026년 11월 16일 월요일",
+    "region": "해외",
+    "takeawayHtml": "<b>앤트로픽이 나스닥 상장을 위한 IPO 로드쇼에 돌입</b>하는 동안, 오픈AI와 구글은 각각 사이버보안 전용 모델과 신형 TPU로 AI 인프라 경쟁의 다음 단계를 준비하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, 주당 70~78달러로 나스닥 IPO 로드쇼 돌입",
+            "url": "https://www.technobezz.com/news/anthropic-ipo-roadshow-shares-price-range",
+            "source": "Technobezz",
+            "pubDate": "2026-11-10",
+            "image": null,
+            "insight": "앤트로픽이 11월 10일 나스닥 상장(티커 ANT)을 위한 IPO 로드쇼를 시작했으며, 주당 70~78달러에 약 8억2500만 주를 공모하는 조건이 제시됐다. 외신에 따르면 직전 분기 매출은 170억 달러에 달했지만 5억3600만 달러의 영업손실을 함께 기록한 것으로 알려졌다. <b>매출 규모와 손실이 공존하는 재무 구조가 그대로 공개되면서, 상장 이후 AI 기업의 수익성에 대한 시장의 평가가 본격적인 시험대에 오르게 됐다.</b>"
+          },
+          {
+            "title": "오픈AI, 사이버보안 전용 모델 'GPT-6 Cyber' 출시",
+            "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+            "source": "OpenAI",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "오픈AI가 11월 5일 취약점 탐지와 검증에 특화된 'GPT-6 Cyber'를 공개했다. 자체 평가인 ExploitGym 벤치마크에서 48.5%를 기록해 이전 모델(32.1%) 대비 약 51% 향상된 성능을 보였다고 밝혔다. <b>오픈AI는 이 모델의 위험도를 '준비 프레임워크'상 최고 등급인 Critical로 분류하며, 승인된 Daybreak Red 고객에게만 API와 코덱스를 통해 제한적으로 접근을 허용한다.</b>"
+          },
+          {
+            "title": "구글, 기밀 추론·대용량 컨텍스트용 신형 TPU 2종 공개",
+            "url": "https://www.constellationr.com/insights/news/google-launches-tpu-8tx-tpu-8i-max",
+            "source": "Constellation Research",
+            "pubDate": "2026-11-09",
+            "image": null,
+            "insight": "구글이 11월 9일 8세대 TPU 라인업에 TPU 8tx와 TPU 8i Max를 추가했다. TPU 8tx는 AMD 5세대 EPYC CPU와 결합해 하드웨어 단계에서 모델 가중치를 보호하는 기밀 추론에 초점을 맞췄고, TPU 8i Max는 SRAM과 HBM 대역폭을 기존 TPU 8i 대비 2배로 늘려 대용량 컨텍스트 처리의 메모리 병목을 해소했다. <b>구글은 올 한 해 동안 네 종류의 TPU를 선보이며, 에이전트형 AI 워크로드 확산에 맞춰 칩 포트폴리오를 빠르게 세분화하는 전략을 분명히 했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "닐슨노먼그룹, AI 개발 속도에 맞춘 '리서치 인 더 루프' 방법론 제안",
+            "url": "https://www.nngroup.com/articles/research-in-the-loop/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-11-13",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Research-In-The-Loop__How_UXR_Adapts__to_Development_at__AI_Speed.png",
+            "insight": "닐슨노먼그룹은 11월 13일 공개한 글에서, AI 코딩 에이전트로 개발 속도가 빨라진 만큼 리서치도 릴리스마다 함께 설계돼야 한다는 '리서치 인 더 루프' 개념을 제시했다. 평가·조사·발견이라는 세 가지 리서치 활동을 각 기능에 내재화하려면, 제품 스펙에 에이전트가 읽을 수 있는 평이한 언어의 리서치 섹션을 추가해 예상 결과와 추적 지표를 명시해야 한다고 제안한다. <b>다만 계측만으로는 인과관계를 증명할 수 없고 시스템 밖의 행동은 포착하지 못하므로, 릴리스에 묶이지 않는 정기적인 정성 리서치는 여전히 필요하다고 강조했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI로 CEO·변호사 사칭해 1억2900만 달러 가로챈 일당 기소",
+            "url": "https://securityweek.com/3-charged-in-scheme-to-use-ai-to-impersonate-ceos-and-attorneys-to-steal-129-million",
+            "source": "SecurityWeek",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "미국 검찰이 11월 5일 AI로 기업 최고경영자의 목소리와 영상을 합성하고 대형 로펌 변호사를 사칭해 해외로 자금을 빼돌린 일당 3명을 기소했다. 이들은 2024년부터 2026년까지 여러 기업을 상대로 이 수법을 반복해 총 1억2900만 달러 이상을 가로챈 것으로 알려졌다. <b>실존 임원과 변호사의 신원을 AI로 정교하게 재현한 사기 수법이 확인되면서, 기업의 자금 이동 승인 절차 전반에 대한 재검토 필요성이 부각되고 있다.</b>"
+          },
+          {
+            "title": "퀄컴, 2026 회계연도 4분기 매출 103억 달러…비휴대폰 매출 전환점 예고",
+            "url": "https://www.constellationr.com/insights/news/qualcomms-diversification-push-comes-view-q4",
+            "source": "Constellation Research",
+            "pubDate": "2026-11-04",
+            "image": null,
+            "insight": "퀄컴이 2026 회계연도 4분기 매출 103억2000만 달러(전년 대비 8% 감소)를 기록했다고 밝혔다. 휴대폰 매출은 26% 줄었지만 자동차 매출은 89% 늘었고, 2029 회계연도까지 비휴대폰 매출 400억 달러(그중 데이터센터 150억 달러 이상)를 목표로 내걸었다. <b>크리스티아노 아몬 CEO는 “내년이 데이터센터 사업 확대를 포함한 비휴대폰 매출 전환점의 시작”이라며, 메타에 공급할 '드래곤플라이 C1000' CPU가 일정대로 출하될 것이라고 밝혔다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-16",
+    "dateLabel": "2026년 11월 16일 월요일",
+    "region": "국내",
+    "takeawayHtml": "<b>삼성·SK하이닉스·LG가 엔비디아와 손잡고 피지컬 AI를 공장 현장에 실제 적용</b>하는 사이, 코스피는 데이터센터 규제 우려로 올해 세 번째 6%대 급락을 겪었다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "'엔비디아 AI 데이 서울 2026'…삼성·SK하이닉스·LG, 피지컬 AI 성과 공개",
+            "url": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1436859",
+            "source": "코리안센터",
+            "pubDate": "2026-11-10",
+            "image": null,
+            "insight": "11월 9~10일 서울 코엑스에서 열린 '엔비디아 AI 데이 서울 2026'에서 삼성전자는 반도체 공정에 'AI 균질화' 기법을 적용해 약 18시간 걸리던 시뮬레이션을 41초로 줄였다고 밝혔다. SK하이닉스는 엔비디아 옴니버스로 반도체 공장 디지털트윈을 구축 중이며, LG전자는 로봇을 엔비디아의 로봇 학습 플랫폼 '아이작 그루트'로 훈련해 실제 생산 현장에서 부품을 집고 옮기는 작업을 시연했다. <b>국내 반도체·전자 3사가 피지컬 AI를 공장 자동화에 실제로 적용하는 단계로 진입했음을 보여준 자리였다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "카카오, 인적분할 앞두고 홍콩·싱가포르서 해외 IR 진행",
+            "url": "https://www.kakaocorp.com/page/detail/12196",
+            "source": "카카오 뉴스룸",
+            "pubDate": "2026-11-11",
+            "image": null,
+            "insight": "정신아 카카오 대표와 김도영 카카오X 대표 내정자가 11~12일 홍콩·싱가포르에서 해외 기관투자자 10여 곳을 만나 인적분할의 배경과 분할 후 카카오AI·카카오X의 역할을 설명했다. 카카오는 분할 후 카카오X가 추진할 예정이던 3000억원 규모 자사주 매입·소각 중 1500억원을 분할 전으로 앞당겨 집행하기로 했다. <b>국내 소액주주 설명회에 이어 해외 투자자까지 분할에 대한 공감대를 넓히는 행보로, 카카오AI·카카오X의 분리 출범이 가시권에 들어왔음을 보여준다.</b>"
+          },
+          {
+            "title": "코스피, 데이터센터 규제 우려로 6%대 급락…연중 세 번째 패닉셀",
+            "url": "https://news.bizwatch.co.kr/article/market/2026/11/06/0041",
+            "source": "비즈워치",
+            "pubDate": "2026-11-06",
+            "image": "https://cdn.bizwatch.co.kr/news/photo/2026/11/06/f150208c2da8bfb91b542054a18009a0.png",
+            "insight": "11월 6일 코스피가 전날보다 6.02%(324.11포인트) 급락해 5059.69로 마감했고, 장중 낙폭이 8%를 넘어서며 서킷브레이커와 매도 사이드카가 동시에 발동됐다. 미국 중간선거 이후 데이터센터 규제 우려가 커지며 외국인이 SK하이닉스를 중심으로 2조8000억원 넘게 순매도한 영향이 컸다. <b>대신증권은 코스피 12개월 선행 PER이 3.77배로 역사적 저점을 기록했다며 이번 급락을 과도한 '언더슈팅'으로 진단했다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
