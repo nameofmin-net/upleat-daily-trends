@@ -1,0 +1,110 @@
+{
+  "intl": {
+    "date": "2026-11-17",
+    "dateLabel": "2026년 11월 17일 화요일",
+    "region": "해외",
+    "takeawayHtml": "<b>AI 업계 자금 흐름이 한층 뜨거워진 한 주, Thinking Machines Lab은 사상 최대 규모 투자를 추진하고 Cloudflare는 실적으로 AI 인프라 수요를 입증했다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Thinking Machines Lab, Accel 주도 50억 달러 투자 유치 추진",
+            "url": "https://www.letsdatascience.com/news/thinking-machines-lab-reportedly-nears-5-billion-round-at-40-fcc2bde1",
+            "source": "Let's Data Science",
+            "pubDate": "2026-11-06",
+            "image": null,
+            "insight": "Business Insider는 11월 6일 Mira Murati가 이끄는 AI 스타트업 Thinking Machines Lab이 Accel 주도로 50억 달러 규모의 신규 투자 라운드를 이번 주 안에 마무리할 수 있다고 보도했다. <b>이번 라운드는 사전 기업가치 400억 달러를 기준으로 하며, 이는 직전 라운드 기업가치의 3배를 넘는 수준이다.</b> 다만 회사와 Accel 모두 공식 확인을 하지 않아, 보도는 복수의 익명 소식통에 의존한 상태다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "Cloudflare, 2026년 3분기 매출 39% 성장하며 시장 예상 상회",
+            "url": "https://247wallst.com/cards/cloudflare-q3-2026-earnings-net-01m6psg0byw1kqkd514aq3zgkb",
+            "source": "24/7 Wall St.",
+            "pubDate": "2026-11-05",
+            "image": "https://247wallst.com/og/card/01m6psg0byw1kqkd514aq3zgkb.png",
+            "insight": "Cloudflare가 11월 5일 발표한 2026년 3분기 실적에서 매출 7억8,250만 달러를 기록해 전년 대비 39% 성장하며 시장 예상치(7억3,830만 달러)를 웃돌았다. <b>조정 주당순이익은 0.38달러로 예상치 0.34달러를 상회했고, 비GAAP 영업이익률도 전년 15.3%에서 17.5%로 개선됐다.</b> 다만 GAAP 기준으로는 3,410만 달러의 순손실을 기록했고 잉여현금흐름 마진은 13%에서 10%로 낮아져, 성장과 수익성 사이의 괴리가 여전히 남아 있음을 보여준다."
+          },
+          {
+            "title": "美 법무부, AI 딥페이크로 경영진·변호사 사칭한 1억2,900만 달러 사기단 기소",
+            "url": "https://www.itpro.com/security/cyber-crime/three-charged-after-impersonating-ceos-and-attorneys-in-usd129-million-deepfake-fraud-scheme",
+            "source": "ITPro",
+            "pubDate": null,
+            "image": "https://cdn.mos.cms.futurecdn.net/3uJ7EShDvD3tRKhZ2zt3Vg-1920-80.jpg",
+            "insight": "미국 법무부가 Jacob Soall, Sharon Hazan, Guy Sheetrit 3명을 딥페이크 기술로 기업 경영진과 대형 로펌 변호사를 사칭해 약 1억2,900만 달러를 가로챈 혐의로 기소했다. <b>이들은 회계 부서 직원에게 CEO를 사칭해 접근한 뒤, 변호사 역할까지 동원해 해외 계좌로 거액을 송금하도록 유도한 것으로 알려졌다.</b> 세 사람은 전신사기와 신원도용 등 혐의로 최대 20년의 연방 교도소형에 처할 수 있다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-17",
+    "dateLabel": "2026년 11월 17일 화요일",
+    "region": "국내",
+    "takeawayHtml": "<b>엔비디아가 네이버에 10억 달러를 투자해 3대 주주로 올라서며 국내 AI 인프라 경쟁에 힘을 보탰고, 쿠팡은 매출 신기록에도 물류센터 화재 여파로 3개 분기 연속 적자를 이어갔다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "엔비디아, 네이버에 10억 달러 투자해 3대 주주로",
+            "url": "https://www.newstomato.com/ReadNews.aspx?no=1318973",
+            "source": "뉴스토마토",
+            "pubDate": "2026-11-06",
+            "image": "https://image.newstomato.com/newsimg/2026/11/2/1318973/attach.jpg?v=202611021727",
+            "insight": "엔비디아는 11월 6일 네이버에 10억 달러를 투자하며 제3자 배정 유상증자로 신주 724만여 주를 인수해 지분 4.54%를 확보, 네이버의 3대 주주로 올라섰다. <b>이는 네이버가 AI 인프라 사업을 본격화하기 위한 협력으로, 세종시 데이터센터 '각 세종'을 거점으로 2027년 상반기 55MW 규모의 AI 팩토리를 가동할 계획이다.</b> 다만 대규모 투자에 걸맞은 글로벌 고객을 얼마나 빨리 확보하느냐가 이 사업의 성패를 좌우할 전망이다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": []
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "쿠팡, 2026년 3분기 매출 역대 최대…물류센터 화재로 영업손실은 3개 분기 연속",
+            "url": "https://zdnet.co.kr/view/?no=20261104073409",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-11-04",
+            "image": "https://image.zdnet.co.kr/2026/03/11/b03b5ed374dbd0329e916d21346a644a.jpg",
+            "insight": "쿠팡Inc의 2026년 3분기 매출이 99억6,200만 달러(약 14조2,209억원)로 역대 최대치를 기록했지만, 영업손실 4억5,000만 달러(약 6,423억원)를 내며 3개 분기 연속 적자를 이어갔다. <b>적자의 주된 원인은 지난 7월 발생한 인천 물류센터 화재로 인한 손실 2억4,800만 달러(약 3,540억원)와 매출원가·판매관리비 부담 증가다.</b> 당기순손실도 5억100만 달러(약 7,151억원)로 적자 전환해, 매출 성장과 수익성 회복 사이의 간극이 더 뚜렷해졌다."
+          },
+          {
+            "title": "네이버웹툰, AI로 창작·팬덤 강화…일본 콘텐츠에 약 850억원 투자",
+            "url": "https://zdnet.co.kr/view?no=20261110084825",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-11-10",
+            "image": "https://image.zdnet.co.kr/2026/09/07/35afee4dbcaf519109c44ab5c809f80c.jpg",
+            "insight": "네이버웹툰이 11월 10일 AI로 창작과 팬덤을 강화하고 웹툰 IP를 애니메이션·게임 등으로 확장하는 전략을 밝혔다. <b>특히 성장세가 둔화된 일본 시장에서는 향후 3년간 100억엔(약 849억원)을 투자해 오리지널 콘텐츠를 확보하고 이용자를 늘릴 계획이다.</b> 이를 위해 자체 제작, 출판사·스튜디오 공동 제작, 개인 창작자 발굴이라는 세 가지 방식을 병행한다."
+          }
+        ]
+      }
+    ]
+  }
+}
