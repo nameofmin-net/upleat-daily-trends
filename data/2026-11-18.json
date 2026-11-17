@@ -1,0 +1,153 @@
+{
+  "intl": {
+    "date": "2026-11-18",
+    "dateLabel": "2026년 11월 18일 수요일",
+    "region": "해외",
+    "takeawayHtml": "Anthropic과 OpenAI가 모델 공급과 비용 구조를 재편하는 사이, <b>Thinking Machines Lab은 400억달러대 밸류에 대형 투자를 추진하며 AI 업계의 자금 경쟁이 한층 가열되고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 클로드 모델 공개와 비용 구조·안전장치 개편",
+            "url": "https://axios.com/2026/09/01/anthropic-releases-new-models-cost-structures-and-safeguards",
+            "source": "Axios",
+            "pubDate": "2026-09-01",
+            "image": null,
+            "insight": "Anthropic이 비용 구조와 안전장치를 개편하며 신규 모델 라인업을 발표했다. Claude Fable 5.1이 정식 출시됐고 상위 모델 Mythos 5.1은 검증된 파트너에만 제한 제공되며, <b>이미 처리한 정보를 다시 참조하는 데 드는 비용을 75% 인하</b>해 대화형 AI 운영 비용 경쟁이 가격 구조 쪽으로까지 확산되고 있음을 보여준다."
+          },
+          {
+            "title": "OpenAI, SpaceX가 인수한 Cursor에 AI 모델 공급 중단",
+            "url": "https://cybernews.com/ai-news/openai-cursor-spacex-contract-termination/",
+            "source": "Cybernews",
+            "pubDate": "2026-08-29",
+            "image": null,
+            "insight": "OpenAI가 일론 머스크의 SpaceX가 인수한 코딩 툴 Cursor에 대한 모델 공급을 2026년 11월 12일부로 중단하겠다고 통보했다. <b>SpaceX 산하 X·xAI가 과거 계약 조건을 어겼다는 신뢰 문제를 이유로 들었으며</b>, 향후 출시될 Astra 모델도 Cursor에는 제공되지 않는다. Cursor 측은 OpenAI 모델이 전체 트래픽의 약 5%에 불과하다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "2026년 웹디자인 트렌드: 촉각적 브루탈리즘과 머신 경험(MX)",
+            "url": "https://fireart.studio/blog/the-best-web-design-trends/",
+            "source": "FireArt Studio",
+            "pubDate": "2026-11-16",
+            "image": "https://fireart.studio/wp-content/uploads/2021/03/eweb4.jpg",
+            "insight": "FireArt Studio가 정리한 2026년 웹디자인 트렌드는 부드러운 그림자와 둥근 모서리 대신 0px 직각 모서리나 완전한 필(pill) 형태, 네온색 1px 테두리를 쓰는 '촉각적 브루탈리즘'을 핵심으로 꼽는다. 비주얼 깊이는 3D 대신 CSS 노이즈·그레인 오버레이로 구현해 배터리 소모와 페이지 용량을 낮추는 방향이며, <b>타이포그래피가 히어로 이미지를 대신해 뷰포트 단위(vw) 텍스트와 가변 폰트로 화면을 채우는 구조적 중심이 된다</b>. AI 어시스턴트가 시각적 스타일이 아닌 시맨틱 코드를 읽는다는 점에서 깨끗한 HTML과 다크 퍼스트 디자인도 '머신 경험' 과제로 제시됐다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "OpenAI, 3분기 매출 처음으로 100억달러 돌파",
+            "url": "https://www.newsbytesapp.com/news/business/openai-revenue-jumps-50-to-record-10-billion-in-q3/story",
+            "source": "NewsBytes",
+            "pubDate": null,
+            "image": null,
+            "insight": "OpenAI의 3분기 매출이 전분기 대비 약 50% 증가한 100억달러를 기록했다고 알려졌다. <b>CFO 사라 프라이어는 연환산 매출 추정치가 약 500억달러에 달한다고 밝혔으며</b>, 엔터프라이즈 부문이 전체 매출의 절반까지 늘었다는 분석도 나왔다. 다만 이 수치는 투자자 대상 발표를 인용한 것으로 공식 감사 자료는 아니다."
+          },
+          {
+            "title": "Thinking Machines Lab, 400억달러 밸류에 50~60억달러 투자 유치 추진",
+            "url": "https://letsdatascience.com/news/thinking-machines-lab-pursues-5-6-billion-funding-round-19b69cd4",
+            "source": "Let's Data Science",
+            "pubDate": "2026-09-04",
+            "image": null,
+            "insight": "Mira Murati가 이끄는 Thinking Machines Lab이 <b>프리머니 밸류에이션 400억달러 이상에서 50억~60억달러 규모의 신규 투자 라운드를 추진 중</b>이며, Nvidia가 약 25억달러를 투자할 수 있다는 보도가 나왔다. 기존 투자자 Andreessen Horowitz(a16z)가 이번 라운드에도 참여할 것으로 알려졌지만 최종 조건과 마감 시점은 아직 확정되지 않았다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-18",
+    "dateLabel": "2026년 11월 18일 수요일",
+    "region": "국내",
+    "takeawayHtml": "LG CNS와 네이버가 AI 에이전트 상용화에 속도를 내는 동안, <b>무신사와 퓨리오사AI는 각각 IPO 심사와 대형 투자 유치로 조 단위 자금 조달 레이스에 뛰어들었다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "LG CNS, 앤트로픽과 '클로드 엔터프라이즈' 도입 계약",
+            "url": "https://www.heraldk.com/article/2026060817000372534",
+            "source": "헤럴드경제",
+            "pubDate": "2026-06-09",
+            "image": "https://static.heraldcorp.com/wbazic/biz/www/image/heraldsns.png",
+            "insight": "LG CNS가 앤트로픽과 클로드 엔터프라이즈 도입 계약을 맺고 LG그룹 전 계열사에 적용 가능한 통합 계약을 확보했다. LG CNS 전 임직원이 먼저 클로드를 사용한 뒤 그룹사와 외부 기업으로 도입을 확장할 계획이며, <b>LG CNS 김태훈 AI클라우드사업부장은 이번 협력이 \"국내 기업 환경에 최적화된 AX 혁신 모델을 본격화하는 계기\"라고 밝혔다</b>. LG CNS는 사내에서 클로드와 LG AI연구원의 챗엑사원을 함께 쓰는 멀티 AI 체계를 운영 중이다."
+          },
+          {
+            "title": "네이버, 연내 개인형 AI 에이전트 앱 출시 계획 공개",
+            "url": "https://ceoscoredaily.com/page/view/2026111214592359044",
+            "source": "CEO스코어데일리",
+            "pubDate": "2026-11-12",
+            "image": "https://ceoscoredaily.com/photos/2026/11/12/2026111214560205793_l.JPG",
+            "insight": "네이버 최수연 대표가 3분기 실적발표 컨퍼런스콜에서 쇼핑·플레이스·예약·지도·페이 등 주요 서비스를 직접 연동해 일정 관리와 거래를 대신 처리하는 개인형 AI 에이전트 앱을 연내 출시하겠다고 밝혔다. 연동되지 않은 외부 서비스는 격리된 브라우저 환경에서 처리하도록 준비 중이며, <b>최 대표는 \"결제·예약 확정 등 주요 작업은 이용자가 직접 결정하도록 설계해 보안과 신뢰를 극대화했다\"고 설명했다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "오픈서베이 '온라인 쇼핑 트렌드 리포트 2026': 쿠팡 주이용률 하락, 네이버플러스스토어 반사이익",
+            "url": "https://blog.opensurvey.co.kr/trendreport/online_shopping-2026/",
+            "source": "오픈서베이",
+            "pubDate": "2026-04-06",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/04/26_thumbnail_trendreport_07.png",
+            "insight": "오픈서베이가 전국 2,100명과 주요 플랫폼 구매 경험자 900명을 대상으로 실시한 조사에서 쿠팡의 주이용 지표가 전년 대비 7.0%p 하락한 반면 네이버플러스스토어는 7.5%p 상승해 시장 구도가 양강 체제로 재편되는 흐름이 확인됐다. 쿠팡의 하락 배경으로는 2025년 말 개인정보 유출 사고 이후 보안·개인정보 관리에 대한 불만이 꼽혔고, <b>온라인 쇼핑에서 AI 서비스를 이용해본 소비자는 10명 중 6명에 달해 제품 비교·최저가 탐색에 AI를 쓰는 경험이 빠르게 확산되고 있음을 보여준다</b>."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "유한킴벌리 '우리강산 푸르게 푸르게' 42주년 리브랜딩",
+            "url": "https://designcompass.org/2026/07/13/keep-korea-green-brand-identity-redesign-2026/",
+            "source": "디자인컴퍼스",
+            "pubDate": "2026-07-13",
+            "image": "https://designcompass.org/wp-content/uploads/2026/07/nature-campaign-thumbnail.jpg",
+            "insight": "유한킴벌리가 42년간 이어온 '우리강산 푸르게 푸르게' 캠페인의 상징인 하트를 유지하면서 산·숲·강을 하나의 형태로 결합한 리브랜딩을 공개했다. 기계적인 직선 대신 손으로 그린 듯한 곡선을 적용해 사람과 자연의 관계를 표현했고, <b>캠페인 전용 서체 '푸른숲체'와 신규 캐릭터 '우푸'를 함께 선보여 로고·서체·캐릭터가 하나의 브랜드 경험으로 연결되도록 설계했다</b>. 작은 패키지부터 옥외광고, 디지털 접점까지 확장성을 고려한 시스템으로 구축됐다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "퓨리오사AI, 8200억원 규모 시리즈D 투자 유치 완료",
+            "url": "https://byline.network/?p=9004111222625303",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-10-29",
+            "image": null,
+            "insight": "국산 AI 반도체 기업 퓨리오사AI가 올해 초 목표치(4,500억~7,500억원)를 웃도는 8,200억원 규모의 시리즈D 투자를 유치하며 기업가치 약 3조 8천억원을 인정받았다. 국민성장펀드가 3,700억원으로 최대 투자자로 나섰고 미국 인피니텀 등 해외 투자자와 네이버·카카오인베스트먼트 등 기존 주주들도 후속 투자에 참여했다. <b>인피니텀의 존 예티모글루 최고투자책임자는 \"첨단 AI 반도체를 설계부터 양산까지 성공적으로 이끌어내는 것은 매우 어려운 과제\"라며 투자 배경을 설명했다</b>."
+          },
+          {
+            "title": "무신사, 코스피 상장예비심사 청구...세무조사·개인정보 유출이 변수",
+            "url": "https://newstomato.com/ReadNews.aspx?no=1312936",
+            "source": "뉴스토마토",
+            "pubDate": "2026-09-08",
+            "image": null,
+            "insight": "무신사가 한국거래소에 코스피 상장예비심사를 청구하며 내년 상장을 목표로 하고 있지만, 희망 기업가치(약 10조원)와 시장에서 보는 평가(약 4조원) 사이 간극이 크다는 분석이 나온다. 서울지방국세청이 조만호 대표 개인회사와의 거래를 들여다보는 세무조사를 진행 중이고, 자회사 29CM에서 고객 2만여 명의 개인정보가 유출된 사고도 심사 부담으로 꼽힌다. <b>올해 상반기 매출은 전년 대비 22.5% 늘어난 8,217억원이었지만 영업이익은 11.2% 줄고 순손실 156억원을 기록해 수익성 둔화가 뚜렷하다</b>."
+          }
+        ]
+      }
+    ]
+  }
+}
