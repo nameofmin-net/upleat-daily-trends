@@ -1,0 +1,162 @@
+{
+  "intl": {
+    "date": "2026-11-19",
+    "dateLabel": "2026년 11월 19일 목요일",
+    "region": "해외",
+    "takeawayHtml": "앤트로픽의 나스닥 상장 추진과 중국의 소프트뱅크·ABB 로보틱스 인수 차단 소식이 겹치며, <b>AI를 둘러싼 자본과 공급망 경쟁이 국경을 넘나드는 모습을 보여준 하루였다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, 나스닥 상장 추진…기업가치 1.2조 달러 목표",
+            "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap",
+            "source": "Renaissance Capital",
+            "pubDate": "2026-11-10",
+            "image": "https://www.renaissancecapital.com/logos/ANT_logo_fb.jpg",
+            "insight": "앤트로픽이 나스닥 상장을 위해 공모가를 주당 70~78달러로 정하며 610억 달러 규모의 기업공개에 나섰다. 공모가 범위 중간값 기준 완전희석 시가총액은 1.2조 달러에 이르며, 여기에는 1,110억 달러 규모의 전환사채는 포함되지 않았다. <b>AMD, 브로드컴, 구글, 마이크론, 마이크로소프트, 엔비디아, TSMC 등 7개 기업이 260억 달러 규모의 사모 전환주를 공모가로 사들이기로 합의했다.</b> 상장은 11월 16일 주간 가격 결정과 거래 시작을 목표로 하며, 종목코드는 'ANT'다."
+          },
+          {
+            "title": "구글 딥마인드, 세포 유형별 DNA 변이 예측하는 '알파지놈 2' 공개",
+            "url": "https://interestingengineering.com/ai-robotics/deepmind-alphagenome-2-causal-dna-variants",
+            "source": "Interesting Engineering",
+            "pubDate": "2026-11-11",
+            "image": "https://cms.interestingengineering.com/wp-content/uploads/2026/11/GettyImages-2157680187.jpg",
+            "insight": "구글 딥마인드가 인간과 생쥐의 68개 조직에서 얻은 1억 700만 개 이상의 개별 세포 프로파일로 훈련한 후속 모델 '알파지놈 2'를 11일 공개했다. 28종의 면역세포로 구성된 TenK10K 벤치마크에서 <b>인과적 유전 변이를 30% 식별해 기존 모델의 16%를 거의 두 배 앞섰고, 변이가 유전자 발현을 높이거나 낮추는 방향을 맞힌 비율도 23%에서 43%로 올랐다.</b> 비상업적 연구자는 API로 무료 이용할 수 있지만, 딥마인드는 이 모델이 임상 진단용이 아닌 연구 도구임을 강조했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "제품팀 94%가 리서치에 AI 활용…검증이 새 과제로",
+            "url": "https://www.lyssna.com/reports/product-teams-ai-research/",
+            "source": "Lyssna",
+            "pubDate": "2026-10-01",
+            "image": "https://www.lyssna.com/opengraph.png?label=Report&title=How+product+teams+are+using+AI+for+research+in+2026&bg-color=neutral-07&image-url=https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Flyssna-production-marketing-site-assets%2Fmain%2FHow%2520product%2520teams%2520are%2520using%2520AI%2520for%2520research%2520-%2520Report.webp",
+            "insight": "UX 리서치 플랫폼 Lyssna가 코펜하겐 Future Product Days 참석자 428명을 설문한 결과, <b>94%가 리서치·의사결정 과정 어딘가에서 AI를 쓰고 있으며 55%는 전 과정에서 AI를 활용한다고 답했다.</b> 47%는 AI 덕분에 리서치를 더 많이 하게 됐다고 답한 반면, AI 활용의 가장 큰 장벽은 데이터 프라이버시·보안(27%)과 결과에 대한 신뢰 부족(25%)으로 나타났다. 보고서는 AI가 리서치를 대체한 게 아니라 결과물을 검증하는 새로운 업무를 만들어냈다고 결론 내렸다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "런던·LA 브랜드 스튜디오 하우하우, 음량 조절 장치 모티프로 로고 재탄생",
+            "url": "https://designcompass.org/2026/11/03/how-how-rebrand-volume-dial-logo/",
+            "source": "Design Compass",
+            "pubDate": "2026-11-03",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/HOWHOW-Turn-Up-the-Truth-7-web-thumbnail-scaled.jpg",
+            "insight": "2020년 설립된 브랜드 스튜디오 하우하우(HOW+HOW)가 설립 6년 만에 처음으로 자체 팀을 통해 리브랜딩을 진행했다. 앰퍼샌드(&)를 더하기 기호(+)로 바꾸고 소문자 표기를 대문자로 정리했으며, <b>로고의 가로선과 세로획이 화면 비율에 따라 길게 펼쳐지거나 짧게 압축되는 '볼륨 조절 장치' 모티프를 핵심 아이덴티티로 삼았다.</b> 새 웹사이트는 구글 검색뿐 아니라 AI 검색에도 대응하도록 구성해, 대규모 언어 모델이 읽을 수 있는 전용 페이지를 따로 마련했다."
+          },
+          {
+            "title": "피그마, Config 2026서 코드·모션·AI 에이전트를 하나의 캔버스로 통합",
+            "url": "https://www.figma.com/ja-jp/blog/config-2026-recap/",
+            "source": "Figma",
+            "pubDate": "2026-06-24",
+            "image": "https://cdn.sanity.io/images/599r6htc/regionalized/ae0303b2ad7753600fee94eb32a43e026cc220ae-3264x1836.png?w=1200&q=70&fit=max&auto=format",
+            "insight": "피그마가 연례 컨퍼런스 Config 2026에서 디자인 레이어를 한 번의 클릭이나 프롬프트로 인터랙티브한 코드 레이어로 바꾸는 기능을 공개했다. <b>디자인 화면에 키프레임과 프리셋 기반 타임라인을 더한 'Figma Motion'을 새로 선보여 CSS·JSON·React로 바로 내보낼 수 있게 했고,</b> 노션·슬랙·깃허브 등과 연결되는 피그마 에이전트와 문장만으로 플러그인을 만드는 생성형 플러그인 기능도 함께 공개했다. 코드 레이어 기능은 7월부터 순차 공개될 예정이다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "중국, 소프트뱅크의 54억 달러 ABB 로보틱스 인수 막아",
+            "url": "https://www.robotics247.com/article/softbanks-proposed-5.4b-acquisition-of-abb-robotics-blocked-by-china",
+            "source": "Robotics 247",
+            "pubDate": "2026-11-05",
+            "image": "https://www.robotics247.com/images/legacy_images/ABB-Robotics-SoftBank-divestment-Robotics247-2025.jpg",
+            "insight": "중국 외국인투자안보심사 기구가 소프트뱅크의 54억 달러 규모 ABB 로보틱스 인수를 차단했다. 애널리스트 서맨사 모우는 <b>ABB 로봇이 자동차·전자 제조사의 민감한 생산 공정과 고객 데이터에 접근할 수 있다는 점에서 데이터 보안이 핵심 우려였을 가능성이 크다고 분석했다.</b> ABB 전체 산업용 로봇 출하량의 약 50%가 중국에서 나오는 만큼, 중국을 제외한 인수는 거래 가치를 크게 떨어뜨린다는 평가가 나온다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-19",
+    "dateLabel": "2026년 11월 19일 목요일",
+    "region": "국내",
+    "takeawayHtml": "네이버와 카카오가 나란히 개인형 AI 에이전트 서비스를 연내 선보이겠다고 밝히며, <b>국내 빅테크의 AI 경쟁 축이 검색·채팅에서 에이전트로 빠르게 옮겨가고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "네이버, 검색·쇼핑·결제 잇는 '개인형 AI 에이전트 앱' 연내 출시",
+            "url": "https://www.dailian.co.kr/news/view/1714112",
+            "source": "데일리안",
+            "pubDate": "2026-11-12",
+            "image": "https://cdnimage.dailian.co.kr/news/202601/news_1768874540_1600298_m_2.png",
+            "insight": "네이버가 검색, 쇼핑, 지도, 결제를 하나로 묶은 개인형 AI 에이전트 앱을 올해 안에 출시한다고 밝혔다. 최수연 대표는 <b>\"개인형 AI 에이전트는 필요한 정보를 직접 찾는 것을 넘어 필요한 일을 미리 챙기거나 번거로운 작업을 대신 수행하는 새로운 사용성을 제공하고자 한다\"</b>고 말했다. 쇼핑 AI 에이전트의 9월 이용자 수는 3월 대비 약 5배, 거래액은 약 4배 늘었으며, 광고 과금 방식도 클릭이 아닌 실제 거래 성과 기반으로 바꾸기로 했다."
+          },
+          {
+            "title": "카카오, 카톡 안에서 쓰는 AI 비서 '카나나 스페이스' 12월 파일럿",
+            "url": "https://news.mtn.co.kr/article/2026110516005111988",
+            "source": "MTN",
+            "pubDate": "2026-11-05",
+            "image": "https://files.mtn.co.kr/article-asset/2026/11/05/d58a2f55-d65a-4678-ad44-de6cf576b692.jpg",
+            "insight": "카카오가 3분기 실적발표에서 카카오톡 내에서 음성·텍스트로 AI를 호출하는 '카나나 스페이스'를 12월 파일럿으로 시작한다고 밝혔다. 대화 맥락과 의도를 파악해 카카오톡 설정 변경, 선물하기, 송금 등을 바로 실행하는 방식이며, <b>카카오는 5000만 명의 카카오톡 이용자 기반을 토대로 연내 월간 활성 AI 이용자 1000만 명을 목표로 내세웠다.</b> PC용 생산성 도구 '칸바스'와 광고주용 AI 에이전트 'AI 크루'도 연내·12월 각각 출시·베타를 예고했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "토스 '두쫀쿠 맵'으로 본 슈퍼앱 UX 전략",
+            "url": "https://ditoday.com/%ED%86%A0%EC%8A%A4%EC%97%90%EC%84%9C-%EC%B0%BE%EB%8A%94-%EB%91%90%EC%AB%80%EC%BF%A0-%EB%91%90%EC%AB%80%EC%BF%A0-%EB%A7%B5%EC%97%90-%EB%8B%B4%EA%B8%B4-%ED%86%A0%EC%8A%A4%EC%9D%98/",
+            "source": "디지털인사이트",
+            "pubDate": "2026-01-22",
+            "image": "https://ditoday.com/wp-content/uploads/2026/01/0121_토스-두쫀쿠.jpg",
+            "insight": "토스가 입점 미니앱 '두쫀쿠 맵'을 앱인토스 SDK로 하루 만에 출시하며 실시간 재고를 지도에 표시하는 서비스를 내놓았다. 기사는 재고 확인을 위해 들어온 사용자가 토스페이 혜택 안내를 거쳐 다른 서비스로 자연스럽게 이어지는 구조를 짚으며, <b>마이크 라자리디스가 제시한 원활함·연결성·효율성·상황적 맥락·일상성이라는 슈퍼앱의 5대 요건에 두쫀쿠 맵이 부합한다고 분석했다.</b> 글로벌 슈퍼앱 시장은 올해 약 1,624억 달러로 성장할 전망이다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "투썸플레이스, 한글 자모로 만든 새 심벌로 리브랜딩",
+            "url": "https://designcompass.org/2026/06/10/twosome-place-korean-symbol-rebranding/",
+            "source": "Design Compass",
+            "pubDate": "2026-06-10",
+            "image": "https://designcompass.org/wp-content/uploads/2026/06/%ED%88%AC%EC%8D%B8.jpg",
+            "insight": "투썸플레이스가 긴 영문명 대신 소비자들이 즐겨 부르는 '투썸'을 중심으로 브랜드 정체성을 새로 정리했다. <b>'TWO'의 T에 'SOME' 발음을 이루는 한글 자모 ㅆ과 ㅁ을 이어 붙여, 한국 전통 기와집 지붕선을 연상시키는 심벌을 만들었다.</b> 단청이나 전통 문양 같은 장식적 요소 없이 한글 구조 자체를 시각 기호로 활용했으며, 2025년 9월 문을 연 콘셉트 매장 '투썸 2.0 강남'과 아이덴티티를 연결했다."
+          },
+          {
+            "title": "한국 야구 국가대표팀, 18년 만에 새 BI 공개",
+            "url": "https://designcompass.org/2026/06/12/korea-baseball-national-team-new-bi/",
+            "source": "Design Compass",
+            "pubDate": "2026-06-12",
+            "image": "https://designcompass.org/wp-content/uploads/2026/06/%EC%95%BC%EA%B5%AC%EA%B5%AD%EA%B0%80%EB%8C%80%ED%91%9C.jpg",
+            "insight": "KBO와 KBSA가 6월 9일 한국 야구 국가대표팀의 새 브랜드 아이덴티티(BI)를 공개했다. 2008년 베이징 올림픽 우승과 함께해온 기존 로고를 18년 만에 현대적으로 다듬은 것으로, <b>'K' 레터마크는 투수의 투구 동작과 타자의 스윙 궤적, 한국 전통 탈춤의 한삼에서 영감을 받아 디자인됐다.</b> 상징색인 'Team Korea Navy'는 유지하면서 라이트블루·블루·레드를 서브 컬러로 더해 유니폼과 굿즈 등에 유연하게 쓸 수 있도록 했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "라이다 모션캡처 '무빈' 100억 시리즈A, AI 정형데이터 '넘즈에이아이' 20억 유치",
+            "url": "https://supple.kr/news/cmw7jxz0biu6hal9ppf9rye2v",
+            "source": "머니투데이",
+            "pubDate": "2026-11-08",
+            "image": "https://images.supple.kr/?url=https%3A%2F%2Fthumb.mt.co.kr%2F06%2F2026%2F11%2F2026110813265917222_5.jpg",
+            "insight": "라이다 센서와 자체 AI로 사람의 동작을 3차원 데이터로 변환하는 모션 분석 기업 무빈이 IMM인베스트먼트 주도로 100억원 규모 시리즈A를 유치했다. <b>해외 매출 비중이 70%에 달하며, 보스턴다이내믹스 등 로봇 기업에 원격조작·학습용 모션 데이터를 공급하고 있다.</b> 같은 날 정형 데이터 파운데이션 모델 '코실로'를 개발하는 넘즈에이아이도 미래에셋벤처투자·한국투자파트너스로부터 20억원의 프리시드 2차 투자를 받았다."
+          }
+        ]
+      }
+    ]
+  }
+}
