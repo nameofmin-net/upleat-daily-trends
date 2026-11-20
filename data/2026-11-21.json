@@ -1,0 +1,121 @@
+{
+  "intl": {
+    "date": "2026-11-21",
+    "dateLabel": "2026년 11월 21일 토요일",
+    "region": "해외",
+    "takeawayHtml": "해외에서는 OpenAI가 GPT-6.2 Astra·Sol을 내놓으며 가격 경쟁과 에이전틱 AI 흐름이 동시에 가속화됐고, <b>Thinking Machines Lab의 50억 달러 투자 유치 소식까지 겹치며 AI 자본 경쟁이 한층 뜨거워졌다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "OpenAI, 'GPT-6.2 Astra'와 'Sol' 공개",
+            "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+            "source": "OpenAI",
+            "pubDate": "2026-11-17",
+            "image": null,
+            "insight": "OpenAI가 11월 17일 공개한 GPT-6.2 Astra와 Sol은 기존 Astra보다 20% 낮아진 입력당 8달러·출력당 40달러 가격에, 출력 토큰을 22% 줄이면서도 벤치마크 점수를 6.2%p 끌어올렸다고 발표했다. <b>다만 독립 테스트에서는 Astra가 Anthropic의 Claude Fable 5.2에 이어 2위에 그쳤고, 코딩 에이전트 성능 개선은 없었다는 평가도 나왔다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "닐슨노먼그룹 \"AI가 리서치 결과물은 대체해도 팀의 학습은 대체할 수 없다\"",
+            "url": "https://www.nngroup.com/articles/human-led-research-still-matters/",
+            "source": "Nielsen Norman Group",
+            "pubDate": "2026-07-17",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Dont_Outsource_the_Learning-1.png",
+            "insight": "닐슨노먼그룹의 마리아 로사라는 AI가 리서치 결과물은 만들어낼 수 있어도 팀이 함께 얻는 '학습'은 대체할 수 없다고 지적했다. 프린스턴대 연구(Stephens et al., 2010)를 인용해 발표자와 청취자의 뇌 활동이 동조될수록 이해와 기억이 향상된다는 점, 스스로 생성한 정보가 읽은 정보보다 더 오래 기억된다는 '자기생성효과'(Bertsch et al., 2007)를 근거로 들었다. <b>그는 AI를 섭외·일정 조율·전사 같은 보조 작업에 활용하되, 모더레이션과 실시간 관찰, 해석은 여전히 사람이 맡아야 한다고 결론 내렸다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "브랜딩 스튜디오 How&How, 설립 6주년에 'HOW+HOW'로 리브랜딩",
+            "url": "https://www.creativeboom.com/news/london-and-la-studio-howhow-launches-a-new-name-visual-identity-and-website/",
+            "source": "Creative Boom",
+            "pubDate": "2026-11-02",
+            "image": "https://media.creativeboom.com/d1c3189b-b681-4305-b29c-19b8a5838c0e/conversions/f78f5f4ff765ac00bfa120731f338266493cbc1c-medium.webp",
+            "insight": "런던과 LA에 스튜디오를 둔 브랜딩 스튜디오 How&How가 설립 6주년을 맞아 이름을 HOW+HOW로 바꾸고 전면 리브랜딩을 단행했다. 앰퍼샌드를 '+' 기호로 교체하고 전체 대문자로 표기를 바꿨으며, 믹싱데스크 페이더를 닮은 볼륨 다이얼 형태의 새 로고와 'Gello'라는 녹황색 컬러, 와그램 세리프 서체를 새 비주얼 아이덴티티로 도입했다. <b>새 웹사이트는 구글 검색뿐 아니라 AI 검색 결과에도 대응하도록 설계돼, 대형언어모델이 읽을 수 있는 전용 페이지까지 별도로 마련했다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "미라 무라티의 Thinking Machines Lab, 400억 달러 밸류에이션에 50억 달러 투자 유치 추진",
+            "url": "https://dealroom.co/news/170334-thinking-machines-lab-nears-5b-round-at-40b-valuation-led-by-accel/",
+            "source": "Dealroom",
+            "pubDate": "2026-11-06",
+            "image": null,
+            "insight": "전 OpenAI CTO 미라 무라티가 이끄는 Thinking Machines Lab이 Accel 주도로 사전 밸류에이션 400억 달러에 50억 달러 규모 투자 라운드를 마무리 짓고 있는 것으로 보도됐다. 이번 라운드가 완료되면 2025년 7월 120억 달러 밸류에이션에 20억 달러를 유치했던 시드 라운드 대비 기업가치가 3배 이상 뛰는 셈이다. <b>다만 보도 시점까지 라운드는 공식적으로 마감되지 않았으며, 한때 추진됐던 500억 달러 밸류에이션 유치 시도는 공동창업자 여럿의 이탈 이후 철회된 바 있다.</b>"
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-21",
+    "dateLabel": "2026년 11월 21일 토요일",
+    "region": "국내",
+    "takeawayHtml": "국내에서는 카카오가 '실행하는 AI'로 전략을 전환하며 수익성 개선을 입증했고, <b>자율주행 로봇기업 유로보틱스의 400억원 시리즈A 유치 등 스타트업 투자도 활기를 띠었다.</b>",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오, '답변하는 AI'에서 '실행하는 AI'로 전략 전환",
+            "url": "https://zdnet.co.kr/view?no=20261105152131",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-11-05",
+            "image": "https://image.zdnet.co.kr/2025/02/04/f1fa3d9e90890162d6218736d68be3d0.jpg",
+            "insight": "카카오가 '답변하는 AI'에서 '실행하는 AI'로 전략을 전환하며, AI 비서 '카나나 스페이스'가 선물하기·송금 같은 자주 쓰는 기능까지 대신 처리하도록 하겠다고 밝혔다. 카나나 스페이스는 12월 사전 신청자 중심으로 파일럿에 들어가며, 회사는 2028년까지 AI 사업을 손익분기점 수준으로 끌어올리고 연내 월간 활성 AI 이용자 1000만 명을 달성하겠다는 목표를 제시했다. <b>올해 3분기 카카오의 매출은 전년 대비 6% 늘어난 2조867억원, 영업이익은 7% 증가한 2403억원을 기록하며 수익성이 개선됐다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": []
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "세븐일레븐 코리아, '선에서 공간으로' 새 비주얼 아이덴티티 공개",
+            "url": "https://design.co.kr/article/174577/",
+            "source": "월간 디자인",
+            "pubDate": "2026-09-29",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/09/28165953/20260928075945-1-832x1040.jpg",
+            "insight": "브랜딩 스튜디오 MHTL이 세계 최초 편의점이라는 세븐일레븐의 상징성을 고려해 워드마크와 '7' 심벌, 키 컬러는 그대로 유지한 채, 기존의 평면적인 3색 스트라이프를 입체적인 공간 그래픽 시스템으로 전환하는 리뉴얼을 진행했다. '선에서 공간으로, 규칙에서 시스템으로'라는 컨셉 아래 숫자 7의 내부와 외부 윤곽선을 따라 다른 리듬의 패턴을 만들어, 확대·절단 위치에 따라 다양한 그래픽 변주가 가능하도록 설계했다. <b>이 그래픽 시스템은 컵·즉석식품 패키지부터 매장 홍보물, 직원 유니폼, 디지털 채널까지 전 접점에 순차 적용된다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "11월 첫째 주 스타트업 투자 914억원…유로보틱스 400억원 시리즈A 최대 규모",
+            "url": "https://quasa.io/ko/media/11weol-ceos-ju-seutateueob-tuja-914eogweon-geonsuneun-julgo-geumaegeun-neuleossda",
+            "source": "Quasa",
+            "pubDate": "2026-11-18",
+            "image": "https://cdn.quasa.io/images/news/Jh9C743cncSC6WYt22AoWkHCnI5uxh62SwzJHm5B.jpg",
+            "insight": "삼성증권 주간 집계에 따르면 11월 2~8일 국내 스타트업 투자는 35건, 공개 금액 기준 914억원으로, 전년 동기 대비 건수는 23.9% 줄었지만 금액은 12.2% 늘었다. 자율이동 로봇기술 기업 유로보틱스가 시리즈A에서 400억원을 유치하며 가장 큰 규모를 기록했고, 모바일 게임사 액션핏과 AI 컨택센터 기업 페르소나에이아이가 각각 150억원을 모았다. <b>다만 공개 금액을 밝힌 기업은 9곳에 불과했고, 상위 3개 기업이 전체 공개액의 76.6%를 차지해 소수 대형 딜에 투자가 쏠린 한 주였다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
