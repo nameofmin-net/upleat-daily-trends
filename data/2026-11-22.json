@@ -1,0 +1,146 @@
+{
+  "intl": {
+    "date": "2026-11-22",
+    "dateLabel": "2026년 11월 22일 일요일",
+    "region": "해외",
+    "takeawayHtml": "오늘 해외 소식의 중심은 <b>Anthropic과 Google이 하루 간격으로 차세대 플래그십 모델을 내놓으며 벌이는 AI 경쟁</b>이었고, Adobe는 디자인 캔버스까지 AI 에이전트로 통합하며 창작 워크플로우 전반을 재편하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "Anthropic, 코딩·추론·비전 강화한 'Claude Fable 5.2'와 'Mythos 5.2' 공개",
+            "url": "https://sdtimes.com/ai/anthropic-introduces-claude-fable-5-2-mythos-5-2/",
+            "source": "SD Times",
+            "pubDate": "2026-11-09",
+            "image": "https://sdtimes.com/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-2.53.59-PM.jpg",
+            "insight": "Anthropic이 11월 9일 코딩과 추론, 비전 성능을 끌어올린 신규 모델 Claude Fable 5.2와 제한 공개 버전 Mythos 5.2를 선보였다. 두 모델 모두 이전 5.1 세대보다 응답 속도가 최대 30% 빨라졌으며, Fable 5.2는 입력 토큰당 8달러·출력 토큰당 40달러로 모든 플랜에서 바로 쓸 수 있다. <b>다만 Anthropic은 까다로운 코딩·지식 작업의 기본 모델로는 여전히 Claude Opus 5.5를 권장하고 있어, Fable 5.2는 속도와 비용 효율을 노린 보완재에 가깝다.</b> Mythos 5.2는 생명과학·사이버보안 분야의 검증된 조직에만 제한적으로 제공된다."
+          },
+          {
+            "title": "Google, 코딩·사이버보안·과학 연구용 최상위 모델 'Gemini 4 Carbon' 공개",
+            "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+            "source": "Google (The Keyword)",
+            "pubDate": "2026-11-10",
+            "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini_4_carbon_key_art_16-9_lockup.width-1300.jpg",
+            "insight": "Google이 11월 10일 코딩, 사이버보안, 과학 연구에 특화된 최상위 모델 Gemini 4 Carbon을 공식 출시했다. 입력 토큰당 2달러·출력 토큰당 10달러의 도입가로 제공되지만 11월 30일부터는 4달러·20달러로 오른다. <b>Google은 Carbon이 CursorBench 4.0 등 주요 벤치마크에서 1위를 차지하면서도 차순위 외부 모델보다 작업당 비용이 2배 이상 낮다고 주장했고, 시뮬레이션 공격 테스트에서는 공격 시도의 99%를 차단했다고 밝혔다.</b> 다만 프롬프트 인젝션 방어는 여전히 개선이 필요한 영역이라고 자체적으로 인정했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "UserTesting, AI 워크플로우 안에서 바로 쓰는 MCP 서버 출시",
+            "url": "https://www.usertesting.com/blog/usertestings-mcp-server-researchers-can-stop-switching-between-ai-analysis-and-research-tools",
+            "source": "UserTesting",
+            "pubDate": "2026-05-27",
+            "image": "https://www.usertesting.com/sites/default/files/usertestingv3/2026-05/HERO-2026-mcp-product-release-725x512.png?width=1200&height=628",
+            "insight": "UserTesting이 Claude, ChatGPT, Figma Make 등 AI 도구에서 바로 연결되는 MCP(Model Context Protocol) 서버를 공개했다. 이를 통해 리서처는 플랫폼을 오가지 않고 AI 워크플로우 안에서 스터디를 설계하고 참가자를 모집하며, 사용성 평가와 행동 데이터, 고객 피드백을 한 흐름에서 비교할 수 있다. <b>UserTesting은 고객 데이터와 리서치 인사이트가 제3자 AI 모델 학습에 쓰이지 않는다고 강조하며 엔터프라이즈급 보안을 내세웠다.</b> 현재는 일부 팀에만 얼리 액세스로 제공된다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "Adobe, MAX서 통합 디자인 캔버스 'Firefly Design' 베타 공개",
+            "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands",
+            "source": "Adobe Newsroom",
+            "pubDate": "2026-11-10",
+            "image": "https://news.adobe.com/news/2026/11/media_1be983d78cf64b14905c05379432c9a51f63f93b1.jpg?width=1200&format=pjpg&optimize=medium",
+            "insight": "Adobe가 11월 10일 Adobe MAX에서 삽화, 이미지 편집, 애니메이션, 3D, 인쇄물 작업을 하나의 캔버스에서 처리하는 신규 디자인 공간 'Firefly Design'을 베타로 공개했다. 브랜드 아이덴티티나 패키지, 캠페인을 하나의 파일 안에서 초기 아이디어부터 클라이언트 리뷰까지 끝낼 수 있도록 설계됐다. <b>동시에 자연어 지시만으로 웹사이트·앱 프로토타입을 만들어주는 'Firefly Builder'도 비공개 베타로 선보여, Adobe가 생성형 AI를 디자인 실무 전체로 확장하고 있음을 보여준다.</b> Edit Text, Retouch 등 일부 기능은 이미 정식 출시됐지만 Firefly Builder는 대기자 명단을 통한 비공개 베타로만 제공된다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "OpenAI, 12월부터 ChatGPT·Codex 사용량 한도 통합",
+            "url": "https://letsdatascience.com/news/openai-to-merge-chatgpt-chat-and-work-tabs-pool-codex-usage-a4ede6bc",
+            "source": "LetsDataScience",
+            "pubDate": "2026-11-02",
+            "image": null,
+            "insight": "OpenAI가 12월부터 ChatGPT Plus·Pro·Business 요금제에서 ChatGPT와 Codex의 사용량을 토큰 기준의 단일 한도로 통합한다고 밝혔다. 더 고성능 모델이나 복잡한 작업을 쓸수록 한도 소진이 빨라지며, 남은 사용량과 초기화 시점은 설정의 사용량 메뉴에서 확인할 수 있다. <b>Codex는 ChatGPT 데스크톱 앱 안에서 모드 선택으로 여전히 별도 경험을 유지하지만, 한 도구를 많이 쓰면 다른 도구에 쓸 수 있는 한도가 줄어드는 구조여서 개발자 커뮤니티에서는 한도를 분리해 달라는 요청도 나왔다.</b>"
+          },
+          {
+            "title": "Google, 와이오밍에 170억 달러 규모 첫 데이터센터 건설 발표",
+            "url": "https://fourweekmba.com/ai-google-confirms-17b-wyoming-data-center-pays-100-of-power/",
+            "source": "FourWeekMBA",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "Google이 11월 5일 와이오밍주 샤이엔 인근에 '프로젝트 템보'로 불리는 첫 데이터센터를 170억 달러 규모로 짓겠다고 발표했다. 가스 파이프라인 업체 Tallgrass Energy, 전력사 Black Hills Energy·AEP, 개발사 Related Digital과 협력하며 2031년 완전 가동을 목표로 한다. <b>Google은 자사가 쓰는 전력의 100%를 직접 비용을 부담하고 수자원 사용을 줄이기 위해 공기 냉각 방식을 적용하겠다고 밝혔다.</b> 다만 최근 미국 중간선거에서 데이터센터 관련 투표 41건 중 40건이 반대로 결론 난 만큼, 지역 사회의 반발도 변수로 남아있다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-22",
+    "dateLabel": "2026년 11월 22일 일요일",
+    "region": "국내",
+    "takeawayHtml": "국내에서는 <b>국가AI전략위원회가 신법 제정 대신 기존 법 정비를 택한 'AI 입법 프레임워크'를 확정</b>했고, 요기요의 UI 개편과 반도체·방산 소재기업들의 코스닥 동시 상장까지 산업 전반에서 변화가 이어졌다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "국가AI전략위원회, 신법 대신 기존법 우선 손질하는 'AI 입법 프레임워크' 확정",
+            "url": "https://www.etnews.com/20261106000224",
+            "source": "전자신문",
+            "pubDate": "2026-11-06",
+            "image": "https://img.etnews.com/news/article/2026/11/06/news-p.v1.20261106.1722109085f94daf9226ad339aae6bd1_P1.jpg",
+            "insight": "국가AI전략위원회가 11월 6일 3차 전체회의를 열고 '대한민국 AI 입법 프레임워크'를 의결했다. 22대 국회 개원 이후 AI 관련 법안이 477건 발의돼 21대 국회 월평균 발의 건수의 4.7배에 달할 정도로 급증하자, 새 법을 만들기보다 AI기본법과 기존 법률을 먼저 정비하는 방향을 택한 것이다. <b>국방·안보 분야는 AI기본법 적용 대상에서 빠지는 만큼 별도 입법을 추진하기로 했고, 국가 핵심 과제를 다루는 7개 TF도 새로 꾸렸다.</b> 초지능 대응 TF는 내년 6월까지 AI 행동계획에 추가할 핵심 과제 10개를 도출해야 한다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "요기요, 2년 만에 앱 UI·UX 전면 개편",
+            "url": "https://www.ddaily.co.kr/page/view/2026060817401248907",
+            "source": "디지털데일리",
+            "pubDate": "2026-06-08",
+            "image": null,
+            "insight": "요기요가 6월 8일 2024년 이후 2년 만에 앱 UI·UX를 전면 개편했다고 밝혔다. 혜택과 음식 카테고리를 한 화면에서 볼 수 있도록 홈 화면을 재구성하고, 적립·포장·선물하기 등 주요 기능을 메뉴 이동 없이 바로 쓸 수 있게 배치했다. <b>음식 배달과 퀵커머스 영역을 분리해 이용 목적에 따라 빠르게 이동하도록 했고, 배달앱 업계 최초로 계절별 인기 메뉴를 모아 보여주는 '시즈널 카테고리'도 선보일 예정이다.</b>"
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "딸기모찌 브랜드 '연백1227', 1227번의 레시피 도전을 정체성으로 담은 리브랜딩",
+            "url": "https://thedieline.com/it-took-1227-tries-to-perfect-this-mochi-the-rebrand-got-it-in-one/",
+            "source": "The Dieline",
+            "pubDate": "2026-07-14",
+            "image": "https://i0.wp.com/thedieline.com/wp-content/uploads/2026/07/6-24c074fe0c6e90a8d6d2f9170e154c44-1.png",
+            "insight": "브랜딩 스튜디오 듀당스가 프리미엄 딸기모찌 브랜드 '연백딸기모찌'를 '연백1227'로 리브랜딩했다. 제품을 완성하기까지 거친 1227번의 레시피 시도를 브랜드 네이밍과 정체성의 중심에 놓은 것이 특징이다. <b>색채는 연백 지역의 '세 가지 흰색'인 쌀·소금·목화에서 가져왔고, 그래픽은 연꽃 문양과 민화 모티프를 평면적인 반복 패턴으로 재해석했다.</b> 로고는 아르데코 양식과 현대 서울의 감각을 함께 녹여냈다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "영광와이케이엠씨 등 4곳, 11월 셋째 주 코스닥 동시 데뷔",
+            "url": "https://www.mt.co.kr/stock/2026/11/15/2026111317112510863",
+            "source": "머니투데이",
+            "pubDate": "2026-11-15",
+            "image": "https://thumb.mt.co.kr/cdn-cgi/image/f=avif/21/2026/11/2026111317112510863_1.jpg",
+            "insight": "11월 셋째 주 영광와이케이엠씨, 옵토닉스, 에이엘로봇, 하나에어로다이내믹스 등 4개 기업이 코스닥에 나란히 상장한다. 네 곳 모두 공모가를 희망 범위 최상단에서 확정했고, 기관 수요예측 경쟁률이 872대 1에서 1343대 1에 달할 정도로 흥행했다. <b>반도체 장비 부품을 만드는 영광와이케이엠씨부터 한화에어로스페이스에 광학부품을 공급하는 옵토닉스까지, 이번 상장 기업들은 대부분 반도체·방산 공급망에 속한 소재·부품 기업이라는 공통점이 있다.</b>"
+          }
+        ]
+      }
+    ]
+  }
+}
