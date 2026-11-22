@@ -1,0 +1,194 @@
+{
+  "intl": {
+    "date": "2026-11-23",
+    "dateLabel": "2026년 11월 23일 월요일",
+    "region": "해외",
+    "takeawayHtml": "앤트로픽이 IPO를 앞두고 신모델 'Claude Fable·Mythos 5.2'를 공개하며 경쟁이 격화되는 가운데, 맥킨지 조사에서는 <b>기업의 AI 투자가 아직 뚜렷한 수익으로 이어지지 못하고 있다는 점</b>이 다시 확인됐다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "앤트로픽, IPO 앞두고 신모델 'Claude Fable·Mythos 5.2' 공개",
+            "url": "https://www.thestar.com.my/tech/tech-news/2026/11/10/anthropic-unveils-new-fable-mythos-models-as-competition-heats-up-ahead-of-ipo",
+            "source": "The Star",
+            "pubDate": "2026-11-09",
+            "image": "https://apicms.thestar.com.my/uploads/images/2026/11/10/4204102.jpg",
+            "insight": "앤트로픽이 상장(IPO)을 앞둔 가운데 코딩과 추론, AI 에이전트 작업에 특화된 'Claude Fable 5.2'와 사이버보안·생명과학 연구용으로 접근이 제한된 'Claude Mythos 5.2'를 공개했다. 새 모델은 입력 토큰당 8달러, 출력 토큰당 40달러로 이전 세대보다 낮은 가격을 책정했으며, <b>이전 버전보다 응답 생성 속도가 최대 30% 빨라졌다</b>고 회사는 설명했다. 로이터는 오픈AI, 구글, 메타가 동시에 코딩·추론·에이전트 중심 모델을 내놓으며 경쟁이 격화되고 있다고 전했다."
+          },
+          {
+            "title": "맥킨지 '2026 AI 현황' 리포트, 기업 AI 투자 대비 수익은 아직 제자리",
+            "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+            "source": "McKinsey & Company",
+            "pubDate": null,
+            "image": null,
+            "insight": "맥킨지가 2026년 5~6월 전 세계 1,719명을 대상으로 진행한 조사에서, AI가 기업 이익(EBIT)에 긍정적으로 기여했다고 답한 비율은 37%로 지난해와 거의 같았다. <b>매출 10억 달러 이상 기업의 54%는 AI를 전사적으로 확대 적용하고 있다고 답했지만, 소규모 기업에서는 그 비율이 3분의 1에 그쳤다</b>."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "AI 시대의 UX 리서치, 도구는 늘었지만 판단력이 핵심이 된다",
+            "url": "https://www.uxmatters.com/mt/archives/2026/05/the-future-of-ux-research-navigating-ai-powered-tools-and-methods.php",
+            "source": "UXmatters",
+            "pubDate": "2026-05-04",
+            "image": null,
+            "insight": "UXmatters에 실린 제시 갈라니스의 글은 AI가 UX 리서치의 핵심 방법론 자체를 바꾸지는 않지만, 녹취·태깅·종합 같은 분석 과정에서 이미 널리 쓰이고 있다고 짚는다. 글은 AI 에이전트가 스크리너 작성이나 샘플 커버리지 점검까지 넘겨받을 수 있다고 보지만, 동의·편향·프라이버시 같은 윤리적 위험도 함께 지적한다. <b>저자는 모든 AI 기반 인사이트를 근거 데이터까지 추적할 수 있어야 한다</b>고 강조하며, EU AI Act 대응과 ISO 9241-210 준수를 권고한다."
+          },
+          {
+            "title": "베이마드 조사, 온라인 쇼핑 반품률 3년 연속 하락",
+            "url": "https://baymard.com/research-articles/ecommerce-quantitative-ux-insights-2026",
+            "source": "Baymard Institute",
+            "pubDate": "2026-08-04",
+            "image": "https://baymard.com/api/og/article/ecommerce-quantitative-ux-insights-2026",
+            "insight": "베이마드 인스티튜트가 미국 온라인 쇼핑객 1,083명을 대상으로 한 조사에서, 지난 12개월간 반품을 두 번 이상 한 소비자 비율이 2024년 44%에서 2026년 28%까지 꾸준히 줄었다. 반면 한 번도 반품하지 않은 소비자는 26%에서 44%로 늘었다. <b>뉴스레터 구독을 해지하는 가장 큰 이유는 '특정 브랜드가 메일을 너무 자주 보내서'(48%)였다</b>."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "어도비 맥스 2026, 크리에이티브 클라우드 전반에 에이전틱 AI 확대",
+            "url": "https://news.adobe.com/news/2026/11/adobe-powers-new-era-of-creativity",
+            "source": "Adobe Newsroom",
+            "pubDate": "2026-11-10",
+            "image": "https://news.adobe.com/news/2026/11/media_194f62215cc674a3099d1a6f6b08199d16183a1ba.jpg?width=1200&format=pjpg&optimize=medium",
+            "insight": "어도비는 마이애미비치에서 열린 '맥스 2026'에서 파이어플라이를 자사와 외부 AI 모델을 결합한 '크리에이티브 스튜디오'로 재편한다고 밝혔다. 포토샵·프리미어·일러스트레이터 등에 AI 어시스턴트(베타)가 추가되고, 서드파티 AI 에이전트가 원본 프로젝트 파일을 직접 편집할 수 있는 로컬 MCP 연동도 프리뷰로 공개됐다. <b>구글·마이크로소프트와 파트너십을 확대하고 디즈니와는 복수 연도 단위의 전략적 제휴를 발표</b>했으며, 캔버스형 디자인 툴 '파이어플라이 디자인'도 새로 선보였다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "애플 지원 커뮤니티 포럼, 28년 만에 영구 폐쇄",
+            "url": "https://www.macrumors.com/2026/11/10/apple-support-community-closing-november-20/",
+            "source": "MacRumors",
+            "pubDate": "2026-11-10",
+            "image": "https://images.macrumors.com/t/PyBmDfw7XWGGZ7XUZENPzChF4jA=/1600x/article-new/2026/11/Apple-Support-Community.jpg",
+            "insight": "애플이 1998년부터 운영해온 '애플 지원 커뮤니티' 포럼을 11월 20일자로 영구 폐쇄한다. 11월 10일부터 이미 읽기 전용으로 전환돼 새 글 작성이 막혔으며, 애플은 '전략과 고객 필요에 대한 신중한 검토' 끝에 내린 결정이라고 밝혔을 뿐 구체적인 이유는 설명하지 않았다. <b>28년간 쌓인 문제 해결 노하우가 폐쇄 후 그대로 남을지는 애플의 공지에서도 확인되지 않았다</b>."
+          },
+          {
+            "title": "서비스나우, 77억 5천만 달러 규모 아미스 인수 완료",
+            "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-completes-Armis-acquisition-closing-the-gap-between-asset-visibility-and-cyber-risk/",
+            "source": "ServiceNow Newsroom",
+            "pubDate": "2026-04-20",
+            "image": null,
+            "insight": "서비스나우가 사이버 자산 노출 관리 기업 아미스를 약 77억 5천만 달러에 인수하는 절차를 마쳤다. 아미스는 IT·OT·IoT·의료기기·클라우드에 걸쳐 약 70억 개 기기를 비침투 방식으로 실시간 추적하는 기술을 보유하고 있으며, <b>지난 3월 마무리된 베자(Veza) 인수와 합쳐 서비스나우의 보안·리스크 시장 규모를 세 배 이상 키울 것으로 예상된다</b>. 아미스는 포춘 10대 기업 중 9곳, 포춘 100대 기업의 35% 이상을 고객으로 두고 있다."
+          },
+          {
+            "title": "메타, 노르웨이·브라질 법원 제동에 상업약관 개정 무기한 보류",
+            "url": "https://www.mediapost.com/publications/article/419294/meta-pauses-data-scraping-terms-following-publishe.html",
+            "source": "MediaPost",
+            "pubDate": "2026-11-05",
+            "image": null,
+            "insight": "메타가 11월 20일 시행 예정이던 신규 상업 약관 개정을 무기한 보류한다고 11월 5일 밝혔다. 노르웨이 법원이 180개 현지 언론사의 요청으로 10월 28일 임시 금지명령을 내렸고, 브라질 상파울루 법원도 11월 3일 비슷한 가처분을 승인했다. <b>해당 약관은 메타 비즈니스 계정 이용자의 웹사이트를 메타가 크롤링·스크래핑할 수 있게 하는 내용이어서 언론사들의 거센 반발을 불렀다</b>."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-23",
+    "dateLabel": "2026년 11월 23일 월요일",
+    "region": "국내",
+    "takeawayHtml": "삼성SDS가 '리얼 서밋 2026'에서 AI 풀스택 전략을 공개하고 통신 3사도 AI 데이터센터 매출을 늘려가는 가운데, <b>중기부는 2030년까지 AI 데카콘 1곳을 육성하겠다는 '비욘드 유니콘' 전략을 내놨다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성SDS, '리얼 서밋 2026'서 다차원 AI 풀스택 전략 공개",
+            "url": "https://zdnet.co.kr/view?no=20260908083751",
+            "source": "ZDNet Korea",
+            "pubDate": "2026-09-08",
+            "image": "https://image.zdnet.co.kr/2026/09/08/a3595e015358d1ecb81b9350e0713505.jpg",
+            "insight": "삼성SDS는 '리얼 서밋 2026'에서 컨설팅부터 구축·운영까지 잇는 '다차원 AI 풀스택' 전략과 AX(AI 전환) 실행 로드맵을 공개했다. 오픈AI, 앤트로픽, 엔비디아 등과의 협력을 강화하며 현장 엔지니어(FDE)를 연내 200여 명으로 늘리고, 2027년 로봇 오케스트레이션 플랫폼 출시도 예고했다. <b>행사에서는 맥킨지 조사를 인용해 기업의 88%가 AI를 도입했지만 이익에 유의미하게 기여했다고 답한 곳은 6%에 그쳤다는 점</b>을 짚으며 AX 전환의 필요성을 강조했다."
+          },
+          {
+            "title": "통신 3사 3분기 실적, AI 데이터센터가 새 수익원으로 부상",
+            "url": "https://news.bizwatch.co.kr/article/mobile/2026/11/10/0025",
+            "source": "비즈워치",
+            "pubDate": "2026-11-11",
+            "image": "https://cdn.bizwatch.co.kr/news/photo/2026/11/10/e835a2b00b7f795b07e4f8d6d5ed8992.jpg",
+            "insight": "SK텔레콤과 LG유플러스는 지난해 일회성 비용이 사라진 기저효과로 3분기 영업이익이 각각 1040%, 84% 늘었지만, KT는 부동산 분양이익 소멸로 영업이익이 6.1% 줄었다. 세 회사 모두 AI 사업은 성장세를 유지했는데, <b>SK텔레콤의 AI 데이터센터(AIDC) 관련 매출은 전년 대비 6.2% 늘었고 LG유플러스의 AIDC 매출은 27.7% 증가</b>해 AI 인프라가 새로운 수익원으로 자리잡고 있음을 보여줬다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "반복되는 금융앱 UX 문제, 화면 디자인이 아니라 구조의 문제",
+            "url": "https://ditoday.com/%EC%A1%B0%EB%A1%B1-%EB%B0%9B%EB%8A%94-%EA%B8%88%EC%9C%B5%EC%95%B1-%EC%99%9C-ux-%EB%AC%B8%EC%A0%9C%EB%8A%94-%EA%B3%84%EC%86%8D-%EB%B0%98%EB%B3%B5%EB%90%A0%EA%B9%8C/",
+            "source": "디지털인사이트",
+            "pubDate": "2026-09-11",
+            "image": "https://ditoday.com/wp-content/uploads/2026/09/0911-1.jpg",
+            "insight": "디지털인사이트는 금융앱의 사용성 문제가 반복되는 이유를 화면 완성도가 아니라 구조적 문제에서 찾는다. 은행·카드·증권별로 시스템과 개발 조직이 분리돼 있어 슈퍼앱으로 화면을 합쳐도 내부는 여전히 분절돼 있고, 보안·규제 때문에 구버전 사용을 막는 강제 업데이트가 반복된다는 것이다. <b>전문가들은 UX 담당자가 정책과 업무 프로세스가 정해지는 초기 단계부터 참여해야 한다</b>고 지적한다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "강남언니, 글로벌 확장 위해 'unni'로 리브랜딩",
+            "url": "https://www.koreatimes.co.kr/amp/business/companies/20260715/beauty-platform-gangnam-unni-rebrands-to-spearhead-global-expansion",
+            "source": "The Korea Times",
+            "pubDate": "2026-07-15",
+            "image": "https://newsimg.koreatimes.co.kr/2026/07/15/c44a300c-0892-489f-ae63-315a5c4135f8.png",
+            "insight": "뷰티 플랫폼 강남언니를 운영하는 힐링페이퍼가 글로벌 시장 공략을 위해 브랜드를 '언니(unni)'로 재정립했다. 신뢰·편의성·관계라는 세 가지 가치를 중심으로 앱을 재설계하고 리뷰 검증을 강화했으며, <b>최근 1년간 태국발 예약은 약 13배, 중국어권 예약은 약 12배 늘었고 일본에서는 55만 명이 앱을 통해 예약했다</b>. 하반기에는 태국 시장 진출 속도를 끌어올릴 계획이다."
+          },
+          {
+            "title": "딸기모찌 브랜드 '연백1227', 1227번의 시도로 완성한 리브랜딩",
+            "url": "https://www.brandinginasia.com/creative-dive-a-look-at-duedances-brand-identity-for-yonbek-1227/",
+            "source": "Branding in Asia",
+            "pubDate": null,
+            "image": null,
+            "insight": "국내 브랜드 디자인 스튜디오 듀당스는 딸기모찌 브랜드 '연백딸기모찌'를 '연백1227'로 리브랜딩했다. 새 이름은 제품을 완성하기까지 거친 1,227번의 레시피 시도에서 따왔으며, <b>연백 지역의 쌀·소금·목화를 뜻하는 '삼백(Three Whites)'에서 색 팔레트를 가져와 한글과 연꽃 문양 등 전통 요소를 현대적으로 재해석</b>했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "AI 유니콘 뤼튼, IPO 주관사로 미래에셋·NH투자증권 선정",
+            "url": "https://www.venturesquare.net/1115953/",
+            "source": "벤처스퀘어",
+            "pubDate": "2026-09-23",
+            "image": "https://www.venturesquare.net/wp-content/uploads/2026/09/image-51.png",
+            "insight": "AI 유니콘 뤼튼테크놀로지스가 IPO 대표주관사로 미래에셋증권을, 공동주관사로 NH투자증권을 선정했다고 밝혔다. 회사는 내년 상장예비심사 청구를 목표로 하고 있으며, 지난 8월 1000억원 규모 시리즈C 투자로 누적 투자유치액 약 2300억원, <b>기업가치 1조원 이상을 인정받아 국내 AI 서비스 분야 최초의 사례가 됐다</b>고 설명했다."
+          },
+          {
+            "title": "중기부, 2030년까지 AI 데카콘 1곳 육성하는 '비욘드 유니콘' 전략 발표",
+            "url": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1437873",
+            "source": "중소벤처기업부",
+            "pubDate": "2026-11-11",
+            "image": "http://img.yonhapnews.co.kr/basic/svc/00_ko/home/koreancenter_fb_logo.jpg",
+            "insight": "중소벤처기업부가 국가인공지능전략위원회와 함께 'AI 스타트업 비욘드 유니콘 육성 전략'을 발표했다. 2030년까지 기업가치 1조원 이상 AI 유니콘 20곳과 10조원 이상 데카콘 1곳을 키운다는 목표로, 최종 단계까지 연계된 기업에는 기업당 100억원 이상의 R&D·사업화 자금을 지원한다. <b>스타트업·스케일업·유니콘 펀드를 합쳐 총 5,000억원 규모의 전용 펀드도 함께 조성</b>한다."
+          },
+          {
+            "title": "쿠팡, 물류센터 화재 손실에 3개 분기 연속 영업손실",
+            "url": "https://news.bizwatch.co.kr/article/consumer/2026/11/04/0011",
+            "source": "비즈워치",
+            "pubDate": "2026-11-04",
+            "image": "https://cdn.bizwatch.co.kr/news/photo/2026/06/16/1b55f8c486e616bdac3988685e10de9d.jpg",
+            "insight": "쿠팡Inc의 2026년 3분기 매출은 99억 6,200만 달러(약 14조 2,209억원)로 전년 대비 7% 늘며 전망치를 웃돌았지만, 7월 인천 물류센터 화재 손실 3,540억원이 반영돼 영업손실 6,423억원으로 3개 분기 연속 적자를 기록했다. 화재 손실을 제외해도 영업손실 2,883억원으로 적자는 이어졌다. <b>3분기 활성고객은 2,520만 명으로 개인정보 유출 사고 이전 수준을 넘어섰고 와우 멤버십 가입자도 역대 최대</b>를 기록했다."
+          }
+        ]
+      }
+    ]
+  }
+}
