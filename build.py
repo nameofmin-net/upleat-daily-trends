@@ -97,6 +97,8 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .search-box input::placeholder{color:var(--sub2);}
 .search-icon{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--sub2);pointer-events:none;}
 .pill-row{display:flex;gap:18px;flex-wrap:wrap;flex:0 0 auto;}
+.gnb-lab{color:#E5484D !important;}
+.gnb-lab sup{font-size:9px;font-weight:700;letter-spacing:.04em;}
 .pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:13px;font-weight:600;padding:7px 0;transition:color .12s ease;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
@@ -874,6 +876,8 @@ def render_gnb_pills():
     pills = ['<a class="pill-btn" data-cat="all" href="index.html">전체</a>']
     for key in CATEGORY_ORDER:
         pills.append(f'<a class="pill-btn" data-cat="{key}" href="index.html?cat={key}">{CATEGORY_LABEL[key]}</a>')
+    # 임시: 신문 UI 시안 테스트 링크
+    pills.append('<a class="pill-btn gnb-lab" href="paper.html">신문 <sup>TEST</sup></a>')
     return "".join(pills)
 
 
