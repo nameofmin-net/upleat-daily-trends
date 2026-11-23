@@ -266,9 +266,9 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .notice-why{background:#F7F7F7;border-radius:10px;padding:14px 16px;color:var(--sub);font-size:13.5px;}
 .notice-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
 .notice-list li{display:flex;gap:10px;}
-.notice-num{flex:0 0 22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.notice-num{flex:0 0 22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;line-height:1;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .notice-list strong{display:block;font-weight:700;color:var(--ink);}
-.notice-list span{color:var(--sub);font-size:13.5px;}
+.notice-list li > div > span{color:var(--sub);font-size:13.5px;}
 .src-group{margin:0 0 12px;}
 .src-label{font-size:12px;font-weight:700;color:var(--ink);margin:0 0 6px;}
 .src-chips{display:flex;flex-wrap:wrap;gap:6px;}
