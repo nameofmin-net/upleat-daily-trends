@@ -196,6 +196,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @keyframes notice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(24,104,224,0);border-color:#BCD4FA;}50%{box-shadow:0 0 0 4px rgba(24,104,224,.14);border-color:#8DB6F5;}}
 .notice-tag{animation:notice-tag-blink 2.8s ease-in-out infinite;}
 @keyframes notice-tag-blink{0%,100%{opacity:1;}50%{opacity:.55;}}
+.notice-bar.seen,.notice-bar.seen .notice-tag{animation:none;}
 @media (prefers-reduced-motion: reduce){.notice-bar,.notice-tag{animation:none;}}
 .notice-bar:hover{background:#DCE9FD;}
 .notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
