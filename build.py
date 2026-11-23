@@ -232,7 +232,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .ai-panel-send:disabled{opacity:.5;cursor:default;}
 
 /* 공지 바 + 모달 */
-.notice-bar{display:flex;align-items:center;gap:12px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:1px solid #BCD4FA;border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;margin:16px 0 0;color:var(--ink);font-size:15px;line-height:1.5;transition:background .15s ease, box-shadow .15s ease;}
+.notice-bar{display:flex;align-items:center;gap:12px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:1px solid #BCD4FA;border-radius:10px;padding:16px 18px;margin:16px 0 0;color:var(--ink);font-size:15px;line-height:1.5;transition:background .15s ease, box-shadow .15s ease;}
 .notice-bar:hover{box-shadow:0 4px 14px rgba(24,104,224,.15);}
 .notice-bar:hover{background:#DCE9FD;}
 .notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
