@@ -1,3 +1,6 @@
+// Workers AI 텍스트 모델 — 카탈로그에서 빠지면 /api/ask가 500을 냄. `npx wrangler ai models list`로 확인 후 교체.
+const ASK_MODEL = "@cf/qwen/qwen3.8-27b";
+
 const ALLOWED_ORIGINS = ["https://nameofmin-net.github.io"];
 
 function corsHeaders(request) {
@@ -145,16 +148,24 @@ export default {
       const systemPrompt = `당신은 "Nexty"라는 이름의, UPLEAT 데일리 트렌드 사이트의 AI 도우미입니다. 아래는 최근 며칠간 사이트에 올라온 AI/UX/디자인/테크비즈 트렌드 기사 목록입니다. 이 목록을 참고해서 방문자의 질문에 한국어로, 간결하고 정확하게 답하세요. 목록에 없는 내용은 모른다고 솔직히 답하고 절대 지어내지 마세요. 가능하면 어떤 기사를 참고했는지 기사 제목을 언급하세요. 스스로를 지칭할 일이 있으면 "저" 또는 "Nexty"라고 하세요.\n\n[최근 트렌드 기사 목록]\n${context || "(최근 데이터 없음)"}`;
 
       try {
-        const aiResponse = await env.AI.run("@cf/qwen/qwen3-30b-a3b-fp8", {
+        const aiResponse = await env.AI.run(ASK_MODEL, {
           messages: [
             { role: "system", content: systemPrompt },
             { role: "user", content: question },
           ],
-          max_tokens: 900,
+          max_completion_tokens: 900,
+          // 짧은 Q&A라 추론(thinking)은 끔 — 켜 두면 기본 xhigh 추론이 토큰을 다 써서 본문이 비어 버림
+          chat_template_kwargs: { enable_thinking: false },
         });
-        const answer = (aiResponse.response || "답변을 생성하지 못했습니다.").trim();
+        // 모델마다 응답 형식이 다름: {response} 또는 OpenAI 형식 {choices:[{message:{content}}]}
+        let raw = aiResponse && (aiResponse.response
+          || (aiResponse.choices && aiResponse.choices[0] && aiResponse.choices[0].message && aiResponse.choices[0].message.content))
+          || "";
+        raw = String(raw).replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+        const answer = raw || "답변을 생성하지 못했습니다.";
         return json(request, { answer });
       } catch (e) {
+        console.error("ask failed", ASK_MODEL, e && e.message ? e.message : e);
         return json(request, { error: "ai request failed" }, 500);
       }
     }
