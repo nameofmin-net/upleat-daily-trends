@@ -290,7 +290,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .np-shade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;}
 .np-tl{box-shadow:0 30px 60px rgba(0,0,0,.35);}
 .mp{position:absolute;left:0;top:0;color:#0B0B0B;font-family:"Noto Serif KR",serif;box-sizing:border-box;overflow:hidden;
-  background-color:#F2EEE3;background-image:radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);background-size:3px 3px;}
+  background-color:#F2EEE3;}
 .mp-top{display:flex;justify-content:space-between;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-xs);border-top:3px solid #0B0B0B;border-bottom:1px solid #0B0B0B;padding:.5em 0;}
 .mp-mast{font-family:"Black Han Sans",sans-serif;text-align:center;font-size:var(--mp-mast);line-height:1;padding:.12em 0 .08em;border-bottom:6px double #0B0B0B;letter-spacing:-.02em;}
 .mp-grid{display:grid;grid-template-columns:2fr 1fr;gap:0;border-bottom:3px solid #0B0B0B;}
@@ -307,7 +307,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .mp-col strong{display:block;font-weight:900;font-size:calc(var(--mp-s) * 1.25);line-height:1.3;margin-bottom:.3em;word-break:keep-all;}
 .mp-col p{margin:0 0 .8em;color:#3A3833;word-break:keep-all;}
 .mp-cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.5em;padding:8%;border:3px solid #0B0B0B;box-sizing:border-box;
-  background-color:#F2EEE3;background-image:radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);background-size:3px 3px;color:#0B0B0B;}
+  background-color:#F2EEE3;color:#0B0B0B;}
 .mp-cover .c-no{font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-xs);border-top:3px solid #0B0B0B;border-bottom:1px solid #0B0B0B;padding:.4em 0;align-self:stretch;}
 .mp-cover .c-mast{font-family:"Black Han Sans",sans-serif;font-size:calc(var(--mp-mast) * .62);line-height:.95;letter-spacing:-.02em;}
 .mp-cover .c-tag{background:#FF2E00;color:#fff;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-s);padding:.3em .8em;}
