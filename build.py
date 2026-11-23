@@ -232,14 +232,15 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .ai-panel-send:disabled{opacity:.5;cursor:default;}
 
 /* 공지 바 + 모달 */
-.notice-bar{display:flex;align-items:center;gap:10px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:none;border-radius:8px;padding:11px 14px;margin:0 0 18px;color:var(--ink);font-size:13.5px;line-height:1.45;transition:background .15s ease;}
+.notice-bar{display:flex;align-items:center;gap:12px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:1px solid #BCD4FA;border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;margin:16px 0 0;color:var(--ink);font-size:15px;line-height:1.5;transition:background .15s ease, box-shadow .15s ease;}
+.notice-bar:hover{box-shadow:0 4px 14px rgba(24,104,224,.15);}
 .notice-bar:hover{background:#DCE9FD;}
 .notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:4px;}
-.notice-text{flex:1 1 auto;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.notice-new{width:6px;height:6px;border-radius:50%;background:#E5484D;flex:0 0 auto;}
+.notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:5px;}
+.notice-text{flex:1 1 auto;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.notice-new{width:8px;height:8px;border-radius:50%;background:#E5484D;flex:0 0 auto;}
 .notice-bar.seen .notice-new{display:none;}
-.notice-more{flex:0 0 auto;color:var(--accent);font-weight:700;font-size:13px;}
+.notice-more{flex:0 0 auto;color:#fff;background:var(--accent);font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;}
 @media (max-width:640px){.notice-text{white-space:normal;}.notice-more{display:none;}}
 .notice-modal{border:none;padding:0;border-radius:16px;width:min(640px, calc(100vw - 32px));max-height:min(86vh, 860px);box-shadow:0 24px 60px rgba(16,24,40,.25);color:var(--ink);background:#fff;}
 .notice-modal::backdrop{background:rgba(17,18,20,.45);}
@@ -1049,7 +1050,6 @@ def build():
 
     index_body = f'''<div class="wrap">
 <header class="site">
-{render_notice()}
 <div class="header-row">
   <h1>UPLEAT 데일리 트렌드 아카이브</h1>
   <div class="region-tab-row" id="regionTabRow">
@@ -1058,7 +1058,7 @@ def build():
     <button class="region-tab-btn" data-region="intl">해외</button>
   </div>
 </div>
-<p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 {len(articles)}개의 글 수록.</p>
+{render_notice()}
 </header>
 
 <div class="feed-list" id="feedList">

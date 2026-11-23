@@ -189,14 +189,15 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .ai-panel-send:disabled{opacity:.5;cursor:default;}
 
 /* 공지 바 + 모달 */
-.notice-bar{display:flex;align-items:center;gap:10px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:none;border-radius:8px;padding:11px 14px;margin:0 0 18px;color:var(--ink);font-size:13.5px;line-height:1.45;transition:background .15s ease;}
+.notice-bar{display:flex;align-items:center;gap:12px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:1px solid #BCD4FA;border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;margin:16px 0 0;color:var(--ink);font-size:15px;line-height:1.5;transition:background .15s ease, box-shadow .15s ease;}
+.notice-bar:hover{box-shadow:0 4px 14px rgba(24,104,224,.15);}
 .notice-bar:hover{background:#DCE9FD;}
 .notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:4px;}
-.notice-text{flex:1 1 auto;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.notice-new{width:6px;height:6px;border-radius:50%;background:#E5484D;flex:0 0 auto;}
+.notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:5px;}
+.notice-text{flex:1 1 auto;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.notice-new{width:8px;height:8px;border-radius:50%;background:#E5484D;flex:0 0 auto;}
 .notice-bar.seen .notice-new{display:none;}
-.notice-more{flex:0 0 auto;color:var(--accent);font-weight:700;font-size:13px;}
+.notice-more{flex:0 0 auto;color:#fff;background:var(--accent);font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;}
 @media (max-width:640px){.notice-text{white-space:normal;}.notice-more{display:none;}}
 .notice-modal{border:none;padding:0;border-radius:16px;width:min(640px, calc(100vw - 32px));max-height:min(86vh, 860px);box-shadow:0 24px 60px rgba(16,24,40,.25);color:var(--ink);background:#fff;}
 .notice-modal::backdrop{background:rgba(17,18,20,.45);}
@@ -239,6 +240,14 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </div>
 <div class="wrap">
 <header class="site">
+<div class="header-row">
+  <h1>UPLEAT 데일리 트렌드 아카이브</h1>
+  <div class="region-tab-row" id="regionTabRow">
+    <button class="region-tab-btn active" data-region="all">전체</button>
+    <button class="region-tab-btn" data-region="domestic">국내</button>
+    <button class="region-tab-btn" data-region="intl">해외</button>
+  </div>
+</div>
 <button type="button" class="notice-bar" id="noticeBar" data-notice="2026-11-23-criteria" aria-haspopup="dialog">
   <span class="notice-tag">공지</span>
   <span class="notice-text">11월 24일부터 트렌드 수집 기준이 바뀝니다 — 최근 30일 기사만, 같은 소식은 한 번만</span>
@@ -272,15 +281,6 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
     <p>기준이 엄격해져서 하루 기사 수가 줄거나 일부 카테고리가 비는 날이 생길 수 있습니다. 오래된 기사나 같은 소식으로 채우지 않기 위한 선택입니다.</p>
   </div>
 </dialog>
-<div class="header-row">
-  <h1>UPLEAT 데일리 트렌드 아카이브</h1>
-  <div class="region-tab-row" id="regionTabRow">
-    <button class="region-tab-btn active" data-region="all">전체</button>
-    <button class="region-tab-btn" data-region="domestic">국내</button>
-    <button class="region-tab-btn" data-region="intl">해외</button>
-  </div>
-</div>
-<p class="note">이 사이트는 매일 자동 수집되는 UPLEAT 데일리 트렌드 리포트(노션 데이터베이스)를 기사 단위로 미러링하며, 새 글이 생성될 때마다 자동으로 업데이트됩니다. 총 437개의 글 수록.</p>
 </header>
 
 <div class="feed-list" id="feedList">
