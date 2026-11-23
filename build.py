@@ -101,7 +101,6 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .nl-nav-bar{display:flex;align-items:stretch;justify-content:space-between;gap:0;height:50px;padding-top:0;padding-bottom:0;}
 .nl-tabs{display:flex;align-items:stretch;background:#1A1A1A;flex:1;padding-left:30px;overflow-x:auto;scrollbar-width:none;}
 .nl-tabs::-webkit-scrollbar{display:none;}
-.nl-nav-bar > .nl-date{display:flex;align-items:center;background:#1A1A1A;padding:0 25px;font-family:"PT Sans Narrow","IBM Plex Sans KR",sans-serif;font-size:16px;color:#FDFDFD;white-space:nowrap;}
 .pill-btn{display:flex;align-items:center;padding:0 20px;font-family:"PT Sans Narrow","IBM Plex Sans KR",sans-serif;font-weight:700;font-size:17px;line-height:1;color:#FDFDFD;white-space:nowrap;transition:background .12s ease;}
 .pill-btn:hover:not(.active){background:#2a2a2a;}
 .pill-btn.active{background:#0029D2;}
@@ -113,7 +112,11 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
   .nl-search-btn{flex-basis:88px;font-size:17px;}
   .nl-tabs{padding-left:0;}
   .pill-btn{padding:0 16px;font-size:16px;}
-  .nl-nav-bar > .nl-date{display:none;}
+  .nl-date{display:none;}
+  .nl-tabs{min-width:0;}
+  .nl-nav-right{padding-left:12px;}
+  .theme-toggle{width:30px;padding:0;justify-content:center;}
+  .theme-toggle .theme-label{display:none;}
 }
 
 /* article feed — left-thumbnail / right-content list rows, full insight inline */
@@ -295,16 +298,31 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
    - surface #101010 · text #E0E0E0 · muted #999 / #7A7A7A
    - brand blue #0029D2 (작은 표시·버튼에만)
    - IBM Plex Sans KR(-0.03em) · Geist Mono(라벨) · Inter Light(디스플레이)
-   이 블록을 지우면 이전 라이트 테마로 돌아갑니다.
+   라이트가 기본, <html data-theme="dark">일 때 다크 토큰 적용.
    ================================================================ */
+/* 라이트(기본) — upleat.com 밝은 섹션 톤 */
 :root{
-  --bg:#101010; --card:#161616; --raise:#1F1F1F;
-  --ink:#E0E0E0; --ink-strong:#FFFFFF; --sub:#999999; --sub2:#7A7A7A;
-  --line:rgba(229,229,229,.14); --line-strong:rgba(229,229,229,.3);
-  --accent:#0029D2; --accent-dim:rgba(0,41,210,.16); --accent-line:rgba(0,41,210,.55);
+  --bg:#F3F3F3; --card:#FFFFFF; --raise:#E9E9E9;
+  --ink:#1F1F1F; --ink-strong:#101010; --sub:#7A7A7A; --sub2:#999999;
+  --line:#E0E0E0; --line-strong:#D4D4D4;
+  --on-ink:#FFFFFF; --body2:#3A3A3A;
+  --accent:#0029D2; --accent-hover:#1A3FE0; --accent-dim:rgba(0,41,210,.05); --accent-line:rgba(0,41,210,.3);
+  --notice-hover:rgba(0,41,210,.09); --pulse:rgba(0,41,210,.16); --pulse-border:#5C78F0;
+  --pop-shadow:0 20px 48px rgba(16,16,16,.14), 0 2px 8px rgba(16,16,16,.06); --backdrop:rgba(16,16,16,.4);
   --shadow:none;
   --mono:"Geist Mono",ui-monospace,monospace;
   --display:"Inter","IBM Plex Sans KR",sans-serif;
+  color-scheme:light;
+}
+/* 다크 — upleat.com 기본 화면 톤 */
+:root[data-theme="dark"]{
+  --bg:#101010; --card:#161616; --raise:#1F1F1F;
+  --ink:#E0E0E0; --ink-strong:#FFFFFF; --sub:#999999; --sub2:#7A7A7A;
+  --line:rgba(229,229,229,.14); --line-strong:rgba(229,229,229,.3);
+  --on-ink:#101010; --body2:#CFCFCF;
+  --accent-dim:rgba(0,41,210,.16); --accent-line:rgba(0,41,210,.55);
+  --notice-hover:rgba(0,41,210,.24); --pulse:rgba(0,41,210,.28); --pulse-border:#3D5BFF;
+  --pop-shadow:0 20px 48px rgba(0,0,0,.6); --backdrop:rgba(0,0,0,.65);
   color-scheme:dark;
 }
 body{background:var(--bg);color:var(--ink);letter-spacing:-.02em;}
@@ -326,7 +344,15 @@ body{background:var(--bg);color:var(--ink);letter-spacing:-.02em;}
 .nl-nav{background:var(--bg);border-bottom:1px solid var(--line);margin-bottom:0;}
 .nl-tabs{background:transparent;padding-left:0;gap:36px;}
 .nl-nav-bar{height:52px;}
-.nl-nav-bar > .nl-date{background:transparent;padding:0;font-family:var(--mono);font-size:13px;color:var(--sub2);letter-spacing:0;}
+.nl-date{font-family:var(--mono);font-size:13px;color:var(--sub2);letter-spacing:0;white-space:nowrap;}
+.nl-nav-right{display:flex;align-items:center;gap:18px;}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px 0 10px;border:1px solid var(--line-strong);border-radius:999px;background:transparent;color:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:0;cursor:pointer;transition:border-color .15s ease, background .15s ease;}
+.theme-toggle:hover{border-color:var(--ink);}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.theme-toggle svg{display:block;flex:0 0 14px;width:14px;height:14px;}
+.theme-toggle .ic-sun{display:none;}
+:root[data-theme="dark"] .theme-toggle .ic-sun{display:block;}
+:root[data-theme="dark"] .theme-toggle .ic-moon{display:none;}
 .pill-btn{padding:0;font-family:"IBM Plex Sans KR",sans-serif;font-weight:400;font-size:16px;letter-spacing:-.03em;color:var(--sub);position:relative;}
 .pill-btn:hover:not(.active){background:transparent;color:var(--ink);}
 .pill-btn.active{background:transparent;color:var(--ink-strong);}
@@ -354,12 +380,12 @@ header.site{margin-bottom:0;}
 
 /* 공지 바 / 모달 */
 .notice-bar{background:var(--accent-dim);border:1px solid var(--accent-line);border-radius:4px;color:var(--ink);}
-.notice-bar:hover{background:rgba(0,41,210,.24);box-shadow:none;}
-@keyframes notice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,41,210,0);border-color:var(--accent-line);}50%{box-shadow:0 0 0 4px rgba(0,41,210,.28);border-color:#3D5BFF;}}
+.notice-bar:hover{background:var(--notice-hover);box-shadow:none;}
+@keyframes notice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,41,210,0);border-color:var(--accent-line);}50%{box-shadow:0 0 0 4px var(--pulse);border-color:var(--pulse-border);}}
 .notice-tag{border-radius:2px;font-family:var(--mono);font-weight:500;}
 .notice-more{border-radius:999px;}
-.notice-modal{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.6);}
-.notice-modal::backdrop{background:rgba(0,0,0,.65);}
+.notice-modal{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:var(--pop-shadow);}
+.notice-modal::backdrop{background:var(--backdrop);}
 .notice-head{border-bottom-color:var(--line);}
 .notice-date{font-family:var(--mono);color:var(--sub2);}
 .notice-close:hover{color:var(--ink-strong);}
@@ -367,7 +393,7 @@ header.site{margin-bottom:0;}
 .notice-body p,.notice-list li > div > span{color:var(--sub);}
 .notice-body b{color:var(--ink-strong);}
 .notice-list strong{color:var(--ink);}
-.notice-num{background:var(--ink);color:#101010;}
+.notice-num{background:var(--ink);color:var(--on-ink);}
 .src-label{font-family:var(--mono);font-weight:500;color:var(--ink);}
 .src-chip{border-color:var(--line-strong);color:var(--sub);border-radius:4px;}
 
@@ -394,29 +420,29 @@ header.site{margin-bottom:0;}
 .rail-text{color:var(--ink);}
 .rail-text b{color:var(--ink-strong);}
 .rail-date{font-family:var(--mono);}
-.scrolltop{background:var(--ink);color:#101010;box-shadow:none;}
+.scrolltop{background:var(--ink);color:var(--on-ink);box-shadow:none;}
 
 /* 댓글 패널 */
-.comment-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 20px 48px rgba(0,0,0,.6);}
+.comment-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:var(--pop-shadow);}
 .comment-panel-header{border-bottom-color:var(--line);}
 .comment-identity strong{color:var(--ink-strong);}
 .comment-textarea{background:var(--raise);color:var(--ink);border-color:var(--line);border-radius:4px;}
 .comment-textarea:focus{border-color:var(--ink);}
 .comment-submit-btn{background:var(--accent);color:#fff;border-radius:999px;}
-.comment-submit-btn:hover{background:#1A3FE0;}
+.comment-submit-btn:hover{background:var(--accent-hover);}
 .comment-item{border-bottom-color:var(--line);}
-.comment-body{color:#CFCFCF;}
+.comment-body{color:var(--body2);}
 .comment-date{font-family:var(--mono);}
 
 /* Nexty AI 패널 */
-.nexty-callout{background:var(--raise);color:var(--ink);box-shadow:0 6px 16px rgba(0,0,0,.4);}
-.nexty-callout::after{background:var(--raise);}
-.ai-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 20px 48px rgba(0,0,0,.6);}
+.nexty-callout{background:var(--card);color:var(--ink);box-shadow:var(--pop-shadow);}
+.nexty-callout::after{background:var(--card);}
+.ai-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:var(--pop-shadow);}
 .ai-panel-header{border-bottom-color:var(--line);}
 .ai-suggestion-chip{background:var(--raise);color:var(--ink);border-color:var(--line);}
 .ai-suggestion-chip:hover{background:var(--accent-dim);border-color:var(--accent-line);}
 .ai-msg strong{color:var(--ink-strong);}
-.ai-msg-user{background:var(--ink);color:#101010;}
+.ai-msg-user{background:var(--ink);color:var(--on-ink);}
 .ai-msg-bot{background:var(--raise);color:var(--ink);}
 .ai-panel-form{border-top-color:var(--line);}
 .ai-panel-input{background:var(--raise);color:var(--ink);border-color:var(--line);border-radius:4px;}
@@ -958,6 +984,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
+<script>(function(){{var t;try{{t=localStorage.getItem("upleat-theme");}}catch(e){{}}document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}})();</script>
 <style>{style}</style>
 </head>
 <body>
@@ -973,7 +1000,14 @@ HEAD = """<!DOCTYPE html>
 <nav class="nl-nav" aria-label="카테고리">
   <div class="nl-nav-bar wrap">
     <div class="nl-tabs">{gnb_pills}</div>
-    <span class="nl-date">{datelabel}</span>
+    <div class="nl-nav-right">
+      <span class="nl-date">{datelabel}</span>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="다크 모드로 전환">
+        <svg class="ic-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="ic-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span class="theme-label">DARK</span>
+      </button>
+    </div>
   </div>
 </nav>
 """
@@ -1190,6 +1224,30 @@ NOTICE_SCRIPT = """
 
 
 
+THEME_SCRIPT = """
+<script>
+(function(){
+  var root = document.documentElement, btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  var label = btn.querySelector('.theme-label');
+  function sync(){
+    var dark = root.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    btn.setAttribute('aria-label', dark ? '라이트 모드로 전환' : '다크 모드로 전환');
+    label.textContent = dark ? 'LIGHT' : 'DARK';
+  }
+  sync();
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('upleat-theme', next); } catch (e) {}
+    sync();
+  });
+})();
+</script>
+"""
+
+
 def build():
     files = sorted(glob.glob(os.path.join(DATA_DIR, "*.json")))
     days = []
@@ -1243,6 +1301,7 @@ def build():
             + COMMENT_PANEL_SCRIPT
             + AI_ASK_SCRIPT
             + NOTICE_SCRIPT
+            + THEME_SCRIPT
             + FOOT.format(lenis=LENIS_SCRIPT, scrolltop=SCROLLTOP_SCRIPT)
         )
 
