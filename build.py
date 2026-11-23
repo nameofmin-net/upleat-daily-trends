@@ -234,6 +234,12 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 /* 공지 바 + 모달 */
 .notice-bar{display:flex;align-items:center;gap:12px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:1px solid #BCD4FA;border-radius:10px;padding:16px 18px;margin:16px 0 0;color:var(--ink);font-size:15px;line-height:1.5;transition:background .15s ease, box-shadow .15s ease;}
 .notice-bar:hover{box-shadow:0 4px 14px rgba(24,104,224,.15);}
+.notice-bar{animation:notice-pulse 2.8s ease-in-out infinite;}
+.notice-bar:hover{animation-play-state:paused;}
+@keyframes notice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(24,104,224,0);border-color:#BCD4FA;}50%{box-shadow:0 0 0 4px rgba(24,104,224,.14);border-color:#8DB6F5;}}
+.notice-tag{animation:notice-tag-blink 2.8s ease-in-out infinite;}
+@keyframes notice-tag-blink{0%,100%{opacity:1;}50%{opacity:.55;}}
+@media (prefers-reduced-motion: reduce){.notice-bar,.notice-tag{animation:none;}}
 .notice-bar:hover{background:#DCE9FD;}
 .notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 .notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:5px;}
