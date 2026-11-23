@@ -6,7 +6,7 @@
 <title>UPLEAT 데일리 트렌드 아카이브</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
 <style>
 :root{
@@ -54,8 +54,6 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .search-box input::placeholder{color:var(--sub2);}
 .search-icon{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--sub2);pointer-events:none;}
 .pill-row{display:flex;gap:18px;flex-wrap:wrap;flex:0 0 auto;}
-.gnb-lab{color:#E5484D !important;}
-.gnb-lab sup{font-size:9px;font-weight:700;letter-spacing:.04em;}
 .pill-btn{display:inline-block;appearance:none;cursor:pointer;font-family:inherit;border:none;background:none;color:var(--sub);font-size:13px;font-weight:600;padding:7px 0;transition:color .12s ease;}
 .pill-btn.active{color:var(--ink);font-weight:700;}
 .pill-btn:hover:not(.active){color:var(--ink);}
@@ -232,9 +230,51 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .src-label{font-size:12px;font-weight:700;color:var(--ink);margin:0 0 6px;}
 .src-chips{display:flex;flex-wrap:wrap;gap:6px;}
 .src-chip{font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:3px 10px;}
+
+/* 오늘의 브리핑 버튼 + 신문 펼침 효과 */
+.brief-btn{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:#fff !important;font-size:13px;font-weight:700;padding:7px 13px;border-radius:999px;white-space:nowrap;transition:transform .15s ease, background .15s ease;}
+.brief-btn:hover{background:#E5484D;transform:translateY(-1px);}
+.brief-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.np-stage{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;perspective:2200px;background:rgba(17,18,20,0);pointer-events:auto;overflow:hidden;}
+.np{position:relative;transform-style:preserve-3d;}
+.np-panel{position:absolute;transform-style:preserve-3d;}
+.np-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#F2EEE3;}
+.np-back{transform:rotateY(180deg);}
+.np-backx{transform:rotateX(180deg);}
+.mp-backpage{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;box-sizing:border-box;border:3px solid #0B0B0B;background:#0B0B0B;color:#F2EEE3;font-family:"IBM Plex Sans KR",sans-serif;}
+.mp-backpage strong{font-family:"Black Han Sans",sans-serif;font-weight:400;font-size:calc(var(--mp-mast) * 1.1);line-height:1;color:#FF2E00;letter-spacing:.02em;}
+.mp-backpage span{font-weight:700;font-size:var(--mp-s);letter-spacing:.3em;}
+.np-shade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;}
+.np-tl{box-shadow:0 30px 60px rgba(0,0,0,.35);}
+.mp{position:absolute;left:0;top:0;color:#0B0B0B;font-family:"Noto Serif KR",serif;box-sizing:border-box;overflow:hidden;
+  background-color:#F2EEE3;background-image:radial-gradient(rgba(0,0,0,.04) 1px, transparent 1px);background-size:3px 3px;}
+.mp-top{display:flex;justify-content:space-between;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-xs);border-top:3px solid #0B0B0B;border-bottom:1px solid #0B0B0B;padding:.5em 0;}
+.mp-mast{font-family:"Black Han Sans",sans-serif;text-align:center;font-size:var(--mp-mast);line-height:1;padding:.12em 0 .08em;border-bottom:6px double #0B0B0B;letter-spacing:-.02em;}
+.mp-grid{display:grid;grid-template-columns:2fr 1fr;gap:0;border-bottom:3px solid #0B0B0B;}
+.mp-lead{padding:2.4% 3% 3% 0;border-right:1px solid #0B0B0B;}
+.mp-kick{display:inline-block;background:#0B0B0B;color:#F2EEE3;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-xs);padding:.2em .6em;}
+.mp-h{font-weight:900;font-size:var(--mp-h);line-height:1.18;letter-spacing:-.02em;margin:.35em 0 .45em;word-break:keep-all;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.mp-img{border:3px solid #0B0B0B;box-shadow:6px 6px 0 #0B0B0B;background:#bbb center/cover no-repeat;filter:grayscale(1) contrast(1.2);aspect-ratio:16/7;}
+.mp-side{padding:2.4% 0 3% 4%;display:flex;flex-direction:column;gap:.6em;font-size:var(--mp-s);line-height:1.55;}
+.mp-side b{font-family:"IBM Plex Sans KR",sans-serif;font-size:var(--mp-xs);color:#FF2E00;}
+.mp-cols{display:grid;grid-template-columns:repeat(4,1fr);}
+.mp-col{padding:2.4% 4% 0;border-left:1px solid #0B0B0B;font-size:var(--mp-s);line-height:1.55;overflow:hidden;}
+.mp-col:first-child{border-left:none;padding-left:0;}
+.mp-col h5{font-family:"IBM Plex Sans KR",sans-serif;display:inline-block;background:#0B0B0B;color:#F2EEE3;font-size:var(--mp-xs);margin:0 0 .5em;padding:.15em .5em;}
+.mp-col strong{display:block;font-weight:900;font-size:calc(var(--mp-s) * 1.25);line-height:1.3;margin-bottom:.3em;word-break:keep-all;}
+.mp-col p{margin:0 0 .8em;color:#3A3833;word-break:keep-all;}
+.mp-cover{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.5em;padding:8%;border:3px solid #0B0B0B;box-sizing:border-box;
+  background-color:#F2EEE3;background-image:radial-gradient(rgba(0,0,0,.05) 1px, transparent 1px);background-size:3px 3px;color:#0B0B0B;}
+.mp-cover .c-no{font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-xs);border-top:3px solid #0B0B0B;border-bottom:1px solid #0B0B0B;padding:.4em 0;align-self:stretch;}
+.mp-cover .c-mast{font-family:"Black Han Sans",sans-serif;font-size:calc(var(--mp-mast) * .62);line-height:.95;letter-spacing:-.02em;}
+.mp-cover .c-tag{background:#FF2E00;color:#fff;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-s);padding:.3em .8em;}
+.mp-cover .c-date{font-family:"IBM Plex Sans KR",sans-serif;font-weight:600;font-size:var(--mp-xs);}
+.np-skip{position:fixed;right:20px;bottom:20px;z-index:201;appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.14);padding:8px 14px;border-radius:999px;}
+.np-skip:hover{background:rgba(255,255,255,.26);}
+@view-transition{navigation:auto;}
 </style>
 </head>
-<body>
+<body data-datelabel="2026년 11월 23일 월요일">
 <div class="gnb-sticky">
 <div class="topbar wrap" style="padding-top:0;padding-bottom:0;">
   <div class="brand"><a href="index.html">UPLEAT · Daily Trend Archive</a></div>
@@ -243,7 +283,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
       <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <input id="searchInput" name="q" type="text" placeholder="날짜, 키워드, 기사 제목으로 검색">
     </form>
-    <div class="pill-row"><a class="pill-btn" data-cat="all" href="index.html">전체</a><a class="pill-btn" data-cat="ai" href="index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="index.html?cat=biz">TECH & BIZ</a><a class="pill-btn gnb-lab" href="paper.html">신문 <sup>TEST</sup></a></div>
+    <div class="pill-row"><a class="pill-btn" data-cat="all" href="index.html">전체</a><a class="pill-btn" data-cat="ai" href="index.html?cat=ai">AI</a><a class="pill-btn" data-cat="ux" href="index.html?cat=ux">UX</a><a class="pill-btn" data-cat="design" href="index.html?cat=design">DESIGN</a><a class="pill-btn" data-cat="biz" href="index.html?cat=biz">TECH & BIZ</a><a class="brief-btn" id="briefBtn" href="paper.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h13v16H6a2 2 0 0 1-2-2z"/><path d="M17 8h3v10a2 2 0 0 1-2 2"/><line x1="7" y1="8" x2="14" y2="8"/><line x1="7" y1="12" x2="14" y2="12"/><line x1="7" y1="16" x2="11" y2="16"/></svg>오늘의 브리핑</a></div>
   </div>
 </div>
 </div>
@@ -7798,6 +7838,139 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
   document.getElementById('noticeClose').addEventListener('click', close);
   modal.addEventListener('close', function(){ document.documentElement.style.overflow = ''; bar.focus(); });
   modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
+})();
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('briefBtn');
+  if (!btn) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !Element.prototype.animate) return;   // 링크 그대로 이동
+
+  function esc(t){ var d = document.createElement('div'); d.textContent = t || ''; return d.innerHTML; }
+  function txt(el, sel){ var x = el && el.querySelector(sel); return x ? x.textContent.trim() : ''; }
+
+  function todayPicks(){
+    var items = Array.prototype.slice.call(document.querySelectorAll('.feed-item')).filter(function(el){ return el.querySelector('.feed-title-row .badge-new'); });
+    if (!items.length) items = Array.prototype.slice.call(document.querySelectorAll('.feed-item'), 0, 8);
+    return items;
+  }
+
+  function printHTML(W, H){
+    var items = todayPicks();
+    var lead = items.find(function(el){ return el.querySelector('.feed-thumb img'); }) || items[0];
+    var img = lead && lead.querySelector('.feed-thumb img');
+    var rest = items.filter(function(el){ return el !== lead; });
+    var cats = [['ai','AI'],['ux','UX'],['design','DESIGN'],['biz','TECH & BIZ']];
+    var cols = cats.map(function(c){
+      var el = rest.find(function(e){ return e.dataset.cat === c[0]; });
+      return '<div class="mp-col"><h5>' + c[1] + '</h5>' + (el ? '<strong>' + esc(txt(el, '.feed-title')) + '</strong><p>' + esc(txt(el, '.feed-summary')) + '</p>' : '') + '</div>';
+    }).join('');
+    var side = rest.slice(0, 3).map(function(el){
+      return '<div><b>' + (el.dataset.region === 'intl' ? '해외' : '국내') + '</b><br>' + esc(txt(el, '.feed-title')) + '</div>';
+    }).join('');
+    return '<div class="mp" style="width:' + W + 'px;height:' + H + 'px;padding:' + Math.round(H * 0.035) + 'px ' + Math.round(W * 0.035) + 'px">'
+      + '<div class="mp-top"><span>VOL.1</span><span>' + esc(document.body.dataset.datelabel || '') + '</span><span>가격 ₩0</span></div>'
+      + '<div class="mp-mast">유플리트 데일리</div>'
+      + '<div class="mp-grid"><div class="mp-lead"><span class="mp-kick">1면 톱</span><div class="mp-h">' + esc(txt(lead, '.feed-title')) + '</div>'
+      + (img ? '<div class="mp-img" style="background-image:url(\'' + img.getAttribute('src') + '\')"></div>' : '')
+      + '</div><div class="mp-side">' + side + '</div></div>'
+      + '<div class="mp-cols">' + cols + '</div></div>';
+  }
+
+  function face(W, H, x, y, extra){
+    return '<div class="np-face' + (extra || '') + '"><div style="position:absolute;left:' + (-x) + 'px;top:' + (-y) + 'px">' + printHTML(W, H) + '</div></div>';
+  }
+
+  var running = false;
+  btn.addEventListener('click', function(e){
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    if (running) return;
+    running = true;
+    var href = btn.getAttribute('href');
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var W = Math.round(Math.min(vw * 0.92, 1120)), H = Math.round(Math.min(vh * 0.86, 780));
+    var hw = W / 2, hh = H / 2;
+    var base = Math.min(W / 1120, H / 780);
+    var vars = '--mp-xs:' + Math.max(7, 11 * base) + 'px;--mp-s:' + Math.max(7, 12 * base) + 'px;--mp-h:' + Math.max(12, 34 * base) + 'px;--mp-mast:' + Math.max(28, 92 * base) + 'px;';
+
+    var stage = document.createElement('div');
+    stage.className = 'np-stage';
+    stage.setAttribute('aria-hidden', 'true');
+    var dl = esc(document.body.dataset.datelabel || '');
+    var backPage = '<div class="mp-backpage" style="width:' + W + 'px;height:' + hh + 'px"><span>매일 새벽 3시 발행</span><strong>UPLEAT</strong><span>AI · UX · DESIGN · TECH &amp; BIZ</span></div>';
+    function backSlice(x){ return '<div class="np-face np-backx"><div style="position:absolute;left:' + (-x) + 'px;top:0">' + backPage + '</div></div>'; }
+    var FX = 'translateZ(1px) rotateX(180deg)';
+    stage.innerHTML =
+      '<div class="np" style="width:' + W + 'px;height:' + H + 'px;' + vars + '">'
+      // 왼쪽 열: 위(고정) + 아래(위로 접힘)
+      + '<div class="np-panel np-tl" style="left:0;top:0;width:' + hw + 'px;height:' + hh + 'px">' + face(W, H, 0, 0) + '</div>'
+      + '<div class="np-panel np-bl" style="left:0;top:' + hh + 'px;width:' + hw + 'px;height:' + hh + 'px;transform-origin:50% 0;transform:' + FX + '">'
+      +   face(W, H, 0, hh) + backSlice(0) + '<div class="np-shade"></div></div>'
+      // 오른쪽 열: 묶음째로 왼쪽 위로 접힘
+      + '<div class="np-panel np-right" style="left:' + hw + 'px;top:0;width:' + hw + 'px;height:' + H + 'px;transform-origin:0 50%;transform:translateZ(2px) rotateY(-180deg)">'
+      +   '<div class="np-panel np-tr" style="left:0;top:0;width:' + hw + 'px;height:' + hh + 'px">'
+      +     face(W, H, hw, 0)
+      +     '<div class="np-face np-back"><div class="mp-cover"><div class="c-no">오늘의 브리핑</div><div class="c-mast">유플리트<br>데일리</div><div class="c-tag">펼쳐 보기</div><div class="c-date">' + dl + '</div></div></div>'
+      +     '<div class="np-shade"></div></div>'
+      +   '<div class="np-panel np-br" style="left:0;top:' + hh + 'px;width:' + hw + 'px;height:' + hh + 'px;transform-origin:50% 0;transform:' + FX + '">'
+      +     face(W, H, hw, hh) + backSlice(hw) + '<div class="np-shade"></div></div>'
+      + '</div>'
+      + '</div>';
+    var skip = document.createElement('button');
+    skip.className = 'np-skip'; skip.type = 'button'; skip.textContent = '건너뛰기 →';
+    document.body.appendChild(stage);
+    document.body.appendChild(skip);
+    document.documentElement.style.overflow = 'hidden';
+
+    var np = stage.querySelector('.np'), right = stage.querySelector('.np-right');
+    var bl = stage.querySelector('.np-bl'), br = stage.querySelector('.np-br');
+    var trShade = stage.querySelector('.np-tr .np-shade');
+    var go = function(){ window.location.href = href; };
+    skip.addEventListener('click', go);
+
+    var fold = 'cubic-bezier(.55,.05,.3,1)';
+    stage.animate([{background:'rgba(17,18,20,0)'},{background:'rgba(17,18,20,.72)'}], {duration:400, fill:'forwards'});
+    // 1) 접힌 신문이 아래에서 툭 던져짐 (커버가 보이는 1/4 크기)
+    np.animate([
+      {transform:'translate(' + (hw/2) + 'px,' + (hh/2 + vh*0.7) + 'px) rotate(-14deg) scale(.7)'},
+      {transform:'translate(' + (hw/2) + 'px,' + (hh/2 - 10) + 'px) rotate(2deg) scale(1.02)', offset:.75},
+      {transform:'translate(' + (hw/2) + 'px,' + (hh/2) + 'px) rotate(0deg) scale(1)'}
+    ], {duration:620, easing:'cubic-bezier(.22,.8,.24,1)', fill:'forwards'}).finished
+    .then(function(){
+      // 2) 오른쪽 반을 펼침 — 뒷면(아래 반면의 뒤)이 드러남
+      var o = {duration:560, delay:160, easing:fold, fill:'forwards'};
+      trShade.animate([{opacity:0},{opacity:.35, offset:.5},{opacity:0}], o);
+      np.animate([{transform:'translate(' + (hw/2) + 'px,' + (hh/2) + 'px)'},{transform:'translate(0px,' + (hh/2) + 'px)'}], o);
+      return right.animate([{transform:'translateZ(2px) rotateY(-180deg)'},{transform:'translateZ(2px) rotateY(0deg)'}], o).finished;
+    })
+    .then(function(){
+      // 3) 아래 반면을 펼침 — 1면 전체가 드러남
+      var o = {duration:620, delay:80, easing:fold, fill:'forwards'};
+      [bl, br].forEach(function(el){
+        el.animate([{transform:FX},{transform:'translateZ(1px) rotateX(0deg)'}], o);
+        el.querySelector('.np-shade').animate([{opacity:.4},{opacity:.25, offset:.5},{opacity:0}], o);
+      });
+      return np.animate([{transform:'translate(0px,' + (hh/2) + 'px)'},{transform:'translate(0px,0px)'}], o).finished;
+    })
+    .then(function(){
+      // 4) 화면 가득 확대 후 신문 페이지로 이동
+      var sc = Math.max(vw / W, vh / H) * 1.04;
+      stage.animate([{background:'rgba(17,18,20,.72)'},{background:'#F2EEE3'}], {duration:420, delay:220, fill:'forwards'});
+      return np.animate([{transform:'scale(1)'},{transform:'scale(' + sc + ')'}], {duration:480, delay:220, easing:'cubic-bezier(.6,0,.4,1)', fill:'forwards'}).finished;
+    })
+    .then(go, go);
+  });
+
+  // 뒤로 가기로 돌아왔을 때 오버레이 정리
+  window.addEventListener('pageshow', function(e){
+    if (!e.persisted) return;
+    document.querySelectorAll('.np-stage,.np-skip').forEach(function(n){ n.remove(); });
+    document.documentElement.style.overflow = '';
+    running = false;
+  });
 })();
 </script>
 
