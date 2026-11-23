@@ -6,7 +6,7 @@
 <title>UPLEAT 데일리 트렌드 아카이브</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.27/dist/lenis.css">
 <style>
 :root{
@@ -245,12 +245,146 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .src-label{font-size:12px;font-weight:700;color:var(--ink);margin:0 0 6px;}
 .src-chips{display:flex;flex-wrap:wrap;gap:6px;}
 .src-chip{font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:3px 10px;}
+
+
+/* ================================================================
+   U PLEAT Design System layer (upleat.com 기준)
+   - surface #101010 · text #E0E0E0 · muted #999 / #7A7A7A
+   - brand blue #0029D2 (작은 표시·버튼에만)
+   - IBM Plex Sans KR(-0.03em) · Geist Mono(라벨) · Inter Light(디스플레이)
+   이 블록을 지우면 이전 라이트 테마로 돌아갑니다.
+   ================================================================ */
+:root{
+  --bg:#101010; --card:#161616; --raise:#1F1F1F;
+  --ink:#E0E0E0; --ink-strong:#FFFFFF; --sub:#999999; --sub2:#7A7A7A;
+  --line:rgba(229,229,229,.14); --line-strong:rgba(229,229,229,.3);
+  --accent:#0029D2; --accent-dim:rgba(0,41,210,.16); --accent-line:rgba(0,41,210,.55);
+  --shadow:none;
+  --mono:"Geist Mono",ui-monospace,monospace;
+  --display:"Inter","IBM Plex Sans KR",sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);letter-spacing:-.02em;}
+::selection{background:var(--accent);color:#fff;}
+
+/* 헤더 — upleat.com 내비게이션처럼 배경과 이어지는 미니멀 바 */
+.nl-head{background:var(--bg);}
+.nl-head-row{padding-top:30px;padding-bottom:26px;}
+.nl-logo{display:inline-flex;align-items:baseline;gap:12px;font-size:inherit;}
+.nl-logo-mark{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.02em;color:var(--ink-strong);}
+.nl-logo-sub{font-family:var(--mono);font-size:13px;color:var(--sub);letter-spacing:0;}
+.nl-search{flex:0 1 420px;height:40px;border-bottom:1px solid var(--line-strong);}
+.nl-search input{background:transparent;color:var(--ink);font-size:15px;padding:0 4px;letter-spacing:-.03em;}
+.nl-search input::placeholder{color:var(--sub2);}
+.nl-search input:focus{background:transparent;box-shadow:none;}
+.nl-search:focus-within{border-bottom-color:var(--ink);}
+.nl-search-btn{flex:0 0 auto;background:transparent;color:var(--ink);font-family:var(--mono);font-weight:500;font-size:13px;letter-spacing:.04em;padding:0 4px 0 16px;}
+.nl-search-btn:hover{background:transparent;color:var(--ink-strong);}
+.nl-nav{background:var(--bg);border-bottom:1px solid var(--line);margin-bottom:0;}
+.nl-tabs{background:transparent;padding-left:0;gap:36px;}
+.nl-nav-bar{height:52px;}
+.nl-nav-bar > .nl-date{background:transparent;padding:0;font-family:var(--mono);font-size:13px;color:var(--sub2);letter-spacing:0;}
+.pill-btn{padding:0;font-family:"IBM Plex Sans KR",sans-serif;font-weight:400;font-size:16px;letter-spacing:-.03em;color:var(--sub);position:relative;}
+.pill-btn:hover:not(.active){background:transparent;color:var(--ink);}
+.pill-btn.active{background:transparent;color:var(--ink-strong);}
+.pill-btn.active::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);}
+@media (max-width:760px){
+  .nl-head-row{padding-top:20px;padding-bottom:14px;gap:14px;}
+  .nl-logo-mark{font-size:20px;}
+  .nl-search{flex:none;}
+  .nl-tabs{gap:24px;}
+  .pill-btn{font-size:15px;}
+}
+
+/* 페이지 타이틀 — Journal 헤더 구성 */
+.page-hero{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:32px;padding:72px 0 56px;}
+.page-title{font-family:var(--display);font-weight:300;font-size:clamp(56px, 8vw, 96px);line-height:.95;letter-spacing:-.03em;color:var(--ink);margin:0;}
+.page-desc{font-size:16px;line-height:1.6;letter-spacing:-.03em;color:var(--ink);margin:0 0 10px;}
+@media (max-width:760px){.page-hero{grid-template-columns:1fr;gap:18px;padding:40px 0 32px;}}
+header.site{margin-bottom:0;}
+.header-row{border-top:1px solid var(--line);padding:18px 0;}
+.feed-count{font-family:var(--mono);font-size:13px;color:var(--sub2);}
+.region-tab-row{gap:24px;}
+.region-tab-btn{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--sub2);letter-spacing:0;}
+.region-tab-btn.active{color:var(--ink-strong);font-weight:500;}
+.region-tab-btn:hover:not(.active){color:var(--ink);}
+
+/* 공지 바 / 모달 */
+.notice-bar{background:var(--accent-dim);border:1px solid var(--accent-line);border-radius:4px;color:var(--ink);}
+.notice-bar:hover{background:rgba(0,41,210,.24);box-shadow:none;}
+@keyframes notice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,41,210,0);border-color:var(--accent-line);}50%{box-shadow:0 0 0 4px rgba(0,41,210,.28);border-color:#3D5BFF;}}
+.notice-tag{border-radius:2px;font-family:var(--mono);font-weight:500;}
+.notice-more{border-radius:999px;}
+.notice-modal{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.6);}
+.notice-modal::backdrop{background:rgba(0,0,0,.65);}
+.notice-head{border-bottom-color:var(--line);}
+.notice-date{font-family:var(--mono);color:var(--sub2);}
+.notice-close:hover{color:var(--ink-strong);}
+.notice-why{background:var(--raise);color:var(--sub);border-radius:4px;}
+.notice-body p,.notice-list li > div > span{color:var(--sub);}
+.notice-body b{color:var(--ink-strong);}
+.notice-list strong{color:var(--ink);}
+.notice-num{background:var(--ink);color:#101010;}
+.src-label{font-family:var(--mono);font-weight:500;color:var(--ink);}
+.src-chip{border-color:var(--line-strong);color:var(--sub);border-radius:4px;}
+
+/* 피드 — Journal 목록처럼 헤어라인 행 */
+.feed-item{border-bottom:1px solid var(--line);}
+.feed-thumb{background:var(--raise);border-radius:4px;}
+.feed-thumb img{filter:saturate(.9);}
+.feed-eyebrow{background:transparent;color:var(--sub);font-family:var(--mono);font-size:13px;font-weight:400;letter-spacing:0;padding:0;border-radius:0;}
+.feed-hashtag{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--sub2);}
+.feed-title{font-weight:500;letter-spacing:-.03em;color:var(--ink);}
+.feed-item:hover .feed-title{color:var(--ink-strong);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;}
+.feed-summary{color:var(--sub);letter-spacing:-.03em;}
+.feed-summary b{color:var(--ink);font-weight:600;}
+.badge-new{background:var(--accent);border-radius:2px;font-family:var(--mono);font-weight:500;}
+.feed-src-name{font-family:var(--mono);font-weight:400;color:var(--sub);}
+.feed-date,.feed-dot{font-family:var(--mono);color:var(--sub2);}
+.comment-fab{background:transparent;border-color:var(--line-strong);color:var(--sub);}
+.comment-fab:hover{border-color:var(--ink);color:var(--ink);}
+.loadmore-btn{background:transparent;border:1px solid var(--line-strong);color:var(--ink);border-radius:999px;box-shadow:none;font-weight:500;}
+.loadmore-btn:hover{border-color:var(--ink);color:var(--ink-strong);}
+.no-results{font-family:var(--mono);}
+.rail-strip{border-top-color:var(--line);}
+.rail-strip h3{font-family:var(--mono);font-weight:500;color:var(--sub);}
+.rail-text{color:var(--ink);}
+.rail-text b{color:var(--ink-strong);}
+.rail-date{font-family:var(--mono);}
+.scrolltop{background:var(--ink);color:#101010;box-shadow:none;}
+
+/* 댓글 패널 */
+.comment-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 20px 48px rgba(0,0,0,.6);}
+.comment-panel-header{border-bottom-color:var(--line);}
+.comment-identity strong{color:var(--ink-strong);}
+.comment-textarea{background:var(--raise);color:var(--ink);border-color:var(--line);border-radius:4px;}
+.comment-textarea:focus{border-color:var(--ink);}
+.comment-submit-btn{background:var(--accent);color:#fff;border-radius:999px;}
+.comment-submit-btn:hover{background:#1A3FE0;}
+.comment-item{border-bottom-color:var(--line);}
+.comment-body{color:#CFCFCF;}
+.comment-date{font-family:var(--mono);}
+
+/* Nexty AI 패널 */
+.nexty-callout{background:var(--raise);color:var(--ink);box-shadow:0 6px 16px rgba(0,0,0,.4);}
+.nexty-callout::after{background:var(--raise);}
+.ai-panel{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 20px 48px rgba(0,0,0,.6);}
+.ai-panel-header{border-bottom-color:var(--line);}
+.ai-suggestion-chip{background:var(--raise);color:var(--ink);border-color:var(--line);}
+.ai-suggestion-chip:hover{background:var(--accent-dim);border-color:var(--accent-line);}
+.ai-msg strong{color:var(--ink-strong);}
+.ai-msg-user{background:var(--ink);color:#101010;}
+.ai-msg-bot{background:var(--raise);color:var(--ink);}
+.ai-panel-form{border-top-color:var(--line);}
+.ai-panel-input{background:var(--raise);color:var(--ink);border-color:var(--line);border-radius:4px;}
+.ai-panel-input:focus{border-color:var(--ink);}
+.ai-panel-send{background:var(--accent);color:#fff;border-radius:999px;}
 </style>
 </head>
 <body>
 <header class="nl-head">
   <div class="nl-head-row wrap">
-    <a class="nl-logo" href="index.html">UPLEAT DAILY</a>
+    <a class="nl-logo" href="index.html" aria-label="U PLEAT Daily Trend 홈"><span class="nl-logo-mark">U PLEAT</span><span class="nl-logo-sub">Daily Trend</span></a>
     <form class="nl-search" action="index.html" method="get" role="search">
       <input id="searchInput" name="q" type="search" placeholder="날짜, 키워드, 기사 제목으로 검색" aria-label="기사 검색">
       <button type="submit" class="nl-search-btn">SEARCH</button>
@@ -265,8 +399,12 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </nav>
 <div class="wrap">
 <header class="site">
+<div class="page-hero">
+  <h1 class="page-title">Daily Trend</h1>
+  <p class="page-desc">AI · UX · 디자인 · 테크 소식을 매일 아침 정리합니다.<br>기사마다 원문과 핵심 인사이트를 함께 남깁니다.</p>
+</div>
 <div class="header-row">
-  <h1>UPLEAT 데일리 트렌드 아카이브</h1>
+  <span class="feed-count">ARCHIVE — 437</span>
   <div class="region-tab-row" id="regionTabRow">
     <button class="region-tab-btn active" data-region="all">전체</button>
     <button class="region-tab-btn" data-region="domestic">국내</button>
