@@ -187,6 +187,41 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .ai-panel-send{flex:0 0 auto;appearance:none;cursor:pointer;font-family:inherit;background:var(--ink);color:#fff;border:none;font-weight:700;font-size:15px;padding:11px 18px;border-radius:8px;}
 .ai-panel-send:hover{background:var(--accent);}
 .ai-panel-send:disabled{opacity:.5;cursor:default;}
+
+/* 공지 바 + 모달 */
+.notice-bar{display:flex;align-items:center;gap:10px;width:100%;appearance:none;cursor:pointer;font-family:inherit;text-align:left;background:var(--accent-dim);border:none;border-radius:8px;padding:11px 14px;margin:0 0 18px;color:var(--ink);font-size:13.5px;line-height:1.45;transition:background .15s ease;}
+.notice-bar:hover{background:#DCE9FD;}
+.notice-bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.notice-tag{flex:0 0 auto;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:4px;}
+.notice-text{flex:1 1 auto;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.notice-new{width:6px;height:6px;border-radius:50%;background:#E5484D;flex:0 0 auto;}
+.notice-bar.seen .notice-new{display:none;}
+.notice-more{flex:0 0 auto;color:var(--accent);font-weight:700;font-size:13px;}
+@media (max-width:640px){.notice-text{white-space:normal;}.notice-more{display:none;}}
+.notice-modal{border:none;padding:0;border-radius:16px;width:min(640px, calc(100vw - 32px));max-height:min(86vh, 860px);box-shadow:0 24px 60px rgba(16,24,40,.25);color:var(--ink);background:#fff;}
+.notice-modal::backdrop{background:rgba(17,18,20,.45);}
+.notice-modal[open]{display:flex;flex-direction:column;}
+.notice-head{display:flex;align-items:flex-start;gap:12px;padding:22px 22px 14px;border-bottom:1px solid var(--line);}
+.notice-head-txt{flex:1;min-width:0;}
+.notice-date{font-size:12px;color:var(--sub2);font-weight:600;}
+.notice-title{font-size:19px;font-weight:700;line-height:1.4;margin:4px 0 0;letter-spacing:-.01em;}
+.notice-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:26px;color:var(--sub2);line-height:1;padding:0;}
+.notice-close:hover{color:var(--ink);}
+.notice-body{overflow-y:auto;padding:18px 22px 24px;font-size:14px;line-height:1.7;}
+.notice-body h3{font-size:14.5px;font-weight:700;margin:22px 0 8px;}
+.notice-body h3:first-child{margin-top:0;}
+.notice-body p{margin:0 0 8px;color:var(--sub);}
+.notice-body b{color:var(--accent);}
+.notice-why{background:#F7F7F7;border-radius:10px;padding:14px 16px;color:var(--sub);font-size:13.5px;}
+.notice-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.notice-list li{display:flex;gap:10px;}
+.notice-num{flex:0 0 22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.notice-list strong{display:block;font-weight:700;color:var(--ink);}
+.notice-list span{color:var(--sub);font-size:13.5px;}
+.src-group{margin:0 0 12px;}
+.src-label{font-size:12px;font-weight:700;color:var(--ink);margin:0 0 6px;}
+.src-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.src-chip{font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:3px 10px;}
 </style>
 </head>
 <body>
@@ -204,6 +239,39 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 </div>
 <div class="wrap">
 <header class="site">
+<button type="button" class="notice-bar" id="noticeBar" data-notice="2026-11-23-criteria" aria-haspopup="dialog">
+  <span class="notice-tag">공지</span>
+  <span class="notice-text">11월 24일부터 트렌드 수집 기준이 바뀝니다 — 최근 30일 기사만, 같은 소식은 한 번만</span>
+  <span class="notice-new" aria-hidden="true"></span>
+  <span class="notice-more">자세히 보기 ›</span>
+</button>
+<dialog class="notice-modal" id="noticeModal" aria-labelledby="noticeTitle">
+  <div class="notice-head">
+    <div class="notice-head-txt">
+      <div class="notice-date">2026.11.23 · 공지</div>
+      <h2 class="notice-title" id="noticeTitle">트렌드 수집 기준이 바뀝니다</h2>
+    </div>
+    <button type="button" class="notice-close" id="noticeClose" aria-label="닫기">×</button>
+  </div>
+  <div class="notice-body" data-lenis-prevent>
+    <h3>왜 바꾸나요</h3>
+    <div class="notice-why">지금까지는 '올해 발행된 기사'면 모두 통과했어요. 그래서 7~8월에 나온 강남언니 리브랜딩 기사가 매체만 바뀐 채 10~11월에 <b>네 번</b> 올라왔습니다. 그동안 실린 기사의 <b>43%가 발행된 지 30일이 넘은 기사</b>였어요.</div>
+
+    <h3>무엇이 바뀌나요</h3>
+    <ol class="notice-list">
+      <li><span class="notice-num">1</span><div><strong>최근 30일 이내 기사만 싣습니다</strong><span>30일이 지났거나 발행일을 확인할 수 없는 기사는 뺍니다. 기관 리포트도 같은 기준입니다.</span></div></li>
+      <li><span class="notice-num">2</span><div><strong>같은 소식은 한 번만 싣습니다</strong><span>최근 60일 동안 실린 기사와 비교해, 같은 회사의 같은 사건이면 매체가 달라도 뺍니다. 새로운 사실이 있는 후속 소식은 싣습니다.</span></div></li>
+      <li><span class="notice-num">3</span><div><strong>고정 매체 36곳을 먼저 확인합니다</strong><span>검색 결과에만 기대지 않고, 아래 매체의 RSS에서 최근 글을 먼저 모읍니다. 발행일이 정확하고 UX·DESIGN 기사를 꾸준히 확보할 수 있어요. 빅테크 발표나 기관 리포트는 지금처럼 검색으로 보완합니다.</span></div></li>
+      <li><span class="notice-num">4</span><div><strong>국내 UX 범위를 넓힙니다</strong><span>국내 기업의 UX 리서치 뉴스에 더해 서비스 개편 사례, 기업 블로그의 디자인·리서치 글, 국내 소비자·사용성 조사, 접근성 정책까지 포함합니다.</span></div></li>
+    </ol>
+
+    <h3>고정 매체 목록</h3>
+    <div class="src-group"><div class="src-label">해외 · UX</div><div class="src-chips"><span class="src-chip">NN/g</span><span class="src-chip">Baymard</span><span class="src-chip">MeasuringU</span><span class="src-chip">Smashing Magazine</span><span class="src-chip">UX Collective</span><span class="src-chip">UX Planet</span></div></div><div class="src-group"><div class="src-label">해외 · DESIGN</div><div class="src-chips"><span class="src-chip">Figma</span><span class="src-chip">Apple Developer</span><span class="src-chip">Fast Company Design</span><span class="src-chip">Dezeen</span><span class="src-chip">Creative Bloq</span><span class="src-chip">Sidebar</span><span class="src-chip">Muzli</span></div></div><div class="src-group"><div class="src-label">해외 · AI</div><div class="src-chips"><span class="src-chip">OpenAI</span><span class="src-chip">Google AI</span><span class="src-chip">MIT Technology Review</span><span class="src-chip">The Verge</span><span class="src-chip">TechCrunch</span></div></div><div class="src-group"><div class="src-label">해외 · TECH & BIZ</div><div class="src-chips"><span class="src-chip">TechCrunch</span><span class="src-chip">The Verge</span></div></div><div class="src-group"><div class="src-label">국내 · UX</div><div class="src-chips"><span class="src-chip">토스 테크</span><span class="src-chip">카카오 테크</span><span class="src-chip">당근</span><span class="src-chip">LY(라인)</span><span class="src-chip">뱅크샐러드</span><span class="src-chip">무신사</span><span class="src-chip">오픈서베이</span><span class="src-chip">요즘IT</span></div></div><div class="src-group"><div class="src-label">국내 · DESIGN</div><div class="src-chips"><span class="src-chip">디자인프레스</span><span class="src-chip">월간 디자인</span><span class="src-chip">디자인컴파스</span></div></div><div class="src-group"><div class="src-label">국내 · AI</div><div class="src-chips"><span class="src-chip">AI타임스</span><span class="src-chip">전자신문</span><span class="src-chip">ZDNet Korea</span></div></div><div class="src-group"><div class="src-label">국내 · TECH & BIZ</div><div class="src-chips"><span class="src-chip">바이라인네트워크</span><span class="src-chip">플래텀</span><span class="src-chip">벤처스퀘어</span><span class="src-chip">아웃스탠딩</span></div></div>
+
+    <h3>참고해 주세요</h3>
+    <p>기준이 엄격해져서 하루 기사 수가 줄거나 일부 카테고리가 비는 날이 생길 수 있습니다. 오래된 기사나 같은 소식으로 채우지 않기 위한 선택입니다.</p>
+  </div>
+</dialog>
 <div class="header-row">
   <h1>UPLEAT 데일리 트렌드 아카이브</h1>
   <div class="region-tab-row" id="regionTabRow">
@@ -7700,6 +7768,27 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
       askQuestion(chip.dataset.q || chip.textContent);
     });
   });
+})();
+</script>
+
+<script>
+(function(){
+  var bar = document.getElementById('noticeBar');
+  var modal = document.getElementById('noticeModal');
+  if (!bar || !modal) return;
+  var key = 'upleat-notice-seen:' + bar.dataset.notice;
+  try { if (localStorage.getItem(key)) bar.classList.add('seen'); } catch (e) {}
+  function open(){
+    if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+    document.documentElement.style.overflow = 'hidden';
+    bar.classList.add('seen');
+    try { localStorage.setItem(key, '1'); } catch (e) {}
+  }
+  function close(){ if (modal.open) modal.close(); }
+  bar.addEventListener('click', open);
+  document.getElementById('noticeClose').addEventListener('click', close);
+  modal.addEventListener('close', function(){ document.documentElement.style.overflow = ''; bar.focus(); });
+  modal.addEventListener('click', function(e){ if (e.target === modal) close(); });
 })();
 </script>
 
