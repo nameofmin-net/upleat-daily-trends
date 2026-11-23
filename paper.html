@@ -45,16 +45,6 @@ a{color:inherit;text-decoration:none;}
 .masthead .sub{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;margin-top:12px;}
 @media (max-width:640px){.masthead .sub{letter-spacing:.14em;font-size:11px;}}
 
-/* 속보 띠 */
-.ticker{display:flex;align-items:stretch;border-bottom:var(--rule);overflow:hidden;background:var(--ink);color:var(--paper);}
-.ticker-label{flex:0 0 auto;background:var(--red);color:#fff;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em;padding:10px 14px;display:flex;align-items:center;}
-.ticker-track{flex:1;overflow:hidden;position:relative;}
-.ticker-move{display:inline-flex;white-space:nowrap;gap:48px;padding:10px 0;font-size:14.5px;font-weight:600;animation:tick 60s linear infinite;}
-.ticker-move b{color:var(--red);font-weight:700;}
-.ticker:hover .ticker-move{animation-play-state:paused;}
-@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-@media (prefers-reduced-motion: reduce){.ticker-move{animation:none;white-space:normal;flex-direction:column;gap:8px;padding:10px 14px;}}
-
 /* 1면 */
 .front{display:grid;grid-template-columns:repeat(12,1fr);gap:0;border-bottom:var(--rule);}
 .lead{grid-column:1 / span 8;padding:24px 24px 28px 0;border-right:var(--hair);}
@@ -137,11 +127,6 @@ a{color:inherit;text-decoration:none;}
     <div class="sub">The UPLEAT Trend Gazette — AI · UX · Design · Tech &amp; Biz</div>
   </header>
 
-  <div class="ticker" id="ticker" hidden>
-    <div class="ticker-label">오늘의 한 줄</div>
-    <div class="ticker-track"><div class="ticker-move" id="tickerMove"></div></div>
-  </div>
-
   <main id="paper"><div class="loading">신문을 인쇄하는 중…</div></main>
 
   <section class="archive" id="archive" hidden>
@@ -200,11 +185,6 @@ a{color:inherit;text-decoration:none;}
     var date = day.intl.date;
     document.getElementById("dateLabel").textContent = day.intl.dateLabel;
     document.getElementById("vol").textContent = "VOL.1 — NO." + issueNo(date);
-
-    var tm = document.getElementById("tickerMove");
-    var line = '<span>해외 ▸ ' + rich(day.intl.takeawayHtml) + '</span><span>국내 ▸ ' + rich(day.domestic.takeawayHtml) + '</span>';
-    tm.innerHTML = line + line;
-    document.getElementById("ticker").hidden = false;
 
     var lead = pickLead(day);
     var html = "";
