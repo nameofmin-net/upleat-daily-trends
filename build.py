@@ -312,9 +312,14 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .mp-cover .c-mast{font-family:"Black Han Sans",sans-serif;font-size:calc(var(--mp-mast) * .62);line-height:.95;letter-spacing:-.02em;}
 .mp-cover .c-tag{background:#FF2E00;color:#fff;font-family:"IBM Plex Sans KR",sans-serif;font-weight:700;font-size:var(--mp-s);padding:.3em .8em;}
 .mp-cover .c-date{font-family:"IBM Plex Sans KR",sans-serif;font-weight:600;font-size:var(--mp-xs);}
+.np-modal{position:absolute;left:50%;top:50%;translate:-50% -50%;background:#F2EEE3;border:3px solid #0B0B0B;box-shadow:10px 10px 0 #0B0B0B;opacity:0;pointer-events:none;display:flex;}
+.np-modal.open{opacity:1;pointer-events:auto;}
+.np-modal iframe{flex:1;width:100%;height:100%;border:0;display:block;background:#F2EEE3;}
+.np-close{position:absolute;top:10px;right:10px;z-index:2;appearance:none;cursor:pointer;font-family:"IBM Plex Sans KR",sans-serif;font-size:13px;font-weight:700;color:#F2EEE3;background:#0B0B0B;border:2px solid #0B0B0B;padding:7px 12px;box-shadow:3px 3px 0 #FF2E00;}
+.np-close:hover{background:#FF2E00;border-color:#FF2E00;box-shadow:3px 3px 0 #0B0B0B;}
+.np-close:focus-visible{outline:3px solid #FF2E00;outline-offset:2px;}
 .np-skip{position:fixed;right:20px;bottom:20px;z-index:201;appearance:none;border:none;cursor:pointer;font-family:inherit;font-size:12.5px;font-weight:700;color:#fff;background:rgba(255,255,255,.14);padding:8px 14px;border-radius:999px;}
 .np-skip:hover{background:rgba(255,255,255,.26);}
-@view-transition{navigation:auto;}
 """
 
 SCROLLTOP_SCRIPT = """
@@ -1168,7 +1173,42 @@ BRIEFING_SCRIPT = """
     var np = stage.querySelector('.np'), right = stage.querySelector('.np-right');
     var bl = stage.querySelector('.np-bl'), br = stage.querySelector('.np-br');
     var trShade = stage.querySelector('.np-tr .np-shade');
-    var go = function(){ window.location.href = href; };
+    // 모달: 브리핑 페이지를 iframe으로 미리 로드해 둠
+    var MW = Math.min(vw - (vw < 640 ? 20 : 64), 1240), MH = vh - (vw < 640 ? 24 : 56);
+    var modal = document.createElement('div');
+    modal.className = 'np-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', '오늘의 브리핑');
+    modal.style.cssText = 'width:' + MW + 'px;height:' + MH + 'px;';
+    modal.innerHTML = '<button type="button" class="np-close" aria-label="브리핑 닫기">✕ 닫기</button><iframe title="오늘의 브리핑" src="' + href + (href.indexOf('?') > -1 ? '&' : '?') + 'embed=1"></iframe>';
+    stage.appendChild(modal);
+    var shown = false;
+    var go = function(){
+      if (shown) return;
+      shown = true;
+      document.getAnimations().forEach(function(a){ if (stage.contains(a.effect && a.effect.target)) a.finish(); });
+      skip.remove();
+      stage.removeAttribute('aria-hidden');
+      stage.style.background = 'rgba(17,18,20,.72)';
+      np.style.visibility = 'hidden';
+      modal.classList.add('open');
+      modal.animate([{opacity:0, transform:'scale(.97)'},{opacity:1, transform:'scale(1)'}], {duration:260, easing:'cubic-bezier(.2,.8,.2,1)'});
+      modal.querySelector('.np-close').focus();
+    };
+    var close = function(){
+      if (!stage.isConnected) return;
+      var a = stage.animate([{opacity:1},{opacity:0}], {duration:220, fill:'forwards'});
+      a.finished.then(function(){ stage.remove(); skip.remove(); document.documentElement.style.overflow = ''; running = false; btn.focus(); });
+      document.removeEventListener('keydown', onKey);
+      window.removeEventListener('message', onMsg);
+    };
+    var onKey = function(e){ if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    var onMsg = function(e){ if (e.origin === location.origin && e.data === 'np-close') close(); };
+    window.addEventListener('message', onMsg);
+    modal.querySelector('.np-close').addEventListener('click', close);
+    stage.addEventListener('click', function(e){ if (shown && e.target === stage) close(); });
     skip.addEventListener('click', go);
 
     var fold = 'cubic-bezier(.55,.05,.3,1)';
@@ -1196,10 +1236,9 @@ BRIEFING_SCRIPT = """
       return np.animate([{transform:'translate(0px,' + (hh/2) + 'px)'},{transform:'translate(0px,0px)'}], o).finished;
     })
     .then(function(){
-      // 4) 화면 가득 확대 후 신문 페이지로 이동
-      var sc = Math.max(vw / W, vh / H) * 1.04;
-      stage.animate([{background:'rgba(17,18,20,.72)'},{background:'#F2EEE3'}], {duration:420, delay:220, fill:'forwards'});
-      return np.animate([{transform:'scale(1)'},{transform:'scale(' + sc + ')'}], {duration:480, delay:220, easing:'cubic-bezier(.6,0,.4,1)', fill:'forwards'}).finished;
+      // 4) 모달 크기로 커지며 브리핑 모달로 전환
+      var sc = Math.min(MW / W, MH / H);
+      return np.animate([{transform:'scale(1)'},{transform:'scale(' + sc + ')'}], {duration:420, delay:200, easing:'cubic-bezier(.6,0,.4,1)', fill:'forwards'}).finished;
     })
     .then(go, go);
   });
