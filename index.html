@@ -126,8 +126,8 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .rail-text b{color:var(--accent);}
 .rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:4px;}
 
-.scrolltop{position:fixed;right:24px;bottom:206px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease, bottom .2s ease;z-index:50;}
-@media (max-width:640px){.scrolltop{bottom:202px;right:24px;}}
+.scrolltop{position:fixed;right:20px;bottom:156px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease, bottom .2s ease;z-index:50;}
+@media (max-width:640px){.scrolltop{bottom:134px;right:16px;width:40px;height:40px;font-size:15px;}}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 /* hide the scroll-top button while a floating panel covers that corner of the screen (it now sits higher, in the panels' footprint) */
@@ -167,16 +167,22 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .comment-empty{font-size:13px;color:var(--sub2);padding:12px 0;}
 
 /* Nexty AI 트렌드 Q&A floating button + panel */
-.ai-ask-wrap{position:fixed;right:20px;bottom:80px;z-index:50;display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
-@media (max-width:640px){.ai-ask-wrap{bottom:76px;right:20px;}}
+.ai-ask-wrap{position:fixed;right:20px;bottom:80px;z-index:50;display:flex;align-items:center;}
+@media (max-width:640px){.ai-ask-wrap{bottom:76px;right:16px;}}
 .ai-ask-fab{position:static;display:inline-flex;align-items:center;gap:9px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:9px 20px 9px 9px;font-size:15px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
 .ai-ask-fab:hover{transform:translateY(-2px);}
-.nexty-avatar{width:46px;height:46px;flex:0 0 auto;display:block;animation-name:nexty-float, nexty-wiggle;animation-duration:2.4s, 6s;animation-timing-function:ease-in-out, ease-in-out;animation-iteration-count:infinite, infinite;}
-@keyframes nexty-float{0%,100%{translate:0 0;}50%{translate:0 -4px;}}
-@keyframes nexty-wiggle{0%,83%,100%{rotate:0deg;}86%{rotate:-10deg;}89%{rotate:9deg;}92%{rotate:-7deg;}95%{rotate:4deg;}98%{rotate:0deg;}}
-.nexty-callout{background:#fff;color:var(--ink);font-size:13.5px;font-weight:700;padding:9px 14px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.16);position:relative;opacity:0;translate:0 6px;pointer-events:none;animation:nexty-callout-pop 8s ease-in-out infinite;}
-.nexty-callout::after{content:'';position:absolute;right:22px;bottom:-5px;width:10px;height:10px;background:#fff;rotate:45deg;}
-@keyframes nexty-callout-pop{0%,55%{opacity:0;translate:0 6px;}62%,80%{opacity:1;translate:0 0;}88%,100%{opacity:0;translate:0 6px;}}
+.nexty-avatar{width:60px;height:60px;margin:-7px;flex:0 0 auto;display:block;background:url(assets/brand/nexty-pixel-idle.png) 0 0/5760px 60px no-repeat;image-rendering:pixelated;animation:nexty-sprite 3.2s steps(96) infinite;}
+.nexty-avatar.thinking{background-image:url(assets/brand/nexty-pixel-think.png);}
+@keyframes nexty-sprite{to{background-position-x:-5760px;}}
+/* callout pops to the left of the pill, so the column above it stays free for the scroll-top button */
+.nexty-callout{position:absolute;right:calc(100% + 10px);top:50%;white-space:nowrap;background:#fff;color:var(--ink);font-size:13.5px;font-weight:700;padding:9px 14px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,.16);opacity:0;translate:6px -50%;pointer-events:none;animation:nexty-callout-pop 8s ease-in-out infinite;}
+.nexty-callout::after{content:'';position:absolute;right:-5px;top:50%;margin-top:-5px;width:10px;height:10px;background:#fff;rotate:45deg;}
+@keyframes nexty-callout-pop{0%,55%{opacity:0;translate:6px -50%;}62%,80%{opacity:1;translate:0 -50%;}88%,100%{opacity:0;translate:6px -50%;}}
+@media (max-width:640px){
+.ai-ask-fab{gap:7px;padding:5px 15px 5px 5px;font-size:13.5px;box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.ai-ask-fab .nexty-avatar{margin:-11px;}
+.nexty-callout{font-size:12.5px;padding:7px 11px;}
+}
 .ai-ask-wrap.panel-open{display:none;}
 @media (prefers-reduced-motion: reduce){.nexty-avatar{animation:none;}.nexty-callout{animation:none;opacity:0;}}
 .ai-panel-overlay{position:fixed;inset:0;background:transparent;z-index:99;display:none;}
@@ -186,7 +192,7 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 @media (max-width:640px){.ai-panel{top:auto;bottom:0;right:0;left:0;width:100%;max-width:100%;max-height:80vh;border-radius:16px 16px 0 0;transform:translateY(16px);}
 .ai-panel.open{transform:translateY(0);}}
 .ai-panel-header{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--line);}
-.ai-panel-avatar{width:36px;height:36px;flex:0 0 auto;display:block;margin-top:2px;}
+.ai-panel-avatar.nexty-avatar{margin:-10px -12px -12px;}
 .ai-panel-title{flex:1;font-size:16.5px;font-weight:700;line-height:1.5;margin:0;}
 .ai-panel-sub{font-size:13px;color:var(--sub2);margin:2px 0 0;}
 .ai-panel-close{flex:0 0 auto;appearance:none;cursor:pointer;background:none;border:none;font-size:26px;color:var(--sub2);line-height:1;padding:0;}
@@ -8164,14 +8170,14 @@ header.site{margin-bottom:0;}
 <div class="ai-ask-wrap" id="aiAskWrap">
   <span class="nexty-callout">저한테 물어보세요!</span>
   <button class="ai-ask-fab" id="aiAskFab">
-    <img class="nexty-avatar" src="assets/brand/nexty.png" alt="Nexty" width="36" height="36">
+    <span class="nexty-avatar" role="img" aria-label="Nexty"></span>
     Nexty에게 묻기
   </button>
 </div>
 <div class="ai-panel-overlay" id="aiPanelOverlay"></div>
 <aside class="ai-panel" id="aiPanel">
   <div class="ai-panel-header">
-    <img class="ai-panel-avatar" src="assets/brand/nexty.png" alt="Nexty" width="28" height="28">
+    <span class="ai-panel-avatar nexty-avatar" id="aiPanelAvatar" role="img" aria-label="Nexty"></span>
     <div style="flex:1">
       <h3 class="ai-panel-title">Nexty</h3>
       <p class="ai-panel-sub">최근 며칠간의 트렌드 기사를 바탕으로 답해요</p>
@@ -8299,6 +8305,7 @@ header.site{margin-bottom:0;}
     sendBtn.disabled = true;
     var loadingEl = addMsg('생각 중...', 'bot');
     loadingEl.classList.add('loading');
+    var nextyAv = document.getElementById('aiPanelAvatar'); if (nextyAv) nextyAv.classList.add('thinking');
     fetch(WORKER_URL + '/api/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -8306,6 +8313,7 @@ header.site{margin-bottom:0;}
     }).then(function(r){ return r.json().then(function(data){ return { ok: r.ok, data: data }; }); })
       .then(function(res){
         loadingEl.classList.remove('loading');
+        if (nextyAv) nextyAv.classList.remove('thinking');
         var answer = res.ok && res.data.answer ? res.data.answer.trim() : '';
         if (answer) {
           typeIntoElement(loadingEl, answer);
@@ -8318,6 +8326,7 @@ header.site{margin-bottom:0;}
       })
       .catch(function(){
         loadingEl.classList.remove('loading');
+        if (nextyAv) nextyAv.classList.remove('thinking');
         loadingEl.textContent = '네트워크 오류로 답변을 가져오지 못했어요.';
       })
       .finally(function(){ sendBtn.disabled = false; });
