@@ -168,8 +168,8 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .rail-text b{color:var(--accent);}
 .rail-date{display:block;font-size:11px;color:var(--sub2);margin-top:4px;}
 
-.scrolltop{position:fixed;right:20px;bottom:156px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease, bottom .2s ease;z-index:50;}
-@media (max-width:640px){.scrolltop{bottom:134px;right:16px;width:40px;height:40px;font-size:15px;}}
+.scrolltop{position:fixed;right:20px;bottom:calc(96px + env(safe-area-inset-bottom, 0px));width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease, bottom .2s ease;z-index:50;}
+@media (max-width:640px){.scrolltop{bottom:calc(74px + env(safe-area-inset-bottom, 0px));right:16px;width:40px;height:40px;font-size:15px;}}
 .scrolltop.show{opacity:1;pointer-events:auto;}
 .scrolltop:hover{transform:translateY(-2px);}
 /* hide the scroll-top button while a floating panel covers that corner of the screen (it now sits higher, in the panels' footprint) */
@@ -209,8 +209,8 @@ h1{font-size:28px;font-weight:700;margin:0 0 10px;letter-spacing:-.01em;}
 .comment-empty{font-size:13px;color:var(--sub2);padding:12px 0;}
 
 /* Nexty AI 트렌드 Q&A floating button + panel */
-.ai-ask-wrap{position:fixed;right:20px;bottom:80px;z-index:50;display:flex;align-items:center;}
-@media (max-width:640px){.ai-ask-wrap{bottom:76px;right:16px;}}
+.ai-ask-wrap{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom, 0px));z-index:50;display:flex;align-items:center;}
+@media (max-width:640px){.ai-ask-wrap{bottom:calc(16px + env(safe-area-inset-bottom, 0px));right:16px;}}
 .ai-ask-fab{position:static;display:inline-flex;align-items:center;gap:9px;appearance:none;cursor:pointer;font-family:inherit;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:9px 20px 9px 9px;font-size:15px;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.22);transition:transform .2s ease;}
 .ai-ask-fab:hover{transform:translateY(-2px);}
 .nexty-avatar{width:60px;height:60px;margin:-7px;flex:0 0 auto;display:block;background:url(assets/brand/nexty-pixel-idle.png) 0 0/5760px 60px no-repeat;image-rendering:pixelated;animation:nexty-sprite 3.2s steps(96) infinite;}
