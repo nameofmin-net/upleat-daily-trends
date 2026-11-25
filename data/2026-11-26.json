@@ -1,0 +1,258 @@
+{
+  "intl": {
+    "date": "2026-11-26",
+    "dateLabel": "2026년 11월 26일 목요일",
+    "region": "해외",
+    "takeawayHtml": "오픈AI와 마이크로소프트가 외부 모델에 의존하지 않는 자체 AI 역량 확보 경쟁에 나선 가운데, <b>피그마와 누뱅크, 구글은 에이전트와 리브랜딩으로 제품 경험을 다시 설계</b>하고 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "GPT-6, 전문 모델 없이도 단백질 설계 능력을 갖췄다",
+            "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+            "source": "OpenAI",
+            "pubDate": "2026-11-24",
+            "image": "https://images.ctfassets.net/kftzwdyauwt9/Eg5mCwwaA3KqnznOVCh0n/8e6deaef25fd508d9853ff86a95187c1/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities-social.png?w=1600&h=900&fit=fill",
+            "insight": "오픈AI는 GPT-6 계열 모델이 생물학 전용 모델을 따로 호출하지 않고도 추론과 코드만으로 단백질 구조와 서열을 설계할 수 있음을 공개했다. 파트너 Onava와의 실험에서 설계한 미니바인더 322개 중 35개(10.9%)가 다섯 개 표적 단백질에 실제로 결합했고, <b>모티프 스캐폴딩 벤치마크에서는 자체 모델이 43.7%의 성공률로 기존 RFdiffusion의 27.8%를 앞섰다</b>. 다만 전체 단백질 구조 예측 정확도는 특화 모델 ESMFold2(TM-score 0.93)에 크게 못 미치는 0.38에 그쳐, 연구진은 이를 '고르지 않은 역량의 경계'라고 설명했다."
+          },
+          {
+            "title": "MS, 외부 모델 증류 없이 성능 높이는 자체 강화학습 인프라 '로켓' 공개",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217783",
+            "source": "AI타임스",
+            "pubDate": "2026-11-26",
+            "image": "https://cdn.aitimes.com/news/photo/202611/217783_222143_4827.jpg",
+            "insight": "마이크로소프트가 외부 모델의 지식을 증류받지 않고 자체 모델의 추론 능력을 끌어올리는 강화학습 프레임워크 '로켓'을 공개했다. MAI 연구조직은 이를 3조 개 매개변수급 'MAI 베이스 2'와 추론 모델 'MAI 싱킹 1' 학습에 적용했으며, <b>자체 종합 벤치마크 성능이 약 50%에서 70%로 올라 앤트로픽 클로드 오퍼스 4.8(66%)을 넘어섰다</b>고 밝혔다. GPU 6000개 환경 기준으로 장애 복구와 자원 관리를 통해 전체 GPU 사용 시간의 약 17.4%를 절감했다고도 설명했다."
+          },
+          {
+            "title": "OpenAI, 경쟁사의 무단 모델 증류 막는 방어 기술 공개",
+            "url": "https://openai.com/index/combatting-adversarial-distillation",
+            "source": "OpenAI",
+            "pubDate": "2026-11-20",
+            "image": "https://images.ctfassets.net/kftzwdyauwt9/5SUtPGdssrttC7LfP1yoJ1/b6b000846ab3576c1735c29534ab20b0/combatting-adversarial-distillation-social.png?w=1600&h=900&fit=fill",
+            "insight": "오픈AI가 타사가 자사 모델의 출력을 무단으로 학습해 안전장치 없는 복제 모델을 만드는 '적대적 증류'를 막기 위한 다층 방어책을 공개했다. 특히 최종 답변에 담기지 않는 추론 과정(CoT) 보호에 주력하는데, <b>적응형 레드팀 테스트에서 추론 추출 공격 성공률이 GPT-6 Astra의 54.0%에서 업데이트된 GPT-6.2 Astra의 0.2%로 떨어졌다</b>. 오픈AI는 올해 수천에서 수만 개 계정 단위의 무단 증류 캠페인을 적발해 조치했으며, 9월 보고서에서는 적발된 캠페인의 핵심 주체를 문샷 AI 관련 인물로 지목했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "베이마드, 음식 배달·픽업 UX 조사…주문의 과반이 '충동적'",
+            "url": "https://baymard.com/research-articles/food-delivery-and-takeout-quantitative-ux-insights-2026",
+            "source": "Baymard",
+            "pubDate": "2026-11-25",
+            "image": "https://baymard.com/api/og/article/food-delivery-and-takeout-quantitative-ux-insights-2026",
+            "insight": "베이마드 인스티튜트가 미국 온라인 음식 주문 이용자 1,113명을 조사한 결과를 공개했다. <b>이용자의 55%가 먹을 것을 결정한 지 15분 안에 주문을 마쳤고 15%는 5분도 걸리지 않아</b> 배달·픽업 주문이 대체로 빠르고 즉흥적으로 이뤄진다는 점을 보여줬다. 반면 예상치 못한 수수료는 주문을 포기하게 만드는 가장 큰 요인(54%)으로 꼽혀, 체크아웃 전 수수료 고지의 중요성을 시사했다."
+          },
+          {
+            "title": "NN/g, 가공되지 않은 데이터로는 AI도 좋은 디자인을 만들지 못한다",
+            "url": "https://www.nngroup.com/articles/raw-data-vs-synthesized-data/?utm_source=rss&utm_medium=feed&utm_campaign=rss-syndication",
+            "source": "NN/g",
+            "pubDate": "2026-11-21",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Can_AI_Card.png",
+            "insight": "닐슨노먼그룹이 AI에게 원자료(raw comment)와 연구자가 정리한 종합 분석(synthesized research)을 각각 입력해 디자인을 생성시켜 비교했다. <b>종합 분석을 기반으로 만든 디자인은 평가 기준의 77.9%를 충족한 반면 원자료 기반 디자인은 69.5%에 그쳐 8.4%포인트 차이가 났다</b>(p<0.001). 연구진은 원자료는 문제만 나열할 뿐 해결책에 대한 판단 근거가 부족하다며, AI 시대에도 리서치 종합이라는 UX 핵심 작업의 가치가 줄지 않는다고 결론지었다."
+          },
+          {
+            "title": "AI 모더레이터와 사람, 같은 사실을 얼마나 알아내나 비교해보니",
+            "url": "https://measuringu.com/do-ai-and-human-moderators-uncover-the-same-facts/?utm_source=rss&utm_medium=rss&utm_campaign=do-ai-and-human-moderators-uncover-the-same-facts",
+            "source": "MeasuringU",
+            "pubDate": "2026-11-18",
+            "image": null,
+            "insight": "measuringU가 AI와 사람 진행자 각 10명씩에게 동일한 질문지로 사용성 인터뷰를 진행시켜, 참가자가 사전 설문에서 밝혔지만 공유하지 않은 사실들을 얼마나 알아내는지 측정했다. <b>사람 진행자는 평균 35%의 사실을 알아낸 반면 AI 진행자는 21%에 그쳤다</b>(p=.003). 차이의 대부분은 AI가 질문을 더 많이 던졌음에도 참가자가 자발적으로 말을 꺼내는 비중이 낮았던 데서 비롯됐다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "구글 번역, 11년 만에 접힌 종이 자국을 지운 새 아이콘",
+            "url": "https://designcompass.org/2026/11/25/google-translate-gradient-icon-redesign/",
+            "source": "디자인컴파스",
+            "pubDate": "2026-11-25",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/google-translate-web-cover-4x3-1.jpg",
+            "insight": "구글이 2015년 이후 11년 만에 번역 앱 아이콘을 새로 디자인했다. 흰색 'G'와 한자 '文'을 겹쳐 번역을 표현하는 기존 구도는 유지하되, <b>종이가 접힌 듯한 삼각형 디테일을 없애고 최근 구글 앱 전반에 적용 중인 그라데이션 스타일(파랑→보라)을 입혔다</b>. 11월 23일 웹에서 먼저 반영이 확인됐다."
+          },
+          {
+            "title": "피그마 에이전트, 피그잼과 슬라이드에도 정식 적용",
+            "url": "https://www.figma.com/blog/introducing-figma-agent-in-figjam-and-slides/",
+            "source": "Figma",
+            "pubDate": "2026-11-24",
+            "image": "https://cdn.sanity.io/images/599r6htc/regionalized/788c8b94cba16df5c795728f974aca117a196962-1694x948.png?w=1200&q=70&fit=max&auto=format",
+            "insight": "피그마가 AI 에이전트 기능을 모든 유료 플랜의 피그잼(FigJam)과 피그마 슬라이드(Figma Slides)로 확장했다. <b>피그잼에서는 리서치 자료로 저니맵을 만들거나 크릿 피드백 스티키를 모아 스펙 문서로 정리할 수 있고, 슬라이드에서는 대본만으로 덱 초안을 생성하거나 스프레드시트 스크린샷에서 차트를 바로 뽑아낼 수 있다</b>. 노션·구글드라이브 같은 커넥터 연동과 파일 첨부도 지원한다."
+          },
+          {
+            "title": "누뱅크, 로고의 두 글자에서 뽑아낸 전용 서체로 리브랜딩",
+            "url": "https://designcompass.org/2026/11/24/nubank-rebrand-nu-sans/",
+            "source": "디자인컴파스",
+            "pubDate": "2026-11-24",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/Nubank-From-Logo-to-Type-2-web-thumbnail-scaled.jpg",
+            "insight": "브라질 디지털은행 누뱅크가 디자인 스튜디오 코토(Koto)와 함께 전용 서체 '누 산스(Nu Sans)'를 중심으로 브랜드를 전면 개편했다. 로고의 소문자 'n'과 'u'가 맞물리는 곡선을 글자 전체에 적용해 14개월에 걸쳐 32가지 변형을 만들었으며, <b>거래 내역에 쓰이는 숫자는 모두 같은 폭으로 디자인해 금액을 세로로 나열해도 자릿수가 어긋나지 않게 했다</b>. 제휴사 화면처럼 배경색을 정하기 어려운 환경에서도 로고가 잘 드러나도록 보라색 정사각형 안에 흰색 'nu'를 넣는 방식도 함께 적용했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "플립카트 CEO 칼얀 크리시나무르티, 11년 만에 퇴임",
+            "url": "https://techcrunch.com/2026/11/25/flipkart-ceo-kalyan-krishnamurthy-to-step-down-next-week-amid-ipo-uncertainty/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "월마트 자회사 플립카트의 칼얀 크리시나무르티 CEO가 12월 4일을 끝으로 11년 만에 자리에서 물러난다. <b>그는 2017년 CEO로 취임해 사업을 다섯 배 이상 키운 것으로 평가받는데, 이번 퇴임은 플립카트가 올해 3월 상장 준비를 위해 본사를 싱가포르에서 인도로 옮긴 뒤 월마트가 5월 IPO 연기와 수익성 우선을 주문한 시점과 맞물려 있다</b>. 월마트는 후임자를 몇 주 안에 발표할 계획이며, 당분간 최고제품기술책임자 발라지 티아가라잔이 회사를 이끈다."
+          },
+          {
+            "title": "아마존·메타, 두 달 막혔던 AI 쇼핑 에이전트 '뮤즈' 연동 재개 논의",
+            "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "메타의 AI 에이전트 '뮤즈'가 지난 9월부터 아마존에서 결제를 완료하지 못하도록 막혀 있었는데, 두 회사가 이 차단을 풀기 위한 협상을 진행 중이라고 포춘이 보도했다. <b>검색 결과 노출 방식과 광고 수익 배분을 두고 여러 차례 협상이 이어지고 있으며, 최종 합의는 양사 CEO의 승인이 필요하다</b>. 아마존은 외부 쇼핑 에이전트가 자사 광고 사업과 고객 관계를 약화시킬 수 있다는 우려를 갖고 있는 것으로 알려졌다."
+          },
+          {
+            "title": "앤트로픽 주가, 상장 1주일 만에 공모가 밑으로",
+            "url": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-24",
+            "image": null,
+            "insight": "앤트로픽 주가가 나스닥 상장 1주일도 안 돼 공모가 83달러 아래로 떨어져 화요일 한때 76달러까지 밀렸다. <b>상장 당일 111.50달러에 거래를 시작했던 것과 비교하면 큰 폭의 하락으로, 공모가 하회는 통상 투자자들이 매긴 가치가 인수단의 기대보다 낮다는 부정적 신호로 읽힌다</b>. 업계는 이를 AI 기업에 대한 공개시장의 평가 잣대로 주시하고 있어, 주가 흐름이 이어질 경우 비상장 AI 스타트업의 밸류에이션과 IPO 전망에도 영향을 줄 수 있다는 우려가 나온다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-26",
+    "dateLabel": "2026년 11월 26일 목요일",
+    "region": "국내",
+    "takeawayHtml": "카카오 제2데이터센터가 지자체 요구에 또다시 착공이 막힌 가운데, <b>네이버는 금융권 스테이블코인 컨소시엄과 오프라인 멤버십 축제로 플랫폼 영향력을 넓히고</b> 있다.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "카카오 제2데이터센터, 남양주시 요구에 올해 착공 무산",
+            "url": "https://www.etnews.com/20261125000342",
+            "source": "전자신문",
+            "pubDate": "2026-11-25",
+            "image": "https://img.etnews.com/news/article/2025/06/13/news-p.v1.20250613.601db6d9081e42139b1df660c9ed92d4_P1.jpg",
+            "insight": "경기 남양주 왕숙 산업단지에 6,000억원을 들여 추진하던 카카오의 두 번째 자체 데이터센터가 또다시 일정에 차질을 빚고 있다. <b>7월 취임한 남양주시장이 지역 기여 방안을 추가로 요구하면서 토지공급계약과 건축허가가 끝나지 않아 올해 안 착공이 불가능해졌고, 시는 목표 시점을 2027년 상반기로 제시했지만 확정된 것은 아니다</b>. 카카오는 2021년 제주, 2022년 서울대 시흥캠퍼스에서도 데이터센터 부지 확보에 실패한 전례가 있다."
+          },
+          {
+            "title": "대학생이 만든 자율주행 AI, 실제 서킷에서 포뮬러 차량으로 레이스",
+            "url": "https://www.etnews.com/20261125000540",
+            "source": "전자신문",
+            "pubDate": "2026-11-25",
+            "image": "https://img.etnews.com/news/article/2026/11/25/news-p.v1.20261125.b2671d2c31424896acab7c6ef6131a3c_P1.jpg",
+            "insight": "산업통상부가 주최한 '2026 A1 챌린지 레이스'에서 인하대·한양대·조선대 세 팀이 엔드투엔드(E2E) 자율주행 AI를 실제 포뮬러 차량에 이식해 에버랜드 스피드웨이를 달렸다. <b>차량에는 HD 카메라 5대와 32채널 라이다, GNSS가 탑재됐으며, 2.538km 코스를 도는 단독 주행과 3대가 동시에 출발하는 대결 방식으로 순위를 가렸다</b>. 주최 측은 주행 데이터를 분석한 성과 보고서를 낸 뒤 2028년 고성능 포뮬러 기반 대회로 고도화할 계획이다."
+          },
+          {
+            "title": "일레븐랩스, 국내 AI 단편영화 '더 시그널' 제작에 기술 지원",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217771",
+            "source": "AI타임스",
+            "pubDate": "2026-11-26",
+            "image": "https://cdn.aitimes.com/news/photo/202611/217771_222129_839.png",
+            "insight": "일레븐랩스가 AI 단편 극영화 프로젝트 '더 콜라보레이션 2026'의 기술 파트너로 합류해 안상훈 감독의 단편 '더 시그널' 제작에 AI 오디오 도구를 지원했다. <b>이 프로젝트는 크리에이티브망고와 서울독립영화제가 공동 주최해 한국 감독들이 글로벌 AI 기업들과 협업한 단편 7편으로 구성됐으며, 27일 서울 CGV 압구정에서 상영회가 열린다</b>. 일레븐랩스 측은 창작자가 기술적 제약 없이 상상을 구현하도록 계속 지원하겠다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "디자인 시스템이 있어도 화면이 제각각이던 토스뱅크의 해법",
+            "url": "https://toss.tech/article/loan_review",
+            "source": "토스 테크",
+            "pubDate": "2026-11-25",
+            "image": "https://static.toss.im/disposables/career-resource/LoanDesignSystem_01.png",
+            "insight": "토스뱅크 대출 심사 플랫폼은 버튼, 테이블 같은 기초 컴포넌트는 디자인 시스템에 갖춰져 있었지만 화면 단위로 어떻게 조합할지 기준이 없어 상품마다 같은 '확정' 버튼의 위치조차 달랐다. <b>운영 담당자를 인터뷰해 실제로는 단계를 순서대로만 밟지 않고 앞 단계로 돌아가거나 여러 화면을 교차 검증한다는 점을 확인하고, 리스트·단계별 작업·부가정보라는 세 가지 화면 패턴을 정의해 패키지화했다</b>. 주택담보대출에 먼저 적용한 패턴을 다른 상품팀이 먼저 재사용을 요청하면서 전사 확산으로 이어졌다."
+          },
+          {
+            "title": "국내여행 숙소, 네이버로 찾아보고 다른 OTA서 예약한다",
+            "url": "https://blog.opensurvey.co.kr/article/domestic-travel-2026-2/",
+            "source": "오픈서베이",
+            "pubDate": "2026-11-02",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/10/26_thumbnail_article_20.png",
+            "insight": "오픈서베이 조사에 따르면 국내여행 숙소 탐색은 네이버 검색(44.1%)이 가장 많이 쓰이지만, 최종 예약까지 네이버로 이어지는 경우는 적었다. <b>숙소 예약자 347명 중 첫 탐색은 네이버 검색이 65명으로 가장 많았지만 최종 예약은 NOL(54명), 네이버 예약(48명), 공식 사이트·앱(42명), 여기어때(39명) 순으로 분산됐다</b>. OTA에서 탐색을 시작한 이용자는 같은 플랫폼에서 예약을 마치는 경향이 강했지만, 네이버로 시작한 이용자는 가격·조건 비교를 위해 다른 플랫폼으로 이동하는 경우가 많았다."
+          },
+          {
+            "title": "토스, 흩어진 제품 변경 기록을 한 타임라인으로 묶은 'New20 Timeline Hub'",
+            "url": "https://toss.tech/article/new20-timeline-hub",
+            "source": "토스 테크",
+            "pubDate": "2026-11-17",
+            "image": "https://static.toss.im/assets/tech-blog/og-image/techblog-og.png",
+            "insight": "토스는 프로모션 'New20'의 지표가 움직일 때마다 회의록, PR, 정책 문서 등에 흩어진 맥락을 다시 찾는 데 시간이 오래 걸리는 문제를 해결하기 위해 변경 사항을 하나의 타임라인에 모았다. <b>정책·혜택, 세그먼트, 노출 지면, 실험, 데이터·대시보드 다섯 갈래로 변경을 나누고 PR은 매시간, 나머지 자료는 매일 아침 스크립트로 자동 수집해 반영 확정 여부를 시각적으로 구분했다</b>. 다만 타임라인상의 변경과 지표 변화가 겹친다고 곧바로 인과관계가 증명되는 것은 아니라는 점도 함께 명시했다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "네이버, 온라인 멤버십 혜택을 오프라인 축제 '넾페스타'로 구현",
+            "url": "https://design.co.kr/article/182907/#utm_source=rss&utm_medium=rss&utm_campaign=%25ed%2598%259c%25ed%2583%259d%25ec%259d%2584-%25ea%25b3%25b5%25ea%25b0%2584%25ec%259c%25bc%25eb%25a1%259c-%25ea%25b5%25ac%25ed%2598%2584%25ed%2595%259c-%25eb%2584%25a4%25ec%259d%25b4%25eb%25b2%2584%25ec%259d%2598-%25ec%258b%25a4%25ed%2597%2598-%25eb%2584%25be%25ed%258e%2598%25ec%258a%25a4%25ed%2583%2580",
+            "source": "월간 디자인",
+            "pubDate": "2026-11-25",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/21131601/20261121041558-20261121_041558.jpg",
+            "insight": "네이버가 10월 30일부터 11월 1일까지 성수 앤더슨씨에서 온라인 멤버십 혜택을 오프라인 경험으로 옮긴 '넾페스타'를 열었다. <b>얼굴 인식 입장 서비스 '페이스사인'으로 티켓 없이 입장하도록 하면서 안티스푸핑과 양자 내성 암호를 적용했고, 네이버페이 월렛 기반 NFT 스탬프 투어도 함께 운영했다</b>. 중정을 사이에 둔 구관과 신관에 약 50개 브랜드를 '넾' 형태의 공통 그래픽으로 묶어 공간 전체의 통일성을 유지했다."
+          },
+          {
+            "title": "건축그룹 BIG의 국내 첫 기획전 '머티리얼리즘' 개막",
+            "url": "https://blog.naver.com/designpress2016/224489843619?fromRss=true&trackingCode=rss",
+            "source": "디자인프레스",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "덴마크 건축가 비야케 잉겔스가 설립한 설계그룹 BIG의 국내 첫 기획전 '머티리얼리즘'이 서울도시건축전시관에서 11월 7일 개막해 내년 2월 28일까지 열린다. <b>돌·흙·콘크리트·금속·유리·목재 등 10가지 재료를 중심으로 BIG의 작업 과정을 보여주며, 주요 프로젝트 모형 50여 점과 스터디 모형 60여 점을 전시하고 관람객이 재료를 직접 만져볼 수 있도록 구성했다</b>. 전시는 서울시가 주최하고 BIG·Maker·Wayd가 주관하며 관람은 무료다."
+          },
+          {
+            "title": "2026 KDA 수상작 '아임에코샘' 생수, 세로 리브로 흔한 생수병을 다시 그리다",
+            "url": "https://design.co.kr/article/182987/#utm_source=rss&utm_medium=rss&utm_campaign=2026-kda-winner-%25ec%2595%2584%25ec%259e%2584%25ec%2597%2590%25ec%25bd%2594%25ec%2583%2598-%25ec%2583%259d%25ec%2588%2598",
+            "source": "월간 디자인",
+            "pubDate": "2026-11-25",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/21212246/20261121122237-20261121_122237-832x832.jpg",
+            "insight": "파운드/파운디드가 디자인한 생수 브랜드 '아임에코샘'이 2026 한국디자인대상(KDA) 프로덕트 부문 수상작으로 선정됐다. <b>물결에서 영감을 얻어 일반적인 가로 리브 대신 세로 리브 구조를 적용했고, 사탕수수 유래 PLA 소재가 가공이 까다로워 금형 테스트를 거치며 모델링을 약 100번 수정했다</b>. 심사위원들은 새로운 기술이나 장치를 더하지 않고 단일 소재의 조형 탐구만으로 가치를 만들어낸 점을 높게 평가했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "네이버파이낸셜, 신한·우리·NH농협·삼성카드와 원화 스테이블코인 컨소시엄 추진",
+            "url": "https://byline.network/2026/11/1125-5/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "네이버파이낸셜이 신한은행·우리은행·NH농협은행·삼성카드와 함께 원화 스테이블코인 발행을 위한 협력체를 꾸려 서울 강남구에 사무실을 운영해온 것으로 알려졌다. <b>금융위원회가 11월 24일 가상자산위원회에서 논의한 법률 제정안은 발행·상환 사업자에게 자기자본 50억원 이상과 금융위 인가를 요구하며, 도입 초기에는 은행이 과반 지분을 갖는 컨소시엄에만 발행을 허용할 방침이다</b>. 네이버와 카카오를 중심으로 한 컨소시엄 경쟁이 2파전 양상으로 전개되고 있다."
+          },
+          {
+            "title": "크래프톤, 자체 개발 LLM '라온-1 미니' 정식 출시",
+            "url": "https://platum.kr/archives/299455?utm_source=rss&utm_medium=rss&utm_campaign=%25ed%2581%25ac%25eb%259e%2598%25ed%2594%2584%25ed%2586%25a4-%25ec%259e%2590%25ec%25b2%25b4-%25ea%25b0%259c%25eb%25b0%259c-llm-%25eb%259d%25bc%25ec%2598%25a8-1-%25eb%25af%25b8%25eb%258b%2588-%25ec%25a0%2595%25ec%258b%259d-%25ec%25b6%259c%25ec%258b%259c-%25ec%2583%2581%25ec%2597%2585%25ec%25a0%2581",
+            "source": "플래텀",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "크래프톤이 10월 21일 공개했던 300억 매개변수급 자체 LLM '라온-1 미니'의 프리뷰를 거쳐 상업적 이용이 가능한 정식 버전을 출시했다. <b>전체 매개변수 약 288억 개 중 실제 추론 시에는 약 43억 개만 활성화하는 전문가 혼합(MoE) 구조로, 아파치 2.0 라이선스로 공개돼 누구나 연구와 상업적 서비스에 활용할 수 있다</b>. 한국어와 영어를 지원하며, 크래프톤은 향후 학습 과정과 성능을 담은 기술 리포트도 공개할 계획이다."
+          },
+          {
+            "title": "의료 AI 스크라이브 '니어닥', 출시 6개월 만에 누적 진료 기록 114만 건",
+            "url": "https://www.venturesquare.net/1131501/",
+            "source": "벤처스퀘어",
+            "pubDate": "2026-11-25",
+            "image": "https://www.venturesquare.net/wp-content/uploads/2026/11/kiko.png",
+            "insight": "스튜디오키코의 진료 대화 기록 AI '니어닥'이 5월 정식 출시 이후 6개월 만에 누적 진료 기록 114만 5,868건, 도입 의료기관 563곳을 기록했다. <b>의료진 120명 설문에서 차트 한 건을 작성하는 시간이 평균 3분 48초에서 1분 8초로 약 70% 줄었고, 무료 체험 후 유료 전환율은 74%에 달했다</b>. 10월 말에는 대형병원용 '니어닥 엔터프라이즈'를 출시해 대학병원들과 개념검증을 진행 중이며, 일본 시장 진출도 준비하고 있다."
+          }
+        ]
+      }
+    ]
+  }
+}
