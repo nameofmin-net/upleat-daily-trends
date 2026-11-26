@@ -1,0 +1,250 @@
+{
+  "intl": {
+    "date": "2026-11-27",
+    "dateLabel": "2026년 11월 27일 금요일",
+    "region": "해외",
+    "takeawayHtml": "AI 에이전트가 소비자이자 평가자로 자리잡으면서, <b>마케팅과 UX 리서치 모두 사람이 아니라 에이전트를 설득하고 검증하는 방식으로 다시 설계되고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "美 42개 주 검찰총장, Character.AI의 이용자 대화기록 매각 저지 나서",
+            "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-26",
+            "image": null,
+            "insight": "미국 42개 주 검찰총장이 챕터11 파산 절차에 들어간 Character.AI가 이용자 대화기록을 경매로 매각하려는 계획에 반대하고 있다. 매각 대상에는 미국 내 2,100만 개 이상 계정의 대화 기록과 미성년자 계정 210만 개 이상이 포함돼 있으며, <b>검찰총장들은 매수자가 개인정보 처리방침에 구속되지 않고 데이터를 재판매할 수 있다는 점을 가장 큰 문제로 지적했다</b>. 경매는 12월 1일로 예정돼 있다."
+          },
+          {
+            "title": "앤트로픽 CEO 다리오 아모데이, 'AI에 인간 통제권 넘긴다'는 비판에 반박",
+            "url": "https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-26",
+            "image": null,
+            "insight": "다리오 아모데이는 X에 올린 글에서 Anthropic이 AI에 인류의 자기결정권을 넘기려 한다는 비판을 '터무니없다'고 반박하며, <b>효율이나 안보를 위해 정당성과 자기결정권을 희생해서는 안 된다고 밝혔다</b>. 그는 경쟁사들이 내세우는 '인간 통제' 담론이 실제 제품 방향과 다르지 않다고 비판했지만, Anthropic 역시 재귀적 자기개선을 빠르게 추진하고 있어 주장과 현실 사이에 긴장이 있다는 지적도 함께 나온다."
+          },
+          {
+            "title": "벤치마크 'ShellBench', 최상위 AI 에이전트도 일상 작업 3분의 1 이상 실패",
+            "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "OpenClaw Foundation 등 연구진이 1,000만 건 이상의 실제 에이전트 상호작용을 바탕으로 만든 벤치마크 'ShellBench'에서 OpenAI·Anthropic·Meta의 최상위 모델도 <b>일상 작업의 3분의 1 넘게 실패했고 시도의 15.7%는 안전 요건을 위반했다</b>. 동일 과제를 세 번 반복했을 때 가장 점수가 높은 모델도 세 번 모두 성공한 비율이 절반에 못 미쳤다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "개인 AI 에이전트가 소비자가 되는 시대, 마케팅은 누구를 설득해야 하나",
+            "url": "https://uxdesign.cc/designing-ux-for-agentic-commerce-digital-marketing-for-personal-ai-agents-c8c99e1b0b37",
+            "source": "UX Collective",
+            "pubDate": "2026-11-25",
+            "image": null,
+            "insight": "개인 AI 비서가 이미 사람을 대신해 상품을 비교하고 구매하고 있지만, <b>인간의 구매 심리를 겨냥한 기존 마케팅 기법은 AI 에이전트에는 통하지 않는다</b>는 지적이 나온다. 에이전트 시대의 디지털 마케팅은 사람이 아니라 에이전트를 설득하는 방식으로 다시 설계돼야 한다는 것이다."
+          },
+          {
+            "title": "AI 코딩 시대, UX 리서치도 개발 루프 안으로 들어가야 한다",
+            "url": "https://www.nngroup.com/articles/research-in-the-loop/",
+            "source": "NN/g",
+            "pubDate": "2026-11-14",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/Research-In-The-Loop__How_UXR_Adapts__to_Development_at__AI_Speed.png",
+            "insight": "AI 에이전트가 출시 비용을 크게 낮추면서 리서치보다 출시가 먼저 이뤄지는 경우가 늘고 있다. NN/g는 이를 'research-in-the-loop'이라 부르며, <b>리서치 요구사항을 출시 전 제품 스펙에 포함시켜 에이전트가 설문·로깅·피드백 장치까지 함께 구현하도록 해야 한다</b>고 제안한다. 다만 계측만으로는 팀이 몰랐던 니즈를 발견하는 역할을 대신할 수 없다고 강조한다."
+          },
+          {
+            "title": "퓨 리서치·MeasuringU, AI 디지털 트윈이 실제 사용자 반응을 과대평가한다고 확인",
+            "url": "https://measuringu.com/pew-research-finds-the-same-problem-we-did-with-digital-twins/",
+            "source": "MeasuringU",
+            "pubDate": "2026-11-10",
+            "image": null,
+            "insight": "퓨 리서치는 AI로 만든 디지털 트윈의 응답이 실제 설문 결과와 <b>평균 12%p, 일부 문항에서는 46%p까지 차이가 났다</b>고 밝혔고, MeasuringU도 AI 트윈이 실제 사용자보다 사용성 점수(SUS)를 챗봇은 최대 6.7점, 업무용 소프트웨어는 약 10.5점 높게 예측해 일부 제품은 등급이 두 단계까지 바뀌었다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "비자, Base Design과 손잡고 '다음 세대를 위한' 로고 리프레시",
+            "url": "https://www.dezeen.com/2026/11/26/visa-logo-redesign-base-design/",
+            "source": "Dezeen",
+            "pubDate": "2026-11-27",
+            "image": "https://static-2026.dezeen.com/uploads/2026/11/visa-base-design-brand-identity_dezeen_2364_sq-1.jpg",
+            "insight": "Base Design은 2021년 비자 워드마크는 그대로 둔 채, <b>워드마크에서 V자만 분리해 독립된 심볼로 만들고 컬러풀한 바 형태의 '히어로 그래픽'으로 감싸는 방식으로 아이덴티티를 확장했다</b>. 둥근 모서리를 특징으로 한 전용 서체 Visa Sans도 함께 선보였으며, 탭투페이 단말기처럼 짧은 순간 노출되는 소규모 접점에서도 브랜드를 알아보게 하는 데 초점을 맞췄다."
+          },
+          {
+            "title": "도커, 컨테이너를 내려놓은 고래 로고 공개",
+            "url": "https://designcompass.org/2026/11/23/docker-moby-whale-logo-redesign/",
+            "source": "Design Compass",
+            "pubDate": "2026-11-23",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/docker-moby-rebrand-1-web-thumbnail-scaled.jpg",
+            "insight": "도커는 브랜드 디자인 회사 모토(Motto)와 함께 고래 캐릭터 '모비'를 다시 그려 <b>등에 싣고 있던 컨테이너 화물을 모두 없애고 둥근 몸통과 꼬리만 남긴 단순한 심볼로 바꿨다</b>. 컨테이너가 기술을 상징해 온 역사에서, AI 에이전트를 격리 실행하고 접근 권한을 관리하는 사업으로 영역을 넓히는 전환을 반영한 결정이라고 설명했다."
+          },
+          {
+            "title": "AI 생성 이미지 시대, 에어리는 '리얼함'을 브랜드 전략으로 내세운다",
+            "url": "https://www.fastcompany.com/91634509/stacey-mccormick-aerie-brands-that-matter-2026-ai-real-image-pamela-anderson",
+            "source": "Fast Company",
+            "pubDate": "2026-11-24",
+            "image": null,
+            "insight": "AI 생성 이미지가 실제 사진인지 가려내기 어려워지면서, <b>패션업계가 오래전부터 안고 있던 '리얼한 신체 재현'이라는 문제가 더 커지고 있다</b>. 에어리(Aerie)는 이런 흐름 속에서 '진짜'를 브랜드 전략의 핵심 축으로 다시 내세우고 있다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "웨이모, 도심 도로는 정복했지만 고속도로에서는 왜 자꾸 멈춰서나",
+            "url": "https://www.theverge.com/transportation/1042151/waymo-highway-ban-ai-safety-recalls",
+            "source": "The Verge",
+            "pubDate": "2026-11-26",
+            "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/11/LA_WAYMO-FREEWAY.jpg?quality=90&strip=all&crop=0%2C10.75214828329%2C100%2C78.49570343342&w=1200",
+            "insight": "지난 11월 6일 샌프란시스코 인근 고속도로(Interstate 280)에서 무인 웨이모 차량이 <b>고속도로 순찰차 뒤로 교통을 통제하는 '트래픽 브레이크' 상황에서 추월을 시도해 대응에 실패하는 영상이 공개됐다</b>. 도심 주행에서는 입지를 다진 웨이모가 고속도로에서는 반복적으로 안전 문제를 겪고 있다는 지적이 나온다."
+          },
+          {
+            "title": "S&P, 지배구조·핵심인물 리스크로 엔비디아 신용등급 하향 검토",
+            "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-26",
+            "image": null,
+            "insight": "S&P Global Ratings는 엔비디아 신용등급을 AA에서 AA-로 낮추는 안을 90일 내 검토하기로 했다. <b>젠슨 황 CEO가 해임됐다가 복귀한 사건을 계기로 '약한 경영진 감독과 승계 계획 부재'를 등급 하향의 핵심 근거로 지목했다</b>. 엔비디아가 보증해 온 5,000억 달러 규모 AI 인프라 대출의 조건도 함께 영향을 받을 수 있다."
+          },
+          {
+            "title": "FCC, 스페이스X의 우주 AI 데이터센터 위성 최대 100만 기 조건부 승인",
+            "url": "https://techcrunch.com/2026/11/25/fcc-approves-spacex-plan-to-put-ai-data-centers-in-space/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-26",
+            "image": null,
+            "insight": "FCC는 스페이스X가 궤도 500~1,002km에 최대 100만 개 위성으로 데이터센터 네트워크 'Starmind'를 구축하는 계획을 조건부로 승인했다. <b>첫 가동 위성 발사까지 7년, 전체 군집 배치까지 14년이 걸릴 전망이며</b>, Amazon 등은 우주 쓰레기와 전파 간섭 우려를 제기했지만 FCC는 일부를 자사 권한 밖이라며 기각했다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-27",
+    "dateLabel": "2026년 11월 27일 금요일",
+    "region": "국내",
+    "takeawayHtml": "AI 직무훈련이 중소기업의 작업 시간을 수십 분에서 수십 초로 줄이는 동안, <b>디자인 현장에서는 아이콘과 알림 UI 같은 작은 단위에서부터 명료함을 기준으로 다시 그리는 개편이 이어지고 있다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "중소기업도 AI 직무훈련으로 업무 자동화…도면 자재 입력 25분→46초",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217812",
+            "source": "AI타임스",
+            "pubDate": "2026-11-26",
+            "image": "https://cdn.aitimes.com/news/photo/202611/217812_222182_3633.jpg",
+            "insight": "조선업체 광림마린테크는 국립한국해양대의 32시간 AI 직무훈련을 받은 뒤, OCR로 도면에서 자재 정보를 자동 추출해 ERP·MES와 연계하는 체계를 구축했다. 그 결과 <b>도면 1장당 자재 명세서 등록 시간이 25.1분에서 0.77분으로, 자재 정보 오타율은 5.34%에서 0.065%로 줄었다</b>."
+          },
+          {
+            "title": "삼성전자 DS, 메모리 개발체제 사업부장 직속으로 재편…HBM 개발 속도전",
+            "url": "https://www.etnews.com/20261126000517",
+            "source": "전자신문",
+            "pubDate": "2026-11-26",
+            "image": "https://img.etnews.com/news/article/2026/07/07/news-p.v1.20260707.79ce9d3b863b4eff8a5bfc15346f9fb8_P1.jpg",
+            "insight": "삼성전자 DS부문은 D램·플래시·솔루션개발실을 사업부장 직속으로 묶는 조직개편을 확정했다. <b>신임 메모리사업부장이 D램개발실장을 겸직하며 HBM 등 차세대 제품 개발을 직접 챙기기로 했고</b>, 메모리와 로직 반도체의 융합에 대응해 솔루션개발실 산하에 로직개발팀도 새로 만들었다."
+          },
+          {
+            "title": "이노베이션아카데미, AI 3강 인재 양성 '코디세이' 비전 선포",
+            "url": "https://www.etnews.com/20261126000288",
+            "source": "전자신문",
+            "pubDate": "2026-11-26",
+            "image": "https://img.etnews.com/news/article/2026/11/26/news-p.v1.20261126.98e791473e7c436eb59ff592555ea05a_P1.jpg",
+            "insight": "이노베이션아카데미는 기업 AX를 늦추는 병목이 기술이 아니라 인재 부족이라고 진단하며, <b>2030년까지 AI·SW 혁신인재 5,000명을 길러내고 기업 100개·대학 30개교와 연계한 교육모델을 만들겠다</b>는 '코디세이' 비전을 선포했다. 최대 18개월짜리 '에이전틱 AI 전문인재' 과정도 함께 운영한다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "성남문화재단, 공연 끝난 뒤 알림톡 설문으로 시민 의견 모아 편성에 반영",
+            "url": "https://blog.opensurvey.co.kr/customer-stories/snart/",
+            "source": "오픈서베이",
+            "pubDate": "2026-11-26",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/11/26_thumbnail_cs_06-1400x1400.png",
+            "insight": "성남문화재단은 공연이 끝난 약 30분 뒤 카카오 알림톡으로 설문을 보내는 방식으로 조사 응답을 <b>연간 2,500건에서 5,000건 이상으로 두 배 늘렸다</b>. 국악·재즈처럼 관객 수는 적어도 실제 수요가 있는 장르를 확인해, 판매 실적만으로 판단하기 어려운 장르를 유지·확대하는 근거로 쓰고 있다."
+          },
+          {
+            "title": "AI로 신제품 컨셉보드 만들 때, 한국 소비자 데이터가 빠지면 생기는 문제",
+            "url": "https://blog.opensurvey.co.kr/research-tips/ai-concept-board-headline-to-rtb/",
+            "source": "오픈서베이",
+            "pubDate": "2026-11-09",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/11/26_conceptstudio_blog_research_tips_04.png",
+            "insight": "범용 생성형 AI로 컨셉보드를 만들면 타깃이 웹 지식 기반의 평균적 인물이 되어 <b>한국 소비자 맥락이 빠지기 쉽고, 신뢰의 근거(RTB)에 쓰인 수치나 출처가 검증되지 않을 수 있다</b>는 점이 지적된다. 오픈서베이는 실제 소비자 데이터를 결합한 합성소비자 평가가 식음료 아이디어 69개에서 실제 평가와 94.2% 일치했다고 밝혔다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "삼성 One UI 9.5, 실시간 알림을 카메라 주변 '나우 바'로 이동",
+            "url": "https://designcompass.org/2026/11/26/samsung-one-ui-9-5-now-bar-live-notifications-redesign/",
+            "source": "Design Compass",
+            "pubDate": "2026-11-26",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/Samsung-One-UI-9.5-Final-1-web-thumbnail.jpg",
+            "insight": "개발 중인 One UI 9.5에서는 상태 표시줄 시계 옆에 있던 실시간 알림이 <b>전면 카메라 주변 상단 중앙, 애플 다이내믹 아일랜드와 비슷한 자리로 옮겨졌다</b>. 여러 활동을 넘길 때도 위아래가 아닌 좌우로 밀어 전환하도록 바뀌었으며, 갤럭시 S27에 먼저 적용될 수 있다는 전망이 나온다."
+          },
+          {
+            "title": "고기야, 달리는 빨간 마스코트로 완성한 한국식 바비큐 브랜딩",
+            "url": "https://designcompass.org/2026/11/25/gogiya-korean-bbq-mascot-branding/",
+            "source": "Design Compass",
+            "pubDate": "2026-11-25",
+            "image": "https://designcompass.org/wp-content/uploads/2026/11/Gogiya-On-the-Run-1-web-thumbnail.jpg",
+            "insight": "고기야는 두 팔을 들고 달리는 빨간 캐릭터로 여럿이 불판에 둘러앉아 고기를 굽는 활기를 표현했다. <b>포장에서는 하늘색과 빨간색의 역할을 서로 바꾸고, 같은 자세의 마스코트 여러 개를 나란히 배치해 달리는 사람에서 발을 맞춘 대열로 보이게 하는 방식으로 브랜드 시스템을 확장했다</b>."
+          },
+          {
+            "title": "도레미약국 성수점, 2026 KDA 인테리어 수상…건물의 시간을 그대로 드러낸 공간",
+            "url": "https://design.co.kr/article/183284/",
+            "source": "월간 디자인",
+            "pubDate": "2026-11-26",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/25151210/20261125061207-1.jpg",
+            "insight": "더퍼스트펭귄이 설계한 도레미약국 성수점은 벽과 천장의 거친 표면을 새 마감으로 덮지 않고 그대로 노출하고, <b>규격이 일정하지 않은 의약품을 수용하도록 금속 하드웨어 모듈 9종을 새로 개발해 진열 방식을 바꿀 수 있게 했다</b>. 심사위원단은 화려한 시각효과보다 공간의 본질에 충실했다는 점을 높게 평가했다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "쿠팡 로켓그로스, 연간 계약제·사전 승인제로 운영방식 전면 개편",
+            "url": "https://byline.network/2026/11/26_2983717/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-11-26",
+            "image": null,
+            "insight": "쿠팡은 로켓그로스 이용약관을 하나로 합쳐 1년 단위 계약으로 바꾸고, <b>판매할 수 있는 상품을 쿠팡이 미리 승인하는 사전 승인제를 도입한다</b>. 최근 180일간 판매 실적이 없는 상품은 강제 반출 대상이 되며, 지난 7월 인천 물류센터 화재로 보관 공간이 줄어든 점도 개편 배경으로 꼽힌다."
+          },
+          {
+            "title": "美 백악관·국무부, 쿠팡 과징금에 '한미동맹 훼손' 공개 비판",
+            "url": "https://www.etnews.com/20261126000499",
+            "source": "전자신문",
+            "pubDate": "2026-11-26",
+            "image": "https://img.etnews.com/news/article/2026/10/11/news-p.v1.20261011.bf8438fb251f4c8da64096ff190e6eb8_P1.png",
+            "insight": "미국 백악관은 한국 공정위가 쿠팡이츠에 최혜대우 강요를 이유로 <b>3,008억원의 잠정 과징금을 부과한 것을 미국 기술기업 차별로 규정</b>했고, 국무부는 이런 제재가 한미동맹 발전을 해칠 수 있다며 대응 정책 검토를 경고했다. 한국 정부는 모든 조사와 결정이 적법하게 이뤄졌다고 반박했다."
+          },
+          {
+            "title": "토스랩 잔디, 메신저에서 AI 지식관리 플랫폼으로…글로벌 ACX 초월대상 수상",
+            "url": "https://www.venturesquare.net/1132078/",
+            "source": "벤처스퀘어",
+            "pubDate": "2026-11-27",
+            "image": "https://www.venturesquare.net/wp-content/uploads/2026/11/unnamed-87.png",
+            "insight": "토스랩이 운영하는 협업툴 잔디는 자체 AI '스프링클러'로 사내 자료를 검색증강생성(RAG) 방식으로 답변에 반영하고, <b>MCP를 지원해 Claude 등 외부 AI 서비스에서도 잔디의 업무 정보를 끌어다 쓸 수 있도록 구조를 바꿨다</b>. 이 같은 AI 지식관리 플랫폼으로의 전환이 '글로벌 ACX 초월대상' 제품·서비스 부문 수상으로 이어졌다."
+          }
+        ]
+      }
+    ]
+  }
+}
