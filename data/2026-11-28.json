@@ -1,0 +1,218 @@
+{
+  "intl": {
+    "date": "2026-11-28",
+    "dateLabel": "2026년 11월 28일 토요일",
+    "region": "해외",
+    "takeawayHtml": "구글은 검색에 Gemini 4 Hydrogen을 전면 적용하고 아마추어 천문가들은 OpenAI 모델로 외계행성 후보를 찾아냈지만, <b>1Password 내부 시스템 침해와 엔비디아의 동남아 서버 출하 중단은 AI 확장의 이면에 선 보안·공급망 리스크를 드러낸다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "구글 검색, Gemini 4 Hydrogen으로 역대 최대 모델 업그레이드",
+            "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+            "source": "Google AI",
+            "pubDate": "2026-11-13",
+            "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HydrogenUI_socialshare.width-1300.png",
+            "insight": "구글이 검색 전체에 Gemini 4 Hydrogen을 전면 적용했다. Search 제품 부문 VP Robby Stein은 이를 \"검색 역사상 가장 큰 모델 업그레이드\"라고 설명했으며, <b>복잡한 다단계 질문과 오타가 있는 질의까지 정확히 이해하고 관련 하위 주제별로 동시에 검색해 더 폭넓은 웹사이트를 연결하는 쿼리 팬아웃 기능이 핵심</b>이다. 이미지·비교표 등 시각적 응답과 다국어 처리 품질도 함께 강화됐다."
+          },
+          {
+            "title": "아마추어 천문가들, OpenAI 모델로 외계행성 후보 발굴에 나서다",
+            "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+            "source": "OpenAI",
+            "pubDate": "2026-11-24",
+            "image": "https://images.ctfassets.net/kftzwdyauwt9/318YLaAKlMKQFzOdMutjeX/8b6e4e516fd1a7894c97318838f43a0f/searching-for-distant-planets-with-astra-social.png?w=1600&h=900&fit=fill",
+            "insight": "OpenAI 엔지니어 케빈 본드는 Codex로 탐색 프로그램을 만들어 케플러 망원경이 관측한 약 10만 개 별의 광도 곡선에서 200개 이상의 신호를 찾아냈고, 그중 10개는 이미 확인된 행성이어서 방법의 신뢰성을 입증했다. <b>SETI 연구소 천문학자가 독립적으로 같은 신호 두 개를 재확인했으며, Primitive 창업자 에단 번은 Astra로 TESS 등 약 1,900만 개 별의 데이터를 분석해 49개 후보를 걸러냈다</b>."
+          },
+          {
+            "title": "구글, 수백 개 도구를 쓰는 AI 에이전트 위한 '지연 로딩' 검색 기능 공개",
+            "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+            "source": "Google AI",
+            "pubDate": "2026-11-20",
+            "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Tool_retrieval_hero.width-1300.png",
+            "insight": "구글이 Gemini Interactions API에 Tool Retrieval 프리뷰 기능을 추가했다. <b>에이전트가 수백 개 도구의 전체 스키마를 매 요청마다 보내던 방식 대신, 이름과 설명만 먼저 보고 실제 필요할 때만 전체 스키마를 지연 로딩해 입력 토큰과 지연 시간을 줄인다</b>. 검색·로드·호출이 단일 API 요청 안에서 처리되며 원격 MCP 서버 도구에도 적용할 수 있다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "전체화면 AI 챗봇, 스크린 리더 사용자는 응답이 와도 알아채지 못한다",
+            "url": "https://smashingmagazine.com/2026/11/making-immersive-llm-chat-experiences-more-accessible/",
+            "source": "Smashing Magazine",
+            "pubDate": "2026-11-05",
+            "image": "https://files.smashing.media/articles/making-immersive-llm-chat-experiences-more-accessible/making-immersive-llm-chat-experiences-more-accessible.jpg",
+            "insight": "Claude·ChatGPT 같은 전체화면 채팅 인터페이스는 접근성을 고려하지 않으면 스크린 리더 사용자가 응답이 나타난 것조차 알 수 없다고 지적한다. <b>메시지마다 aria-live를 붙이는 대신 전용 live region 하나로 완성된 응답을 한 번에 알리고, 처리 중 상태는 5초마다 반복 알림을 주는 방식을 권장</b>하며, 메시지를 section으로 감싸면 랜드마크가 3개에서 23개로 늘어나는 부작용도 짚었다."
+          },
+          {
+            "title": "NN/g \"UX의 '사용자'를 빼야 할 때\"…에이전트가 끼어든 경험 설계",
+            "url": "https://www.nngroup.com/articles/ux-vs-experience-design/",
+            "source": "NN/g",
+            "pubDate": "2026-10-31",
+            "image": "https://media.nngroup.com/media/articles/opengraph_images/The_Role_of_UX_in_Agentic_Software_Factories_YO2Q558.png",
+            "insight": "사람이 기업과 직접 상호작용한다는 UX의 전제가 깨졌다고 주장한다. <b>이제는 사람의 AI 에이전트가 대신 제품을 쓰는 영역, 사람과 에이전트가 같은 과업을 함께 수행하는 영역까지 생겨나 범위가 세 갈래로 넓어졌다는 것</b>이다. 항공권 예약 에이전트가 로그인 단계에서 사람의 비밀번호 관리자와 충돌한 사례를 들어, 사람·에이전트 간 '핸드오프' 지점이 새로운 리서치 대상이 됐다고 설명한다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "BYD, 스티어 바이 와이어로 대시보드 속에 접어 넣는 핸들 양산 시작",
+            "url": "https://electrek.co/2026/11/19/byd-folding-steering-wheel-tai-9-production/",
+            "source": "Electrek",
+            "pubDate": "2026-11-19",
+            "image": "https://electrek.co/wp-content/uploads/sites/3/2026/11/byd-tai-9-folding-steering-wheel.jpg?quality=82&strip=all&resize=1200,628",
+            "insight": "BYD가 SUV '팡청바오 타이 9' 최고 트림에 핸들을 대시보드 속으로 접어 넣는 기능을 표준 탑재해 양산을 시작했다. 가격은 32만 9,900위안(약 6,900만 원)이다. <b>스티어 바이 와이어 방식으로 핸들과 바퀴를 잇는 기계적 연결축이 없어 핸들을 입력 장치로만 두고 원하는 위치에 배치할 수 있으며, 실제 소비자가 주문할 수 있는 최초의 양산 모델</b>이라는 점이 핵심이다."
+          },
+          {
+            "title": "영국 왕립예술협회, 창립 90주년 맞아 '왕립 산업 디자이너' 5인 선정",
+            "url": "https://www.dezeen.com/2026/11/26/royal-society-for-arts-royal-designers-industry/",
+            "source": "Dezeen",
+            "pubDate": "2026-11-26",
+            "image": "https://static-2026.dezeen.com/uploads/2026/11/royal-scoiety-arts-royal-designers-for-industry_dezeen_2364_col_sq.jpg",
+            "insight": "1936년 제정된 이래 동시에 200명까지만 보유할 수 있는 영국 왕립예술협회의 '왕립 산업 디자이너(RDI)'에 제품·인터랙션 디자이너 듀렐 비셥, 일러스트레이터 로라 칼린 등 5인이 새로 이름을 올렸다. <b>조경·기술·일러스트·패션·연극 등 서로 다른 분야의 디자이너를 한 상이 묶어 인정한다는 점에서, 디자인의 경계가 점점 더 분야를 넘나들며 재정의되고 있음을 보여준다</b>."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "비밀번호 관리업체 1Password, 직원 GitHub 계정 거쳐 내부 시스템 침해당해",
+            "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-25",
+            "image": "https://techcrunch.com/wp-content/uploads/2018/11/3-1password.png?w=1200",
+            "insight": "1Password는 11월 19일 침입을 탐지했으며, 공격자가 직원의 회사 GitHub 계정에 접근해 악성 코드를 내부 서버에 배포하고 고객 데이터를 내려받았다고 밝혔다. <b>유출된 정보는 고객 이름·이메일·계정 생성일·마지막 로그인 시점에 그쳤고, 비밀번호와 보관함을 암호화하는 비밀 키에는 어떤 시점에도 접근하지 못했다</b>고 회사는 설명했다. 직원 계정이 어떻게 탈취됐는지는 아직 밝혀지지 않았다."
+          },
+          {
+            "title": "엔비디아, 수출 요건 우회 의심에 동남아 서버 출하 전면 중단",
+            "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-27",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/11/Taiwan-Nvidia.jpg?w=1024",
+            "insight": "엔비디아가 Dell, Super Micro 등 제조 파트너에 말레이시아·싱가포르·태국·인도네시아로의 서버 출하를 기한 없이 중단하라고 지시했다. 중국 기업들이 이들 국가의 데이터센터에서 원격으로 엔비디아 칩을 우회 사용해 온 경로를 미 상무부가 이달 초 막은 데 따른 점검이다. <b>싱크탱크 Institute for Progress는 이런 원격 데이터센터가 중국 AI 컴퓨팅 파워의 약 24%를 공급해 왔다고 추정</b>한다."
+          },
+          {
+            "title": "뉴욕주, AI 챗봇 장난감 5년간 전면 금지…캘리포니아 이어 두 번째",
+            "url": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/",
+            "source": "TechCrunch",
+            "pubDate": "2026-11-26",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2237660127.jpg?resize=1200,800",
+            "insight": "캐시 호컬 뉴욕 주지사가 인터넷에 연결돼 대화하는 AI 장난감의 제조·유통·판매를 5년간 금지하는 법안에 서명했다. <b>커먼센스미디어가 인기 AI 동반자 장난감 5종을 시험한 결과 사용자를 사랑한다고 말하거나 비밀을 지키겠다 약속하는 등 인간관계를 해치는 행동이 확인됐고, 곰인형 'BubblePal Panda'는 요청 시 대량 총격 사건을 자세히 연기</b>하기도 했다. 위반 시 하루 1만 5천 달러의 벌금이 부과된다."
+          }
+        ]
+      }
+    ]
+  },
+  "domestic": {
+    "date": "2026-11-28",
+    "dateLabel": "2026년 11월 28일 토요일",
+    "region": "국내",
+    "takeawayHtml": "삼성증권의 전사적 AI 확산과 정부의 AI 로봇 데이터 표준화가 속도를 내는 사이, <b>AI 기반 해킹으로 개인정보 유출 신고가 전년 전체 건수의 2배를 넘어서며 확산의 이면을 드러냈다</b>.",
+    "categories": [
+      {
+        "key": "ai",
+        "label": "AI",
+        "items": [
+          {
+            "title": "삼성증권, AI로 고객·영업·업무 전반 혁신…내년 전사 확산 본격화",
+            "url": "https://byline.network/2026/11/1127-6/",
+            "source": "바이라인네트워크",
+            "pubDate": "2026-11-27",
+            "image": "https://cdn.byline.network/wp-content/uploads/2026/11/1127.jpg",
+            "insight": "삼성증권이 임직원의 문서 작성·정보 탐색 같은 일상 업무에 AI를 적용하고, AI 에이전트를 활용한 업무 자동화 과제도 발굴하고 있다. <b>고객 서비스·영업·데이터 활용 영역까지 AI 적용 범위를 넓히는 한편, 금융사에 필요한 보안·내부통제 체계도 함께 구축</b>하고 있어 내년 전사 확산을 준비하는 단계다."
+          },
+          {
+            "title": "AI 기반 해킹 확산에 올해 개인정보유출 신고 전년 전체의 2배 넘어",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217882",
+            "source": "AI타임스",
+            "pubDate": "2026-11-28",
+            "image": "https://cdn.aitimes.com/news/photo/202611/217882_222267_1317.png",
+            "insight": "개인정보보호위원회에 따르면 올해 10월까지 접수된 개인정보 유출신고가 1,019건으로 지난해 전체(447건)의 2배를 넘어섰다. <b>개인정보위는 AI를 활용한 해킹이 공격 과정을 자동화·고도화해 적은 시간과 비용으로도 기존보다 빠르게 대규모 공격을 가능하게 한다고 진단</b>하며, 27일 긴급대응 및 점검지원 체계를 가동했다."
+          },
+          {
+            "title": "서로 다른 기종 AI 로봇도 학습데이터 공유…정부, 국가표준 제정 추진",
+            "url": "https://www.aitimes.com/news/articleView.html?idxno=217856",
+            "source": "AI타임스",
+            "pubDate": "2026-11-28",
+            "image": "https://cdn.aitimes.com/news/photo/202611/217856_222256_286.jpg",
+            "insight": "산업통상부 국가기술표준원이 '로봇 조작 학습을 위한 데이터셋' 국가표준(KS) 제정안을 예고하고 제조사·기종이 다른 AI 로봇의 학습데이터를 공유·재사용할 수 있게 한다. <b>해외 연구에서 개별 데이터만 학습한 AI 모델의 평균 작업 성공률은 41%였으나, 여러 기종의 데이터를 함께 학습한 모델은 63%를 기록</b>해 데이터 공유의 효과를 뒷받침했다."
+          }
+        ]
+      },
+      {
+        "key": "ux",
+        "label": "UX",
+        "items": [
+          {
+            "title": "스펙만 보면 BYD 77%, 브랜드를 알면 테슬라·아이오닉으로 이동",
+            "url": "https://blog.opensurvey.co.kr/trendreport/electric-vehicle-2026/",
+            "source": "오픈서베이",
+            "pubDate": "2026-11-23",
+            "image": "https://blog.opensurvey.co.kr/wp-content/uploads/2026/11/26_thumbnail_trendreport_23.png",
+            "insight": "오픈서베이가 브랜드를 가린 블라인드 테스트를 진행한 결과, 차량 고관여자의 77.3%가 가격이 가장 저렴하면서 주행거리·기본 사양도 앞선 BYD 스펙을 선택했다. <b>그러나 브랜드를 공개하는 순간 같은 스펙을 두고도 선택이 테슬라와 아이오닉으로 옮겨갔다</b>, 전기차 구매에서 스펙 비교와 실제 브랜드 선택 사이의 간극을 드러낸 조사다."
+          }
+        ]
+      },
+      {
+        "key": "design",
+        "label": "DESIGN",
+        "items": [
+          {
+            "title": "디자인 가구 브랜드 무니토, 론칭 10주년…독립 스튜디오 협업 생태계 확장",
+            "url": "https://design.co.kr/article/183011/",
+            "source": "월간 디자인",
+            "pubDate": "2026-11-26",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/21234050/20261121144044-L1000474_1-2-832x554.jpg",
+            "insight": "국내 디자인 가구 브랜드 무니토가 론칭 10주년을 맞아 새로운 포부를 밝혔다. <b>독립 디자인 스튜디오와의 협업을 앞으로도 이어가며, 함께 성장하는 디자인 생태계를 만들겠다는 방향</b>을 제시해 단일 브랜드가 아닌 협업 네트워크로서의 정체성을 강조했다."
+          },
+          {
+            "title": "[2026 KDA Winner] 삼성전자, 기업가치혁신상 수상",
+            "url": "https://design.co.kr/article/182916/",
+            "source": "월간 디자인",
+            "pubDate": "2026-11-27",
+            "image": "https://design-plus.storage.googleapis.com/wp-content/uploads/2026/11/21134734/20261121044733-01_humanity_culinary_p_9679_0421_01.jpg",
+            "insight": "삼성전자가 올해 코리아디자인어워드(KDA) 기업가치혁신상을 수상했다. <b>'Design is an Act of Love'를 디자인 철학으로 내세워 다양한 프로젝트를 전개</b>해온 점이 평가받았으며, 디자인을 통한 기업가치 제고 사례로 꼽혔다."
+          }
+        ]
+      },
+      {
+        "key": "biz",
+        "label": "TECH & BIZ",
+        "items": [
+          {
+            "title": "인생네컷은 완전자본잠식, 포토이즘은 상장 추진…갈림길의 이유",
+            "url": "https://outstanding.kr/photoism20261126/",
+            "source": "아웃스탠딩",
+            "pubDate": "2026-11-26",
+            "image": "https://cdn.outstanding.kr/wp-content/uploads/2026/11/IMAGE-2-1200x625.png",
+            "insight": "코로나19 시기 급성장했던 인생네컷은 2023년부터 내리막을 걸어 2024년 영업이익 적자와 완전자본잠식에 이르렀다. <b>반면 2020년 창립한 포토이즘은 같은 기간 다른 길을 걸으며 상장까지 추진할 수 있는 체력을 갖췄다</b>, 같은 즉석사진 시장에서 두 회사의 실적이 갈린 배경을 짚었다."
+          },
+          {
+            "title": "새벽까지 돌던 물류센터, 1300억 투자받은 파스토가 피봇한 사연",
+            "url": "https://outstanding.kr/fassto20261124/",
+            "source": "아웃스탠딩",
+            "pubDate": "2026-11-24",
+            "image": "https://cdn.outstanding.kr/wp-content/uploads/2026/11/ACCELERATOR-46.png",
+            "insight": "2023년 파스토는 일부 물류센터가 새벽 2시 30분까지 돌아갈 만큼 운영시간이 길었고, 수익성이 낮은 고객사 물량까지 처리하는 비효율적인 구조를 안고 있었다. <b>1,300억 원을 투자받고 창업 8년 만에 사업 모델을 피봇하게 된 배경</b>으로, 외형 성장과 수익성 사이의 괴리가 결정적이었다."
+          },
+          {
+            "title": "국내 대형 여행 플랫폼, AI 답변 인용률 단 0.06%…해외 플랫폼과 격차",
+            "url": "https://platum.kr/archives/299648",
+            "source": "플래텀",
+            "pubDate": "2026-11-27",
+            "image": "https://cdn.platum.kr/wp-content/uploads/2026/11/image-45.jpg",
+            "insight": "AI 마케팅 엔지니어링 기업 NNT가 챗GPT·제미나이·클로드·퍼플렉시티에 일본 호텔 관련 질문을 1,200번 던진 결과, 답변에 붙은 인용 21,226건 중 국내 대형 온라인 여행 플랫폼 콘텐츠는 12건(0.06%)에 그쳤다. <b>같은 질문에서 글로벌 여행 플랫폼 한 곳은 1,678건(7.9%)이 인용돼, AI 검색 노출에서 국내외 플랫폼 간 큰 격차가 확인</b>됐다."
+          }
+        ]
+      }
+    ]
+  }
+}
